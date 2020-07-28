@@ -1,0 +1,31 @@
+service: site # NOTE: update this with your service name
+tenant: site
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-west-2
+  timeout: 30
+
+plugins:
+  - serverless-nextjs-plugin
+
+custom:
+  serverless-nextjs:
+    nextConfigDir: "./"
+    routes:
+      - src: index.html
+        path: /
+      - src: test
+        path: tests/{id}
+        request:
+          parameters:
+            paths:
+              id: true
+    createAssetBucket: false
+    assetsBucketName: "site-application" 
+    cloudFront: true
+
+package:
+  exclude:
+    - ./**
