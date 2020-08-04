@@ -2,24 +2,29 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      docker: 18
+  pre_build:
     commands:
-      - echo runing npm install...
-      - npm install
-
-      - echo runing npm install with only dev...
-      - npm install --only=dev
-
-      - echo installing serverless
-      - npm install -g serverless
+      - echo Logging in to Amazon ECR
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - REPOSITORY_URI=$REPOSITORY_URI
   build:
     commands:
-      - echo runing webpack
-      - echo removing dev dependences
-      # - npm uninstall --only=dev
-
-      - echo making serverless deploy
-      - echo using environment $NODE_ENV
-      - sls deploy --stage $NODE_ENV
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - echo $REPOSITORY_URI
+      - echo $NODE_ENV
+      - docker build -t feira-site:$NODE_ENV .
+      - docker tag feira-site:$NODE_ENV $REPOSITORY_URI:$NODE_ENV
   post_build:
     commands:
-      - echo finished deploy
+      - echo Build completed on `date`
+      - docker push $REPOSITORY_URI:$NODE_ENV
+      - echo Changing the Dockerrun file to the correct for this environment
+      - sed -i 's/DUMMY_ENV/'$NODE_ENV'/g' Dockerrun.aws.json
+artifacts:
+  files:
+    - Dockerrun.aws.json
+    - .ebextensions/*
+

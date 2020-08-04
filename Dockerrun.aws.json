@@ -1,0 +1,17 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "444591678145.dkr.ecr.us-west-2.amazonaws.com/site:DUMMY_ENV",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "HostPort": "80",
+      "ContainerPort": "3000"
+		},
+		{
+			"HostPort": "443",
+			"ContainerPort": "3000"
+		}
+  ]
+}
