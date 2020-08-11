@@ -1,11 +1,11 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import React from 'react';
+import Head from 'next/head';
+import Nav from '../../components/nav';
 
-const Home = () => (
+const Home = ({ blah }) => (
   <div>
     <Head>
-      <title>Home</title>
+      <title>Teste - {blah}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
@@ -83,8 +83,8 @@ const Home = () => (
       }
     `}</style>
   </div>
-)
+);
 
-Home.getInitialProps = () => ({ blah: 'blah' });
+Home.getInitialProps = ({ query }) => ({ blah: query.id });
 
-export default Home
+export default Home;

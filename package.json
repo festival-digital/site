@@ -6,16 +6,40 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "eslint:fix": "eslint --fix \"./**/*.js\" \"./**/*.jsx\"",
     "serverless:dev": "now-lambda"
   },
   "dependencies": {
+    "babel-loader": "^8.1.0",
     "next": "9.5.0",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "raw-loader": "^4.0.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-styled-components": "^1.11.1",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "now-lambda-runner": "^4.0.0",
+    "prettier": "^2.0.5",
     "serverless-nextjs-plugin": "^2.5.2-alpha.0",
     "serverless-offline": "^6.5.0"
-  }
+  },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ]
 }

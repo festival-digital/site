@@ -1,5 +1,22 @@
 module.exports = {
-  target: 'serverless',
-  assetPrefix: `https://site-application.s3-us-west-2.amazonaws.com`,
   env: {},
+  webpack: (config) => ({
+    ...config,
+    module: {
+      rules: [
+        ...config.module.rules,
+        {
+          test: /.css$/,
+          loader: 'emit-file-loader',
+          options: {
+            name: 'dist/[path][name].[ext].js',
+          },
+        },
+        {
+          test: /.css$/,
+          use: ['babel-loader', 'raw-loader', 'postcss-loader'],
+        },
+      ],
+    },
+  }),
 };
