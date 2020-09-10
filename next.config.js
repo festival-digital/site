@@ -1,22 +1,8 @@
-module.exports = {
+// next.config.js 
+const withCSS = require('@zeit/next-css');
+module.exports = withCSS({
   env: {},
-  webpack: (config) => ({
-    ...config,
-    module: {
-      rules: [
-        ...config.module.rules,
-        {
-          test: /.css$/,
-          loader: 'emit-file-loader',
-          options: {
-            name: 'dist/[path][name].[ext].js',
-          },
-        },
-        {
-          test: /.css$/,
-          use: ['babel-loader', 'raw-loader', 'postcss-loader'],
-        },
-      ],
-    },
-  }),
-};
+  cssLoaderOptions: {
+    url: false
+  },
+});

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { defaultTheme, IDALoginButton, Title } from '@resystem/design-system';
 import { ThemeProvider } from 'styled-components';
 import Headers from 'components/Header';
 
@@ -11,9 +12,10 @@ const Container = styled.div`
 `;
 
 const Home = () => (
-  <ThemeProvider theme={{}}>
+  <ThemeProvider theme={defaultTheme}>
     <Headers />
-    asdsad
+    <Title>teste</Title>
+    <IDALoginButton dark small />
   </ThemeProvider>
 );
 
