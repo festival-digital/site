@@ -3,6 +3,7 @@
 import React from 'react';
 import App from 'next/app';
 import '@resystem/design-system/dist/main.css';
+import Main from 'components/main/main';
 
 export default class MyApp extends App {
   constructor(props) {
@@ -12,7 +13,9 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <Component {...pageProps} />
+      <Main>
+        <Component {...pageProps} />
+      </Main>
     );
   }
 }

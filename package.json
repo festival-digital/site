@@ -10,7 +10,7 @@
     "serverless:dev": "now-lambda"
   },
   "dependencies": {
-    "@resystem/design-system": "^0.0.29",
+    "@resystem/design-system": "^0.0.34",
     "@zeit/next-css": "^1.0.1",
     "babel-loader": "^8.1.0",
     "next": "9.5.0",
