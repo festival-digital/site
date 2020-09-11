@@ -1,11 +1,12 @@
 import React from 'react';
+import { Content } from './home.style';
 
 /**
  * This is the Home component
  * @returns {React.Component}
  */
 const Home = () => (
-  <div>Pagina Home</div>
+  <Content>Pagina Home</Content>
 );
 
 export default Home;
