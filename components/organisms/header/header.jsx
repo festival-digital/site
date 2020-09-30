@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { IDALoginButton } from '@resystem/design-system';
 import {
   BurgerIcon,
@@ -10,7 +11,7 @@ import {
  * This is the Header component
  * @returns {React.Component} header component global
  */
-const Header = () => (
+const Header = ({ onIDASignin }) => (
   <HeaderComponent>
     <Brand
       onClick={(() => {})}
@@ -19,7 +20,7 @@ const Header = () => (
     />
     <div>
       <IDALoginButton
-        onClick={(() => {})}
+        onClick={onIDASignin}
         dark
         small
         text="Entrar"
@@ -32,5 +33,9 @@ const Header = () => (
     </div>
   </HeaderComponent>
 );
+
+Header.propTypes = {
+  onIDASignin: PropTypes.func.isRequired,
+};
 
 export default Header;
