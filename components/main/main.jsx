@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+
 import { defaultTheme } from '@resystem/design-system';
-import { MainComponent } from './main.style';
 import Header from 'components/organisms/header/header';
+import { MainComponent } from './main.style';
 
 /**
  * This is the Main component
@@ -16,7 +16,7 @@ const Main = ({ children }) => (
   <ThemeProvider theme={defaultTheme}>
     <MainComponent>
       <Header />
-      { children }
+      {children}
     </MainComponent>
   </ThemeProvider>
 );
