@@ -21,5 +21,3 @@ export const BurgerIcon = styled.img`
     display: none;
   }
 `;
-
-

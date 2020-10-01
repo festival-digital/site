@@ -1,9 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  SET_USER, RESET_USER, SET_AUTH, RESET_AUTH,
-} from './actions';
+import { SET_USER, RESET_USER, SET_AUTH, RESET_AUTH } from './actions';
 
 const Store = React.createContext();
 
@@ -11,7 +9,6 @@ export const initialState = {
   user: null,
   auth: null,
 };
-
 
 export const reducer = (state, action) => {
   switch (action.type) {

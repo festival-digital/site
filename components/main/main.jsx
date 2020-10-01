@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+
 import { defaultTheme } from '@resystem/design-system';
 import Store from 'components/store/Store';
 import Header from 'components/organisms/header/header';
-import { openIDASignin, getUser } from './main.controller';
 import ida from 'libs/ida.lib';
-import { MainComponent } from './main.style';
 import { SET_AUTH } from 'components/store/actions';
+import { openIDASignin, getUser } from './main.controller';
+import { MainComponent } from './main.style';
 
 /**
  * This is the Main component
@@ -28,18 +28,21 @@ const Main = ({ children }) => {
       dispatch({
         type: SET_AUTH,
         auth,
-      })
-      getUser({ ida: auth.ida, setLoading, navigationTo: router.push, dispatch });
+      });
+      getUser({
+        ida: auth.ida,
+        setLoading,
+        navigationTo: router.push,
+        dispatch,
+      });
     });
   }, []);
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <MainComponent>
-        <Header
-          onIDASignin={openIDASignin}
-        />
-        { children }
+        <Header onIDASignin={openIDASignin} />
+        {children}
       </MainComponent>
     </ThemeProvider>
   );
