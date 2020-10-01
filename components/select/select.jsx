@@ -1,25 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form, SelectForm, Option } from './select.style';
+import { Form, SelectForm, Option, SelectContent } from './select.style';
 
 /**
  * This is the Select component
  * @returns {React.Component}
  */
-const Select = ({ value, options, small, onChange }) => {
-  const [select, setSelect] = React.useState('');
+const Select = ({ options, small }) => {
+  const [select, setSelect] = React.useState('')
   return (
-    <Form>
-      <SelectForm value={select} onChange={({ target }) => setSelect(target.value)} small={small}>
-        <Option disabled value="">
-          Selecionar
-        </Option>
-        {options.map((item) => (
-          <Option key={item} value={item}>{item}</Option>
-        ))}
-      </SelectForm>
-    </Form>
-  );
+      <SelectContent small={small}>
+        <SelectForm
+          value={select}
+          onChange={({ target }) => setSelect(target.value)}
+          small={small}
+          >
+          <Option disabled value=""> Selecionar </Option>
+          {options.map((item) => (
+            <Option key={item} value={item}>
+              {item}
+            </Option>
+          ))}
+        </SelectForm>
+      </SelectContent>
+  )
 };
 
 export default Select;
