@@ -1840,10 +1840,10 @@
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.5.0.tgz#5d3923bc5520f355c3a70b72673c92d23719cf4b"
   integrity sha512-YaLBsyAQuEDTyzEuTzg/VwwSqpfNkJ5fiQNIBSGY+UmSpg1+1OHIyMRURzLKO1K7ad3w6kZ+ykgGcMLToR33EQ==
 
-"@resystem/design-system@^0.0.40":
-  version "0.0.40"
-  resolved "https://registry.yarnpkg.com/@resystem/design-system/-/design-system-0.0.40.tgz#eda99ce5de5f5fd415e8e00fc6f58f2b4a924330"
-  integrity sha512-dEAHE+SSBwbWU4dgWtzC4czd7uI7t2dM2rvsXwF24d+3uRYU706hHeMwmcM0fC9zLCWeXeJeQpr48iVaRBdYpg==
+"@resystem/design-system@^0.0.56":
+  version "0.0.56"
+  resolved "https://registry.yarnpkg.com/@resystem/design-system/-/design-system-0.0.56.tgz#fe7cb9295b311c5c6f22ed33476558fd6e9a11f8"
+  integrity sha512-yNqjFSnp1ZWoM1h5gQZZE7eNowbrgnHr50UsJgzYRVDq40w9do1SjsSWS7gOZtDO+yqNYRoWABD+DIhvxqn/1Q==
   dependencies:
     "@material-ui/core" "^4.11.0"
     "@material-ui/icons" "^4.9.1"
