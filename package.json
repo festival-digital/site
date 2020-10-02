@@ -11,15 +11,12 @@
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@resystem/design-system": "^0.0.40",
+    "@resystem/design-system": "^0.0.56",
     "@resystem/ida-js-sdk": "^0.0.25",
     "@zeit/next-css": "^1.0.1",
-<<<<<<< HEAD
     "apollo-boost": "^0.4.9",
     "apollo-cache-inmemory": "^1.6.6",
-=======
     "axios": "^0.20.0",
->>>>>>> feature/context-redux-like
     "babel-loader": "^8.1.0",
     "dotenv": "^8.2.0",
     "graphql": "^15.3.0",
