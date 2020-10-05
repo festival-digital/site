@@ -6,7 +6,7 @@ const Nav = styled.nav`
   width: 100%;
   height: ${({ height }) => `${height}px`};
   position: relative;
-  background-image: url('./static/images/event_header_no_scroll.png');
+  background-image: url('/static/images/event_header_no_scroll.png');
   background-size: cover;
   z-index: 100;
   height: ${({ maxHeight }) => `${maxHeight}px`};
@@ -82,7 +82,7 @@ const MainButton = styled.button`
 const MainButtonImage = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url('./static/images/platdig-idv-concepts-avatar2.png');
+  background-image: url('/static/images/platdig-idv-concepts-avatar2.png');
   background-size: cover;
   box-shadow: none;
 `;
@@ -129,7 +129,7 @@ const EventHeader = () => {
         <MainButton>
           <MainButtonImage />
         </MainButton>
-        <OasiLogo src="./static/icons/oasis-logo.svg" alt="Logo escrito Oasi" />
+        <OasiLogo src="/static/icons/oasis-logo2.svg" alt="Logo escrito Oasi" />
       </LinearBackground>
     </Nav>
   );
