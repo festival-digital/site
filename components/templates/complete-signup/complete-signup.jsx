@@ -4,11 +4,16 @@ import Icon from '@material-ui/core/Icon';
 import { CheckboxInput } from '@resystem/design-system';
 import TextInput from 'components/molecules/text-input/TextInput';
 import Store from 'components/store/Store';
-import { completeRegister } from './complete-signup.controller';
 import ida from 'libs/ida.lib';
+import { completeRegister } from './complete-signup.controller';
 import {
-  Content, Title, Description, Form,
-  SubmitButton, Footer, IconWrapper,
+  Content,
+  Title,
+  Description,
+  Form,
+  SubmitButton,
+  Footer,
+  IconWrapper,
 } from './complete-signup.style';
 
 /**
@@ -26,8 +31,11 @@ const CompleteSignup = () => {
   return (
     <Content>
       <header>
-        <Title>Finalizar cadastro</Title>  
-        <Description>Estamos quase! Só precisamos de mais alguns dados seus para garantir sua segurança na plataforma.</Description>  
+        <Title>Finalizar cadastro</Title>
+        <Description>
+          Estamos quase! Só precisamos de mais alguns dados seus para garantir
+          sua segurança na plataforma.
+        </Description>
       </header>
       <Form
         onSubmit={(e) => {
@@ -76,10 +84,11 @@ const CompleteSignup = () => {
                 border-color: #000;
               }
             `}
-          >Li e concordo com os <a href="#">termos de uso e privacidade</a> da PLATAFORMA</CheckboxInput>
-          <SubmitButton
-            disabled={!name || !cpf}
           >
+            Li e concordo com os <a href="#">termos de uso e privacidade</a> da
+            PLATAFORMA
+          </CheckboxInput>
+          <SubmitButton disabled={!name || !cpf}>
             Finalizar
             <IconWrapper>
               <Icon>done</Icon>
