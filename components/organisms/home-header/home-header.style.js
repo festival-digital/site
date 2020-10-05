@@ -47,7 +47,7 @@ export const NavigationItem = styled.li`
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    color: ${({ theme }) => theme.brandColor.secondary.medium};
+    color: ${({ theme }) => theme.brandColor.fourtiary.medium};
   }
 `;
 
