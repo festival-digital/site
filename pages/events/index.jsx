@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ActivityCard from 'components/organisms/activity-card';
 import EventCard from 'components/organisms/event-card';
 import ActivityIncentiveCard from 'components/molecules/activity-incentive-card';
+import EventHeader from 'components/organisms/event-header';
 import { Text, TextInput } from '@resystem/design-system';
 
 const Container = styled.div`
@@ -72,6 +73,7 @@ const EventsPage = () => {
   return (
     <>
       <Container>
+        <EventHeader />
         <FilterContainer>
           <input placeholder="Buscar evento" />
           <FilterButtonContainer>
