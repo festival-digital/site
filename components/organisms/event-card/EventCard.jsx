@@ -36,7 +36,8 @@ const LinearBackground = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 16px 16px 0 16px;
+  padding: ${({ theme: { spacingInset } }) =>
+    `${spacingInset.xs} ${spacingInset.xs} 0 ${spacingInset.xs}`};
   display: flex;
   flex-direction: column;
 
@@ -44,7 +45,12 @@ const LinearBackground = styled.div`
     content: '';
     height: 100%;
     width: 50%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 25%, transparent);
+    background: linear-gradient(
+      360deg,
+      #1d1d1d 32.38%,
+      rgba(29, 29, 29, 0) 95.65%
+    );
+    transform: rotate(90deg);
     position: absolute;
     top: 0;
     left: 0;
@@ -55,7 +61,12 @@ const LinearBackground = styled.div`
     content: '';
     height: 50%;
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 15%, transparent);
+    background: linear-gradient(
+      360deg,
+      #1d1d1d 0%,
+      rgba(29, 29, 29, 0.755208) 49.32%,
+      rgba(29, 29, 29, 0) 95.65%
+    );
     position: absolute;
     bottom: 0;
     right: 0;
@@ -82,7 +93,7 @@ const Legends = styled.div`
 
   & p {
     z-index: 4;
-    color: #fff;
+    color: ${({ theme }) => theme.neutralColor[1]};
     font-size: 14px;
     line-height: 120%;
     font-family: 'Space Mono';
@@ -91,7 +102,7 @@ const Legends = styled.div`
   }
   & small {
     z-index: 4;
-    color: #fff;
+    color: ${({ theme }) => theme.neutralColor[1]};
     line-height: 20px;
     font-size: 12px;
   }
@@ -104,7 +115,7 @@ const Button = styled.button`
   width: 32px;
   height: 32px;
 
-  background-color: #404040;
+  background-color: ${({ theme }) => theme.neutralColor[7]};
   border-radius: 10px;
   cursor: pointer;
 `;
@@ -114,13 +125,7 @@ const Button = styled.button`
  * @returns {React.Component}
  */
 
-const ActivityCardSimple = ({
-  backgroundUrl,
-  iconUrl,
-  title,
-  subtitle,
-  ...props
-}) => {
+const EventCard = ({ backgroundUrl, iconUrl, title, subtitle, ...props }) => {
   return (
     <Container onClick={() => console.log(1123)}>
       <Figure backgroundUrl={backgroundUrl} />
@@ -145,18 +150,18 @@ const ActivityCardSimple = ({
   );
 };
 
-ActivityCardSimple.defaultProps = {
+EventCard.defaultProps = {
   backgroundUrl: '',
   iconUrl: '',
   title: '',
   subtitle: '',
 };
 
-ActivityCardSimple.propTypes = {
+EventCard.propTypes = {
   backgroundUrl: PropTypes.string,
   iconUrl: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
 };
 
-export default ActivityCardSimple;
+export default EventCard;

@@ -114,7 +114,7 @@ const Button = styled.button`
  * @returns {React.Component}
  */
 
-const ActivityCardInformation = ({
+const ActivityCard = ({
   backgroundUrl,
   iconUrl,
   title,
@@ -145,18 +145,18 @@ const ActivityCardInformation = ({
   );
 };
 
-ActivityCardInformation.defaultProps = {
+ActivityCard.defaultProps = {
   backgroundUrl: '',
   iconUrl: '',
   title: '',
   subtitle: '',
 };
 
-ActivityCardInformation.propTypes = {
+ActivityCard.propTypes = {
   backgroundUrl: PropTypes.string,
   iconUrl: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
 };
 
-export default ActivityCardInformation;
+export default ActivityCard;

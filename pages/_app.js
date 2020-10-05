@@ -4,7 +4,7 @@ import React from 'react';
 import App from 'next/app';
 import Provider from 'state/store';
 import '@resystem/design-system/dist/main.css';
-// import 'styles/main.css';
+import 'styles/main.css';
 import Main from 'components/main/main';
 import { StoreProvider, reducer, initialState } from 'components/store/Store';
 
