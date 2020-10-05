@@ -1,20 +1,19 @@
 export default {
   brandColor: {
     primary: {
-      darkest: '#4D068A',
-      dark: '#6E21B1',
-      medium: '#8740C6',
-      light: '#B570F2',
-      lightest: '#D9ADFF',
-      gradient:
-        'linear-gradient(180deg, #EA5EBF, 100%, #8740C6, 100%, #8740C6, 100%)',
+      darkest: '#320778',
+      dark: '#5115B1',
+      medium: '#6A49EF',
+      light: '#833BF5',
+      lightest: '#A169FC',
+      gradient: 'linear-gradient(180deg, #2E08C2 0%, #A439D7 100%)',
     },
     secondary: {
-      darkest: '#771F5C',
-      dark: '#B93691',
-      medium: '#EA5EBF',
-      light: '#FF9AE0',
-      lightest: '#FFBEEB',
+      darkest: '#1D1D1D',
+      dark: '#AAAAAA',
+      medium: '#FFFFFF',
+      light: '#FFFFFF',
+      lightest: '#FFFFFF',
     },
     tertiary: {
       medium: '#F1C40F',
