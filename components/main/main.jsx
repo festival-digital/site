@@ -2,12 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-
-import { defaultTheme } from '@resystem/design-system';
 import Store from 'components/store/Store';
 import Header from 'components/organisms/header/header';
 import ida from 'libs/ida.lib';
 import { SET_AUTH } from 'components/store/actions';
+import theme from 'utils/theme';
 import { openIDASignin, getUser } from './main.controller';
 import { MainComponent } from './main.style';
 
@@ -39,9 +38,9 @@ const Main = ({ children }) => {
   }, []);
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <MainComponent>
-        <Header onIDASignin={openIDASignin} />
+        {/* <Header onIDASignin={openIDASignin} /> */}
         {children}
       </MainComponent>
     </ThemeProvider>
