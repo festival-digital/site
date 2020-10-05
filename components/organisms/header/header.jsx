@@ -1,6 +1,8 @@
 import React from 'react';
-import { IDALoginButton } from '@resystem/design-system';
+ 
+import { IDARegisterButton, } from '@resystem/design-system';
 import {
+  IDALoginButton,
   BurgerIcon,
   Brand,
   Header as HeaderComponent,
@@ -14,22 +16,27 @@ const Header = () => (
   <HeaderComponent>
     <Brand
       onClick={(() => {})}
-      src="/static/images/dummy-brand.svg"
+      src="/static/images/oasi.png"
       alt="esse é um logo provisório para a plataforma da feira digital"
     />
-    <div>
-      <IDALoginButton
-        onClick={(() => {})}
-        dark
-        small
-        text="Entrar"
-      /> 
+   <div>
+      
       <BurgerIcon
         onClick={(() => {})}
         src="/static/icons/menu-burger.svg"
         alt="esse é icone do meenu, 3 linhas pretas na horizontal formando um sanduiche"
-      />
+      /> 
     </div>
+     
+     
+    <IDALoginButton
+      onClick={(() => {})}
+      src="/static/images/branco.png"
+      alt="esse é um logo provisório para a plataforma da feira digital"
+    />
+   
+ 
+
   </HeaderComponent>
 );
 

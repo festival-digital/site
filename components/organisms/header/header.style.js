@@ -6,8 +6,12 @@ export const Header = styled.header`
   align-items: center;
   width: 100%;
   padding: 20px 15px;
-  border-bottom: 1px solid #000000;
+  
+  background-color:black;
 `;
+ 
+ 
+
 
 export const Brand = styled.img`
   height: 40px;
@@ -21,5 +25,15 @@ export const BurgerIcon = styled.img`
     display: none;
   }
 `;
+
+export const IDALoginButton = styled.img`
+ height:42px;
+ width:178px;
+
+  @media (max-width: 769px) {
+    display: none;
+  }
+`;
+ 
 
 

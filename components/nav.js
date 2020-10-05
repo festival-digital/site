@@ -16,6 +16,9 @@ const Nav = () => (
         <Link href="/">
           <a href="/"> Home</a>
         </Link>
+        <Link href="/">
+          <a href="/"> Home</a>
+        </Link>
       </li>
       {links.map(({ key, href, label }) => (
         <li key={key}>
@@ -45,7 +48,7 @@ const Nav = () => (
         padding: 6px 8px;
       }
       a {
-        color: #067df7;
+        color: #white;
         text-decoration: none;
         font-size: 13px;
       }

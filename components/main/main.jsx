@@ -5,6 +5,9 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@resystem/design-system';
 import { MainComponent } from './main.style';
 import Header from 'components/organisms/header/header';
+import Footer from 'components/organisms/footer/footer';
+ 
+
 
 /**
  * This is the Main component
@@ -15,10 +18,20 @@ import Header from 'components/organisms/header/header';
 const Main = ({ children }) => (
   <ThemeProvider theme={defaultTheme}>
     <MainComponent>
+      
+      
       <Header />
       { children }
+      <Footer />
+      
+     
     </MainComponent>
+     
+     
+     
   </ThemeProvider>
+
+  
 );
 
 Main.propTypes = {
