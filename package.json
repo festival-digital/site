@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@resystem/design-system": "^0.0.40",
+    "@resystem/design-system": "^0.0.56",
     "@resystem/ida-js-sdk": "^0.0.25",
     "@zeit/next-css": "^1.0.1",
     "apollo-boost": "^0.4.9",
