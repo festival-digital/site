@@ -7,7 +7,7 @@ const Nav = styled.nav`
   height: ${({ height }) => `${height}px`};
   position: relative;
   background-image: url('/static/images/event_header_no_scroll.png');
-  background-size: cover;
+  background-size: 100% auto;
   z-index: 100;
   height: ${({ maxHeight }) => `${maxHeight}px`};
   animation-duration: 0.3s;
