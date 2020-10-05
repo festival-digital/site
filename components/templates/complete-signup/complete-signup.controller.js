@@ -12,7 +12,7 @@ import { validateCPF } from 'utils/validations';
 const mapUserToAPI = ({ ida, cpf, email, name }) => ({
   ida,
   email,
-  first_name: email.split(' ')[0],
+  first_name: name.split(' ')[0],
   last_name: name.split(' ').slice(1).join(' '),
   cpf: cpf.replace(/\D+/g, ''),
 });

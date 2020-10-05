@@ -6,29 +6,35 @@ export default {
       medium: '#8740C6',
       light: '#B570F2',
       lightest: '#D9ADFF',
-      gradient:
-        'linear-gradient(180deg, #EA5EBF, 100%, #8740C6, 100%, #8740C6, 100%)',
+      gradient: 'linear-gradient(180deg, #EA5EBF 0%, #8740C6 100%, #8740C6 100%);',
     },
     secondary: {
+      darkest: '#1D1D1D',
+      dark: '#AAAAAA',
+      medium: '#FFFFFF',
+      light: '#FFFFFF',
+      lightest: '#FFFFFF',
+    },
+    tertiary: {
+      medium: '#F1C40F',
+    },
+    fourtiary: {
       darkest: '#771F5C',
       dark: '#B93691',
       medium: '#EA5EBF',
       light: '#FF9AE0',
       lightest: '#FFBEEB',
     },
-    tertiary: {
-      medium: '#F1C40F',
-    },
   },
   neutralColor: {
-    8: '#1D1D1D',
-    7: '#404040',
-    6: '#808080',
-    5: '#AAAAAA',
-    4: '#BFBFBF',
-    3: '#CCCCCC',
-    2: '#E5E5E5',
     1: '#FFFFFF',
+    2: '#E5E5E5',
+    3: '#CCCCCC',
+    4: '#BFBFBF',
+    5: '#AAAAAA',
+    6: '#808080',
+    7: '#404040',
+    8: '#1D1D1D',
   },
   alarmColor: {
     success: {

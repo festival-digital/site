@@ -4,11 +4,16 @@ import Icon from '@material-ui/core/Icon';
 import { CheckboxInput } from '@resystem/design-system';
 import TextInput from 'components/molecules/text-input/TextInput';
 import Store from 'components/store/Store';
-import { completeRegister } from './complete-signup.controller';
 import ida from 'libs/ida.lib';
+import { completeRegister } from './complete-signup.controller';
 import {
-  Content, Title, Description, Form,
-  SubmitButton, Footer, IconWrapper,
+  Content,
+  Title,
+  Description,
+  Form,
+  SubmitButton,
+  Footer,
+  IconWrapper,
 } from './complete-signup.style';
 
 /**
@@ -26,8 +31,11 @@ const CompleteSignup = () => {
   return (
     <Content>
       <header>
-        <Title>Finalizar cadastro</Title>  
-        <Description>Estamos quase! Só precisamos de mais alguns dados seus para garantir sua segurança na plataforma.</Description>  
+        <Title>Finalizar cadastro</Title>
+        <Description>
+          Estamos quase! Só precisamos de mais alguns dados seus para garantir
+          sua segurança na plataforma.
+        </Description>
       </header>
       <Form
         onSubmit={(e) => {
@@ -45,18 +53,21 @@ const CompleteSignup = () => {
         <div>
           <TextInput
             type="tel"
+            id="tel"
             label="CPF"
             error={errors.cpf}
             value={masker.toPattern(cpf, '999.999.999-99')}
             onChange={setCpf}
           />
           <TextInput
+            id="name"
             label="Nome Completo"
             error={errors.name}
             value={name}
             onChange={setName}
           />
           <TextInput
+            id="email"
             label="E-mail"
             error={errors.email}
             value={email}
@@ -64,7 +75,7 @@ const CompleteSignup = () => {
           />
         </div>
         <Footer>
-          <CheckboxInput
+          {/* <CheckboxInput
             checked
             customStyle={`
               & + label {
@@ -76,10 +87,12 @@ const CompleteSignup = () => {
                 border-color: #000;
               }
             `}
-          >Li e concordo com os <a href="#">termos de uso e privacidade</a> da PLATAFORMA</CheckboxInput>
-          <SubmitButton
-            disabled={!name || !cpf}
+            onChange={() => {}}
           >
+            Li e concordo com os <a href="/">termos de uso e privacidade</a> da
+            PLATAFORMA
+          </CheckboxInput> */}
+          <SubmitButton disabled={!name || !cpf}>
             Finalizar
             <IconWrapper>
               <Icon>done</Icon>

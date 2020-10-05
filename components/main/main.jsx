@@ -28,6 +28,7 @@ const Main = ({ children }) => {
         type: SET_AUTH,
         auth,
       });
+
       getUser({
         ida: auth.ida,
         setLoading,

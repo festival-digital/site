@@ -14,9 +14,7 @@ const CompleteSignup = () => {
         showTicketModal={() => setIsOpenTicketModal(true)}
         hideTicketModal={() => setIsOpenTicketModal(false)}
       />
-      <AddTicket
-        opened={isOpenTicketModal}
-      />
+      <AddTicket opened={isOpenTicketModal} />
     </>
   );
 };

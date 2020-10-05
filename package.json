@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build ",
+    "wbuild": "SET NODE_ENV=development&&next build ",
     "start": "next start",
     "eslint:fix": "eslint --fix \"./**/*.js\" \"./**/*.jsx\"",
     "serverless:dev": "now-lambda"
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@resystem/design-system": "^0.0.56",
+    "@resystem/design-system": "^0.0.59",
     "@resystem/ida-js-sdk": "^0.0.25",
     "@zeit/next-css": "^1.0.1",
     "apollo-boost": "^0.4.9",

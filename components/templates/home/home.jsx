@@ -1,15 +1,18 @@
 import React from 'react';
-import { Button } from '@resystem/design-system';
 import { Content } from './home.style';
+import Header from 'components/organisms/home-header/home-header';
+
 /**
  * This is the Home component
  * @returns {React.Component}
  */
 const Home = () => (
-  <Content>
-    Pagina Home
-    <Button>Teste</Button>
-  </Content>
+  <>
+    <Header />
+    <Content>
+      Pagina Home
+    </Content>
+  </>
 );
 
 export default Home;

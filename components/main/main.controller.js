@@ -34,9 +34,6 @@ export const getUser = async ({
     throw err;
   }
 
-  console.log(ida);
-  console.log(getUserResponse);
-  
   if (!getUserResponse.data.oneUser) {
     navigationTo('/complete-signup');
     setLoading(false);
