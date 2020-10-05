@@ -5,7 +5,7 @@ import { IDARegisterButton } from '@resystem/design-system';
 import {
   BurgerIcon, Brand, Header as HeaderComponent, IDAContent,
   Navigation, NavigationItem,
-} from './header.style';
+} from './home-header.style';
 
 /**
  * This is the Header component
