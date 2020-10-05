@@ -1,5 +1,5 @@
-node_modules
-node_modules/.yarn-integrity
+/node_modules
+/node_modules/.yarn-integrity
 .next
 .serverless
 .serverless_nextjs
