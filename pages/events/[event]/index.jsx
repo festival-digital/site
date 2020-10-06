@@ -172,9 +172,38 @@ const EventPage = () => {
         <ButtonAddTicket>Já tenho um ingresso</ButtonAddTicket>
         <Text variant="warning">Acontecendo agora!</Text>
       </DescriptionEvent>
-      {[1, 1, 1, 1].map(() => (
-        <ActivityCard key={enhancedCodeGenerator()} />
-      ))}
+      <ActivityCard
+        key={enhancedCodeGenerator()}
+        backgroundUrl="/static/images/card-activity.png"
+        activityName="Nome da atividade"
+        activityDate="10 nov / 10h - 14h"
+        tags={['música']}
+        subscription="closed"
+      />
+      <ActivityCard
+        key={enhancedCodeGenerator()}
+        backgroundUrl="/static/images/card-activity.png"
+        activityName="Nome da atividade"
+        activityDate="10 nov / 10h - 14h"
+        tags={['música']}
+        activityType="free"
+      />
+      <ActivityCard
+        key={enhancedCodeGenerator()}
+        backgroundUrl="/static/images/card-activity.png"
+        activityName="Nome da atividade"
+        activityDate="10 nov / 10h - 14h"
+        tags={['música']}
+        subscription="closed"
+      />
+      <ActivityCard
+        key={enhancedCodeGenerator()}
+        backgroundUrl="/static/images/card-activity.png"
+        activityName="Nome da atividade"
+        activityDate="10 nov / 10h - 14h"
+        tags={['música']}
+        subscription=""
+      />
     </Container>
   );
 };
