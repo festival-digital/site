@@ -6,14 +6,16 @@ export const Nav = styled.nav`
   z-index: 30;
 
   ${({ isSticky, backgroundURI }) => {
-    return isSticky ? `
+    return isSticky
+      ? `
       top: 0px;
       background: url(${backgroundURI});
       background-size: cover;
       background-position: top center;
       animation-duration: 0.3s;
       animation-name: onStickyEnter;
-    ` : '';
+    `
+      : '';
   }}
 
   @keyframes onStickyEnter {
@@ -38,12 +40,14 @@ export const LinearBackground = styled.div`
     `${spacingInset.xs} ${spacingInset.xs}`};
   z-index: 100;
 
-  ${({ isSticky, theme: { spacingInset }}) => {
-    return isSticky ? `
+  ${({ isSticky, theme: { spacingInset } }) => {
+    return isSticky
+      ? `
       padding: ${spacingInset.xs} ${spacingInset.xs};
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.75);
       z-index: 100;
-    ` : '';
+    `
+      : '';
   }}
 `;
 

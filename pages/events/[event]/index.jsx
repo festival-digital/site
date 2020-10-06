@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import EventHeader from 'components/organisms/event-header';
+import EventHeader from 'components/organisms/event-header/event-header';
 import ActivityCard from 'components/organisms/activity-card';
 import buildClass from 'utils/buildClass';
 import { enhancedCodeGenerator } from 'utils/codeGenerator';
