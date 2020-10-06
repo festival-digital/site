@@ -53,18 +53,21 @@ const CompleteSignup = () => {
         <div>
           <TextInput
             type="tel"
+            id="tel"
             label="CPF"
             error={errors.cpf}
             value={masker.toPattern(cpf, '999.999.999-99')}
             onChange={setCpf}
           />
           <TextInput
+            id="name"
             label="Nome Completo"
             error={errors.name}
             value={name}
             onChange={setName}
           />
           <TextInput
+            id="email"
             label="E-mail"
             error={errors.email}
             value={email}
@@ -72,7 +75,7 @@ const CompleteSignup = () => {
           />
         </div>
         <Footer>
-          <CheckboxInput
+          {/* <CheckboxInput
             checked
             customStyle={`
               & + label {
@@ -84,10 +87,11 @@ const CompleteSignup = () => {
                 border-color: #000;
               }
             `}
+            onChange={() => {}}
           >
-            Li e concordo com os <a href="#">termos de uso e privacidade</a> da
+            Li e concordo com os <a href="/">termos de uso e privacidade</a> da
             PLATAFORMA
-          </CheckboxInput>
+          </CheckboxInput> */}
           <SubmitButton disabled={!name || !cpf}>
             Finalizar
             <IconWrapper>

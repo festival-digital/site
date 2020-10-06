@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { enhancedCodeGenerator } from 'utils/codeGenerator';
 
 const Container = styled.div`
   height: 160px;
@@ -36,9 +37,9 @@ const LinearBackground = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 16px 16px 0 16px;
-  display: flex;
-  flex-direction: column;
+  padding: 16px 16px 16px 16px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
 
   &::after {
     content: '';
@@ -63,40 +64,6 @@ const LinearBackground = styled.div`
   }
 `;
 
-const IconContainer = styled.div`
-  flex: 1;
-`;
-
-const LegendsContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Legends = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-
-  & p {
-    z-index: 4;
-    color: #fff;
-    font-size: 14px;
-    line-height: 120%;
-    font-family: 'Space Mono';
-    font-style: normal;
-    font-weight: bold;
-  }
-  & small {
-    z-index: 4;
-    color: #fff;
-    line-height: 20px;
-    font-size: 12px;
-  }
-`;
-
 const Button = styled.button`
   display: flex;
   justify-content: center;
@@ -109,54 +76,166 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const RightContent = styled.div`
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  align-items: flex-end;
+  justify-content: flex-end;
+  justify-items: right;
+  width: 100%;
+  position: relative;
+`;
+
+const LeftContent = styled.div`
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+  align-items: end;
+  justify-content: flex-end;
+  justify-items: left;
+  width: 100%;
+`;
+
+const ActivityDate = styled.div`
+  align-self: start;
+  color: ${({ theme }) => theme.neutralColor[1]};
+  font-size: ${({ theme }) => theme.fontSize.xs};
+  font-weight: ${({ theme }) => theme.fontWeight.regular};
+`;
+
+const ActivityName = styled.div`
+  font-size: ${({ theme }) => theme.fontSize.sm};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  color: ${({ theme }) => theme.neutralColor[1]};
+`;
+
+const Tag = styled.div`
+  padding: ${({ theme }) => `1px ${theme.spacingInset.nano}`};
+  color: #ea5ebf;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ea5ebf;
+  flex-grow: 0;
+  border-radius: ${({ theme }) => theme.borderRadius.xs};
+  text-transform: lowercase;
+`;
+
+const TagGreen = styled.div`
+  padding: ${({ theme }) => `1px ${theme.spacingInset.nano}`};
+  color: ${({ theme }) => theme.neutralColor[8]};
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${({ theme }) => theme.alarmColor.success.medium};
+  background: ${({ theme }) => theme.alarmColor.success.medium};
+  flex-grow: 0;
+  border-radius: ${({ theme }) => theme.borderRadius.xs};
+  text-transform: lowercase;
+  font-size: ${({ theme }) => theme.fontSize.xxs};
+  align-self: start;
+
+  @media only screen and (max-width: 320px) {
+    font-size: ${({ theme }) => theme.fontSize.xxxs};
+  }
+`;
+
+const TagGray = styled.div`
+  align-self: start;
+  padding: ${({ theme }) => `1px ${theme.spacingInset.nano}`};
+  color: ${({ theme }) => theme.neutralColor[8]};
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${({ theme }) => theme.neutralColor[4]};
+  background: ${({ theme }) => theme.neutralColor[4]};
+  flex-grow: 0;
+  border-radius: ${({ theme }) => theme.borderRadius.xs};
+  text-transform: lowercase;
+  font-size: ${({ theme }) => theme.fontSize.xxs};
+
+  @media only screen and (max-width: 320px) {
+    font-size: ${({ theme }) => theme.fontSize.xxxs};
+  }
+`;
+
+const ReadMoreLink = styled.a`
+  display: block;
+  font-size: ${({ theme }) => theme.fontSize.xs};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  color: ${({ theme }) => theme.neutralColor[1]};
+  text-transform: uppercase;
+`;
+
+const GenerateTags = ({ tags }) => {
+  return tags.map((item) => <Tag key={enhancedCodeGenerator()}>{item}</Tag>);
+};
+
+const SelectTag = ({ activityType, subscription }) => {
+  if (subscription) {
+    if (subscription === 'done') return <TagGreen>Inscrição feita</TagGreen>;
+    return <TagGray>Inscrições encerradas</TagGray>;
+  }
+
+  if (activityType) {
+    if (activityType === 'free') return <TagGreen>Atividade gratuita</TagGreen>;
+    return <TagGray>Atividade paga</TagGray>;
+  }
+  return <></>;
+};
+
 /**
  * This is the activity card component
  * @returns {React.Component}
  */
 
 const ActivityCard = ({
+  activityName,
   backgroundUrl,
-  iconUrl,
-  title,
-  subtitle,
+  tags,
+  activityDate,
+  subscription,
+  activityType,
   ...props
 }) => {
   return (
     <Container onClick={() => console.log(1123)}>
       <Figure backgroundUrl={backgroundUrl} />
       <LinearBackground>
-        <IconContainer>
-          <img src={iconUrl} alt="ícone do evento" />
-        </IconContainer>
-        <LegendsContainer>
-          <Legends>
-            <p>{title}</p>
-            <small>{subtitle}</small>
-          </Legends>
-          <Button>
-            <img
-              src="./static/icons/arrow_right.svg"
-              alt="ícone de seta para a direita"
-            />
-          </Button>
-        </LegendsContainer>
+        <LeftContent>
+          <ActivityDate>{activityDate}</ActivityDate>
+          <ActivityName>{activityName}</ActivityName>
+          <GenerateTags tags={tags} />
+          <ReadMoreLink
+            href="/"
+            alt={`Link para saber mais sobre ${activityName}`}
+          >
+            + Saiba mais
+          </ReadMoreLink>
+        </LeftContent>
+        <RightContent>
+          <SelectTag subscription={subscription} activityType={activityType} />
+          <Button>Entrar</Button>
+        </RightContent>
       </LinearBackground>
     </Container>
   );
 };
 
 ActivityCard.defaultProps = {
+  activityName: null,
   backgroundUrl: '',
-  iconUrl: '',
-  title: '',
-  subtitle: '',
+  tags: [],
+  activityDate: null,
+  subscription: null,
+  activityType: null,
 };
 
 ActivityCard.propTypes = {
+  activityName: PropTypes.string,
   backgroundUrl: PropTypes.string,
-  iconUrl: PropTypes.string,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  activityDate: PropTypes.string,
+  subscription: PropTypes.oneOf(['done', 'closed']),
+  activityType: PropTypes.oneOf(['free', 'payment']),
 };
 
 export default ActivityCard;
