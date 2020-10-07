@@ -10,7 +10,7 @@ export const Menu = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 100px);
   bottom: 0;
   left: 0;
   z-index: 30;
