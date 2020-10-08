@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import EventHeader from 'components/organisms/event-header';
+import EventHeader from 'components/organisms/event-header/event-header';
 import ActivityCard from 'components/organisms/activity-card';
 import buildClass from 'utils/buildClass';
 import { enhancedCodeGenerator } from 'utils/codeGenerator';
@@ -172,9 +172,38 @@ const EventPage = () => {
         <ButtonAddTicket>Já tenho um ingresso</ButtonAddTicket>
         <Text variant="warning">Acontecendo agora!</Text>
       </DescriptionEvent>
-      {[1, 1, 1, 1].map(() => (
-        <ActivityCard key={enhancedCodeGenerator()} />
-      ))}
+      <ActivityCard
+        key={enhancedCodeGenerator()}
+        backgroundUrl="/static/images/card-activity.png"
+        activityName="Nome da atividade"
+        activityDate="10 nov / 10h - 14h"
+        tags={['música']}
+        subscription="closed"
+      />
+      <ActivityCard
+        key={enhancedCodeGenerator()}
+        backgroundUrl="/static/images/card-activity.png"
+        activityName="Nome da atividade"
+        activityDate="10 nov / 10h - 14h"
+        tags={['música']}
+        activityType="free"
+      />
+      <ActivityCard
+        key={enhancedCodeGenerator()}
+        backgroundUrl="/static/images/card-activity.png"
+        activityName="Nome da atividade"
+        activityDate="10 nov / 10h - 14h"
+        tags={['música']}
+        subscription="closed"
+      />
+      <ActivityCard
+        key={enhancedCodeGenerator()}
+        backgroundUrl="/static/images/card-activity.png"
+        activityName="Nome da atividade"
+        activityDate="10 nov / 10h - 14h"
+        tags={['música']}
+        subscription=""
+      />
     </Container>
   );
 };
