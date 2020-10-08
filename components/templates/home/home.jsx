@@ -1,7 +1,7 @@
 import React from 'react';
-import { Content } from './home.style';
 import Header from 'components/organisms/home-header/home-header';
-
+import Menu from 'components/organisms/home-menu/home-menu';
+import { Content } from './home.style';
 /**
  * This is the Home component
  * @returns {React.Component}
@@ -9,9 +9,8 @@ import Header from 'components/organisms/home-header/home-header';
 const Home = () => (
   <>
     <Header />
-    <Content>
-      Pagina Home
-    </Content>
+    <Menu opened/>
+    <Content>Pagina Home</Content>
   </>
 );
 

@@ -64,18 +64,6 @@ const LinearBackground = styled.div`
   }
 `;
 
-const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-
-  background-color: #404040;
-  border-radius: 10px;
-  cursor: pointer;
-`;
-
 const RightContent = styled.div`
   display: grid;
   grid-template-rows: 1fr;
@@ -84,7 +72,6 @@ const RightContent = styled.div`
   justify-content: flex-end;
   justify-items: right;
   width: 100%;
-  position: relative;
 `;
 
 const LeftContent = styled.div`
@@ -95,6 +82,7 @@ const LeftContent = styled.div`
   justify-content: flex-end;
   justify-items: left;
   width: 100%;
+  position: relative;
 `;
 
 const ActivityDate = styled.div`
@@ -122,6 +110,8 @@ const Tag = styled.div`
 `;
 
 const TagGreen = styled.div`
+  position: absolute;
+  align-self: start;
   padding: ${({ theme }) => `1px ${theme.spacingInset.nano}`};
   color: ${({ theme }) => theme.neutralColor[8]};
   border-width: 1px;
@@ -130,9 +120,7 @@ const TagGreen = styled.div`
   background: ${({ theme }) => theme.alarmColor.success.medium};
   flex-grow: 0;
   border-radius: ${({ theme }) => theme.borderRadius.xs};
-  text-transform: lowercase;
   font-size: ${({ theme }) => theme.fontSize.xxs};
-  align-self: start;
 
   @media only screen and (max-width: 320px) {
     font-size: ${({ theme }) => theme.fontSize.xxxs};
@@ -140,6 +128,7 @@ const TagGreen = styled.div`
 `;
 
 const TagGray = styled.div`
+  position: absolute;
   align-self: start;
   padding: ${({ theme }) => `1px ${theme.spacingInset.nano}`};
   color: ${({ theme }) => theme.neutralColor[8]};
@@ -149,9 +138,7 @@ const TagGray = styled.div`
   background: ${({ theme }) => theme.neutralColor[4]};
   flex-grow: 0;
   border-radius: ${({ theme }) => theme.borderRadius.xs};
-  text-transform: lowercase;
   font-size: ${({ theme }) => theme.fontSize.xxs};
-
   @media only screen and (max-width: 320px) {
     font-size: ${({ theme }) => theme.fontSize.xxxs};
   }
@@ -163,6 +150,17 @@ const ReadMoreLink = styled.a`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: ${({ theme }) => theme.neutralColor[1]};
   text-transform: uppercase;
+`;
+
+const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.neutralColor[1]};
+  background-color: ${({ theme }) => theme.neutralColor[7]};
+  border-radius: ${({ theme }) => `${theme.borderRadius.sm}`};
+  padding: ${({ theme }) => `${theme.spacingSquish.nano}`};
+  cursor: pointer;
 `;
 
 const GenerateTags = ({ tags }) => {
@@ -188,16 +186,17 @@ const SelectTag = ({ activityType, subscription }) => {
  */
 
 const ActivityCard = ({
-  activityName,
-  backgroundUrl,
-  tags,
   activityDate,
-  subscription,
+  activityName,
   activityType,
+  backgroundUrl,
+  isSubscribed,
+  subscription,
+  tags,
   ...props
 }) => {
   return (
-    <Container onClick={() => console.log(1123)}>
+    <Container>
       <Figure backgroundUrl={backgroundUrl} />
       <LinearBackground>
         <LeftContent>
@@ -221,21 +220,23 @@ const ActivityCard = ({
 };
 
 ActivityCard.defaultProps = {
-  activityName: null,
-  backgroundUrl: '',
-  tags: [],
   activityDate: null,
-  subscription: null,
+  activityName: null,
   activityType: null,
+  backgroundUrl: '',
+  isSubscribed: false,
+  subscription: null,
+  tags: [],
 };
 
 ActivityCard.propTypes = {
-  activityName: PropTypes.string,
-  backgroundUrl: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.string),
   activityDate: PropTypes.string,
-  subscription: PropTypes.oneOf(['done', 'closed']),
+  activityName: PropTypes.string,
   activityType: PropTypes.oneOf(['free', 'payment']),
+  backgroundUrl: PropTypes.string,
+  isSubscribed: PropTypes.bool,
+  subscription: PropTypes.oneOf(['done', 'closed']),
+  tags: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default ActivityCard;
