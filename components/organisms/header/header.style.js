@@ -25,15 +25,3 @@ export const BurgerIcon = styled.img`
     display: none;
   }
 `;
-
-export const IDALoginButton = styled.img`
- height:42px;
- width:178px;
-
-  @media (max-width: 769px) {
-    display: none;
-  }
-`;
- 
-
-
