@@ -9,23 +9,21 @@ import {
 
 const Navigation = ({ onIDASignin, textButton, column }) => {
   return (
-    <div>
-      <NavigationComponent column={column}>
-        <NavigationItem column={column}>
-          <Link href="/">
-            <a>Início</a>
-          </Link>
-        </NavigationItem>
-        <NavigationItem column={column}>
-          <Link href="/events">
-            <a>Todos os eventos</a>
-          </Link>
-        </NavigationItem>
-        <IDAContent column={column}>
-          <IDARegisterButton small onClick={onIDASignin} text={textButton} />
-        </IDAContent>
-      </NavigationComponent>
-    </div>
+    <NavigationComponent column={column}>
+      <NavigationItem column={column}>
+        <Link href="/">
+          <a>Início</a>
+        </Link>
+      </NavigationItem>
+      <NavigationItem column={column}>
+        <Link href="/events">
+          <a>Todos os eventos</a>
+        </Link>
+      </NavigationItem>
+      <NavigationItem column={column}>
+        <IDARegisterButton small onClick={onIDASignin} text={textButton} />
+      </NavigationItem>
+    </NavigationComponent>
   );
 };
 
