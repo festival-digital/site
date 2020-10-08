@@ -7,8 +7,11 @@ export const Navigation = styled.ul`
   }};
   align-items: center;
   grid-template-rows: 50px 50px auto;
-  height: 100%;
   width: 100%;
+  margin: ${(props) => {
+    const { column } = props;
+    return column ? '50px 20px' : '0';
+  }};
 
   & li:nth-child(3) {
     align-self: end;
