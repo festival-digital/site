@@ -6,12 +6,12 @@ export const Navigation = styled.ul`
     return column ? 'grid' : 'inline-flex';
   }};
   align-items: center;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 50px 50px auto;
   height: 100%;
+  width: 100%;
 
   & li:nth-child(3) {
     align-self: end;
-    justify-self: end;
   }
 `;
 
@@ -24,10 +24,6 @@ export const NavigationItem = styled.li`
   text-align: ${(props) => {
     const { column } = props;
     return column ? 'center' : 'left';
-  }};
-  padding-bottom: ${(props) => {
-    const { column } = props;
-    return column ? '30px' : '0';
   }};
 
   > a {

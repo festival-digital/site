@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Menu = styled.div`
-  position: fixed;
+  position: relative;
   display: ${(props) => {
     const { opened } = props;
     return !opened ? 'none' : 'flex';
@@ -11,7 +11,7 @@ export const Menu = styled.div`
   bottom: 0;
   left: 0;
   z-index: 30;
-  padding: 50px 20px;
+  padding: 0 20px;
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(15px);
   overflow: auto;

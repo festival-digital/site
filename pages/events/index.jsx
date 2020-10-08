@@ -73,7 +73,7 @@ const EventsPage = () => {
   return (
     <>
       <Container>
-        <EventHeader goBackMode />
+        <EventHeader />
         <FilterContainer>
           <input placeholder="Buscar evento" />
           <FilterButtonContainer>

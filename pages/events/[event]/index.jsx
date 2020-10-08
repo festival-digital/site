@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import EventHeader from 'components/organisms/event-header/event-header';
+import EventFooter from 'components/organisms/event-footer/event-footer';
 import ActivityCard from 'components/organisms/activity-card';
 import buildClass from 'utils/buildClass';
 import { enhancedCodeGenerator } from 'utils/codeGenerator';
+
 import {
   Text as TextReSystem,
   Title as TitleReSystem,
@@ -81,7 +83,7 @@ export const LinkBadge = styled.a`
   text-transform: uppercase;
 `;
 
-export const DescriptionEvent = styled.section`
+export const Grid = styled.section`
   padding: ${({ theme: { spacingInset } }) =>
     `${spacingInset.xs} ${spacingInset.xs}`};
   background-color: ${({ theme }) => theme.neutralColor[8]};
@@ -140,12 +142,13 @@ const EventPage = () => {
   const badges = [
     'música',
     'oficinas',
-    'mostra de vidioclipe',
+    'mostra de videoclipe',
     'hackatom',
     'zona de propulsão',
   ];
   return (
     <Container>
+      <EventHeader goBackMode />
       <EventCover>
         <LinearBackground>
           <EventLogo src="/static/images/card1-logo.png" alt="Logo do evento" />
@@ -155,7 +158,7 @@ const EventPage = () => {
           </EventDate>
         </LinearBackground>
       </EventCover>
-      <DescriptionEvent>
+      <Grid>
         <Title>Feira da Música de Fortaleza</Title>
         <SmallText>Evento é gratuito</SmallText>
         <LinkBadge href="/"> Site do evento </LinkBadge>
@@ -171,7 +174,7 @@ const EventPage = () => {
         </Text>
         <ButtonAddTicket>Já tenho um ingresso</ButtonAddTicket>
         <Text variant="warning">Acontecendo agora!</Text>
-      </DescriptionEvent>
+      </Grid>
       <ActivityCard
         key={enhancedCodeGenerator()}
         backgroundUrl="/static/images/card-activity.png"
@@ -194,7 +197,7 @@ const EventPage = () => {
         activityName="Nome da atividade"
         activityDate="10 nov / 10h - 14h"
         tags={['música']}
-        subscription="closed"
+        subscription="done"
       />
       <ActivityCard
         key={enhancedCodeGenerator()}
@@ -204,6 +207,10 @@ const EventPage = () => {
         tags={['música']}
         subscription=""
       />
+      <Grid>
+        <Text variant="default">Próximas Atividades</Text>
+      </Grid>
+      <EventFooter />
     </Container>
   );
 };
