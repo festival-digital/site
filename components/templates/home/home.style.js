@@ -4,20 +4,72 @@ import { } from '@resystem/design-system';
 export const Content  = styled.div`
   padding: 16px;
   background-color:black;
+  
 `;
- export const FirstBoxContent = styled.div`
- @media only screen and (min-width: 769px){
-   background-image: url("static/images/Header-2 2.png"); height:810px;
-  height: 800px;}
 
- @media only screen and (max-width: 769px){}`;
+
+export const FirstBoxContentMobile = styled.div`
+ @media only screen and (max-width: 769px){
+  background-size:cover; background-image: url("static/images/player_01 (1).png"); height:400px;display:block; width:100%;
+  }
+
+  @media only screen and (min-width: 769px){
+    display:none;
+   
+   }
+
+ `;
+
+ export const FirstBoxContent = styled.div`
+ @media only screen and (max-width: 769px){
+   display:none;
+  }
+
+  @media only screen and (min-width: 769px){
+    background-image: url("static/images/Header-2 2.png"); height:600px;
+   }
+
+ `;
 
  export const Mosaico = styled.div`
  @media only screen and (min-width: 769px){
-   background-image: url("static/images/Header-2 2.png"); height:810px;
-  height: 800px;}
+   background-color:black;   display:flex;}
 
  @media only screen and (max-width: 769px){}`;
+
+ export const MosaicoTextBox = styled.div`
+ @media only screen and (min-width: 769px){
+   background-color:black; width:50%;  padding:90px;height:341px;}
+
+ @media only screen and (max-width: 769px){ display: none;}`;
+
+
+ export const MosaicoTextBoxMobile = styled.div`
+ @media only screen and (min-width: 769px){
+   display:none;}
+
+ @media only screen and (max-width: 769px){background-color:black; width:100%; padding:90px;height:341px;display:block;height:341px;}`;
+
+
+ export const MosaicoImage = styled.div`
+ @media only screen and (min-width: 769px){
+   background-size: cover;background-image: url("static/images/_1-1.png");background-size: cover; height:341px; width:50%; display:flex;}
+
+ @media only screen and (max-width: 769px){ background-size: cover;background-image: url("static/images/_1-1.png");background-size: cover; width:100%;height:341px;display:block;}`;
+ 
+  
+ 
+ export const MosaicoImage2 = styled.div`
+ @media only screen and (min-width: 769px){
+   background-size: cover;background-image: url("static/images/_3-3.png");background-size: cover; height:341px; width:50%; display:flex;}
+
+ @media only screen and (max-width: 769px){ background-size: cover;background-image: url("static/images/_3-3.png");background-size: cover; width:100%;height:341px;display:block;}`;
+ 
+ export const MosaicoImage3 = styled.div`
+ @media only screen and (min-width: 769px){
+   background-size: cover;background-image: url("static/images/Group 371.png");background-size: cover; height:341px; width:50%; display:flex;}
+
+ @media only screen and (max-width: 769px){ background-size: cover;background-image: url("static/images/Group 371.png");background-size: cover; width:100%;height:341px;display:block;}`;
  
 export const CallAction = styled.div`
 
@@ -51,8 +103,7 @@ background-image: url("/static/images/bgCallActionMobile.png");
    
 }
 @media only screen and (max-width: 769px){
-  display: block;
-  width:100%;
+  display:none;
    
   }
 `;
@@ -106,8 +157,24 @@ export const FirstRowCover = styled.div`
 }
 }
 @media only screen and (max-width: 769px){
+  display:none;
+   
+  }
+`;
+
+
+export const FirstRowCoverMobile = styled.div`
+ @media only screen and (min-width: 769px){
+  display:none;
+  
+   
+}
+}
+@media only screen and (max-width: 769px){
   display: block;
   width:100%;
+  background-color:black;
+  padding:60px;
    
   }
 `;
