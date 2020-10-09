@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from 'components/organisms/home-header/home-header';
 import Menu from 'components/organisms/home-menu/home-menu';
+import CompleteRegistration from 'components/modals/complete-registration/complete-registration';
 import { Content } from './home.style';
 /**
  * This is the Home component
@@ -9,7 +10,7 @@ import { Content } from './home.style';
 const Home = () => (
   <>
     <Header />
-    <Menu opened/>
+    <CompleteRegistration opened />
     <Content>Pagina Home</Content>
   </>
 );
