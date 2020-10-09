@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import ModalWrapper from 'components/organisms/modal-wrapper/modal-wrapper';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -71,37 +70,6 @@ export const Text = styled.p`
   font-weight: normal;
   font-size: 16px;
   color: ${({ theme }) => theme.neutralColor[1]};
-`;
-
-export const SubmitButton = styled.button`
-  position: relative;
-  width: 100%;
-  height: 40px;
-  border-radius: 10px;
-  font-weight: bold;
-  background: linear-gradient(180deg, #ea5ebf 0%, #8740c6 100%, #8740c6 100%);
-  border: 2px solid #000000;
-  box-shadow: 0px 2px 0px #000000;
-  color: ${({ theme }) => theme.neutralColor[1]};
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-
-  &:disabled {
-    background-color: #ccc;
-    color: #808080;
-  }
-`;
-
-export const CancelButton = styled.button`
-  width: 100%;
-  height: 33px;
-  border-radius: 10px;
-  font-weight: bold;
-  background-color: ${({ theme }) => theme.neutralColor[7]};
-  color: ${({ theme }) => theme.neutralColor[1]};
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  text-transform: uppercase;
 `;
 
 export const Icon = styled.p`

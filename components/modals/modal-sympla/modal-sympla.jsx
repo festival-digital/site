@@ -1,4 +1,6 @@
 import React from 'react';
+import GradientButton from 'components/atoms/gradient-button/gradient-button';
+import CancelButton from 'components/atoms/cancel-button/cancel-button';
 import {
   Wrapper,
   Modal,
@@ -8,8 +10,6 @@ import {
   Text,
   Brand,
   WrapperLogo,
-  SubmitButton,
-  CancelButton,
   SpaceSmall,
   Icon,
 } from './modal-sympla.style';
@@ -40,7 +40,7 @@ const ModalSympla = () => {
         <Space />
         <NavigationLink>Saiba mais sobre o sympla</NavigationLink>
         <Space />
-        <SubmitButton>Entendi, vamos lá</SubmitButton>
+        <GradientButton>Entendi, vamos lá</GradientButton>
         <SpaceSmall />
         <CancelButton>Cancelar</CancelButton>
       </Modal>

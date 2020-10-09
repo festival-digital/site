@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import ModalWrapper from 'components/organisms/modal-wrapper/modal-wrapper';
 
 export const Wrapper = styled.div`
   position: fixed;
