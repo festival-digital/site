@@ -7,7 +7,6 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.neutralColor[1]};
   background: ${({ theme }) => theme.brandColor.primary.gradient};
   box-sizing: border-box;
-  
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;

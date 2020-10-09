@@ -7,7 +7,7 @@ export const Form = styled.form`
 export const SelectContent = styled.div`
   position: relative;
   display: flex;
-  width: ${({ small }) => small ? '264px' : '308px'};
+  width: 100%;
   height: 46px;
   line-height: 3;
   overflow: hidden;
