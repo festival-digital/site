@@ -1,6 +1,7 @@
 import React from 'react';
 import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import CancelButton from 'components/atoms/cancel-button/cancel-button';
+import GoBackButton from 'components/atoms/go-back-button/go-back-button';
 import {
   Wrapper,
   Modal,
@@ -11,6 +12,7 @@ import {
   Brand,
   WrapperLogo,
   SpaceSmall,
+  ContentButtonGoBack,
   Icon,
 } from './modal-sympla.style';
 
@@ -18,6 +20,9 @@ const ModalSympla = () => {
   return (
     <Wrapper opened>
       <Modal>
+        <ContentButtonGoBack>
+          <GoBackButton />
+        </ContentButtonGoBack>
         <WrapperLogo>
           <Brand
             style={{ height: '22px' }}
