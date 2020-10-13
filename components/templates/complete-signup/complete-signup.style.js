@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const Content = styled.section`
+  position: relative;
   display: grid;
-  min-height: 100%;
-  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  grid-template-rows: 1fr auto;
   grid-gap: 16px;
   padding: 32px 16px;
+  text-align: center;
 `;
 
 export const Title = styled.h1`
@@ -13,64 +15,30 @@ export const Title = styled.h1`
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   line-height: 28.13px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  color: #ffffff;
 `;
 
-export const Description = styled.p`
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal;
-  line-height: 19.2px;
+export const Apresentation = styled.div`
 `;
 
-export const Form = styled.form`
-  margin-top: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  > div {
-    display: grid;
-    grid-gap: 16px;
-  }
-`;
-
-export const Footer = styled.footer`
-  display: grid;
-  grid-gap: 24px;
-`;
-
-export const SubmitButton = styled.button`
+export const ActionWrapper = styled.div`
   position: relative;
-  width: 100%;
-  height: 40px;
-  border-radius: 10px;
-  background-color: #771F5C;
-  color: #EA5EBF;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-
-  &:disabled {
-    background-color: #CCC;
-    color: #808080;
-  }
+  z-index: 11;
 `;
 
-export const IconWrapper = styled.div`
+export const Brand = styled.img`
+  height: 70px;
+`;
+
+export const Illustration = styled.div`
   position: absolute;
-  right: 13px;
-  top: calc(50% - 12px);
-`;
-
-export const Input = styled.input`
-  width: 100%:
-  height: 48px;
-  border: 2px solid #808080;
-  border-radius: 
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-
-  &:focus {
-    border: 2px solid #808080;
-  }
+  width: 100%;
+  height: 337px;
+  bottom: 0;
+  z-index: 10;
+  background-image: url('/static/icons/signup-illustration.svg');
+  background-position: center;
+  background-size: 141% 141%;
+  background-repeat: no-repeat;
 `;

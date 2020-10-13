@@ -7,7 +7,7 @@ import Header from 'components/organisms/header/header';
 import ida from 'libs/ida.lib';
 import { SET_AUTH } from 'components/store/actions';
 import theme from 'utils/theme';
-import { openIDASignin, getUser } from './main.controller';
+import { getUser } from './main.controller';
 import { MainComponent } from './main.style';
 
 /**
@@ -23,11 +23,14 @@ const Main = ({ children }) => {
 
   // component did mount cycle
   useEffect(() => {
-    ida.onCurrentUserChange((auth) => {
+      console.log('hereee 1');
+      ida.onCurrentUserChange((auth) => {
       dispatch({
         type: SET_AUTH,
         auth,
       });
+
+      console.log('hereee');
 
       getUser({
         ida: auth.ida,

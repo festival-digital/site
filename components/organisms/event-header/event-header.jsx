@@ -48,7 +48,7 @@ const EventHeader = ({ backgroundURI, goBackMode }) => {
               <MainButton>
                 <MainButtonImage />
               </MainButton>
-              <OasiLogo src="/static/icons/oasis-logo.svg" alt="Logo escrito Oasi" />
+              <OasiLogo src="/static/icons/oasi.svg" alt="Logo escrito Oasi" />
             </>
           )
         }
