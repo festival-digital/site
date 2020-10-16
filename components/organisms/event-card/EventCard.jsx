@@ -46,11 +46,10 @@ const LinearBackground = styled.div`
     height: 100%;
     width: 50%;
     background: linear-gradient(
-      360deg,
+      90deg,
       #1d1d1d 32.38%,
       rgba(29, 29, 29, 0) 95.65%
     );
-    transform: rotate(90deg);
     position: absolute;
     top: 0;
     left: 0;
