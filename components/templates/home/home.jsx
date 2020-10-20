@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from 'components/organisms/home-header/home-header';
+import Breadcrumb from 'components/molecules/breadcrumb/breadcrumb';
 import { Content } from './home.style';
 
 /**
@@ -9,7 +10,20 @@ import { Content } from './home.style';
 const Home = () => (
   <>
     <Header />
-    <Content>Pagina Home</Content>
+    <Content>
+      <Breadcrumb
+        options={[
+          {
+            href: 'fodase',
+            label: 'Início',
+          },
+          {
+            href: 'mano',
+            label: 'Home',
+          },
+        ]}
+      />
+    </Content>
   </>
 );
 

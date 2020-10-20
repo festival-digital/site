@@ -6,24 +6,21 @@ import { Form, SelectForm, Option, SelectContent } from './select.style';
  * This is the Select component
  * @returns {React.Component}
  */
-const Select = ({ options, small }) => {
-  const [select, setSelect] = React.useState('')
-  return (
-      <SelectContent small={small}>
-        <SelectForm
-          value={select}
-          onChange={({ target }) => setSelect(target.value)}
-          small={small}
-          >
-          <Option disabled value=""> Selecionar </Option>
-          {options.map((item) => (
-            <Option key={item} value={item}>
-              {item}
-            </Option>
-          ))}
-        </SelectForm>
-      </SelectContent>
-  )
+const Select = ({
+  value, options, onChange, placeholder,
+}) => (
+  <SelectForm value={value} onChange={onChange}>
+    <Option disabled value="" selected>
+      {placeholder}
+    </Option>
+    {options.map(({ id, label }) => (
+      <Option key={id} value={id}>{label}</Option>
+    ))}
+  </SelectForm>
+);
+
+Select.defaultProps = {
+  placeholder: 'Selecionar',
 };
 
 export default Select;

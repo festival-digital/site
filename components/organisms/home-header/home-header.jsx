@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { IDARegisterButton } from '@resystem/design-system';
+import { openIDASignin } from 'components/main/main.controller';
 import Navigation from 'components/molecules/navigation/navigation';
 import {
   BurgerIcon,
@@ -14,16 +15,16 @@ import {
  * This is the Header component
  * @returns {React.Component} header component global
  */
-const Header = ({ onIDASignin }) => (
+const Header = () => (
   <HeaderComponent>
     <Brand
       onClick={() => {}}
-      src="/static/icons/oasis-logo.svg"
+      src="/static/icons/oasi.svg"
       alt="esse é um logo provisório para a plataforma da feira digital"
     />
     <div>
       <Wrapper>
-        <Navigation textButton="Entrar" />
+        <Navigation onIDASignin={openIDASignin} textButton="Entrar" />
       </Wrapper>
       <BurgerIcon
         onClick={() => {}}
@@ -37,8 +38,6 @@ const Header = ({ onIDASignin }) => (
   </HeaderComponent>
 );
 
-Header.propTypes = {
-  onIDASignin: PropTypes.func.isRequired,
-};
+Header.propTypes = {};
 
 export default Header;
