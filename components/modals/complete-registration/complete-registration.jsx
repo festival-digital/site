@@ -20,7 +20,7 @@ const CompleteRegistration = () => {
         <Select />
         <Space />
         <TextInput label="Digite sua cidade e estado" />
-        <GradientButton>Continuar</GradientButton>
+        <GradientButton> Continuar</GradientButton>
         <SpaceSmall />
         <CancelButton>Ignorar</CancelButton>
       </Modal>
