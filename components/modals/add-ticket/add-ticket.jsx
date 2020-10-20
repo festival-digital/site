@@ -16,8 +16,8 @@ import {
 const renderListContent = ({ setIsAdd }) => (
   <Content>
     <header>
-      <Title>Você já tem ingresso?</Title>  
-      <Description>Se sim, adicione eles aqui. Você também pode adicioná-los mais tarde.</Description>  
+      <Title>Você já tem ingresso?</Title>
+      <Description>Se sim, adicione eles aqui. Você também pode adicioná-los mais tarde.</Description>
     </header>
     <TicketList>
       <AddTicketButton onClick={() => { setIsAdd(true) }} type="button">
@@ -43,7 +43,7 @@ const renderListContent = ({ setIsAdd }) => (
 const renderAddContent = () => (
   <Content>
     <header>
-      <Title>Adicionar ingresso</Title>  
+      <Title>Adicionar ingresso</Title>
     </header>
     <div>
       <TextInput
@@ -61,7 +61,7 @@ const renderAddContent = () => (
 );
 
 /**
- * modal to add and manage ticket of an account 
+ * modal to add and manage ticket of an account
  * @param {boolean} opened flag to control render state on modal, opened or hidden
  * @returns {React.Component}
  */

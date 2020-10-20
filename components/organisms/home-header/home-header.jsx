@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { IDARegisterButton } from '@resystem/design-system';
 import { openIDASignin } from 'components/main/main.controller';
+import Navigation from 'components/molecules/navigation/navigation';
 import {
-  BurgerIcon, Brand, Header as HeaderComponent, IDAContent,
-  Navigation, NavigationItem,
+  BurgerIcon,
+  Brand,
+  Header as HeaderComponent,
+  Wrapper,
 } from './home-header.style';
 
 /**
@@ -20,25 +23,9 @@ const Header = () => (
       alt="esse é um logo provisório para a plataforma da feira digital"
     />
     <div>
-      <Navigation>
-        <NavigationItem>
-          <Link href="/">
-            <a>Início</a>
-          </Link>
-        </NavigationItem>
-        <NavigationItem>
-          <Link href="/events">
-            <a>Todos os eventos</a>
-          </Link>
-        </NavigationItem>
-      </Navigation>
-      <IDAContent>
-        <IDARegisterButton
-          onClick={openIDASignin}
-          text="Entrar"
-          small
-        />
-      </IDAContent>
+      <Wrapper>
+        <Navigation onIDASignin={openIDASignin} textButton="Entrar" />
+      </Wrapper>
       <BurgerIcon
         onClick={() => {}}
         customStyle={`

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import VanillaMask from 'vanilla-masker';
 import Button from 'components/atoms/button/button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import SimpleInput from 'components/atoms/simple-input/simple-input';
@@ -12,7 +13,7 @@ const TicketForm = ({
     <SimpleInput
       value={ticket}
       placeholder="Digite o código do ingresso"
-      onChange={(e) => setTicket(e.target.value)}
+      onChange={(e) => setTicket(VanillaMask.toPattern(e.target.value, 'SSSS-SS-SSSS').toUpperCase())}
     />
     <Button type="button" onClick={onSubmit} disabled={!ticket}>
       Tenho! É esse aqui

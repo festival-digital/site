@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Form, SelectForm, Option } from './select.style';
+import { Form, SelectForm, Option, SelectContent } from './select.style';
 
 /**
  * This is the Select component
  * @returns {React.Component}
  */
 const Select = ({
-  value, options, small, onChange, placeholder,
+  value, options, onChange, placeholder,
 }) => (
   <SelectForm value={value} onChange={onChange}>
     <Option disabled value="" selected>

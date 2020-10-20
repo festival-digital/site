@@ -2,9 +2,11 @@ import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import {
   Apresentation, Brand, Content, Title,
-  ActionWrapper, Illustration,
+  ActionWrapper, Illustration, DesktopIllustration, ButtonWrapper,
 } from './complete-signup.style';
 import GradientButton from 'components/atoms/gradient-button/gradient-button';
+import Store from 'components/store/Store';
+import { initCreateOasisAccount } from './complete-signup.controller';
 
 /**
  * This is the CompleteSignup component
@@ -12,23 +14,35 @@ import GradientButton from 'components/atoms/gradient-button/gradient-button';
  */
 const CompleteSignup = () => {
   const router = useRouter();
-  // const { state } = useContext(Store);
-  // const [loading, setLoading] = useState('');
+  const { state, dispatch } = useContext(Store);
+  const [loading, setLoading] = useState('');
 
+  if (loading) return <Content />;
   return (
     <Content>
       <Apresentation>
         <Title>Prepare-se para conhecer o novo mundo de</Title>
-        <Brand src="/static/icons/purple-oasi.svg"  alt="" />
+        <Brand src="/static/icons/oasi.svg"  alt="" />
       </Apresentation>
       <ActionWrapper>
-        <GradientButton
-          onClick={() => { router.push('/complete-signup/chat'); }}
-        >
-          Entrar!
-        </GradientButton>
+        <ButtonWrapper>
+          <GradientButton
+            onClick={() => {
+              initCreateOasisAccount({
+                ida: state.auth.ida,
+                setLoading,
+                router,
+                dispatch,
+                userId: state.user?.id,
+              });
+            }}
+          >
+            Entrar!
+          </GradientButton>
+        </ButtonWrapper>
+        <Illustration src="/static/icons/signup-illustration.svg" alt="" />
+        <DesktopIllustration src="/static/icons/desktop-signup-illustration.svg" alt="" />
       </ActionWrapper>
-      <Illustration src="/static/icons/signup-illustration.svg" alt="" />
     </Content>
   );
 };

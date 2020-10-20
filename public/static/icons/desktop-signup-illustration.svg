@@ -1,0 +1,66 @@
+<svg width="1440" height="365" viewBox="0 0 1440 365" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M0 365L615 277H825L1440 365H0Z" fill="white"/>
+<path d="M720 0C662.01 0 615 46.9905 615 104.957V277H825V104.957C825 46.9905 777.99 0 720 0Z" fill="url(#paint0_linear)"/>
+<path d="M752.004 225.837V276.991L722.837 206.925L752.004 225.837Z" fill="white"/>
+<path d="M687.598 225.837V276.991L716.764 206.925L687.598 225.837Z" fill="white"/>
+<path d="M749.945 164.613C739.159 162.268 728.813 161.59 719.801 161.687C710.788 161.59 700.442 162.268 689.656 164.613L664.219 241.144L719.807 261.515L775.395 241.144L749.945 164.613Z" fill="black"/>
+<rect x="685.927" y="102.732" width="67.281" height="66.9659" fill="url(#pattern0)"/>
+<path d="M719.555 150.301C727.353 150.301 733.675 143.994 733.675 136.213C733.675 128.433 727.353 122.126 719.555 122.126C711.756 122.126 705.435 128.433 705.435 136.213C705.435 143.994 711.756 150.301 719.555 150.301Z" fill="white"/>
+<rect x="696.338" y="134.201" width="46.3041" height="45.264" fill="url(#pattern1)"/>
+<path d="M719.555 153.621H723.206L721.381 156.779L719.555 159.931L717.729 156.779L715.903 153.621H719.555Z" fill="white"/>
+<rect x="696.338" y="93.1223" width="46.3041" height="45.1086" fill="url(#pattern2)"/>
+<path d="M719.555 118.813H715.903L717.729 115.654L719.555 112.496L721.381 115.654L723.206 118.813H719.555Z" fill="white"/>
+<rect x="676.294" y="113.12" width="45.372" height="46.1945" fill="url(#pattern3)"/>
+<path d="M702.108 136.214V139.864L698.942 138.036L695.782 136.214L698.942 134.393L702.108 132.572V136.214Z" fill="white"/>
+<rect x="717.47" y="113.12" width="45.372" height="46.1945" fill="url(#pattern4)"/>
+<path d="M737.003 136.214V132.572L740.162 134.393L743.328 136.214L740.162 138.036L737.003 139.864V136.214Z" fill="white"/>
+<rect x="683.286" y="126.45" width="45.9933" height="46.0394" fill="url(#pattern5)"/>
+<path d="M707.214 148.524L709.797 151.101L706.269 152.044L702.74 152.987L703.685 149.467L704.631 145.946L707.214 148.524Z" fill="white"/>
+<rect x="709.855" y="99.9433" width="45.9933" height="46.0387" fill="url(#pattern6)"/>
+<path d="M731.887 123.91L729.304 121.333L732.832 120.39L736.361 119.447L735.415 122.967L734.47 126.487L731.887 123.91Z" fill="white"/>
+<rect x="683.286" y="99.9433" width="45.9933" height="46.0387" fill="url(#pattern7)"/>
+<path d="M707.214 123.91L704.631 126.487L703.685 122.967L702.74 119.447L706.269 120.39L709.797 121.333L707.214 123.91Z" fill="white"/>
+<rect x="709.855" y="126.45" width="45.9933" height="46.0394" fill="url(#pattern8)"/>
+<path d="M731.887 148.524L734.47 145.946L735.415 149.467L736.361 152.987L732.832 152.044L729.304 151.101L731.887 148.524Z" fill="white"/>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0"/>
+</pattern>
+<pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image1"/>
+</pattern>
+<pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image2"/>
+</pattern>
+<pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image3"/>
+</pattern>
+<pattern id="pattern4" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image3"/>
+</pattern>
+<pattern id="pattern5" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image4"/>
+</pattern>
+<pattern id="pattern6" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image4"/>
+</pattern>
+<pattern id="pattern7" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image4"/>
+</pattern>
+<pattern id="pattern8" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image4"/>
+</pattern>
+<linearGradient id="paint0_linear" x1="720" y1="264.216" x2="720" y2="7.92815" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9043C5"/>
+<stop offset="0.3086" stop-color="#5D2B7F"/>
+<stop offset="0.6388" stop-color="#2B143B"/>
+<stop offset="0.8782" stop-color="#0C0610"/>
+<stop offset="1"/>
+</linearGradient>
+<image id="image0" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbYAAAG2CAYAAAATCaNwAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA"/>
+<image id="image1" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATAAAAEoCAYAAADffq0FAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA"/>
+<image id="image2" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATAAAAEkCAYAAACovG1+AAAACXBIWXMAAC4jAAAuIwF4pT92AAAA"/>
+<image id="image3" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEwCAYAAAAEguzvAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA"/>
+<image id="image4" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAACXBIWXMAAC4jAAAuIwF4pT92AAAA"/>
+</defs>
+</svg>

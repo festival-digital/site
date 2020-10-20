@@ -12,9 +12,8 @@ const EventForm = ({
     <Select
       options={eventOptions}
       value={event}
-      onChange={(event) => {
-        console.log(event.target.value);
-        setEvent(event.target.value)
+      onChange={(e) => {
+        setEvent(e.target.value);
       }}
       placeholder="Selecionar evento"
     />

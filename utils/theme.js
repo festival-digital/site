@@ -6,7 +6,8 @@ export default {
       medium: '#8740C6',
       light: '#B570F2',
       lightest: '#D9ADFF',
-      gradient: 'linear-gradient(180deg, #EA5EBF 0%, #8740C6 100%, #8740C6 100%);',
+      gradient:
+        'linear-gradient(180deg, #EA5EBF 0%, #8740C6 100%, #8740C6 100%);',
     },
     secondary: {
       darkest: '#1D1D1D',
