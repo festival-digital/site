@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from 'components/organisms/home-header/home-header';
 import { Content } from './home.style';
+
 /**
  * This is the Home component
  * @returns {React.Component}
