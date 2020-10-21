@@ -205,7 +205,7 @@ const EventPage = () => {
         activityName="Nome da atividade"
         activityDate="10 nov / 10h - 14h"
         tags={['música']}
-        subscription=""
+        subscription="open"
       />
       <Grid>
         <Text variant="default">Próximas Atividades</Text>
