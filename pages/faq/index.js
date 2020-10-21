@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Text } from '@resystem/design-system';
 import { questions } from './questions';
 import Footer from '../../components/organisms/footer/footer';
 import Card from '../../components/organisms/card-faq/card';
 import GradientButton from '../../components/atoms/gradient-button/gradient-button';
 import Header from '../../components/organisms/home-header/home-header';
+
 import {
   Container,
   Wrapper,
@@ -14,12 +16,17 @@ import {
   SpaceSmall,
   Title,
   customButtonStyle,
+  Input,
+  Textarea,
 } from './index.style';
 
 const FAQPage = () => {
   const [activeId, setActiveId] = useState(false);
 
   const isClicked = (id) => {
+    if (id === activeId) {
+      return setActiveId(false);
+    }
     setActiveId(id);
   };
 
@@ -51,8 +58,18 @@ const FAQPage = () => {
             Preencha o formulário abaixo com suas dúvidas, sugestões ou
             comentários. Vamos tentar te dar um retorno o mais rápido possível!
           </Text>
-          <SpaceSmall />
+          <Space />
           <Form>
+            <div>
+              <Input placeholder="Nome Completo" />
+              <SpaceSmall />
+              <Input placeholder="Email*" />
+              <SpaceSmall />
+              <Input placeholder="Telefone com DDD*" />
+              <SpaceSmall />
+            </div>
+            <Textarea placeholder="Digite aqui sua mensagem" />
+            <SpaceSmall />
             <GradientButton customStyle={customButtonStyle}>
               Enviar Formulário
             </GradientButton>
