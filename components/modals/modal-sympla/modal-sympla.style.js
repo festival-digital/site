@@ -26,6 +26,15 @@ export const Brand = styled.img`
   }
 `;
 
+export const ContentButtonGoBack = styled.div`
+  display: none;
+
+  @media (min-width: 600px) {
+    display: block;
+    margin-bottom: 20px;
+  }
+`;
+
 export const WrapperLogo = styled.div`
   display: inline-flex;
   align-items: center;
@@ -40,10 +49,15 @@ export const SpaceSmall = styled.div`
 `;
 
 export const Modal = styled.div`
-  width: 100%;
+  max-width: 408px;
+  max-height: 499px;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.brandColor.secondary.darkest};
   padding: 24px 16px;
+
+  @media (min-width: 600px) {
+    text-align: center;
+  }
 `;
 
 export const Title = styled.h4`

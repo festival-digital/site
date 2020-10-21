@@ -10,7 +10,6 @@ export const openIDASignin = async () => {
     await ida.signinWithPopup();
   } catch (err) {
     console.log([err]);
-    throw err;
   }
 };
 
@@ -31,7 +30,6 @@ export const getUser = async ({
     getUserResponse = await fetchUser(ida);
   } catch (err) {
     console.log([err]);
-    throw err;
   }
 
   if (!getUserResponse.data.oneUser) {
@@ -43,7 +41,7 @@ export const getUser = async ({
   dispatch({
     type: SET_USER,
     user: getUserResponse.data.oneUser,
-  })
+  });
 
   setLoading(false);
 };

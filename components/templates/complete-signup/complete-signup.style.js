@@ -1,76 +1,82 @@
 import styled from 'styled-components';
 
 export const Content = styled.section`
+  position: relative;
   display: grid;
-  min-height: 100%;
-  grid-template-rows: auto 1fr;
+  background: linear-gradient(180deg, #9043C5 0.33%, #B480D8 31.12%, #DCC4ED 68.81%, #F5EFFA 96.13%, #FFFFFF 110.03%);
+  min-height: 100vh;
+  grid-template-rows: 1fr auto;
   grid-gap: 16px;
-  padding: 32px 16px;
+  text-align: center;
+  overflow: hidden;
 `;
 
 export const Title = styled.h1`
+  padding: 16px;
+  margin-top: 10vh;
   font-size: 24px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   line-height: 28.13px;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
+  color: #ffffff;
 `;
 
-export const Description = styled.p`
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: normal;
-  line-height: 19.2px;
+export const Apresentation = styled.div`
 `;
 
-export const Form = styled.form`
-  margin-top: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  > div {
-    display: grid;
-    grid-gap: 16px;
-  }
-`;
-
-export const Footer = styled.footer`
-  display: grid;
-  grid-gap: 24px;
-`;
-
-export const SubmitButton = styled.button`
+export const ActionWrapper = styled.div`
+  padding: 16px;
   position: relative;
-  width: 100%;
-  height: 40px;
-  border-radius: 10px;
-  background-color: #771F5C;
-  color: #EA5EBF;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  text-align: center;
+  background-color: #ffffff;
+  z-index: 11;
 
-  &:disabled {
-    background-color: #CCC;
-    color: #808080;
+  @media (min-width: 768px) {
+    padding: 36px 16px;
   }
 `;
 
-export const IconWrapper = styled.div`
-  position: absolute;
-  right: 13px;
-  top: calc(50% - 12px);
+export const ButtonWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+  z-index: 11;
+  width: 100%;
+  max-width: 420px;
+
+  @media (min-width: 768px) {
+    top: -60px;
+  }
 `;
 
-export const Input = styled.input`
-  width: 100%:
-  height: 48px;
-  border: 2px solid #808080;
-  border-radius: 
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+export const Brand = styled.img`
+  height: 70px;
+`;
 
-  &:focus {
-    border: 2px solid #808080;
+export const Illustration = styled.img`
+  display: inline-flex;
+  position: absolute;
+  width: 100%;
+  justify-self: center;
+  bottom: calc(100% - 2px);
+  left: 0;
+  z-index: 10;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const DesktopIllustration = styled.img`
+  display: none;
+  position: absolute;
+  width: 100%;
+  justify-self: center;
+  bottom: calc(100% - 2px);
+  left: 0;
+  z-index: 10;
+
+  @media (min-width: 768px) {
+    display: inline-flex;
   }
 `;

@@ -11,7 +11,6 @@ import {
 } from './event-header.style';
 
 const EventHeader = ({ backgroundURI, goBackMode }) => {
-  console.log('backgroundURI ', backgroundURI);
   const [isSticky, setIsSticky] = useState(false);
   const stickyRef = useRef(null);
 

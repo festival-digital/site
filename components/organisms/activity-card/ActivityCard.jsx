@@ -235,7 +235,7 @@ ActivityCard.propTypes = {
   activityType: PropTypes.oneOf(['free', 'payment']),
   backgroundUrl: PropTypes.string,
   isSubscribed: PropTypes.bool,
-  subscription: PropTypes.oneOf(['done', 'closed']),
+  subscription: PropTypes.oneOf(['closed', 'done', 'free', 'open']),
   tags: PropTypes.arrayOf(PropTypes.string),
 };
 
