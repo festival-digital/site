@@ -67,15 +67,20 @@ const Footer = () => {
           </NavigationItem>
         </div>
         <MediaSocial>
-          <Link href="/">
+          <a href="/" target="_blank" without rel="noreferrer">
             <Icon src="/static/icons/facebookIcon.svg" alt="" />
-          </Link>
-          <Link href="/">
+          </a>
+          <a
+            href="https://www.instagram.com/oasi.vc/"
+            target="_blank"
+            without
+            rel="noreferrer"
+          >
             <Icon src="static/icons/instagramIcon.svg" alt="" />
-          </Link>
-          <Link href="/">
+          </a>
+          <a href="/" target="_blank" without rel="noreferrer">
             <Icon src="static/icons/twitterIcon.svg" alt="" />
-          </Link>
+          </a>
         </MediaSocial>
       </Navigation>
       <Space />
@@ -83,19 +88,13 @@ const Footer = () => {
       <Organization>
         <div>
           <Link href="/">
-            <BrandIcon src="static/icons/oasis-logo.svg" alt="" />
+            <BrandIcon src="static/icons/oasi.svg" alt="" />
           </Link>
         </div>
         <div>
-          <Link href="/">
-            <Icon src="static/icons/midia-ninja.svg" alt="" />
-          </Link>
-          <Link href="/">
-            <Icon src="static/icons/design-ativista.svg" alt="" />
-          </Link>
-          <Link href="/">
-            <Icon src="static/icons/zona-de-propulssao.svg" alt="" />
-          </Link>
+          <Icon src="static/icons/midia-ninja.svg" alt="" />
+          <Icon src="static/icons/design-ativista.svg" alt="" />
+          <Icon src="static/icons/zona-de-propulssao.svg" alt="" />
         </div>
       </Organization>
     </FooterComponent>
