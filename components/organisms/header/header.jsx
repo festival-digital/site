@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { IDALoginButton } from '@resystem/design-system';
 import { BurgerIcon, Brand, Header as HeaderComponent } from './header.style';
+import { openIDASignin } from 'components/main/main.controller';
 
 /**
  * This is the Header component
@@ -15,7 +16,7 @@ const Header = ({ onIDASignin }) => (
       alt="esse é um logo provisório para a plataforma da feira digital"
     />
     <div>
-      <IDALoginButton onClick={onIDASignin} dark small text="Entrar" />
+      <IDALoginButton onClick={() => console.log('testeee')} dark small text="Entrar" />
       <BurgerIcon
         onClick={() => {}}
         src="/static/icons/menu-burger.svg"

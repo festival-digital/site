@@ -1,4 +1,8 @@
-import { createUser } from './complete-signup.repository';
+import {
+  createUser,
+  getEvents as getEventsRepository,
+  addTicket as addTicketRepository,
+} from './complete-signup.repository';
 import { validateCPF } from 'utils/validations';
 
 /**
@@ -21,39 +25,103 @@ const mapUserToAPI = ({ ida, cpf, email, name }) => ({
  * function that validate and try errors or the api response
  * @param {object} params infations and state control function 
  * @param {function} params.setLoading set loading state when waits for api response   
- * @param {function} params.setErrors set error state if there is input errors   
- * @param {function} params.cpf user cpf
- * @param {function} params.name user name
+ * @param {function} params.router function to navigate to another page   
+ * @param {function} params.dispatch function to change global context
+ * @param {function} params.ida ativist identification code
+ * @param {function} params.userId oasis identification code
  */
-export const completeRegister = async ({
-  setLoading, setErrors, cpf, name,
-  email, ida,
+export const initCreateOasisAccount = async ({
+  setLoading, ida, router, dispatch, userId,
 }) => {
   setLoading(true);
-  setErrors({});
 
-  const cpfRegexp = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
-  if (!cpfRegexp.test(cpf) || !validateCPF(cpf.replace(/\D+/g, ''))) {
-    setErrors({ cpf: 'CPF Inválido' });
+  if (userId) {
+    setLoading(false);
+    router.push('/complete-signup/chat');
     return;
   }
 
   let createUserResponse;
-  console.log(ida);
   try {
-    createUserResponse = await createUser(mapUserToAPI({
-      ida,
-      cpf,
-      name,
-      email
-    }));
+    createUserResponse = await createUser({ ida });
   } catch (err) {
     console.log([err]);
     throw err;
   }
 
-  console.log(createUserResponse);
+  dispatch({
+    type: SET_USER,
+    user: createUserResponse.data.createUser,
+  });
 
-  setErrors({});
   setLoading(false);
+  router.push('/complete-signup/chat');
+};
+
+/**
+ * function that request enable events on api and set on component state
+ * @param {object} params infations and state control function 
+ * @param {function} params.setLoading set loading state when waits for api response   
+ * @param {function} params.setEventOptions set evente option to the user select   
+ */
+export const getEvents = async ({ setLoading, setEventOptions }) => {
+  setLoading(true);
+
+  let eventsResponse;
+
+  try {
+    eventsResponse = await getEventsRepository();
+  } catch (err) {
+    throw err;
+  }
+
+  setEventOptions(eventsResponse.data.allEvents.map(({ id, name, sympla_id }) => ({
+    id,
+    label: name,
+    sympla_id,
+  })))
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000)
+};
+
+/**
+ * function that add ticket on user
+ * @param {object} params infations and state control function 
+ * @param {function} params.setLoading set loading state when waits for api response   
+ * @param {function} params.ticket ticket code
+ * @param {function} params.symplaEventId sympla event id
+ * @param {function} params.callback function to execute after ticket validation
+ * @param {function} params.invalidTicketCallback function to execute if return ticket validation error
+ * @param {function} params.dispatch function to change global context
+ */
+export const addTicket = async ({
+  setLoading, callback, ticket, symplaEventId,
+  userId, tickets, invalidTicketCallback,
+}) => {
+  setLoading(true);
+
+  if (tickets.findIndex(({ code }) => code === ticket) !== -1) {
+    callback();
+    setLoading(true);
+    return;
+  }
+
+  let addTicketResponse;
+
+  try {
+    addTicketResponse = await addTicketRepository({
+      code: ticket.replace(/\-/g, ''),
+      sympla_event_id: symplaEventId,
+      user_id: userId,
+    });
+  } catch (err) {
+    invalidTicketCallback()
+    setLoading(false);
+    return;
+  }
+
+  callback();
+  setLoading(true);
 };
