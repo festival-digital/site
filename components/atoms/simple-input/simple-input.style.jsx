@@ -29,6 +29,7 @@ export const ErrorMessage = styled.p`
 export const InputBase = styled.div`
   margin: 0;
   padding: 0;
+  width: 100%;
   display: inline-flex;
   flex-direction: column;
 
