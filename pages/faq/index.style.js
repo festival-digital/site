@@ -2,6 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
+export const WrapperSearch = styled.div`
+  margin: 24px 0;
+
+  @media (min-width: 650px) {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
 export const Title = styled.h1`
   font-family: Space Mono;
   font-style: normal;
@@ -17,9 +26,25 @@ export const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-export const Contact = styled.div``;
+export const Contact = styled.div`
+  display: block;
+`;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ContainerInputs = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+
+  @media (min-width: 680px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
 
 export const Text = styled.p`
   font-family: Roboto;
@@ -27,13 +52,6 @@ export const Text = styled.p`
   font-weight: normal;
   font-size: 18px;
   color: #ffffff;
-`;
-
-export const Link = styled.a`
-  text-decoration: none;
-  font-size: 14px;
-  color: #ffffff;
-  display: block;
 `;
 
 export const Space = styled.div`
@@ -44,10 +62,90 @@ export const SpaceSmall = styled.div`
   margin-bottom: 7px;
 `;
 
+export const InputSearch = styled.input`
+  background: #404040;
+  border-radius: 10px;
+  border: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 14px 0;
+  color: #ffffff;
+  width: 100%;
+
+  &:focus {
+    font-size: 16px;
+    line-height: 19px;
+    padding: 14px 0;
+    color: #ffffff;
+    width: 100%;
+  }
+
+  & ::after {
+    content: 'aaaaaaa';
+    color: white;
+  }
+
+  @media (min-width: 650px) {
+    display: inline-flex;
+    max-width: 308px;
+    margin: 0;
+  }
+`;
+
+export const Textarea = styled.textarea`
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 0px #000000;
+  border-radius: 10px;
+  background: #404040;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  word-wrap: break-word;
+  resize: none;
+
+  &:focus {
+    padding: 10px;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 0px #000000;
+  }
+`;
+
+export const ErrorMessage = styled.p`
+  margin-top: 6px;
+  text-align: left;
+  color: #ff2626;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+`;
+export const TextareaBase = styled.div`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const customButtonStyle = `
-border: 2px solid #EA5EBF;
-box-sizing: border-box;
-box-shadow: 0px 2px 0px #EA5EBF;
-border-radius: 10px;
-background: #FF9AE0;
+ @media (min-width: 650px) {
+    max-width: 221px;
+    align-self: flex-end;
+  }
+`;
+
+export const customInputStyle = `
+ @media (min-width: 650px) {
+     max-width: 308px;
+  }
 `;

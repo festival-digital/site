@@ -11,8 +11,10 @@ export const ButtonForm = styled.button`
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  
+
   &:disabled {
     background-color: ${({ disabledColor }) => disabledColor};
   }
+
+  ${({ customStyle }) => customStyle}
 `;

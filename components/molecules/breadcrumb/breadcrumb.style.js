@@ -7,13 +7,14 @@ export const Wrapper = styled.div`
   padding: 16px 0px;
   align-items: center;
   color: #ffffff;
+  height: 48px;
 
   & > div:last-child {
     a {
-      color: #EA5EBF;
+      color: #ea5ebf;
       font-weight: 500;
     }
-    
+
     & > span {
       display: none;
     }

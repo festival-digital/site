@@ -142,7 +142,7 @@ const FAQPage = () => {
 
   const handleBlurName = () => {
     if (!fullName) {
-      return setFullNameError('Preencha o campo de nome completo!');
+      return setFullNameError('Preencha o nome completo!');
     }
     return setFullNameError('');
   };
@@ -156,16 +156,16 @@ const FAQPage = () => {
 
   const handleBlurPhone = () => {
     if (!phone) {
-      return setPhoneError('Preencha o campo de telefone!');
+      return setMessageError('Preencha o campo de telefone!');
     }
-    return setPhoneError('');
+    return setMessageError('');
   };
 
   const handleBlurEmail = () => {
-    if (!email) {
-      return setEmailError('Preencha o campo de email!');
+    if (!phone) {
+      return setMessageError('Preencha o campo de email!');
     }
-    return setEmailError('');
+    return setMessageError('');
   };
 
   const handleClick = () => {};
@@ -173,7 +173,6 @@ const FAQPage = () => {
     <Container>
       <Header />
       <Wrapper>
-        <Title>Perguntas Frequentes</Title>
         <WrapperSearch>
           <Breadcrumb
             options={[
@@ -194,6 +193,7 @@ const FAQPage = () => {
           </ErrorMessagemSearch>
         )}
         <SpaceSmall />
+        <Title>Perguntas Frequentes</Title>
         {filteredQuestions.map((question, index) => {
           const { title, description } = question;
           return (
