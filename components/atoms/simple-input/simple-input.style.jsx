@@ -16,3 +16,22 @@ export const Input = styled.input`
     box-shadow: 0px 2px 0px #000000;
   }
 `;
+
+export const ErrorMessage = styled.p`
+  margin-top: 6px;
+  text-align: left;
+  color: #ff2626;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+`;
+export const InputBase = styled.div`
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+
+  ${({ customStyle }) => customStyle}
+`;
