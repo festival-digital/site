@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input } from './simple-input.style';
+import { Input, ErrorMessage, InputBase } from './simple-input.style';
 
 /**
  * This is the simple input component
  * @returns {React.Component}
  */
-const SimpleInput = (props) => <Input {...props} />;
+const SimpleInput = ({ error, ...props }) => {
+  return (
+    <InputBase>
+      <Input {...props} />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+    </InputBase>
+  );
+};
 
 SimpleInput.defaultProps = {
   type: 'text',
