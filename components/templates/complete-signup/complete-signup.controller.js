@@ -3,6 +3,7 @@ import {
   getEvents as getEventsRepository,
   addTicket as addTicketRepository,
 } from './complete-signup.repository';
+import { SET_USER } from 'components/store/actions';
 import { validateCPF } from 'utils/validations';
 
 /**
@@ -31,13 +32,13 @@ const mapUserToAPI = ({ ida, cpf, email, name }) => ({
  * @param {function} params.userId oasis identification code
  */
 export const initCreateOasisAccount = async ({
-  setLoading, ida, router, dispatch, userId,
+  setLoading, ida, router, dispatch, userId, navigateTo,
 }) => {
   setLoading(true);
 
   if (userId) {
     setLoading(false);
-    router.push('/complete-signup/chat');
+    navigateTo();
     return;
   }
 
@@ -55,7 +56,7 @@ export const initCreateOasisAccount = async ({
   });
 
   setLoading(false);
-  router.push('/complete-signup/chat');
+  navigateTo();
 };
 
 /**
@@ -112,7 +113,7 @@ export const addTicket = async ({
 
   try {
     addTicketResponse = await addTicketRepository({
-      code: ticket.replace(/\-/g, ''),
+      code: ticket.replace(/-/g, ''),
       sympla_event_id: symplaEventId,
       user_id: userId,
     });

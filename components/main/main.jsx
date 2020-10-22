@@ -23,28 +23,26 @@ const Main = ({ children }) => {
 
   // component did mount cycle
   useEffect(() => {
-      console.log('hereee 1');
-      ida.onCurrentUserChange((auth) => {
-      dispatch({
-        type: SET_AUTH,
-        auth,
-      });
-
-      console.log('hereee');
-
-      getUser({
-        ida: auth.ida,
-        setLoading,
-        navigationTo: router.push,
-        dispatch,
-      });
+    ida.onCurrentUserChange((auth) => {
+      if (auth) {
+        dispatch({
+          type: SET_AUTH,
+          auth,
+        });
+  
+        getUser({
+          ida: auth.ida,
+          setLoading,
+          navigationTo: router.push,
+          dispatch,
+        });
+      }
     });
   }, []);
 
   return (
     <ThemeProvider theme={theme}>
       <MainComponent>
-        {/* <Header onIDASignin={openIDASignin} /> */}
         {children}
       </MainComponent>
     </ThemeProvider>

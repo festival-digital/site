@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import { Text } from '@resystem/design-system';
 import { questions } from './questions';
 import Footer from '../../components/organisms/footer/footer';
@@ -17,6 +18,7 @@ import {
 } from './index.style';
 
 const FAQPage = () => {
+  const router = useRouter();
   const [activeId, setActiveId] = useState(false);
 
   const isClicked = (id) => {

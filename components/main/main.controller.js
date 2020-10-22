@@ -32,10 +32,8 @@ export const getUser = async ({
     console.log([err]);
   }
 
-  if (!getUserResponse.data.oneUser) {
+  if (!getUserResponse.data.oneUser?.status || getUserResponse.data.oneUser?.status === 'INCOMPLETE') {
     navigationTo('/complete-signup');
-    setLoading(false);
-    return;
   }
 
   dispatch({

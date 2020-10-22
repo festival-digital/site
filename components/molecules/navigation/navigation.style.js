@@ -41,3 +41,25 @@ export const NavigationItem = styled.li`
     color: ${({ theme }) => theme.brandColor.fourtiary.medium};
   }
 `;
+
+export const IDARegisterButton = styled.button`
+  display: flex;
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1D1D1D;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 2px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  padding: 12px 24px;
+  cursor: pointer;
+`;
+
+export const IDALogo = styled.img`
+  width: 24px;
+  margin-right: 16px;
+`;

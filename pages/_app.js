@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import Router from 'next/router';
 import App from 'next/app';
 import Provider from 'state/store';
+import 'styles/empty.css';
 import '@resystem/design-system/dist/main.css';
 import 'styles/main.css';
 import Main from 'components/main/main';

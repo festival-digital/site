@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Store from 'components/store/Store';
+import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import {
   Apresentation, Brand, Content, Title,
   ActionWrapper, Illustration, DesktopIllustration, ButtonWrapper,
 } from './complete-signup.style';
-import GradientButton from 'components/atoms/gradient-button/gradient-button';
-import Store from 'components/store/Store';
 import { initCreateOasisAccount } from './complete-signup.controller';
 
 /**
@@ -17,7 +17,10 @@ const CompleteSignup = () => {
   const { state, dispatch } = useContext(Store);
   const [loading, setLoading] = useState('');
 
-  if (loading) return <Content />;
+  const navigateTo = () => {
+    router.replace('/complete-signup/chat');
+  };
+
   return (
     <Content>
       <Apresentation>
@@ -31,9 +34,9 @@ const CompleteSignup = () => {
               initCreateOasisAccount({
                 ida: state.auth.ida,
                 setLoading,
-                router,
+                navigateTo,
                 dispatch,
-                userId: state.user?.id,
+                userId: state.user ? state.user.id : null,
               });
             }}
           >
