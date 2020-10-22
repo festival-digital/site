@@ -21,6 +21,7 @@ const CompleteRegistration = ({
   lastName,
   birthDate,
   email,
+  opened,
 }) => {
   /* values */
   const [cpfInput, setCpfInput] = useState('');
@@ -112,7 +113,7 @@ const CompleteRegistration = ({
   };
 
   return (
-    <Wrapper opened>
+    <Wrapper opened={opened}>
       <Modal>
         <Title>Complete seu cadastro para acessar o evento!</Title>
         <Space />
