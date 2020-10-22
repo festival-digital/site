@@ -60,3 +60,7 @@ export function emailValidation(email) {
 export function phoneValidation(phone) {
   return isPhone(phone) ? '' : 'número de celular inválido';
 }
+
+export function maskCPF(input) {
+  return input.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
+}

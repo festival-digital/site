@@ -31,6 +31,7 @@ export const InputBase = styled.div`
   padding: 0;
   display: inline-flex;
   flex-direction: column;
+  width: 100%;
 
   ${({ customStyle }) => customStyle}
 `;
