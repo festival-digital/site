@@ -1,11 +1,17 @@
 import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
-import {
-  Apresentation, Brand, Content, Title,
-  ActionWrapper, Illustration, DesktopIllustration, ButtonWrapper,
-} from './complete-signup.style';
 import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import Store from 'components/store/Store';
+import {
+  Apresentation,
+  Brand,
+  Content,
+  Title,
+  ActionWrapper,
+  Illustration,
+  DesktopIllustration,
+  ButtonWrapper,
+} from './complete-signup.style';
 import { initCreateOasisAccount } from './complete-signup.controller';
 
 /**
@@ -22,7 +28,7 @@ const CompleteSignup = () => {
     <Content>
       <Apresentation>
         <Title>Prepare-se para conhecer o novo mundo de</Title>
-        <Brand src="/static/icons/oasi.svg"  alt="" />
+        <Brand src="/static/icons/oasi.svg" alt="" />
       </Apresentation>
       <ActionWrapper>
         <ButtonWrapper>
@@ -41,7 +47,10 @@ const CompleteSignup = () => {
           </GradientButton>
         </ButtonWrapper>
         <Illustration src="/static/icons/signup-illustration.svg" alt="" />
-        <DesktopIllustration src="/static/icons/desktop-signup-illustration.svg" alt="" />
+        <DesktopIllustration
+          src="/static/icons/desktop-signup-illustration.svg"
+          alt=""
+        />
       </ActionWrapper>
     </Content>
   );

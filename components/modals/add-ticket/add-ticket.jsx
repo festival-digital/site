@@ -1,11 +1,19 @@
-import React, { useState } from  'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '@material-ui/core/Icon';
+import { Animation } from '@resystem/design-system';
 import TextInput from 'components/molecules/text-input/TextInput';
 import ModalWrapper from 'components/organisms/modal-wrapper/modal-wrapper';
+
 import {
-  Content, Title, Description, AddTicketButton,
-  AddIconWrapper, TicketList, SubmitButton, SubmitIconWrapper,
+  Content,
+  Title,
+  Description,
+  AddTicketButton,
+  AddIconWrapper,
+  TicketList,
+  SubmitButton,
+  SubmitIconWrapper,
   InformationLink,
 } from './add-ticket.style';
 
@@ -17,10 +25,17 @@ const renderListContent = ({ setIsAdd }) => (
   <Content>
     <header>
       <Title>Você já tem ingresso?</Title>
-      <Description>Se sim, adicione eles aqui. Você também pode adicioná-los mais tarde.</Description>
+      <Description>
+        Se sim, adicione eles aqui. Você também pode adicioná-los mais tarde.
+      </Description>
     </header>
     <TicketList>
-      <AddTicketButton onClick={() => { setIsAdd(true) }} type="button">
+      <AddTicketButton
+        onClick={() => {
+          setIsAdd(true);
+        }}
+        type="button"
+      >
         Adicionar ingresso
         <AddIconWrapper>
           <Icon style={{ color: '#771F5C' }}>add</Icon>
@@ -46,10 +61,10 @@ const renderAddContent = () => (
       <Title>Adicionar ingresso</Title>
     </header>
     <div>
-      <TextInput
-        label="Código do ingresso"
-      />
-      <InformationLink href="#">Onde encontro o código do ingresso?</InformationLink>
+      <TextInput label="Código do ingresso" />
+      <InformationLink href="#">
+        Onde encontro o código do ingresso?
+      </InformationLink>
     </div>
     <SubmitButton type="submit">
       Adicionar ingresso
@@ -69,7 +84,13 @@ const AddTicket = ({ opened }) => {
   const [isAdd, setIsAdd] = useState(false);
   return (
     <ModalWrapper opened={opened}>
-      { isAdd ? renderAddContent() : renderListContent({ setIsAdd }) }
+      <Animation
+        animation="slideInUp"
+        duration="650ms"
+        customStyle="width: 100%;"
+      >
+        {isAdd ? renderAddContent() : renderListContent({ setIsAdd })}
+      </Animation>
     </ModalWrapper>
   );
 };

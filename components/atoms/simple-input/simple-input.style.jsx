@@ -25,6 +25,8 @@ export const ErrorMessage = styled.p`
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
+  line-height: 12px;
+  height: 12px;
 `;
 export const InputBase = styled.div`
   margin: 0;

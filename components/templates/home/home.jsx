@@ -1,6 +1,9 @@
 import React from 'react';
 import Header from 'components/organisms/home-header/home-header';
-import CompleteRegistration from 'components/modals/complete-registration/complete-registration';
+import ModalCompleteRegistration from 'components/modals/complete-registration/complete-registration';
+import ModaSympla from 'components/modals/modal-sympla/modal-sympla';
+import ModalAddTicket from 'components/modals/add-ticket/add-ticket';
+import ModalAddTicketFromEvent from 'components/modals/add-ticket-from-event/add-ticket-from-event';
 import Breadcrumb from 'components/molecules/breadcrumb/breadcrumb';
 import { Content } from './home.style';
 
@@ -9,7 +12,7 @@ import { Content } from './home.style';
  * @returns {React.Component}
  */
 
-const dados = {
+const registrationData = {
   firstName: '',
   lastName: '',
   birthDate: '',
@@ -21,7 +24,10 @@ const Home = () => (
   <>
     <Header />
     <Content>
-      <CompleteRegistration {...dados} />
+      <ModalAddTicketFromEvent />
+      <ModalAddTicket />
+      <ModalCompleteRegistration {...registrationData} opened={false} />
+      <ModaSympla opened />
     </Content>
   </>
 );

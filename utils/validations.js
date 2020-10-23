@@ -28,6 +28,10 @@ export const validateCPF = (strCPF) => {
   return true;
 };
 
+export const cpfValidation = (cpf) => {
+  return validateCPF(cpf) ? '' : 'Número de CPF inválido';
+};
+
 export function removePhoneMask(input) {
   return input.replace(/[^\w\s]/gi, '').replace(' ', '');
 }
@@ -54,13 +58,33 @@ export function isEmail(input) {
 }
 
 export function emailValidation(email) {
-  return isEmail(email) ? '' : 'formato de e-mail inválido';
+  return isEmail(email) ? '' : 'Formato de e-mail inválido';
 }
 
 export function phoneValidation(phone) {
-  return isPhone(phone) ? '' : 'número de celular inválido';
+  return isPhone(phone) ? '' : 'Número de celular inválido';
 }
 
 export function maskCPF(input) {
-  return input.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
+  let v = input;
+  v = v.replace(/\D/g, '');
+  v = v.replace(/(\d{3})(\d{0,8})/g, '$1.$2');
+  v = v.replace(/(\d{3}).(\d{3})(\d)/g, '$1.$2.$3');
+  v = v.replace(/(\d{3}).(\d{3}).(\d{3})(\d)/g, '$1.$2.$3-$4');
+  v = v.replace(/(\d{3}).(\d{3}).(\d{3})(\d{2})/g, '$1.$2.$3-$4');
+  return v;
+  // input.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
+}
+
+export function maskDate(input) {
+  let v = input;
+  v = v.replace(/\D/g, '');
+  v = v.length > 8 ? v.substring(0, 8) : v;
+  v = v.replace(/(\d{2})(\d{0,6})/g, '$1/$2');
+  v = v.replace(/(\d{2})(\d{1,4})/g, '$1/$2');
+  return v;
+}
+
+export function dateValidation(input) {
+  return input.replace(/\D/g, '').length < 8 ? 'Data inválida' : '';
 }
