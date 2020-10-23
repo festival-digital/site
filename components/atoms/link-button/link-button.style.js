@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const ButtonForm = styled.button`
+export const ButtonForm = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 48px;
   border-radius: 10px;

@@ -10,7 +10,7 @@ export const Navigation = styled.ul`
   width: 100%;
   margin: ${(props) => {
     const { column } = props;
-    return column ? '50px 20px' : '0';
+    return column ? '48px 16px' : '0';
   }};
 
   & li:nth-child(3) {
@@ -55,7 +55,7 @@ export const IDARegisterButton = styled.button`
   border-width: 2px;
   border-radius: 10px;
   background-color: #FFFFFF;
-  padding: 12px 24px;
+  padding: 8px 16px;
   cursor: pointer;
 `;
 
