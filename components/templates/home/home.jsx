@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Icon from '@material-ui/core/Icon';
 import { IDARegisterButton } from '@resystem/design-system';
+import { openIDASignin } from 'components/main/main.controller';
+import ModalSympla from 'components/modals/modal-sympla/modal-sympla';
 import Header from 'components/organisms/home-header/home-header';
 import Footer from 'components/organisms/footer/footer';
 import Button from 'components/atoms/button/button';
 import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import LinkButton from 'components/atoms/link-button/link-button';
+import Store from 'components/store/Store';
+import { OPEN_MENU_MODAL, CLOSE_MENU_MODAL } from 'components/store/actions';
 import {
   PageTemplate,
   ApresentationContent,
@@ -44,7 +48,6 @@ import {
   NextEventDate,
   NextEventTags,
   NextEventActionsWrapper,
-  NextEventEventsLink,
   NextEventDescription,
   NextEventInfoWrapper,
   NextEventMosaicIllustration,
@@ -55,11 +58,25 @@ import {
  * @returns {React.Component}
  */
 const Home = () => {
+  const { state, dispatch } = useContext(Store);
+  const [symplaModal, setSymplaModal] = useState(false);
   const router = useRouter();
   return (
     <PageTemplate>
       <InitialWrapper>
-        <Header />
+        <Header
+          menuOpened={state.menu}
+          toggleMenu={() => {
+            dispatch({
+              type: state.menu ? CLOSE_MENU_MODAL : OPEN_MENU_MODAL,
+            });
+          }}
+          closeMenu={() => {
+            dispatch({
+              type: CLOSE_MENU_MODAL,
+            });
+          }}
+        />
         <ApresentationContent>
           <Title>
             Conheça
@@ -100,7 +117,11 @@ const Home = () => {
             </IDAText>
           </ContentAbout>
           <WrapperButtonIDA>
-            <IDARegisterButton text="Entrar com IDa" dark />
+            <IDARegisterButton
+              onClick={openIDASignin}
+              text="Entrar com IDa"
+              dark
+            />
             <IDALink href="/">
               <a>SAIBA MAIS SOBRE A IDa</a>
             </IDALink>
@@ -224,6 +245,7 @@ const Home = () => {
         </NextEventInfoWrapper>
         <NextEventActionsWrapper>
           <GradientButton
+            onClick={() => setSymplaModal(true)}
             customStyle={`
               > span {
                 vertical-align: middle;
@@ -247,6 +269,15 @@ const Home = () => {
       </NextEvent>
 
       <Footer />
+
+      <ModalSympla
+        opened={symplaModal}
+        toSympla={() => {
+          window.open('https://www.sympla.com.br', '_blank');
+          setSymplaModal(false);
+        }}
+        onCancel={() => setSymplaModal(false)}
+      />
     </PageTemplate>
   );
 };

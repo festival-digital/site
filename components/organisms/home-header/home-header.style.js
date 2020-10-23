@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  position: relative;
+  position: ${({ fixed }) => !fixed ? 'relative' : 'fixed'};
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
