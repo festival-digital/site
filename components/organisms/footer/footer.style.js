@@ -2,45 +2,84 @@ import styled from 'styled-components';
 
 export const Footer = styled.footer``;
 
-export const Wrapper = styled.div`
-  max-width: 1100px;
+export const IDAContent = styled.div`
   width: 100%;
-  display: block;
-  margin: 24px auto;
-  box-sizing: border-box;
+  text-align: center;
+  background: linear-gradient(180deg, #2E08C2 0%, #A439D7 100%);
 
-  @media (min-width: 845px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+`;
+
+export const IDAContentWrapper = styled.div`
+  display: inline-grid;
+  width: 100%;
+  max-width: 1024px;
+  padding: 20px;
+
+  @media (min-width: 769px) {
+    grid-template-columns: 1fr 240px;  
+  }
+`;
+
+export const ContentAbout = styled.div`
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const IDASubtitle = styled.h3`
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 16px;
+  color: #ffffff;
+`;
+
+export const IDALink = styled.a`
+  display: block;
+  padding: 16px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+`;
+
+export const IDAText = styled.p`
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
+  margin-bottom: 24px;
+
+  @media (min-width: 769px) {
+    margin-bottom: 0px;
   }
 `;
 
 export const WrapperButtonIDA = styled.div`
-  text-align: center;
-  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  
 
-  > a {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    color: #ffffff;
-    text-align: center;
+  @media (min-width: 769px) {
+    max-width: 240px;  
+  }
+
+  & > button {
+    width: 100%;
   }
 `;
-
-export const IDAContent = styled.div`
-  margin-top: 60px;
-  width: 100%;
-  display: block;
-  padding: 16px;
-  background: linear-gradient(180deg, #2e08c2 0%, #a439d7 100%);
-`;
-
-export const ContentAbout = styled.div``;
 
 export const Space = styled.div`
   margin-bottom: ${({ theme }) => theme.spacingStack.xxxs};

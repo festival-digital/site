@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ChatTemplate from 'components/templates/complete-signup/chat/chat';
 
 /**

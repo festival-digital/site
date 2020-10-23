@@ -4,44 +4,45 @@ import Link from 'next/link';
 import { IDARegisterButton, Text, Subtitle } from '@resystem/design-system';
 import {
   Footer as FooterComponent,
-  IDAContent,
   Space,
   SpaceSmall,
   Navigation,
   NavigationItem,
-  Wrapper,
-  ContentAbout,
   WrapperButtonIDA,
   MediaSocial,
   Icon,
   Organization,
   BrandIcon,
+  IDAContent,
+  IDAContentWrapper,
+  ContentAbout,
+  IDASubtitle,
+  IDAText,
+  IDALink,
 } from './footer.style';
 
 const Footer = () => {
   return (
     <FooterComponent>
       <IDAContent>
-        <Wrapper>
+        <IDAContentWrapper>
           <ContentAbout>
-            <Subtitle type="h3">
-              Bora viver essa experiência mágica com a gente?
-            </Subtitle>
-            <Space />
-            <Text>
-              Você já conhece a IDa? É um serviço de autenticação seguro e
-              rápido!
-              <br />E o seu cadastro na Oasi é com ela.
-            </Text>
+            <IDASubtitle>
+              Gostou? Vêm viver essa experiência com a gente!
+            </IDASubtitle>
+            <IDAText>
+              Você já conhece a IDa? É um serviço de autenticação seguro e rápido!
+              <br />
+              E o seu cadastro na Oasi é com ela.
+            </IDAText>
           </ContentAbout>
           <WrapperButtonIDA>
-            <IDARegisterButton text="Entrar com IDA" dark />
-            <SpaceSmall />
-            <Link href="/">
+            <IDARegisterButton text="Entrar com IDa" dark />
+            <IDALink href="/">
               <a>SAIBA MAIS SOBRE A IDa</a>
-            </Link>
+            </IDALink>
           </WrapperButtonIDA>
-        </Wrapper>
+        </IDAContentWrapper>
       </IDAContent>
       <Navigation>
         <div>

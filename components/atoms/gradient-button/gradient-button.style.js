@@ -18,5 +18,10 @@ export const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
 
+  & > span {
+    vertical-align: middle;
+    margin-right: 8px; 
+  }
+
   ${(props) => props}
 `;

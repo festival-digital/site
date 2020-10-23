@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { IDARegisterButton } from '@resystem/design-system';
 import {
   Navigation as NavigationComponent,
   NavigationItem,
   IDAContent,
+  IDARegisterButton,
+  IDALogo,
 } from './navigation.style';
 
 const Navigation = ({ onIDASignin, textButton, column }) => {
@@ -21,7 +22,10 @@ const Navigation = ({ onIDASignin, textButton, column }) => {
         </Link>
       </NavigationItem>
       <NavigationItem column={column}>
-        <IDARegisterButton small onClick={onIDASignin} text={textButton} />
+        <IDARegisterButton type="button" onClick={onIDASignin}>
+          <IDALogo src="http://ida-design-system-assets.s3-us-west-2.amazonaws.com/icons/brand.svg" alt="" /> 
+          Cadastre-se
+        </IDARegisterButton>
       </NavigationItem>
     </NavigationComponent>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { Text } from '@resystem/design-system';
 import Breadcrumb from 'components/molecules/breadcrumb/breadcrumb';
 import ErrorMessagemSearch from '../../components/atoms/errorMessageSearch/errorMessagemSearch';
@@ -59,6 +60,7 @@ const Textarea = ({ placeholder, onChange, value, error, onBlur, id }) => {
  * @returns {React.Component}
  */
 const FAQPage = () => {
+  const router = useRouter();
   const [activeId, setActiveId] = useState(false);
   const [filterQuestion, setFilterQuestion] = useState('');
   const [filteredQuestions, setFilteredQuestions] = useState(questions);
