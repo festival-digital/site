@@ -1,13 +1,17 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SET_USER, RESET_USER, SET_AUTH, RESET_AUTH } from './actions';
+import {
+  SET_USER, RESET_USER, SET_AUTH, RESET_AUTH,
+  OPEN_MENU_MODAL, CLOSE_MENU_MODAL,
+} from './actions';
 
 const Store = React.createContext();
 
 export const initialState = {
   user: null,
   auth: null,
+  menu: false,
 };
 
 export const reducer = (state, action) => {
@@ -20,6 +24,10 @@ export const reducer = (state, action) => {
       return { ...state, auth: action.auth };
     case RESET_AUTH:
       return { ...state, auth: null };
+    case OPEN_MENU_MODAL:
+      return { ...state, menu: true };
+    case CLOSE_MENU_MODAL:
+      return { ...state, menu: false };
     default:
       return state;
   }

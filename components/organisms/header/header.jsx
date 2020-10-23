@@ -8,8 +8,8 @@ import { openIDASignin } from 'components/main/main.controller';
  * This is the Header component
  * @returns {React.Component} header component global
  */
-const Header = ({ onIDASignin }) => (
-  <HeaderComponent>
+const Header = ({ onIDASignin, menuOpened}) => (
+  <HeaderComponent fixed={menuOpened}>
     <Brand
       onClick={() => {}}
       src="/static/images/dummy-brand.svg"

@@ -56,7 +56,6 @@ export const Modal = styled.div`
   padding: 24px 16px;
 
   @media (min-width: 600px) {
-    text-align: center;
   }
 `;
 

@@ -10,21 +10,43 @@ export const InitialWrapper = styled.div`
   background-color: #000;
   min-height: 100vh;
 
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    left: 0;
+    background: linear-gradient(0deg,#000000 34%,rgba(0,0,0,0) 84.68%);
+    z-index: 11;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 65%;
+    top: 0px;
+    left: 0;
+    background-image: url("/static/images/home-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+  }
+
   @media (min-width: 769px) {
     background-image: url("/static/images/home-bg.jpg");
     background-size: cover;
     background-position: center;
 
+    &:before {
+      display: none;
+    }
+
     &:after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      bottom: 0px;
-      left: 0;
       background: linear-gradient(89.99deg,#000000 21%,rgba(0,0,0,0) 90.68%);
-      z-index: 10;
     }
   }
 `;
@@ -41,7 +63,7 @@ export const ApresentationContent = styled.div`
   margin-left: 0;
   margin-right: 0;
   padding: 20px;
-  z-index: 11;
+  z-index: 12;
 
   @media (min-width: 769px) {
     padding: 48px;
@@ -116,6 +138,8 @@ export const DownButton = styled.button`
 `;
 
 export const DownIllustration = styled.img`
+  position: relative;
+  z-index: 12;
   width: 48px;
 `;
 
@@ -327,7 +351,6 @@ export const AboutOasiVideo = styled.div`
   width: 100%;
   max-width: 552px;
   height: 240px;
-  background-color: white;
   margin-top: 32px;
 
   & > iframe {

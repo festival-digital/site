@@ -12,6 +12,7 @@ export const Content = styled.section`
 `;
 
 export const Title = styled.h1`
+  position: relative;
   padding: 16px;
   margin-top: 10vh;
   font-size: 24px;
@@ -20,9 +21,12 @@ export const Title = styled.h1`
   line-height: 28.13px;
   margin-bottom: 4px;
   color: #ffffff;
+  z-index: 20;
 `;
 
 export const Apresentation = styled.div`
+  position: relative;
+  z-index: 20;
 `;
 
 export const ActionWrapper = styled.div`

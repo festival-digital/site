@@ -45,9 +45,11 @@ export const NavigationItem = styled.li`
 export const IDARegisterButton = styled.button`
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: Roboto;
   font-style: normal;
-  font-size: 16px;
+  width: 100%;
+  font-size: 18px;
   font-weight: 400;
   color: #1D1D1D;
   border-style: solid;
@@ -60,6 +62,6 @@ export const IDARegisterButton = styled.button`
 `;
 
 export const IDALogo = styled.img`
-  width: 24px;
-  margin-right: 16px;
+  width: 32px;
+  margin-right: 8px;
 `;
