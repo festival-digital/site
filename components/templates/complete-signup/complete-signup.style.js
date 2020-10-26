@@ -9,6 +9,7 @@ export const Content = styled.section`
   grid-gap: 16px;
   text-align: center;
   overflow: hidden;
+  
 `;
 
 export const Title = styled.h1`
