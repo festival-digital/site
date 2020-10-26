@@ -12,6 +12,11 @@ export const ButtonForm = styled.button`
   font-weight: bold;
   cursor: pointer;
 
+  & > span {
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
   &:disabled {
     background-color: ${({ disabledColor }) => disabledColor};
   }

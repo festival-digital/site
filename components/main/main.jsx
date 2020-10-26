@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import Store from 'components/store/Store';
 import Header from 'components/organisms/header/header';
+import HomeMenu from 'components/organisms/home-menu/home-menu';
 import ida from 'libs/ida.lib';
-import { SET_AUTH } from 'components/store/actions';
+import { SET_AUTH, CLOSE_MENU_MODAL } from 'components/store/actions';
 import theme from 'utils/theme';
-import { getUser } from './main.controller';
+import { getUser, openIDASignin } from './main.controller';
 import { MainComponent } from './main.style';
 
 /**
@@ -17,35 +18,42 @@ import { MainComponent } from './main.style';
  * @returns {React.Component}
  */
 const Main = ({ children }) => {
-  const { dispatch } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
   const router = useRouter();
   const [loading, setLoading] = useState(true);
 
   // component did mount cycle
   useEffect(() => {
-      console.log('hereee 1');
-      ida.onCurrentUserChange((auth) => {
-      dispatch({
-        type: SET_AUTH,
-        auth,
-      });
-
-      console.log('hereee');
-
-      getUser({
-        ida: auth.ida,
-        setLoading,
-        navigationTo: router.push,
-        dispatch,
-      });
+    ida.onCurrentUserChange((auth) => {
+      if (auth) {
+        dispatch({
+          type: SET_AUTH,
+          auth,
+        });
+  
+        getUser({
+          ida: auth.ida,
+          setLoading,
+          navigationTo: router.push,
+          dispatch,
+        });
+      }
     });
   }, []);
 
   return (
     <ThemeProvider theme={theme}>
       <MainComponent>
-        {/* <Header onIDASignin={openIDASignin} /> */}
         {children}
+        <HomeMenu
+          onIDASignin={openIDASignin}
+          opened={state.menu}
+          closeMenu={() => {
+            dispatch({
+              type: CLOSE_MENU_MODAL,
+            });
+          }}
+        />
       </MainComponent>
     </ThemeProvider>
   );

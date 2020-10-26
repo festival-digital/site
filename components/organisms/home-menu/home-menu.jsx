@@ -6,10 +6,15 @@ import { Menu as MenuComponent } from './home-menu.style';
  * This is the Menu component
  * @returns {React.Component} Menu component global
  */
-const Menu = ({ opened, onIDASignin }) => {
+const Menu = ({ opened, onIDASignin, closeMenu }) => {
   return (
     <MenuComponent opened={opened}>
-      <Navigation textButton="Entrar com IDA" column />
+      <Navigation
+        onIDASignin={onIDASignin}
+        closeMenu={closeMenu}
+        textButton="Entrar com IDA"
+        column
+      />
     </MenuComponent>
   );
 };

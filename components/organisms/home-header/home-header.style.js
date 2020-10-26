@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
+  position: ${({ fixed }) => !fixed ? 'relative' : 'fixed'};
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,6 +13,7 @@ export const Header = styled.header`
   @media (min-width: 789px) {
     padding: 20px 40px;
   }
+  z-index: 20;
 `;
 
 export const Brand = styled.img`

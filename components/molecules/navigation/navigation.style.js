@@ -10,7 +10,7 @@ export const Navigation = styled.ul`
   width: 100%;
   margin: ${(props) => {
     const { column } = props;
-    return column ? '50px 20px' : '0';
+    return column ? '48px 16px' : '0';
   }};
 
   & li:nth-child(3) {
@@ -40,4 +40,28 @@ export const NavigationItem = styled.li`
     line-height: 19px;
     color: ${({ theme }) => theme.brandColor.fourtiary.medium};
   }
+`;
+
+export const IDARegisterButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto;
+  font-style: normal;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  color: #1D1D1D;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 2px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  padding: 8px 16px;
+  cursor: pointer;
+`;
+
+export const IDALogo = styled.img`
+  width: 32px;
+  margin-right: 8px;
 `;
