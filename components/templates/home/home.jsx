@@ -122,9 +122,7 @@ const Home = () => {
               text="Entrar com IDa"
               dark
             />
-            <IDALink href="/">
-              <a>SAIBA MAIS SOBRE A IDa</a>
-            </IDALink>
+            <IDALink href="/">SAIBA MAIS SOBRE A IDa</IDALink>
           </WrapperButtonIDA>
         </IDAContentWrapper>
       </IDAContent>
@@ -133,6 +131,7 @@ const Home = () => {
         <AboutOasiWrapper>
           <AboutOasiVideo>
             <iframe
+              title="video do youtube"
               src="https://www.youtube.com/embed/kXtsZdAeGjk"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -263,7 +262,9 @@ const Home = () => {
             Saiba mais
           </Button>
           <Link href="/">
-            <LinkButton color="#FFFFFF">Ver todos os eventos</LinkButton>
+            <LinkButton href="/" color="#FFFFFF">
+              Ver todos os eventos
+            </LinkButton>
           </Link>
         </NextEventActionsWrapper>
       </NextEvent>

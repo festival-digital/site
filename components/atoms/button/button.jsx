@@ -9,11 +9,15 @@ const Button = ({ children, customStyle, ...props }) => (
 );
 
 Button.propTypes = {
-  children: PropTypes.oneOf([PropTypes.node, PropTypes.string]),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+  color: PropTypes.string,
+  disabledColor: PropTypes.string,
 };
 
 Button.defaultProps = {
-  children: 'Button',
   color: '#EA5EBF',
   disabledColor: '#FFBEEB',
 };

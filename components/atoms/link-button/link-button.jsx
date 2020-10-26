@@ -7,7 +7,8 @@ const Button = ({ children, ...props }) => (
 );
 
 Button.propTypes = {
-  children: PropTypes.oneOf([PropTypes.node, PropTypes.string]),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  color: PropTypes.string,
 };
 
 Button.defaultProps = {

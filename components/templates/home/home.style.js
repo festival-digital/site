@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-export const PageTemplate = styled.div`
-`;
+export const PageTemplate = styled.div``;
 
 export const InitialWrapper = styled.div`
   position: relative;
@@ -11,33 +10,33 @@ export const InitialWrapper = styled.div`
   min-height: 100vh;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 100%;
     height: 100%;
     bottom: 0px;
     left: 0;
-    background: linear-gradient(0deg,#000000 34%,rgba(0,0,0,0) 84.68%);
+    background: linear-gradient(0deg, #000000 34%, rgba(0, 0, 0, 0) 84.68%);
     z-index: 11;
   }
 
   :before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 100%;
     height: 65%;
     top: 0px;
     left: 0;
-    background-image: url("/static/images/home-bg.jpg");
+    background-image: url('/static/images/home-bg.jpg');
     background-size: cover;
     background-position: center;
     z-index: 10;
   }
 
   @media (min-width: 769px) {
-    background-image: url("/static/images/home-bg.jpg");
+    background-image: url('/static/images/home-bg.jpg');
     background-size: cover;
     background-position: center;
 
@@ -46,7 +45,11 @@ export const InitialWrapper = styled.div`
     }
 
     &:after {
-      background: linear-gradient(89.99deg,#000000 21%,rgba(0,0,0,0) 90.68%);
+      background: linear-gradient(
+        89.99deg,
+        #000000 21%,
+        rgba(0, 0, 0, 0) 90.68%
+      );
     }
   }
 `;
@@ -96,9 +99,9 @@ export const OasiLogo = styled.img`
   display: block;
   margin-top: 8px;
   height: 43px;
-  
+
   @media (min-width: 769px) {
-    margin-top: 24px;  
+    margin-top: 24px;
     height: 135px;
   }
 `;
@@ -114,7 +117,7 @@ export const Description = styled.p`
   max-width: 400px;
 
   @media (min-width: 769px) {
-    margin-top: 48px;  
+    margin-top: 48px;
   }
 `;
 
@@ -132,9 +135,8 @@ export const DownButton = styled.button`
 
   @media (min-width: 769px) {
     width: 48px;
-    margin-top: 48px;  
+    margin-top: 48px;
   }
-
 `;
 
 export const DownIllustration = styled.img`
@@ -150,15 +152,14 @@ export const IDAContentWrapper = styled.div`
   padding: 20px;
 
   @media (min-width: 769px) {
-    grid-template-columns: 1fr 240px;  
+    grid-template-columns: 1fr 240px;
   }
 `;
 
 export const IDAContent = styled.div`
   width: 100%;
   text-align: center;
-  background: linear-gradient(180deg, #2E08C2 0%, #A439D7 100%);
-
+  background: linear-gradient(180deg, #2e08c2 0%, #a439d7 100%);
 `;
 
 export const ContentAbout = styled.div`
@@ -211,10 +212,9 @@ export const WrapperButtonIDA = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  
 
   @media (min-width: 769px) {
-    max-width: 240px;  
+    max-width: 240px;
   }
 
   & > button {
@@ -222,9 +222,7 @@ export const WrapperButtonIDA = styled.div`
   }
 `;
 
-export const AboutPlataform = styled.section`
-
-`;
+export const AboutPlataform = styled.section``;
 
 export const AboutPlataformRow = styled.div`
   display: grid;
@@ -324,7 +322,7 @@ export const AboutOasi = styled.div`
   display: flex;
   width: 100%;
   background-color: #000000;
-  background-image: url("/static/images/mosaic.svg");
+  background-image: url('/static/images/mosaic.svg');
   background-size: cover;
   background-position: 0%;
   align-items: center;
@@ -365,7 +363,7 @@ export const AboutOasiVideo = styled.div`
 
 export const AboutOasiTextWrapper = styled.div`
   padding: 32px 20px;
-  
+
   @media (min-width: 769px) {
     padding: 0;
     margin-left: 128px;
@@ -391,7 +389,6 @@ export const AboutOasiDescription = styled.p`
   color: #ffffff;
 `;
 
-
 export const NextEvent = styled.div`
   position: relative;
   padding: 40px 20px 420px 20px;
@@ -399,14 +396,14 @@ export const NextEvent = styled.div`
   overflow: hidden;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 100%;
     height: 420px;
     bottom: 0px;
     left: 0;
-    background-image: url("${({ backgroundImg }) => backgroundImg}");
+    background-image: url('${({ backgroundImg }) => backgroundImg}');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -414,14 +411,14 @@ export const NextEvent = styled.div`
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 100%;
     height: 420px;
     bottom: 0px;
     left: 0;
-    background: linear-gradient(179.96deg,#000000 8%,rgba(0,0,0,0) 31.68%);
+    background: linear-gradient(179.96deg, #000000 8%, rgba(0, 0, 0, 0) 31.68%);
     z-index: 10;
   }
 
@@ -431,14 +428,18 @@ export const NextEvent = styled.div`
     &:after {
       top: 0;
       height: 100%;
-      background: linear-gradient(89.99deg,#000000 31%,rgba(0,0,0,0) 90.68%);
+      background: linear-gradient(
+        89.99deg,
+        #000000 31%,
+        rgba(0, 0, 0, 0) 90.68%
+      );
     }
 
     &:before {
       bottom: 0;
       height: 100%;
     }
-  }  
+  }
 `;
 
 export const NextEventInfoWrapper = styled.div`
@@ -460,7 +461,7 @@ export const NextEventTitle = styled.h2`
   font-weight: bold;
   font-size: 18px;
   line-height: 28px;
-  color: #FF9AE0;
+  color: #ff9ae0;
   text-transform: uppercase;
   margin-bottom: 20px;
 `;
@@ -479,7 +480,7 @@ export const NextEventSubtitle = styled.h3`
   font-weight: bold;
   font-size: 24px;
   line-height: 120%;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 20px;
 `;
 
@@ -489,7 +490,7 @@ export const NextEventDate = styled.h4`
   font-weight: normal;
   font-size: 18px;
   line-height: 120%;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 20px;
 `;
 
@@ -499,7 +500,7 @@ export const NextEventTags = styled.p`
   font-weight: normal;
   font-size: 16px;
   line-height: 140%;
-  color: #FF9AE0;
+  color: #ff9ae0;
   margin-bottom: 20px;
 `;
 
@@ -509,7 +510,7 @@ export const NextEventDescription = styled.p`
   font-weight: normal;
   font-size: 16px;
   line-height: 140%;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 20px;
 `;
 
@@ -518,7 +519,7 @@ export const NextEventActionsWrapper = styled.div`
   grid-gap: 20px;
   position: relative;
   z-index: 15;
-  
+
   @media (min-width: 769px) {
     grid-template-columns: 200px 200px;
     max-width: 500px;

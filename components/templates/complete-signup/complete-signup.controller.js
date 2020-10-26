@@ -49,7 +49,9 @@ export const initCreateOasisAccount = async ({
 
   let createUserResponse;
   try {
-    createUserResponse = await createUser({ ida });
+    createUserResponse = await createUser({
+      ida: '5f9344948b147955a09bffc3',
+    });
   } catch (err) {
     console.log([err]);
     throw err;

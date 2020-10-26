@@ -1,9 +1,9 @@
+import { SET_USER } from 'components/store/actions';
 import ida from '../../libs/ida.lib';
 import { fetchUser } from './main.repository';
-import { SET_USER } from 'components/store/actions';
 
 /**
- * open ida signin pop and resolve possible errors if 
+ * open ida signin pop and resolve possible errors if
  */
 export const openIDASignin = async () => {
   try {
@@ -15,16 +15,14 @@ export const openIDASignin = async () => {
 
 /**
  * get user on APP API and manage to complete signin or main flux
- * @param {object} params infations and state control function 
- * @param {string} ida user IDA token to be found on APP API  
- * @param {function} setLoading set loading state when waits for api response   
- * @param {function} navigationTo used to redirect user to another page   
+ * @param {object} params infations and state control function
+ * @param {string} ida user IDA token to be found on APP API
+ * @param {function} setLoading set loading state when waits for api response
+ * @param {function} navigationTo used to redirect user to another page
  */
-export const getUser = async ({
-  ida, setLoading, navigationTo, dispatch,
-}) => {
+export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
+  console.log('pesquisar por ida ', ida);
   setLoading(true);
-
   let getUserResponse;
   try {
     getUserResponse = await fetchUser(ida);
@@ -32,7 +30,13 @@ export const getUser = async ({
     console.log([err]);
   }
 
-  if (!getUserResponse.data.oneUser?.status || getUserResponse.data.oneUser?.status === 'INCOMPLETE') {
+  if (
+    !getUserResponse.data ||
+    !getUserResponse.data.oneUser ||
+    !getUserResponse.data.oneUser.status ||
+    getUserResponse.data.oneUser.status === 'INCOMPLETE'
+  ) {
+    console.log('get response ', getUserResponse);
     navigationTo('/complete-signup');
   }
 
