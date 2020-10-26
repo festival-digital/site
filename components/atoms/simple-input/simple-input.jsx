@@ -10,7 +10,7 @@ const SimpleInput = ({ error, ...props }) => {
   return (
     <InputBase>
       <Input {...props} />
-      {error && <ErrorMessage>{error}</ErrorMessage>}
+      <ErrorMessage>{error}</ErrorMessage>
     </InputBase>
   );
 };
