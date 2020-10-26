@@ -7,6 +7,7 @@ export const WrapperSearch = styled.div`
 
   @media (min-width: 650px) {
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 `;
@@ -17,6 +18,11 @@ export const Title = styled.h1`
   font-weight: bold;
   color: #ffffff;
   font-size: 24px;
+  margin: 24px 0;
+
+  @media (min-width: 650px) {
+    margin: 0;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -60,39 +66,6 @@ export const Space = styled.div`
 
 export const SpaceSmall = styled.div`
   margin-bottom: 7px;
-`;
-
-export const InputSearch = styled.input`
-  background: #404040;
-  border-radius: 10px;
-  border: none;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  padding: 14px 0;
-  color: #ffffff;
-  width: 100%;
-
-  &:focus {
-    font-size: 16px;
-    line-height: 19px;
-    padding: 14px 0;
-    color: #ffffff;
-    width: 100%;
-  }
-
-  & ::after {
-    content: 'aaaaaaa';
-    color: white;
-  }
-
-  @media (min-width: 650px) {
-    display: inline-flex;
-    max-width: 308px;
-    margin: 0;
-  }
 `;
 
 export const Textarea = styled.textarea`
@@ -146,6 +119,7 @@ export const customButtonStyle = `
 
 export const customInputStyle = `
  @media (min-width: 650px) {
-     max-width: 308px;
+     max-width: 300px;
+     margin-right: 30px;
   }
 `;

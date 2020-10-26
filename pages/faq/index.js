@@ -8,6 +8,7 @@ import Card from '../../components/organisms/card-faq/card';
 import Button from '../../components/atoms/button/button';
 import Header from '../../components/organisms/home-header/home-header';
 import SimpleInput from '../../components/atoms/simple-input/simple-input';
+import SearchInput from '../../components/atoms/search-input/search-input';
 import {
   phoneValidation,
   emailValidation,
@@ -173,16 +174,17 @@ const FAQPage = () => {
     <Container>
       <Header />
       <Wrapper>
+        <Space />
+        <Breadcrumb
+          options={[
+            { href: '/', label: 'Início' },
+            { href: '/faq', label: 'Perguntas Frequentes' },
+          ]}
+        />
         <WrapperSearch>
-          <Breadcrumb
-            options={[
-              { href: '/', label: 'Início' },
-              { href: '/faq', label: 'Perguntas Frequentes' },
-            ]}
-          />
-          <Space />
-          <InputSearch
-            placeholder="Pesquisa"
+          <Title>Perguntas Frequentes</Title>
+          <SearchInput
+            placeholder="Buscar"
             onChange={handleOnChangeFilter}
             value={filterQuestion}
           />
@@ -192,8 +194,6 @@ const FAQPage = () => {
             Não encontramos resultados para sua busca
           </ErrorMessagemSearch>
         )}
-        <SpaceSmall />
-        <Title>Perguntas Frequentes</Title>
         {filteredQuestions.map((question, index) => {
           const { title, description } = question;
           return (

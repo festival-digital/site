@@ -15,6 +15,7 @@ export const Input = styled.input`
     border: 2px solid #000000;
     box-shadow: 0px 2px 0px #000000;
   }
+  ${({ customStyle }) => customStyle}
 `;
 
 export const ErrorMessage = styled.p`
@@ -32,6 +33,4 @@ export const InputBase = styled.div`
   width: 100%;
   display: inline-flex;
   flex-direction: column;
-
-  ${({ customStyle }) => customStyle}
 `;
