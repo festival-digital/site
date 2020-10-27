@@ -16,7 +16,6 @@ import {
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
 `;
 
 export const EventCover = styled.div`
@@ -177,7 +176,7 @@ const EventPage = () => {
       </Grid>
       <ActivityCard
         key={enhancedCodeGenerator()}
-        backgroundUrl="/static/images/card-activity.png"
+        backgroundUrl="/static/images/card-activity-big.png"
         activityName="Nome da atividade"
         activityDate="10 nov / 10h - 14h"
         tags={['música']}
@@ -185,7 +184,7 @@ const EventPage = () => {
       />
       <ActivityCard
         key={enhancedCodeGenerator()}
-        backgroundUrl="/static/images/card-activity.png"
+        backgroundUrl="/static/images/card-activity-big.png"
         activityName="Nome da atividade"
         activityDate="10 nov / 10h - 14h"
         tags={['música']}
@@ -193,7 +192,7 @@ const EventPage = () => {
       />
       <ActivityCard
         key={enhancedCodeGenerator()}
-        backgroundUrl="/static/images/card-activity.png"
+        backgroundUrl="/static/images/card-activity-big.png"
         activityName="Nome da atividade"
         activityDate="10 nov / 10h - 14h"
         tags={['música']}
@@ -201,7 +200,7 @@ const EventPage = () => {
       />
       <ActivityCard
         key={enhancedCodeGenerator()}
-        backgroundUrl="/static/images/card-activity.png"
+        backgroundUrl="/static/images/card-activity-big.png"
         activityName="Nome da atividade"
         activityDate="10 nov / 10h - 14h"
         tags={['música']}

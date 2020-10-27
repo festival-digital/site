@@ -28,6 +28,7 @@ const Figure = styled.figure`
       backgroundUrl || ''
     })`}; /* fullmetal.jpg  './static/images/card1.png'*/
   background-size: cover;
+  background-position: center;
   transition: all 0.7s ease-in-out;
   overflow: hidden;
   z-index: -1;
@@ -65,6 +66,7 @@ const LinearBackground = styled.div`
 `;
 
 const RightContent = styled.div`
+  position: relative;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
