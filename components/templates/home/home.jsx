@@ -158,16 +158,8 @@ const Home = () => {
           <Picture src="/static/images/grid-1.jpg" alt="" />
           <AboutText>
             <TextWrapper>
-<<<<<<< HEAD
               <AboutTitleIllusttration src="/static/icons/grid-1-title-illustration.svg" alt="" />
               <AboutTitle>Saudações, Nomadæ!</AboutTitle>
-=======
-              <AboutTitleIllusttration
-                src="/static/icons/grid-1-title-illustration.svg"
-                alt=""
-              />
-              <AboutTitle>Saudações, Nômade!</AboutTitle>
->>>>>>> 3421f200475db0564c9a5319dfedf4c9da4b506b
               <AboutDescription>
                 Navegações diferentes pra você assistir o seu artista favorito!
                 Fazer aquela reunião interativa e multimídia, ou expor seus
@@ -186,12 +178,7 @@ const Home = () => {
               />
               <AboutTitle>Um mundo feito de encontros</AboutTitle>
               <AboutDescription>
-<<<<<<< HEAD
                 Uma nova forma de experimentar a coletividade te espera! Conhecendo pessoas novas, encontrando amiges ou até artistas favorites!
-=======
-                Uma nova forma de experimentar o coletivo, com amigos novos,
-                amigos antigos ou até seus artistas favoritos, te espera!
->>>>>>> 3421f200475db0564c9a5319dfedf4c9da4b506b
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -200,22 +187,10 @@ const Home = () => {
           <Picture src="/static/images/grid-3.jpg" alt="" />
           <AboutText>
             <TextWrapper>
-<<<<<<< HEAD
               <AboutTitleIllusttration src="/static/icons/grid-3-title-illustration.svg" alt="" />
               <AboutTitle>Galeria e Exposições</AboutTitle>
               <AboutDescription>
                 Curadoria sempre envolvida com diversos eventos e temas da plataforma. Pra espalhar a palavra de tudo que a gente ama.
-=======
-              <AboutTitleIllusttration
-                src="/static/icons/grid-3-title-illustration.svg"
-                alt=""
-              />
-              <AboutTitle>Galerias e Exposições</AboutTitle>
-              <AboutDescription>
-                Curadoria sempre envolvida com os eventos e temas da plataforma,
-                dos mais diversos. Pra espalhar a palavra de tudo que a gente
-                ama.
->>>>>>> 3421f200475db0564c9a5319dfedf4c9da4b506b
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -230,13 +205,7 @@ const Home = () => {
               />
               <AboutTitle>Feira online </AboutTitle>
               <AboutDescription>
-<<<<<<< HEAD
                 Com catálogo colaborativo, espaços de aprendizagem,  encontros e paineis, muita troca e história pra ouvir e contar por aqui! Vai perder essa?
-=======
-                Com um catálogo colaborativo, espaços de aprendizagem, encontros
-                e paineis, muita troca e história pra ouvir e contar por aqui!
-                Vai perder essa?
->>>>>>> 3421f200475db0564c9a5319dfedf4c9da4b506b
               </AboutDescription>
             </TextWrapper>
           </AboutText>
