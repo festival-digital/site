@@ -4,6 +4,10 @@ export default [
     label: 'Mulher Cisgênero',
   },
   {
+    id: 'homem-cisgenero',
+    label: 'Homem Cisgênero',
+  },
+  {
     id: 'mulher-trans',
     label: 'Mulher Trans',
   },

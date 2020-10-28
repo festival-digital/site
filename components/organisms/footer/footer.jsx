@@ -28,12 +28,12 @@ const Footer = () => {
         <IDAContentWrapper>
           <ContentAbout>
             <IDASubtitle>
-              Gostou? Vêm viver essa experiência com a gente!
+              Bora viver essa experiência mágica com a gente?
             </IDASubtitle>
             <IDAText>
-              Você já conhece a IDa? É um serviço de autenticação seguro e rápido!
+              Conhece a IDa? É uma autenticação segura e rápida!
               <br />
-              E o seu cadastro na Oasi é com ela.
+              Seu cadastro na OASI é feito com ela.
             </IDAText>
           </ContentAbout>
           <WrapperButtonIDA>

@@ -76,9 +76,9 @@ const Home = () => {
               Gostou? Vêm viver essa experiência com a gente!
             </IDASubtitle>
             <IDAText>
-              Você já conhece a IDa? É um serviço de autenticação seguro e rápido!
+              Você conhece a IDa? É uma autenticação rápida e segura. 
               <br />
-              E o seu cadastro na Oasi é com ela.
+              Sua entrada na OASI é feita com ela
             </IDAText>
           </ContentAbout>
           <WrapperButtonIDA>
@@ -113,7 +113,7 @@ const Home = () => {
           <AboutText>
             <TextWrapper>
               <AboutTitleIllusttration src="/static/icons/grid-1-title-illustration.svg" alt="" />
-              <AboutTitle>Saudações, Nômade!</AboutTitle>
+              <AboutTitle>Saudações, Nomadæ!</AboutTitle>
               <AboutDescription>
                 Navegações diferentes pra você assistir o seu artista favorito! Fazer aquela reunião interativa e multimídia, ou expor seus produtos? Conheça a plataforma! Conheça oasi.
               </AboutDescription>
@@ -127,7 +127,7 @@ const Home = () => {
               <AboutTitleIllusttration src="/static/icons/grid-2-title-illustration.svg" alt="" />
               <AboutTitle>Um mundo feito de encontros</AboutTitle>
               <AboutDescription>
-                Uma nova forma de experimentar o coletivo, com amigos novos, amigos antigos ou até seus artistas favoritos, te espera! 
+                Uma nova forma de experimentar a coletividade te espera! Conhecendo pessoas novas, encontrando amiges ou até artistas favorites!
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -137,9 +137,9 @@ const Home = () => {
           <AboutText>
             <TextWrapper>
               <AboutTitleIllusttration src="/static/icons/grid-3-title-illustration.svg" alt="" />
-              <AboutTitle>Galerias e Exposições</AboutTitle>
+              <AboutTitle>Galeria e Exposições</AboutTitle>
               <AboutDescription>
-                Curadoria sempre envolvida com os eventos e temas da plataforma, dos mais diversos. Pra espalhar a palavra de tudo que a gente ama.
+                Curadoria sempre envolvida com diversos eventos e temas da plataforma. Pra espalhar a palavra de tudo que a gente ama.
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -151,7 +151,7 @@ const Home = () => {
               <AboutTitleIllusttration src="/static/icons/grid-4-title-illustration.svg" alt="" />
               <AboutTitle>Feira online </AboutTitle>
               <AboutDescription>
-                Com um catálogo colaborativo, espaços de aprendizagem,  encontros e paineis, muita troca e história pra ouvir e contar por aqui! Vai perder essa?
+                Com catálogo colaborativo, espaços de aprendizagem,  encontros e paineis, muita troca e história pra ouvir e contar por aqui! Vai perder essa?
               </AboutDescription>
             </TextWrapper>
           </AboutText>

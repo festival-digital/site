@@ -32,8 +32,6 @@ export const getUser = async ({
     console.log([err]);
   }
 
-  
-  console.log('aquiii', getUserResponse);
   if (!getUserResponse.data || !getUserResponse.data || !getUserResponse.data.oneUser?.status || getUserResponse.data.oneUser?.status === 'INCOMPLETE') {
     navigationTo('/complete-signup');
   }

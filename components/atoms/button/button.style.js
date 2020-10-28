@@ -20,4 +20,6 @@ export const ButtonForm = styled.button`
   &:disabled {
     background-color: ${({ disabledColor }) => disabledColor};
   }
+
+  ${({ customStyle }) => customStyle};
 `;
