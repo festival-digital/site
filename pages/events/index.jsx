@@ -5,6 +5,7 @@ import EventCard from 'components/organisms/event-card';
 import ActivityIncentiveCard from 'components/molecules/activity-incentive-card';
 import EventHeader from 'components/organisms/event-header/event-header';
 import { Text, TextInput } from '@resystem/design-system';
+import CompleteRegistration from 'components/modals/complete-registration/complete-registration';
 
 const Container = styled.div`
   display: flex;
@@ -72,6 +73,7 @@ const EventsPage = () => {
   };
   return (
     <>
+      <CompleteRegistration opened />
       <Container>
         <EventHeader />
         <FilterContainer>

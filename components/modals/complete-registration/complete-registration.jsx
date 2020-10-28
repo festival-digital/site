@@ -20,6 +20,12 @@ import {
   maskDate,
 } from '../../../utils/validations';
 
+import {
+  getAllUsers,
+  getEvent,
+  getAllEvents,
+} from './complete-registration.controller';
+
 const CompleteRegistration = ({
   cpf,
   firstName,
@@ -86,6 +92,8 @@ const CompleteRegistration = ({
   }, [firstNameInput, lastNameInput, cpfInput, birthDateInput, emailInput]);
 
   useEffect(() => {
+    // getAllUsers('5f987a8bd1298b6768b78001');
+    getAllEvents();
     setButtonDisable(true);
   }, []);
 
