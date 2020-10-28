@@ -7,10 +7,12 @@ FROM node:12
 ARG REPOSITORY_URI
 ARG NODE_ENV
 
-WORKDIR .
+# create & set working directory
+RUN mkdir -p /usr/src
+WORKDIR /usr/src
 
 # copy source files
-COPY . .
+COPY . /usr/src
 
 # install dependencies
 RUN npm install
