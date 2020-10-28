@@ -1,4 +1,5 @@
 // next.config.js
+const path = require('path')
 const withCSS = require('@zeit/next-css');
 
 module.exports = withCSS({
@@ -9,4 +10,9 @@ module.exports = withCSS({
   cssLoaderOptions: {
     url: false,
   },
+  webpack: (config) => {
+    config.resolve.modules.push(path.resolve('./'))
+    return config
+  },
 });
+  
