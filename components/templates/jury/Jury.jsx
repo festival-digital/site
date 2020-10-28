@@ -1,10 +1,13 @@
 import React from 'react';
-import PropTypes from  'prop-types';
+import PropTypes from 'prop-types';
 import {
-  JuryContainer, JuryHeader, JuryDescription, JuryList,
+  JuryContainer,
+  JuryHeader,
+  JuryDescription,
+  JuryList,
 } from './jury.style';
 
-const renderCards = () => null 
+const renderCards = () => null;
 
 /**
  * This is the Jury component
@@ -19,16 +22,15 @@ const Jury = () => (
     </JuryHeader>
     <Button>Voltar para a galeria</Button>
     <JuryDescription>
-      Aqui, você pode classificar os vídeos exibidos na Mostra de Videoclipes. O vídeo mais bem votado vai ser exibido no palco principal durante o encerramento da Feira da Música! Quando terminar de votar, pode clicar em “Voltar Para a Galeria” que vamos te levar de volta ;)
+      Aqui, você pode classificar os vídeos exibidos na Mostra de Videoclipes. O
+      vídeo mais bem votado vai ser exibido no palco principal durante o
+      encerramento da Feira da Música! Quando terminar de votar, pode clicar em
+      “Voltar Para a Galeria” que vamos te levar de volta ;)
     </JuryDescription>
-    <JuryList>
-        { renderCards() }
-    </JuryList>
+    <JuryList>{renderCards()}</JuryList>
   </JuryContainer>
 );
 
-Jury.propTypes = {
-
-};
+Jury.propTypes = {};
 
 export default Jury;
