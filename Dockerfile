@@ -1,7 +1,7 @@
 # Dockerfile
 
 # base image
-FROM node:alpine
+FROM node:12
 
 # define environment variables
 ARG REPOSITORY_URI
