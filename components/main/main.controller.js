@@ -36,7 +36,6 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
     !getUserResponse.data.oneUser.status ||
     getUserResponse.data.oneUser.status === 'INCOMPLETE'
   ) {
-    console.log('get response ', getUserResponse);
     navigationTo('/complete-signup');
   }
 

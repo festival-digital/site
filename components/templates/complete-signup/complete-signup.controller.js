@@ -123,10 +123,8 @@ export const addTicket = async ({
     return;
   }
 
-  let addTicketResponse;
-
   try {
-    addTicketResponse = await addTicketRepository({
+    await addTicketRepository({
       code: ticket.replace(/-/g, ''),
       sympla_event_id: symplaEventId,
       user_id: userId,

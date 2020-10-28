@@ -1,7 +1,11 @@
 # Dockerfile
 
 # base image
-FROM node:alpine
+FROM node:12
+
+# define environment variables
+ARG REPOSITORY_URI
+ARG NODE_ENV
 
 # create & set working directory
 RUN mkdir -p /usr/src
@@ -12,6 +16,9 @@ COPY . /usr/src
 
 # install dependencies
 RUN npm install
+
+ENV NODE_ENV=production
+ENV PORT=3000
 
 # build app
 RUN npm run build

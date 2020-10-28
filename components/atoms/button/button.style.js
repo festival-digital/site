@@ -32,5 +32,5 @@ export const ButtonForm = styled.button`
     margin-right: 5px;
   }
 
-  ${({ customStyle }) => customStyle}
+  ${({ customStyle }) => customStyle};
 `;
