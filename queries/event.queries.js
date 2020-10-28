@@ -59,9 +59,7 @@ export const ALL_EVENTS_QUERY = gql`
       id
       name
       sympla_id
-      tickets {
-        id
-      }
+      tickets
       description
       image_url
       cover_url
@@ -72,18 +70,7 @@ export const ALL_EVENTS_QUERY = gql`
       end_date
       is_free
       status
-      activities {
-        id
-        title
-        description
-        tags
-        end_date
-        start_date
-        subscription_start_date
-        subscription_end_date
-        has_subscription
-        subscription_url
-      }
+      activities
     }
   }
 `;
