@@ -22,6 +22,7 @@ export default class MyApp extends App {
   }
 
   render() {
+    console.log('passou pelo _app');
     const { Component, pageProps } = this.props;
     return (
       <Provider>

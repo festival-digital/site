@@ -6,7 +6,11 @@ import Store from 'components/store/Store';
 import Header from 'components/organisms/header/header';
 import HomeMenu from 'components/organisms/home-menu/home-menu';
 import ida from 'libs/ida.lib';
-import { SET_AUTH, CLOSE_MENU_MODAL } from 'components/store/actions';
+import {
+  SET_AUTH,
+  CLOSE_MENU_MODAL,
+  SET_LOADING_PAGE,
+} from 'components/store/actions';
 import theme from 'utils/theme';
 import { getUser, openIDASignin } from './main.controller';
 import { MainComponent } from './main.style';
@@ -24,13 +28,16 @@ const Main = ({ children }) => {
 
   // component did mount cycle
   useEffect(() => {
+    console.log('auth onCurrentUserChange');
+
     ida.onCurrentUserChange((auth) => {
+      console.log('auth from ida on  current user change ', auth);
       if (auth) {
         dispatch({
           type: SET_AUTH,
           auth,
         });
-  
+
         getUser({
           ida: auth.ida,
           setLoading,
@@ -38,6 +45,10 @@ const Main = ({ children }) => {
           dispatch,
         });
       }
+      dispatch({
+        type: SET_LOADING_PAGE,
+        loading: false,
+      });
     });
   }, []);
 

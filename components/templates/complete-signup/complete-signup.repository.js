@@ -1,5 +1,8 @@
 import { client } from 'utils/apollo';
-import { ADD_TICKET_INTO_USER_MUTATION, CREATE_USER_MUTATION } from 'mutations/user.mutations';
+import {
+  ADD_TICKET_INTO_USER_MUTATION,
+  CREATE_USER_MUTATION,
+} from 'mutations/user.mutations';
 import { ALL_EVENTS_QUERY } from 'queries/event.queries';
 
 /**
@@ -7,30 +10,31 @@ import { ALL_EVENTS_QUERY } from 'queries/event.queries';
  * @param {string} params user IDA token to be found on APP API
  * @returns {Promise} contains user data or null
  */
-export const createUser = (user) => client().mutate({
-  mutation: CREATE_USER_MUTATION,
-  variables: { user },
-});
+export const createUser = (user) =>
+  client().mutate({
+    mutation: CREATE_USER_MUTATION,
+    variables: { user },
+  });
 
 /**
  * request events on api
  * @returns {Promise} contains events array
  */
-export const getEvents = () => client().query({
-  query: ALL_EVENTS_QUERY,
-});
+export const getEvents = () =>
+  client().query({
+    query: ALL_EVENTS_QUERY,
+  });
 
 /**
  * request events on api
  * @returns {Promise} contains events array
  */
-export const addTicket = ({ sympla_event_id, user_id, code }) => client().mutate({
-  mutation: ADD_TICKET_INTO_USER_MUTATION,
-  variables: {
-    sympla_event_id,
-    user_id,
-    code,
-  },
-});
-
-
+export const addTicket = ({ sympla_event_id, user_id, code }) =>
+  client().mutate({
+    mutation: ADD_TICKET_INTO_USER_MUTATION,
+    variables: {
+      sympla_event_id,
+      user_id,
+      code,
+    },
+  });

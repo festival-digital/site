@@ -13,16 +13,44 @@ import LinkButton from 'components/atoms/link-button/link-button';
 import Store from 'components/store/Store';
 import { OPEN_MENU_MODAL, CLOSE_MENU_MODAL } from 'components/store/actions';
 import {
-  PageTemplate, ApresentationContent, InitialWrapper, Title,
-  OasiLogo, Description, DownIllustration, DownButton,
-  IDAContent, ContentAbout, IDASubtitle, IDALink,
-  IDAText, WrapperButtonIDA, IDAContentWrapper, AboutPlataform,
-  TextWrapper, AboutTitle, AboutDescription, Picture, AboutPlataformRow,
-  AboutText, AboutTitleIllusttration, AboutOasi, AboutOasiWrapper,
-  AboutOasiVideo, AboutOasiTextWrapper, AboutOasiTitle, AboutOasiDescription,
-  NextEvent, NextEventTitle, NextEventSubtitle, NextEventDate,
-  NextEventTags, NextEventActionsWrapper, NextEventEventsLink, NextEventDescription,
-  NextEventInfoWrapper, NextEventMosaicIllustration,
+  PageTemplate,
+  ApresentationContent,
+  InitialWrapper,
+  Title,
+  OasiLogo,
+  Description,
+  DownIllustration,
+  DownButton,
+  IDAContent,
+  ContentAbout,
+  IDASubtitle,
+  IDALink,
+  IDAText,
+  WrapperButtonIDA,
+  IDAContentWrapper,
+  AboutPlataform,
+  TextWrapper,
+  AboutTitle,
+  AboutDescription,
+  Picture,
+  AboutPlataformRow,
+  AboutText,
+  AboutTitleIllusttration,
+  AboutOasi,
+  AboutOasiWrapper,
+  AboutOasiVideo,
+  AboutOasiTextWrapper,
+  AboutOasiTitle,
+  AboutOasiDescription,
+  NextEvent,
+  NextEventTitle,
+  NextEventSubtitle,
+  NextEventDate,
+  NextEventTags,
+  NextEventActionsWrapper,
+  NextEventDescription,
+  NextEventInfoWrapper,
+  NextEventMosaicIllustration,
 } from './home.style';
 
 /**
@@ -31,11 +59,11 @@ import {
  */
 const Home = () => {
   const { state, dispatch } = useContext(Store);
-  const [symplaModal, setSymplaModal] = useState(false)
+  const [symplaModal, setSymplaModal] = useState(false);
   const router = useRouter();
   return (
     <PageTemplate>
-      <InitialWrapper> 
+      <InitialWrapper>
         <Header
           menuOpened={state.menu}
           toggleMenu={() => {
@@ -56,15 +84,22 @@ const Home = () => {
             <OasiLogo src="/static/icons/oasi.svg" alt="" />
           </Title>
           <Description>
-            Experimente formas diferentes de se encontrar e conectar com amigos, colaborar com eventos projetos, e realizar um novo mundo possível. 
+            Experimente formas diferentes de se encontrar e conectar com amigos,
+            colaborar com eventos projetos, e realizar um novo mundo possível.
           </Description>
-          <DownButton type="button" onClick={() => {
-            document.querySelector('#ida-c2a').scrollIntoView({
-                behavior: 'smooth'
-            });
-          }}>
+          <DownButton
+            type="button"
+            onClick={() => {
+              document.querySelector('#ida-c2a').scrollIntoView({
+                behavior: 'smooth',
+              });
+            }}
+          >
             <span>Descer para saber mais</span>
-            <DownIllustration src="/static/icons/more-illustration.svg" alt="" />          
+            <DownIllustration
+              src="/static/icons/more-illustration.svg"
+              alt=""
+            />
           </DownButton>
         </ApresentationContent>
       </InitialWrapper>
@@ -82,10 +117,12 @@ const Home = () => {
             </IDAText>
           </ContentAbout>
           <WrapperButtonIDA>
-            <IDARegisterButton onClick={openIDASignin} text="Entrar com IDa" dark />
-            <IDALink href="/">
-              <a>SAIBA MAIS SOBRE A IDa</a>
-            </IDALink>
+            <IDARegisterButton
+              onClick={openIDASignin}
+              text="Entrar com IDa"
+              dark
+            />
+            <IDALink href="/">SAIBA MAIS SOBRE A IDa</IDALink>
           </WrapperButtonIDA>
         </IDAContentWrapper>
       </IDAContent>
@@ -93,15 +130,24 @@ const Home = () => {
       <AboutOasi>
         <AboutOasiWrapper>
           <AboutOasiVideo>
-            <iframe src="https://www.youtube.com/embed/kXtsZdAeGjk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+            <iframe
+              title="video do youtube"
+              src="https://www.youtube.com/embed/kXtsZdAeGjk"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </AboutOasiVideo>
           <AboutOasiTextWrapper>
             <AboutOasiTitle>Oasi? Mas o que é isso?</AboutOasiTitle>
             <AboutOasiDescription>
-              Ei você! Oasi é uma plataforma que absorve vários formatos, shows, festas, mostras, conferências, oficinas e encontros. 
+              Ei você! Oasi é uma plataforma que absorve vários formatos, shows,
+              festas, mostras, conferências, oficinas e encontros.
               <br />
               <br />
-              Enfim, uma nova forma de construir eventos e experiências coletivas. Fica o convite pra fazer e realizar esse mundo com a gente. Explorar!
+              Enfim, uma nova forma de construir eventos e experiências
+              coletivas. Fica o convite pra fazer e realizar esse mundo com a
+              gente. Explorar!
             </AboutOasiDescription>
           </AboutOasiTextWrapper>
         </AboutOasiWrapper>
@@ -112,10 +158,20 @@ const Home = () => {
           <Picture src="/static/images/grid-1.jpg" alt="" />
           <AboutText>
             <TextWrapper>
+<<<<<<< HEAD
               <AboutTitleIllusttration src="/static/icons/grid-1-title-illustration.svg" alt="" />
               <AboutTitle>Saudações, Nomadæ!</AboutTitle>
+=======
+              <AboutTitleIllusttration
+                src="/static/icons/grid-1-title-illustration.svg"
+                alt=""
+              />
+              <AboutTitle>Saudações, Nômade!</AboutTitle>
+>>>>>>> 3421f200475db0564c9a5319dfedf4c9da4b506b
               <AboutDescription>
-                Navegações diferentes pra você assistir o seu artista favorito! Fazer aquela reunião interativa e multimídia, ou expor seus produtos? Conheça a plataforma! Conheça oasi.
+                Navegações diferentes pra você assistir o seu artista favorito!
+                Fazer aquela reunião interativa e multimídia, ou expor seus
+                produtos? Conheça a plataforma! Conheça oasi.
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -124,10 +180,18 @@ const Home = () => {
           <Picture src="/static/images/grid-2.jpg" alt="" />
           <AboutText>
             <TextWrapper>
-              <AboutTitleIllusttration src="/static/icons/grid-2-title-illustration.svg" alt="" />
+              <AboutTitleIllusttration
+                src="/static/icons/grid-2-title-illustration.svg"
+                alt=""
+              />
               <AboutTitle>Um mundo feito de encontros</AboutTitle>
               <AboutDescription>
+<<<<<<< HEAD
                 Uma nova forma de experimentar a coletividade te espera! Conhecendo pessoas novas, encontrando amiges ou até artistas favorites!
+=======
+                Uma nova forma de experimentar o coletivo, com amigos novos,
+                amigos antigos ou até seus artistas favoritos, te espera!
+>>>>>>> 3421f200475db0564c9a5319dfedf4c9da4b506b
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -136,10 +200,22 @@ const Home = () => {
           <Picture src="/static/images/grid-3.jpg" alt="" />
           <AboutText>
             <TextWrapper>
+<<<<<<< HEAD
               <AboutTitleIllusttration src="/static/icons/grid-3-title-illustration.svg" alt="" />
               <AboutTitle>Galeria e Exposições</AboutTitle>
               <AboutDescription>
                 Curadoria sempre envolvida com diversos eventos e temas da plataforma. Pra espalhar a palavra de tudo que a gente ama.
+=======
+              <AboutTitleIllusttration
+                src="/static/icons/grid-3-title-illustration.svg"
+                alt=""
+              />
+              <AboutTitle>Galerias e Exposições</AboutTitle>
+              <AboutDescription>
+                Curadoria sempre envolvida com os eventos e temas da plataforma,
+                dos mais diversos. Pra espalhar a palavra de tudo que a gente
+                ama.
+>>>>>>> 3421f200475db0564c9a5319dfedf4c9da4b506b
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -148,10 +224,19 @@ const Home = () => {
           <Picture src="/static/images/grid-4.jpg" alt="" />
           <AboutText>
             <TextWrapper>
-              <AboutTitleIllusttration src="/static/icons/grid-4-title-illustration.svg" alt="" />
+              <AboutTitleIllusttration
+                src="/static/icons/grid-4-title-illustration.svg"
+                alt=""
+              />
               <AboutTitle>Feira online </AboutTitle>
               <AboutDescription>
+<<<<<<< HEAD
                 Com catálogo colaborativo, espaços de aprendizagem,  encontros e paineis, muita troca e história pra ouvir e contar por aqui! Vai perder essa?
+=======
+                Com um catálogo colaborativo, espaços de aprendizagem, encontros
+                e paineis, muita troca e história pra ouvir e contar por aqui!
+                Vai perder essa?
+>>>>>>> 3421f200475db0564c9a5319dfedf4c9da4b506b
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -159,14 +244,22 @@ const Home = () => {
       </AboutPlataform>
 
       <NextEvent backgroundImg="/static/images/feira-bg.jpg">
-        <NextEventMosaicIllustration src="/static/images/event-mosaic.svg" alt="" />
+        <NextEventMosaicIllustration
+          src="/static/images/event-mosaic.svg"
+          alt=""
+        />
         <NextEventInfoWrapper>
           <NextEventTitle>Próximo evento</NextEventTitle>
           <NextEventSubtitle>Feira da Música de Fortaleza</NextEventSubtitle>
           <NextEventDate>de 5 a 8 de Novembro</NextEventDate>
-          <NextEventTags>música - mostra de vídeoclipe - oficinas - hackatom - zona de propulsão</NextEventTags>
+          <NextEventTags>
+            música - mostra de vídeoclipe - oficinas - hackatom - zona de
+            propulsão
+          </NextEventTags>
           <NextEventDescription>
-            Cinco dias de muita música brasileira, com artistas locais e emergentes. Também vai rolar exposições com artistas de Fortaleza, e claro que não podia faltar a feirinha online, né?
+            Cinco dias de muita música brasileira, com artistas locais e
+            emergentes. Também vai rolar exposições com artistas de Fortaleza, e
+            claro que não podia faltar a feirinha online, né?
           </NextEventDescription>
         </NextEventInfoWrapper>
         <NextEventActionsWrapper>
@@ -189,9 +282,7 @@ const Home = () => {
             Saiba mais
           </Button>
           <Link href="/">
-            <LinkButton
-              color="#FFFFFF"
-            >
+            <LinkButton href="/" color="#FFFFFF">
               Ver todos os eventos
             </LinkButton>
           </Link>

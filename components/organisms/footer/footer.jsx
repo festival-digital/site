@@ -38,9 +38,7 @@ const Footer = () => {
           </ContentAbout>
           <WrapperButtonIDA>
             <IDARegisterButton text="Entrar com IDa" dark />
-            <IDALink href="/">
-              <a>SAIBA MAIS SOBRE A IDa</a>
-            </IDALink>
+            <IDALink href="/">SAIBA MAIS SOBRE A IDa</IDALink>
           </WrapperButtonIDA>
         </IDAContentWrapper>
       </IDAContent>
@@ -68,15 +66,20 @@ const Footer = () => {
           </NavigationItem>
         </div>
         <MediaSocial>
-          <Link href="/">
+          <a href="/" target="_blank" without rel="noreferrer">
             <Icon src="/static/icons/facebookIcon.svg" alt="" />
-          </Link>
-          <Link href="/">
+          </a>
+          <a
+            href="https://www.instagram.com/oasi.vc/"
+            target="_blank"
+            without
+            rel="noreferrer"
+          >
             <Icon src="static/icons/instagramIcon.svg" alt="" />
-          </Link>
-          <Link href="/">
+          </a>
+          <a href="/" target="_blank" without rel="noreferrer">
             <Icon src="static/icons/twitterIcon.svg" alt="" />
-          </Link>
+          </a>
         </MediaSocial>
       </Navigation>
       <Space />
@@ -88,15 +91,9 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          <Link href="/">
-            <Icon src="static/icons/midia-ninja.svg" alt="" />
-          </Link>
-          <Link href="/">
-            <Icon src="static/icons/design-ativista.svg" alt="" />
-          </Link>
-          <Link href="/">
-            <Icon src="static/icons/zona-de-propulssao.svg" alt="" />
-          </Link>
+          <Icon src="static/icons/midia-ninja.svg" alt="" />
+          <Icon src="static/icons/design-ativista.svg" alt="" />
+          <Icon src="static/icons/zona-de-propulssao.svg" alt="" />
         </div>
       </Organization>
     </FooterComponent>

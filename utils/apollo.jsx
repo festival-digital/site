@@ -10,29 +10,29 @@ import nextWithApollo from 'next-with-apollo';
 const GRAPH_URI = `${process.env.GRAPH_URI}`;
 const API_KEY = `${process.env.APP_KEY}`;
 
-export const client = (initialState) => new ApolloClient({
-  uri: GRAPH_URI,
-  cache: new InMemoryCache({ dataIdFromObject: () => Math.random() }).restore(initialState || {}),
-  request: (operation) => {
-    operation.setContext({
-      headers: {
-        'x-api-key': API_KEY || '',
-      },
-    });
+export const client = (initialState) =>
+  new ApolloClient({
+    uri: GRAPH_URI,
+    cache: new InMemoryCache({ dataIdFromObject: () => Math.random() }).restore(
+      initialState || {}
+    ),
+    request: (operation) => {
+      operation.setContext({
+        headers: {
+          'x-api-key': API_KEY || '',
+        },
+      });
+    },
+  });
+
+export const withApollo = nextWithApollo(client, {
+  getDataFromTree: 'ssr',
+  render: ({ Page, props }) => {
+    const { apollo } = props;
+    return (
+      <ApolloProvider client={apollo}>
+        <Page {...props} />
+      </ApolloProvider>
+    );
   },
 });
-
-export const withApollo = nextWithApollo(
-  client,
-  {
-    getDataFromTree: 'ssr',
-    render: ({ Page, props }) => {
-      const { apollo } = props;
-      return (
-        <ApolloProvider client={apollo}>
-          <Page {...props} />
-        </ApolloProvider>
-      );
-    },
-  },
-);
