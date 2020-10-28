@@ -8,7 +8,7 @@ ARG REPOSITORY_URI
 ARG NODE_ENV
 
 # working directory
-WORKDIR .
+WORKDIR /src
 
 # copy source files
 COPY . .
