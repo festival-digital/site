@@ -3,7 +3,7 @@ import PropTypes from  'prop-types';
 import Button from 'components/atoms/button/button';
 import {
   JuryContainer, JuryHeader, JuryDescription, JuryList,
-  OasiLogo, JuryTitle, BackIcon, Wrapper,
+  OasiLogo, JuryTitle, Wrapper, BackIcon,
 } from './jury.style';
 
 const renderCards = () => null;
