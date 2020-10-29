@@ -1,6 +1,6 @@
 import React from 'react';
-import JuryTemplate from 'components/templates/jury/jury';
+import JuryTemplate from 'components/templates/jury/Jury';
 
-const Jury = () => <JuryTemplate />
+const Jury = () => <JuryTemplate />;
 
 export default Jury;

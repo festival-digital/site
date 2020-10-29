@@ -10,7 +10,13 @@ export const getAllUsers = async () => {
 };
 
 export const getEvent = async (id) => {
-  const response = await fetchEvent(id);
+  let response;
+
+  try {
+    response = await fetchEvent(id);
+  } catch (err) {
+    console.log([err]);
+  }
   console.log('get event ', response);
 };
 

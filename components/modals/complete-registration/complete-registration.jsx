@@ -93,7 +93,8 @@ const CompleteRegistration = ({
 
   useEffect(() => {
     // getAllUsers('5f987a8bd1298b6768b78001');
-    // getAllEvents();
+    //  getAllEvents();
+    const event = getEvent('5f987a8bd1298b6768b78112');
     setButtonDisable(true);
   }, []);
 
