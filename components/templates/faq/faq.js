@@ -8,6 +8,7 @@ import Card from 'components/organisms/card-faq/card';
 import Header from 'components/organisms/home-header/home-header';
 import SearchInput from 'components/atoms/search-input/search-input';
 import FormContact from 'components/organisms/form-contact/form-contact';
+import Narrativa from 'components/modals/narrativa/narrativa';
 import { questions } from './questions';
 import { Container, Wrapper, Space, Title, WrapperSearch } from './faq.style';
 
@@ -51,6 +52,7 @@ const FAQPage = () => {
 
   return (
     <Container>
+     <Narrativa />
       <Header
         menuOpened={state.menu}
         toggleMenu={() => {

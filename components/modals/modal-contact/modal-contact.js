@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import GoBackButton from 'components/atoms/go-back-button/go-back-button';
 import FormContact from 'components/organisms/form-contact/form-contact';
-import { Wrapper, ContentButton, Content } from './modal-contact.style';
+import {
+  Wrapper,
+  ContentButton,
+  Content,
+  ContainerForm,
+} from './modal-contact.style';
 
 const ModalFormContact = ({ open, setOpenModal }) => {
   const handleClick = (event) => {
@@ -14,7 +19,9 @@ const ModalFormContact = ({ open, setOpenModal }) => {
         <ContentButton>
           <GoBackButton onClick={handleClick} />
         </ContentButton>
-        <FormContact />
+        <ContainerForm>
+          <FormContact />
+        </ContainerForm>
       </Content>
     </Wrapper>
   );
