@@ -1,15 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from  'prop-types';
 import Button from 'components/atoms/button/button';
 import {
-  JuryContainer,
-  JuryHeader,
-  JuryDescription,
-  JuryList,
-  OasiLogo,
-  JuryTitle,
-  BackIcon,
-  Wrapper,
+  JuryContainer, JuryHeader, JuryDescription, JuryList,
+  OasiLogo, JuryTitle, BackIcon, Wrapper,
 } from './jury.style';
 
 const renderCards = () => null;
@@ -19,7 +13,7 @@ const renderCards = () => null;
  * @param {object} props proptypes to be pass to the component
  * @returns {React.Component}
  */
-const Jury = () => (
+const JuryTemplate = () => (
   <JuryContainer>
     <Wrapper>
       <JuryHeader>
@@ -38,16 +32,17 @@ const Jury = () => (
         Voltar para a galeria
       </Button>
       <JuryDescription>
-        Aqui, você pode classificar os vídeos exibidos na Mostra de Videoclipes.
-        O vídeo mais bem votado vai ser exibido no palco principal durante o
-        encerramento da Feira da Música! Quando terminar de votar, pode clicar
-        em “Voltar Para a Galeria” que vamos te levar de volta ;)
+        Aqui, você pode classificar os vídeos exibidos na Mostra de Videoclipes. O vídeo mais bem votado vai ser exibido no palco principal durante o encerramento da Feira da Música! Quando terminar de votar, pode clicar em “Voltar Para a Galeria” que vamos te levar de volta ;)
       </JuryDescription>
-      <JuryList>{renderCards()}</JuryList>
+      <JuryList>
+          { renderCards() }
+      </JuryList>
     </Wrapper>
   </JuryContainer>
 );
 
-Jury.propTypes = {};
+Jury.propTypes = {
 
-export default Jury;
+};
+
+export default JuryTemplate;
