@@ -6,6 +6,7 @@ FROM node:12
 # define environment variables
 ARG REPOSITORY_URI
 ARG NODE_ENV
+ARG GRAPH_URI
 
 # working directory
 WORKDIR /src
