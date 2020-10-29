@@ -37,9 +37,14 @@ export const AuthorParagraph = styled.p`
   font-family: ${({ theme }) => theme.fontFamily.primary}, sans-serif;
   font-style: normal;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-  font-size: ${({ theme }) => theme.fontSize.lg};
+  font-size: ${({ theme }) => theme.fontSize.xs};
   line-height: 28px;
   color: ${({ theme }) => theme.neutralColor[1]};
+  margin-bottom: 20px;
+
+  @media (min-width: 700px) {
+    font-size: ${({ theme }) => theme.fontSize.lg};
+  }
 `;
 
 export const Subtitle = styled.h2`
@@ -53,7 +58,7 @@ export const Subtitle = styled.h2`
 
 export const ContentButton = styled.div`
   display: flex;
-
+  justify-content: space-between;
   @media (min-width: 1024px) {
     display: none;
   }
@@ -102,3 +107,10 @@ export const Footer = styled.div`
   text-align: center;
   width: 100%;
 `;
+
+export const customStyleButton = `
+  width: 48px;
+  Height: 48px;
+`;
+
+export const IconQuestionMask = styled.img``;

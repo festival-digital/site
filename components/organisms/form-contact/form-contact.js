@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useRouter } from 'next/router';
+import Store from 'components/store/Store';
 import { Text } from '@resystem/design-system';
 import Button from '../../atoms/button/button';
 import SimpleInput from '../../atoms/simple-input/simple-input';
@@ -7,6 +9,7 @@ import {
   emailValidation,
   phoneMask,
 } from '../../../utils/validations';
+import { createFAQQuestion } from './form-contact.controller';
 
 import {
   Contact,
@@ -44,6 +47,8 @@ const Textarea = ({ placeholder, onChange, value, error, onBlur, id }) => {
   );
 };
 const FormContact = () => {
+  const router = useRouter();
+  const { state } = useContext(Store);
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
@@ -111,19 +116,30 @@ const FormContact = () => {
 
   const handleBlurPhone = () => {
     if (!phone) {
-      return setMessageError('Preencha o campo de telefone!');
+      return setPhoneError('Preencha o campo de telefone!');
     }
     return setMessageError('');
   };
 
   const handleBlurEmail = () => {
-    if (!phone) {
-      return setMessageError('Preencha o campo de email!');
+    if (!email) {
+      return setEmailError('Preencha o campo de email!');
     }
     return setMessageError('');
   };
 
-  const handleClick = () => {};
+  const handleClick = (event) => {
+    event.preventDefault();
+    console.log('fui clicado');
+    createFAQQuestion({
+      name: fullName,
+      phone,
+      message,
+      email,
+      user: state.user ? state.user.id : null,
+    });
+  };
+
   return (
     <Contact>
       <Space />

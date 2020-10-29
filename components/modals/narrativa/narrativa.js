@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GoBackButton from 'components/atoms/go-back-button/go-back-button';
+import GradientButton from 'components/atoms/gradient-button/gradient-button';
+import ModalContact from 'components/modals/modal-contact/modal-contact';
 import {
   Title,
   Subtitle,
@@ -14,14 +16,38 @@ import {
   Strong,
   Footer,
   AuthorParagraph,
+  IconQuestionMask,
+  customStyleButton,
 } from './narrativa.style';
 
-const Narrativa = ({ opened }) => {
+const Narrativa = ({ opened, setOpenedModal }) => {
+  const [openModalContact, setOpenModalContact] = useState(false);
+
+  const handleClick = (event) => {
+    if (event.target === event.currentTarget) setOpenedModal(null);
+  };
+
+  if (openModalContact)
+    return (
+      <ModalContact
+        open={openModalContact}
+        setOpenModal={setOpenModalContact}
+      />
+    );
   return (
     <Wrapper opened={opened}>
       <Content>
         <ContentButton>
           <GoBackButton />
+          <GradientButton
+            customStyle={customStyleButton}
+            onClick={() => setOpenModalContact(true)}
+          >
+            <IconQuestionMask
+              src="static/icons/question.svg"
+              alt="botão da cor rosa com icone com ponto de interrogação da cor branca, ao clicar será redirecionado para tela formulario de contato do site"
+            />
+          </GradientButton>
         </ContentButton>
         <Title>Oasi</Title>
         <Subtitle>floresta-oásis</Subtitle>

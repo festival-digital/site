@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Breadcrumb from 'components/molecules/breadcrumb/breadcrumb';
-import ErrorMessagemSearch from '../../components/atoms/errorMessageSearch/errorMessagemSearch';
+import Store from 'components/store/Store';
+import { OPEN_MENU_MODAL, CLOSE_MENU_MODAL } from 'components/store/actions';
+import ErrorMessagemSearch from 'components/atoms/errorMessageSearch/errorMessagemSearch';
+import Footer from 'components/organisms/footer/footer';
+import Card from 'components/organisms/card-faq/card';
+import Header from 'components/organisms/home-header/home-header';
+import SearchInput from 'components/atoms/search-input/search-input';
+import FormContact from 'components/organisms/form-contact/form-contact';
 import { questions } from './questions';
-import Footer from '../../components/organisms/footer/footer';
-import Card from '../../components/organisms/card-faq/card';
-import Header from '../../components/organisms/home-header/home-header';
-import SearchInput from '../../components/atoms/search-input/search-input';
-import FormContact from '../../components/organisms/form-contact/form-contact';
-
 import { Container, Wrapper, Space, Title, WrapperSearch } from './index.style';
 
 /**
@@ -16,6 +17,7 @@ import { Container, Wrapper, Space, Title, WrapperSearch } from './index.style';
  */
 const FAQPage = () => {
   // const router = useRouter();
+  const { state, dispatch } = useContext(Store);
   const [activeId, setActiveId] = useState(false);
   const [filterQuestion, setFilterQuestion] = useState('');
   const [filteredQuestions, setFilteredQuestions] = useState(questions);
@@ -49,7 +51,19 @@ const FAQPage = () => {
 
   return (
     <Container>
-      <Header />
+      <Header
+        menuOpened={state.menu}
+        toggleMenu={() => {
+          dispatch({
+            type: state.menu ? CLOSE_MENU_MODAL : OPEN_MENU_MODAL,
+          });
+        }}
+        closeMenu={() => {
+          dispatch({
+            type: CLOSE_MENU_MODAL,
+          });
+        }}
+      />
       <Wrapper>
         <Space />
         <Breadcrumb
