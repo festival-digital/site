@@ -8,7 +8,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import nextWithApollo from 'next-with-apollo';
 
 const GRAPH_URI = `${process.env.GRAPH_URI}`;
-const API_KEY = `${process.env.APP_KEY}`;
+const API_KEY = `${process.env.API_KEY}`;
 
 export const client = (initialState) =>
   new ApolloClient({
