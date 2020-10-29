@@ -7,8 +7,9 @@ export const createFAQQuestion = async ({
   message,
   user,
 }) => {
+  let responseFAQQuestion = '';
   try {
-    await createFAQQuestionRespository({
+    responseFAQQuestion = await createFAQQuestionRespository({
       name,
       email,
       phone,
@@ -16,6 +17,7 @@ export const createFAQQuestion = async ({
       user,
     });
   } catch (err) {
-    console.log(err);
+    throw err;
   }
+  return responseFAQQuestion;
 };

@@ -104,3 +104,14 @@ export const customInputStyle = `
      margin-right: 30px;
   }
 `;
+
+export const MessageSucess = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 50px 0;
+`;
+
+export const Animation = styled.img`
+  margin: 0 20px;
+`;

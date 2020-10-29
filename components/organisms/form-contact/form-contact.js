@@ -23,6 +23,8 @@ import {
   ErrorMessage,
   customInputStyle,
   ContainerInputs,
+  MessageSucess as MessageSucessComponent,
+  Animation,
 } from './form-contact.style';
 
 /**
@@ -46,6 +48,27 @@ const Textarea = ({ placeholder, onChange, value, error, onBlur, id }) => {
     </TextareaBase>
   );
 };
+
+/**
+ * This is the message Sucess component
+ * @returns {React.Component}
+ */
+
+const MessageSucess = () => {
+  return (
+    <MessageSucessComponent>
+      <Animation src="static/images/ilustracao.svg" />
+      <div>
+        <Text>
+          Agradeçemos o seu contato!
+          <br />
+          Vamos te responder o mais rápido possível.
+        </Text>
+      </div>
+    </MessageSucessComponent>
+  );
+};
+
 const FormContact = () => {
   const router = useRouter();
   const { state } = useContext(Store);
@@ -58,6 +81,7 @@ const FormContact = () => {
   const [messageError, setMessageError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [buttonEnabled, setButtonEnabled] = useState(true);
+  const [questionSent, setQuestionSent] = useState(false);
 
   const hasError = (string) => string.length > 0;
 
@@ -136,11 +160,15 @@ const FormContact = () => {
       message,
       email,
       user: state.user ? state.user.id : null,
+    }).then((resp) => {
+      if (resp.data.createFAQQuestion.id) {
+        setQuestionSent(true);
+        setEmail('');
+        setFullName('');
+        setMessage('');
+        setPhone('');
+      }
     });
-    setEmail('');
-    setFullName('');
-    setMessage('');
-    setPhone('');
   };
 
   return (
@@ -148,57 +176,62 @@ const FormContact = () => {
       <Space />
       <Title>Ficou com mais alguma dúvida? Entre em contato com a gente</Title>
       <SpaceSmall />
-      <Text>
-        Preencha o formulário abaixo com suas dúvidas, sugestões ou comentários.
-        Vamos tentar te dar um retorno o mais rápido possível!
-      </Text>
-      <Space />
-      <Form>
-        <ContainerInputs>
-          <SimpleInput
-            placeholder="Nome Completo"
-            onChange={handleOnChangeFullName}
-            value={fullName}
-            error={fullNameError}
-            onBlur={handleBlurName}
-            customStyle={customInputStyle}
-          />
-          <SpaceSmall />
-          <SimpleInput
-            placeholder="Email*"
-            onChange={handleOnChangeEmail}
-            value={email}
-            error={emailError}
-            onBlur={handleBlurEmail}
-            customStyle={customInputStyle}
-          />
-          <SpaceSmall />
-          <SimpleInput
-            placeholder="Telefone com DDD*"
-            onChange={handleOnChangePhone}
-            value={phone}
-            error={phoneError}
-            onBlur={handleBlurPhone}
-            customStyle={customInputStyle}
-          />
-          <SpaceSmall />
-        </ContainerInputs>
-        <Textarea
-          placeholder="Digite sua mensagem"
-          onChange={handleOnChangeMessage}
-          onBlur={handleBlurMessage}
-          value={message}
-          error={messageError}
-        />
-        <Space />
-        <Button
-          onClick={handleClick}
-          disabled={buttonEnabled}
-          customStyle={customButtonStyle}
-        >
-          Enviar Formulário
-        </Button>
-      </Form>
+      {!questionSent && (
+        <>
+          <Text>
+            Preencha o formulário abaixo com suas dúvidas, sugestões ou
+            comentários. Vamos tentar te dar um retorno o mais rápido possível!
+          </Text>
+          <Space />
+          <Form>
+            <ContainerInputs>
+              <SimpleInput
+                placeholder="Nome Completo"
+                onChange={handleOnChangeFullName}
+                value={fullName}
+                error={fullNameError}
+                onBlur={handleBlurName}
+                customStyle={customInputStyle}
+              />
+              <SpaceSmall />
+              <SimpleInput
+                placeholder="Email*"
+                onChange={handleOnChangeEmail}
+                value={email}
+                error={emailError}
+                onBlur={handleBlurEmail}
+                customStyle={customInputStyle}
+              />
+              <SpaceSmall />
+              <SimpleInput
+                placeholder="Telefone com DDD*"
+                onChange={handleOnChangePhone}
+                value={phone}
+                error={phoneError}
+                onBlur={handleBlurPhone}
+                customStyle={customInputStyle}
+              />
+              <SpaceSmall />
+            </ContainerInputs>
+            <Textarea
+              placeholder="Digite sua mensagem"
+              onChange={handleOnChangeMessage}
+              onBlur={handleBlurMessage}
+              value={message}
+              error={messageError}
+            />
+            <Space />
+            <Button
+              onClick={handleClick}
+              disabled={buttonEnabled}
+              customStyle={customButtonStyle}
+            >
+              Enviar Formulário
+            </Button>
+          </Form>
+        </>
+      )}
+      {questionSent && <MessageSucess />}
     </Contact>
   );
 };
