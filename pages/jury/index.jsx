@@ -1,5 +1,5 @@
 import React from 'react';
-import JuryTemplate from 'components/templates/jury/Jury';
+import JuryTemplate from 'components/templates/jury/jury';
 
 const Jury = () => <JuryTemplate />;
 
