@@ -9,7 +9,6 @@ import {
   statesCollection,
 } from 'collections';
 import SimpleSelect from 'components/atoms/select/select';
-import SwitchButton from 'components/atoms/switch-button/switch-button';
 import {
   Title,
   Space,
@@ -42,15 +41,6 @@ const CompleteRegistration = ({
   lastName,
   birthDate,
   email,
-
-  skinColor,
-  gender,
-  sexualOrientation,
-  city,
-  country,
-  age,
-  desability,
-
   opened,
   handleConfirmButton,
   handleCancelButton,
@@ -64,14 +54,14 @@ const CompleteRegistration = ({
   const [buttonDisable, setButtonDisable] = useState(false);
 
   /*  required fields */
-  const [skinColorInput, setSkinColorInput] = useState('');
-  const [genderInput, setGenderInput] = useState('');
-  const [sexualOrientationInput, setSexualOrientationInput] = useState('');
-  const [cityInput, setCityInput] = useState('');
-  const [countryInput, setCountryInput] = useState('');
-  const [ageInput, setAge] = useState(0);
-  const [isDesabilityInput, setIsDesabilityInput] = useState(false);
-  const [desabilityInput, setDesabilityInput] = useState('');
+  const [skinColor, setSkinColor] = useState('');
+  const [gender, setGender] = useState('');
+  const [sexualOrientation, setSexualOrientation] = useState('');
+  const [city, setCity] = useState('');
+  const [country, setCountry] = useState('');
+  const [age, setAge] = useState(0);
+  const [isDesability, setIsDesability] = useState(false);
+  const [desability, setDesability] = useState('');
 
   /* erros */
   const [cpfError, setCpfError] = useState('');
@@ -91,7 +81,7 @@ const CompleteRegistration = ({
   const [desabilityError, setDesabilityError] = useState('');
 
   const hasError = (string) => {
-    console.log('has error ', string, !!string);
+    console.log(string, !!string);
     return !!string;
   };
   const simpleInputValidation = (string) =>
@@ -165,35 +155,6 @@ const CompleteRegistration = ({
     setEmailInput(value);
   };
 
-  /* onChanges required */
-
-  const handleOnChangeSkinColor = (event) => {
-    setSkinColorInput(event.target.value);
-  };
-
-  const handleSelectChange = (event, inputName) => {
-    switch (inputName) {
-      case 'skinColor':
-        setSkinColorInput(event.target.value);
-        break;
-      case 'gender':
-        setGenderInput(event.target.value);
-        break;
-      case 'sexualOrientation':
-        setSexualOrientationInput(event.target.value);
-        break;
-      case 'country':
-        setCountryInput(event.target.value);
-        break;
-      default:
-        break;
-    }
-  };
-
-  const handleOnChangeCity = (event) => {
-    setCityInput(event.target.value);
-  };
-
   return (
     <Wrapper opened={opened}>
       <Animation
@@ -205,69 +166,52 @@ const CompleteRegistration = ({
           <Title>Complete seu cadastro para acessar o evento!</Title>
           <Space />
           <Space />
-          {!skinColor && (
-            <SimpleSelect
-              placeholder="Selecione sua cor de pele"
-              value={skinColorInput}
-              onChange={(event) => handleSelectChange(event, 'skinColor')}
-              error={skinColorError}
-              options={skinColorCollection}
-            />
-          )}
-          <SpaceSmall />
-          {!gender && (
-            <SimpleSelect
-              placeholder="Selecione seu gênero"
-              value={genderInput}
-              onChange={(event) => handleSelectChange(event, 'gender')}
-              error={genderError}
-              options={gendersCollection}
-            />
-          )}
-          <SpaceSmall />
-          {!sexualOrientation && (
-            <SimpleSelect
-              placeholder="Selecione sua orientação sexual"
-              value={sexualOrientationInput}
-              onChange={(event) =>
-                handleSelectChange(event, 'sexualOrientation')
-              }
-              error={sexualOrientationError}
-              options={sexualOrientationCollection}
-            />
-          )}
-          <SpaceSmall />
-          {!country && (
-            <SimpleSelect
-              placeholder="Selecione seu estado"
-              value={countryInput}
-              onChange={(event) => handleSelectChange(event, 'country')}
-              error={countryError}
-              options={statesCollection}
-            />
-          )}
-          <SpaceSmall />
-          {!city && (
+          {!firstName && (
             <SimpleInput
-              placeholder="Digite sua cidade"
-              value={country}
-              onChange={handleOnChangeCity}
-              error={countryError}
+              placeholder="Digite seu nome"
+              value={firstNameInput}
+              onChange={handleOnChangeFirstName}
+              error={firstNameError}
+            />
+          )}
+          <SpaceSmall />
+          {!lastName && (
+            <SimpleInput
+              placeholder="Digite seu sobrenome"
+              value={lastNameInput}
+              onChange={handleOnChangeLastName}
+              error={lastNameError}
+            />
+          )}
+          <SpaceSmall />
+          {!cpf && (
+            <SimpleInput
+              placeholder="Digite seu cpf"
+              value={cpfInput}
+              onChange={handleOnChangeCPF}
+              error={cpfError}
+              maxLength={14}
+            />
+          )}
+          <SpaceSmall />
+          {!birthDate && (
+            <SimpleInput
+              placeholder="Digite sua data nascimento"
+              value={birthDateInput}
+              onChange={handleOnChangeBirthDate}
+              error={birthDateError}
+            />
+          )}
+          <SpaceSmall />
+          {!email && (
+            <SimpleInput
+              placeholder="Digite seu email"
+              value={emailInput}
+              onChange={handleOnChangeEmail}
+              error={emailError}
             />
           )}
           <Space />
-          <SwitchButton
-            options={[
-              {
-                id: 'sim',
-                label: 'sim',
-              },
-              {
-                id: 'não',
-                label: 'não',
-              },
-            ]}
-          />
           <Button disabled={buttonDisable} onClick={handleConfirmButtonClick}>
             {' '}
             Continuar
