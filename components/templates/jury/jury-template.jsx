@@ -41,7 +41,7 @@ const JuryTemplate = () => (
   </JuryContainer>
 );
 
-JuryTemplate.propTypes = {
+Jury.propTypes = {
 
 };
 
