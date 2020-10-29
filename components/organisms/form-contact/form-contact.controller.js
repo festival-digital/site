@@ -16,7 +16,6 @@ export const createFAQQuestion = async ({
       user,
     });
   } catch (err) {
-    return;
+    console.log(err);
   }
-  setLoading(false);
 };

@@ -130,7 +130,6 @@ const FormContact = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    console.log('fui clicado');
     createFAQQuestion({
       name: fullName,
       phone,
@@ -138,6 +137,10 @@ const FormContact = () => {
       email,
       user: state.user ? state.user.id : null,
     });
+    setEmail('');
+    setFullName('');
+    setMessage('');
+    setPhone('');
   };
 
   return (

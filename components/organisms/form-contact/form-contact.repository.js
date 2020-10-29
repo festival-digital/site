@@ -4,5 +4,5 @@ import { CREATE_FAQ_MUTATION } from 'mutations/faq.mutations';
 export const createFAQQuestion = ({ name, email, phone, message, user }) =>
   client().mutate({
     mutation: CREATE_FAQ_MUTATION,
-    variables: { name, email, phone, message, user },
+    variables: { FAQQuestion: { name, email, phone, message, user } },
   });
