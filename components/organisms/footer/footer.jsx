@@ -66,7 +66,12 @@ const Footer = () => {
           </NavigationItem>
         </div>
         <MediaSocial>
-          <a href="/" target="_blank" without rel="noreferrer">
+          <a
+            href="https://www.facebook.com/oasi.vc/"
+            target="_blank"
+            without
+            rel="noreferrer"
+          >
             <Icon src="/static/icons/facebookIcon.svg" alt="" />
           </a>
           <a
@@ -77,7 +82,12 @@ const Footer = () => {
           >
             <Icon src="static/icons/instagramIcon.svg" alt="" />
           </a>
-          <a href="/" target="_blank" without rel="noreferrer">
+          <a
+            href="https://twitter.com/oasivc"
+            target="_blank"
+            without
+            rel="noreferrer"
+          >
             <Icon src="static/icons/twitterIcon.svg" alt="" />
           </a>
         </MediaSocial>
