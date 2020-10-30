@@ -15,7 +15,7 @@ export const fetchUser = (ida) =>
 
 /**
  * request user on api
- * @param {Object} user receive all the users constraints for the search
+ * @param {Object} user receive all the users constraints for filter the search
  * @returns {Promise} contains all users that match with user args
  */
 export const fetchAllUsers = (user) =>
@@ -29,21 +29,18 @@ export const fetchAllUsers = (user) =>
  * @param {Object} id event id to be found on APP API
  * @returns {Promise} contains event data or null
  */
-export const fetchEvent = (id) => {
+export const fetchEvent = (id) =>
   client().query({
     query: ONE_EVENT_QUERY,
     variables: { id },
   });
-};
-
 /**
  * request user on api
- * @param {Object} event receive all the events constraints for the search
+ * @param {Object} event receive all the events constraints for filter the search
  * @returns {Promise} contains all events that match with event args
  */
-export const fetchAllEvents = (event) => {
+export const fetchAllEvents = (event) =>
   client().query({
     query: ALL_EVENTS_QUERY,
     variables: { event },
   });
-};

@@ -15,6 +15,7 @@ export const Input = styled.input`
     border: 2px solid #000000;
     box-shadow: 0px 2px 0px #000000;
   }
+  ${({ customStyle }) => customStyle}
 `;
 
 export const ErrorMessage = styled.p`
@@ -31,9 +32,13 @@ export const ErrorMessage = styled.p`
 export const InputBase = styled.div`
   margin: 0;
   padding: 0;
+  width: 100%;
   display: inline-flex;
   flex-direction: column;
+<<<<<<< HEAD
   width: 100%;
 
   ${({ customStyle }) => customStyle}
+=======
+>>>>>>> feature/fd-345
 `;

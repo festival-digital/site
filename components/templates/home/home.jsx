@@ -111,7 +111,7 @@ const Home = () => {
               Gostou? Vêm viver essa experiência com a gente!
             </IDASubtitle>
             <IDAText>
-              Você conhece a IDa? É uma autenticação rápida e segura. 
+              Você conhece a IDa? É uma autenticação rápida e segura.
               <br />
               Sua entrada na OASI é feita com ela
             </IDAText>
