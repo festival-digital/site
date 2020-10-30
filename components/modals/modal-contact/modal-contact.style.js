@@ -29,3 +29,7 @@ export const Content = styled.div`
 export const ContentButton = styled.div`
   display: flex;
 `;
+
+export const ContainerForm = styled.div`
+  margin-bottom: 30px;
+`;
