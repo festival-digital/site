@@ -9,6 +9,7 @@ import Card from 'components/organisms/card-faq/card';
 import Button from 'components/atoms/button/button';
 import Header from 'components/organisms/home-header/home-header';
 import SimpleInput from 'components/atoms/simple-input/simple-input';
+import ProfileMenu from 'components/organisms/profile-menu/profile-menu';
 import {
   phoneValidation,
   emailValidation,
@@ -173,6 +174,7 @@ const FAQPage = () => {
   return (
     <Container>
       <Header />
+     <ProfileMenu />
       <Wrapper>
         <WrapperSearch>
           <Breadcrumb
