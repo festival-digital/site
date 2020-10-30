@@ -12,6 +12,10 @@ import {
   Text,
 } from './profile-menu.style';
 
+const handleClick = () => {
+  console.log('eu fui clicado');
+};
+
 const Menu = () => {
   return (
     <MenuComponent>
@@ -55,7 +59,7 @@ const Menu = () => {
           </a>
         </Link>
       </MenuItem>
-      <MenuItem>
+      <MenuItem onClick={handleClick}>
         <Link href="#">
           <a>
             <Icon style={{ color: 'white' }}>exit_to_app</Icon>
