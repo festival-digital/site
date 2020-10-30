@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 45px 12px;
+  grid-row-gap: 6px;
+`;
+export const ButtonContainer = styled.div`
   width: 100%;
   height: 45px;
   display: flex;
@@ -40,4 +46,15 @@ export const Label = styled.label`
   height: 100%;
   font-size: ${({ theme }) => theme.fontSize.sm};
   color: ${({ theme }) => theme.neutralColor[1]};
+`;
+
+export const ErrorMessage = styled.p`
+  text-align: left;
+  color: #ff2626;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 12px;
+  height: 12px;
 `;
