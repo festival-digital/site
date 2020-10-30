@@ -13,4 +13,6 @@ export const ButtonForm = styled.a`
   font-style: Roboto;
   font-size: 14px;
   font-weight: bold;
+
+  ${({ customStyle }) => customStyle}
 `;

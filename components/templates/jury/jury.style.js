@@ -32,6 +32,14 @@ export const JuryContainer = styled.div`
   }
 `;
 
+export const JuryLoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+`;
+
 export const Wrapper = styled.div`
   position: relative;
   z-index: 10;
@@ -54,7 +62,7 @@ export const JuryHeader = styled.header`
 
 export const JuryTitle = styled.h1`
   display: inline-block;
-  margin-left: 40px;
+  margin-top: 24px;
   font-family: Space Mono;
   font-style: normal;
   font-weight: bold;
@@ -62,6 +70,11 @@ export const JuryTitle = styled.h1`
   line-height: 120%;
   color: #ffffff;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    margin-left: 40px;
+    margin-top: 0px;
+  }
 `;
 
 export const JuryDescription = styled.p`
@@ -71,13 +84,15 @@ export const JuryDescription = styled.p`
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 140%;
   color: #ffffff;
   max-width: 1024px;
 `;
 
 export const JuryList = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px; 
   padding: 32px;
-  height: 1000px;
 `;
