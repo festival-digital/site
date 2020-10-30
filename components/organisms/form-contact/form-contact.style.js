@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
-
-export const WrapperSearch = styled.div`
-  margin: 24px 0;
-
-  @media (min-width: 650px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-`;
-
 export const Title = styled.h1`
   font-family: Space Mono;
   font-style: normal;
@@ -23,13 +11,6 @@ export const Title = styled.h1`
   @media (min-width: 650px) {
     margin: 0;
   }
-`;
-
-export const Wrapper = styled.div`
-  width: 100%;
-  padding: 0 16px;
-  max-width: 1040px;
-  margin: 0 auto;
 `;
 
 export const Contact = styled.div`
@@ -122,4 +103,15 @@ export const customInputStyle = `
      max-width: 300px;
      margin-right: 30px;
   }
+`;
+
+export const MessageSucess = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 50px 0;
+`;
+
+export const Animation = styled.img`
+  margin: 0 20px;
 `;
