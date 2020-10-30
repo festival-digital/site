@@ -1707,10 +1707,10 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@resystem/design-system@^0.0.61":
-  version "0.0.61"
-  resolved "https://registry.yarnpkg.com/@resystem/design-system/-/design-system-0.0.61.tgz#a0566e076c11405939774e0efa001ade7b1de6b2"
-  integrity sha512-hWv79jHJmSxyoESDNfBDnrsBUg5tFxKmq0TaK93XLWwNpw+zr1qpVo7Sz6qGgmvEgosbq+GIr+HX8ZGSoJ9kwA==
+"@resystem/design-system@^0.0.63":
+  version "0.0.63"
+  resolved "https://registry.yarnpkg.com/@resystem/design-system/-/design-system-0.0.63.tgz#0a966c108049545cdc1180813a956737d9a19ae2"
+  integrity sha512-HIogcGdmRkbh42cYy6WW98pKAcr9ALBejzBGONAc8orL7Hb0Gp88k2+U+vkCV7+7xhw1MIt8/rXr+HfIfMmMdQ==
   dependencies:
     "@material-ui/core" "^4.11.0"
     "@material-ui/icons" "^4.9.1"

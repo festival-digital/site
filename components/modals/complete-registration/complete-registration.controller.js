@@ -1,12 +1,29 @@
 import {
+  fetchUser,
   fetchAllUsers,
   fetchEvent,
   fetchAllEvents,
 } from './complete-registration.repository';
 
-export const getAllUsers = async () => {
-  const response = await fetchAllUsers();
-  console.log('All users ', response);
+export const getUser = async (ida) => {
+  let response;
+  try {
+    response = await fetchUser(ida);
+  } catch (err) {
+    console.log([err]);
+  }
+  return response;
+};
+
+export const getAllUsers = async (userConstraints) => {
+  let response;
+  try {
+    response = await fetchAllUsers(userConstraints);
+    console.log('All users ', response);
+  } catch (err) {
+    console.log([err]);
+  }
+  return response;
 };
 
 export const getEvent = async (id) => {
