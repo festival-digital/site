@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '@material-ui/core/Icon';
-import GoBackButton from 'components/atoms/go-back-button/go-back-button';
+import GoBackButton from 'components/templates/narrative/node_modules/components/atoms/go-back-button/go-back-button';
 import Button from 'components/atoms/button/button';
 import {
   ModalWrapper, TermsWrapper, Terms, Title,

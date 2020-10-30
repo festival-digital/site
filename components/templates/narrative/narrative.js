@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import GoBackButton from 'components/atoms/go-back-button/go-back-button';
+import Navigate from 'next';
 import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import ModalContact from 'components/modals/modal-contact/modal-contact';
 import {
@@ -18,14 +19,10 @@ import {
   AuthorParagraph,
   IconQuestionMask,
   customStyleButton,
-} from './narrativa.style';
+} from './narrative.style';
 
-const Narrativa = ({ opened, setOpenedModal }) => {
+const Narrative = () => {
   const [openModalContact, setOpenModalContact] = useState(false);
-
-  const handleClick = (event) => {
-    if (event.target === event.currentTarget) setOpenedModal(null);
-  };
 
   if (openModalContact)
     return (
@@ -35,7 +32,7 @@ const Narrativa = ({ opened, setOpenedModal }) => {
       />
     );
   return (
-    <Wrapper opened={opened}>
+    <Wrapper>
       <Content>
         <ContentButton>
           <GoBackButton />
@@ -317,15 +314,13 @@ const Narrativa = ({ opened, setOpenedModal }) => {
           grego (oási), basco (oasia), espanhol (oasis), alemão (oase),
           africaner (oase), albanês (oaz) russo (oazis), holandês (oase) etc. Ou
           seja, trata-se de um nome que pode ser compreendido em boa parte do
-          mundo. Oasi indica um lugar acolhedor, lugar onde Nômades chegam para
-          se alimentar, descansar, se modificar e fortalecer para continuar a
-          travessia pelo deserto. Aqui é importante não indicar um contraponto
-          binário em relação ao deserto, mas a uma formação natural com menos ou
-          mesmo quase nada de vegetação, mas com vidas e culturas próprias. Oasi
-          se formaria com bordas e adensamento de vegetação, água e sombra no
-          interior desse quente ambiente. Trata-se de um lugar neste espaço
-          amplo e desértico, formado por grãos de areia (silício) da mesma forma
-          que o próprio universo em que estamos imersos, incluindo Oasi.
+          mundo. Aqui é importante não indicar um contraponto binário em relação
+          ao deserto, mas a uma formação natural com menos ou mesmo quase nada
+          de vegetação, mas com vidas e culturas próprias. Oasi se formaria com
+          bordas e adensamento de vegetação, água e sombra no interior desse
+          quente ambiente. Trata-se de um lugar neste espaço amplo e desértico,
+          formado por grãos de areia (silício) da mesma forma que o próprio
+          universo em que estamos imersos, incluindo Oasi.
         </Text>
         <Space />
         <Text>
@@ -368,4 +363,4 @@ const Narrativa = ({ opened, setOpenedModal }) => {
   );
 };
 
-export default Narrativa;
+export default Narrative;
