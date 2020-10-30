@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
-  margin: 20px;
+  margin-right: 20px;
 `;
 
 export const customButtonStyle = `

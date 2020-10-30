@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import Icon from '@material-ui/core/Icon';
 import Link from 'next/link';
@@ -11,12 +11,26 @@ import {
   customButtonStyle,
   Text,
 } from './profile-menu.style';
+import ida from 'libs/ida.lib';
+import { useRouter } from 'next/router';
+import Store from 'components/store/Store';
 
-const handleClick = () => {
-  console.log('eu fui clicado');
+const handleLogout = (router, dispatch) => {
+  router.push('/');
+  ida.logout();
+  dispatch({
+    type: 'SET_USER',
+    user: null,
+  });
+  dispatch({
+    type: 'SET_AUTH',
+    auth: null,
+  });
 };
 
 const Menu = () => {
+  const { dispatch } = useContext(Store)
+  const router = useRouter();
   return (
     <MenuComponent>
       <MenuItem>
@@ -59,7 +73,7 @@ const Menu = () => {
           </a>
         </Link>
       </MenuItem>
-      <MenuItem onClick={handleClick}>
+      <MenuItem onClick={() => handleLogout(router, dispatch)}>
         <Link href="#">
           <a>
             <Icon style={{ color: 'white' }}>exit_to_app</Icon>
