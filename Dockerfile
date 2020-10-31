@@ -6,13 +6,15 @@ FROM node:12
 # define environment variables
 ARG REPOSITORY_URI
 ARG NODE_ENV
+ARG GRAPH_URI
+ARG GRAPHQL_URI
+ARG API_KEY
 
-# create & set working directory
-RUN mkdir -p /usr/src
-WORKDIR /usr/src
+# working directory
+WORKDIR /src
 
 # copy source files
-COPY . /usr/src
+COPY . .
 
 # install dependencies
 RUN npm install

@@ -6,9 +6,9 @@ import { Input, ErrorMessage, InputBase } from './simple-input.style';
  * This is the simple input component
  * @returns {React.Component}
  */
-const SimpleInput = ({ error, ...props }) => {
+const SimpleInput = ({ error, customStyle, ...props }) => {
   return (
-    <InputBase>
+    <InputBase customStyle={customStyle}>
       <Input {...props} />
       <ErrorMessage>{error}</ErrorMessage>
     </InputBase>

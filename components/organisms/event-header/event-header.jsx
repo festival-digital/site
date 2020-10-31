@@ -9,6 +9,7 @@ import {
   MainButtonImage,
   OasiLogo,
 } from './event-header.style';
+import ProfileMenu from '../profile-menu/profile-menu';
 
 const EventHeader = ({ backgroundURI, goBackMode }) => {
   const [isSticky, setIsSticky] = useState(false);
@@ -39,9 +40,7 @@ const EventHeader = ({ backgroundURI, goBackMode }) => {
           <GoBackButton />
         ) : (
           <>
-            <MainButton>
-              <MainButtonImage />
-            </MainButton>
+            <ProfileMenu />
             <OasiLogo src="/static/icons/oasi.svg" alt="Logo escrito Oasi" />
           </>
         )}

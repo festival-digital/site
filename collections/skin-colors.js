@@ -1,11 +1,11 @@
 export default [
   {
-    id: 'branca',
-    label: 'Branca',
-  },
-  {
     id: 'preta',
     label: 'Preta',
+  },
+  {
+    id: 'branca',
+    label: 'Branca',
   },
   {
     id: 'amarelo',

@@ -21,7 +21,6 @@ export const openIDASignin = async () => {
  * @param {function} navigationTo used to redirect user to another page
  */
 export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
-  console.log('pesquisar por ida ', ida);
   setLoading(true);
   let getUserResponse;
   try {
