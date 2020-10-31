@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Animation, SmallText, Text } from '@resystem/design-system';
+import { Animation, Text } from '@resystem/design-system';
 import {
   disabilitiesCollection,
   gendersCollection,
@@ -8,6 +8,7 @@ import {
   skinColorCollection,
   statesCollection,
 } from 'collections';
+import Store from 'components/store/Store';
 import SimpleSelect from 'components/atoms/select/select';
 import SwitchButton from 'components/atoms/switch-button/switch-button';
 import {
@@ -50,13 +51,17 @@ const CompleteRegistration = ({
   handleConfirmButton,
   handleCancelButton,
 }) => {
+  const { state } = useContext(Store);
+  const [user, setUser] = useState({});
+  const [isOpen, setIsOpen] = useState(true);
+
   /*  required fields */
   const [skinColorInput, setSkinColorInput] = useState('');
   const [genderInput, setGenderInput] = useState('');
   const [sexualOrientationInput, setSexualOrientationInput] = useState('');
   const [cityInput, setCityInput] = useState('');
   const [countryInput, setCountryInput] = useState('');
-  const [ageInput, setAgeInput] = useState('');
+  const [birthDateInput, setBirthDateInput] = useState('');
   const [isDisabilityInput, setIsDisabilityInput] = useState('');
   const [disabilityInput, setDisabilityInput] = useState('');
   /*  required fields errors */
@@ -65,7 +70,7 @@ const CompleteRegistration = ({
   const [sexualOrientationError, setSexualOrientationError] = useState('');
   const [cityError, setCityError] = useState('');
   const [countryError, setCountryError] = useState('');
-  const [ageError, setAgeError] = useState('');
+  const [birthDateError, setBirthDateError] = useState('');
   const [isDisabilityError, setIsDisabilityError] = useState('');
   const [disabilityError, setDisabilityError] = useState('');
 
@@ -100,18 +105,22 @@ const CompleteRegistration = ({
     console.log(hasValue(sexualOrientationInput), 'sexualOrientationInput');
     console.log(hasValue(countryInput), 'countryInput');
     console.log(hasValue(cityInput), 'cityInput');
-    console.log(hasValue(ageInput), 'ageInput');
+    console.log(hasValue(birthDateInput), 'birthDateInput');
     console.log(hasValue(isDisabilityInput), 'isDisabilityInput');
     console.log(hasValue(disabilityInput), 'disabilityInput');
+
+    const needDisability = !user.disability && isDisabilityInput === 'sim';
+    const checkDisability = needDisability ? hasValue(disabilityInput) : true;
+
     if (
-      hasValue(skinColorInput) &&
-      hasValue(genderInput) &&
-      hasValue(sexualOrientationInput) &&
-      hasValue(countryInput) &&
-      hasValue(cityInput) &&
-      hasValue(ageInput) &&
-      hasValue(isDisabilityInput) &&
-      hasValue(disabilityInput)
+      (user.skin_color || hasValue(skinColorInput)) &&
+      (user.gender || hasValue(genderInput)) &&
+      (user.sexual_orientation || hasValue(sexualOrientationInput)) &&
+      (user.state || hasValue(countryInput)) &&
+      (user.city || hasValue(cityInput)) &&
+      (user.birth_date || hasValue(birthDateInput)) &&
+      (user.has_disability || hasValue(isDisabilityInput)) &&
+      checkDisability
     ) {
       handleConfirmButton({
         skinColor: skinColorInput,
@@ -119,7 +128,8 @@ const CompleteRegistration = ({
         sexualOrientation: sexualOrientationInput,
         country: countryInput,
         city: countryInput,
-        age: ageInput,
+        age: birthDateInput,
+        has_disability: isDisabilityInput === 'sim',
         disability,
       });
     } else {
@@ -128,7 +138,7 @@ const CompleteRegistration = ({
       setSexualOrientationError(simpleSelectValidation(sexualOrientationInput));
       setCountryError(simpleSelectValidation(countryInput));
       setCityError(simpleInputValidation(cityInput));
-      setAgeError(simpleInputValidation(ageInput));
+      setBirthDateError(dateValidation(birthDateInput));
       setIsDisabilityError(simpleSelectValidation(isDisabilityInput));
       setDisabilityError(simpleSelectValidation(disabilityInput));
       setButtonDisable(true);
@@ -137,37 +147,41 @@ const CompleteRegistration = ({
 
   function handleIgnoreButtonClick() {
     handleCancelButton();
+    setIsOpen(false);
   }
 
   useEffect(() => {
+    const needDisability = !user.disability && isDisabilityInput === 'sim';
+    const checkDisability = needDisability ? hasValue(disabilityInput) : true;
     if (
-      hasValue(skinColorInput) &&
-      hasValue(genderInput) &&
-      hasValue(sexualOrientationInput) &&
-      hasValue(countryInput) &&
-      hasValue(cityInput) &&
-      hasValue(ageInput) &&
-      hasValue(isDisabilityInput) &&
-      hasValue(disabilityInput)
+      (user.skin_color || hasValue(skinColorInput)) &&
+      (user.gender || hasValue(genderInput)) &&
+      (user.sexual_orientation || hasValue(sexualOrientationInput)) &&
+      (user.state || hasValue(countryInput)) &&
+      (user.city || hasValue(cityInput)) &&
+      (user.birth_date || hasValue(birthDateInput)) &&
+      (user.has_disability || hasValue(isDisabilityInput)) &&
+      checkDisability
     )
       setButtonDisable(false);
   }, [
+    user,
     skinColorInput,
     genderInput,
     sexualOrientationInput,
     countryInput,
     cityInput,
-    ageInput,
+    birthDateInput,
     isDisabilityInput,
     disabilityInput,
   ]);
 
   useEffect(() => {
-    // getAllUsers('5f987a8bd1298b6768b78001');
-    //  getAllEvents();
-    // const event = getEvent('5f987a8bd1298b6768b78112');
-    setButtonDisable(false);
-  }, []);
+    getUser(state?.auth?.ida || '5f9344948b147955a09bffc3').then((response) => {
+      setUser(response?.data?.oneUser || {});
+      // console.log('response ', response?.data?.oneUser || {});
+    });
+  }, [state]);
 
   /* onChanges required */
   const handleSelectChange = (event, inputName) => {
@@ -206,13 +220,13 @@ const CompleteRegistration = ({
     setCityError(simpleInputValidation(target.value));
   };
 
-  const handleOnChangeAge = ({ target }) => {
-    setAgeInput(target.value);
-    setAgeError(simpleInputValidation(target.value));
+  const handleOnChangeBirthDate = ({ target }) => {
+    setBirthDateInput(maskDate(target.value));
+    setBirthDateError(dateValidation(target.value));
   };
 
   return (
-    <Wrapper opened={opened}>
+    <Wrapper isOpen={isOpen}>
       <Animation
         animation="slideInUp"
         duration="400ms"
@@ -222,7 +236,8 @@ const CompleteRegistration = ({
           <Title>Complete seu cadastro para acessar o evento!</Title>
           <Space />
           <Space />
-          {!skinColor && (
+          {console.log('user.skin_color ', user.skin_color, !user.skin_color)}
+          {!user.skin_color && (
             <SimpleSelect
               placeholder="Selecione sua cor de pele"
               value={skinColorInput}
@@ -232,7 +247,7 @@ const CompleteRegistration = ({
             />
           )}
           <SpaceSmall />
-          {!gender && (
+          {!user.gender && (
             <SimpleSelect
               placeholder="Selecione seu gênero"
               value={genderInput}
@@ -242,7 +257,7 @@ const CompleteRegistration = ({
             />
           )}
           <SpaceSmall />
-          {!sexualOrientation && (
+          {!user.sexual_orientation && (
             <SimpleSelect
               placeholder="Selecione sua orientação sexual"
               value={sexualOrientationInput}
@@ -254,7 +269,7 @@ const CompleteRegistration = ({
             />
           )}
           <SpaceSmall />
-          {!country && (
+          {!user.state && (
             <SimpleSelect
               placeholder="Selecione seu estado"
               value={countryInput}
@@ -264,7 +279,7 @@ const CompleteRegistration = ({
             />
           )}
           <SpaceSmall />
-          {!city && (
+          {!user.city && (
             <SimpleInput
               placeholder="Digite sua cidade"
               value={cityInput}
@@ -272,12 +287,12 @@ const CompleteRegistration = ({
               error={cityError}
             />
           )}
-          {!age && (
+          {!user.birth_date && (
             <SimpleInput
-              placeholder="Digite sua idade"
-              value={ageInput}
-              onChange={handleOnChangeAge}
-              error={ageError}
+              placeholder="Digite sua data de nascimento"
+              value={birthDateInput}
+              onChange={handleOnChangeBirthDate}
+              error={birthDateError}
             />
           )}
           <SpaceNano />
@@ -312,27 +327,27 @@ const CompleteRegistration = ({
 };
 
 CompleteRegistration.propTypes = {
-  skinColor: PropTypes.string,
-  gender: PropTypes.string,
-  sexualOrientation: PropTypes.string,
-  country: PropTypes.string,
-  city: PropTypes.string,
-  age: PropTypes.string,
-  disability: PropTypes.string,
-  opened: PropTypes.bool,
+  // skinColor: PropTypes.string,
+  // gender: PropTypes.string,
+  // sexualOrientation: PropTypes.string,
+  // country: PropTypes.string,
+  // city: PropTypes.string,
+  // age: PropTypes.string,
+  // disability: PropTypes.string,
+  // opened: PropTypes.bool,
   handleConfirmButton: PropTypes.func,
   handleCancelButton: PropTypes.func,
 };
 
 CompleteRegistration.defaultProps = {
-  skinColor: '',
-  gender: '',
-  sexualOrientation: '',
-  country: '',
-  city: '',
-  age: '',
-  disability: '',
-  opened: false,
+  // skinColor: '',
+  // gender: '',
+  // sexualOrientation: '',
+  // country: '',
+  // city: '',
+  // age: '',
+  // disability: '',
+  // opened: false,
   handleConfirmButton: () => {},
   handleCancelButton: () => {},
 };

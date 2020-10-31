@@ -12,6 +12,22 @@ export const ONE_USER_QUERY = gql`
           sympla_id
         }
       }
+      first_name
+      last_name
+      display_name
+      birth_date
+      old
+      city
+      state
+      gender
+      other_gender
+      skin_color
+      other_skin_color
+      sexual_orientation
+      other_sexual_orientation
+      has_disability
+      disability
+      status
     }
   }
 `;
@@ -32,6 +48,8 @@ export const ALL_USERS_QUERY = gql`
       other_gender
       skin_color
       other_skin_color
+      sexual_orientation
+      other_sexual_orientation
       has_disability
       disability
       status
@@ -54,28 +72,3 @@ export const ALL_USERS_QUERY = gql`
     }
   }
 `;
-
-// tickets {
-//   id
-//   code
-//   event {
-//     sympla_id
-//   }
-// }
-// my_events {
-//   id
-//   name
-//   sympla_id
-//   tickets
-//   description
-//   image_url
-//   cover_url
-//   site_url
-//   tags
-//   sympla_url
-//   start_date
-//   end_date
-//   is_free
-//   status
-//   activities
-// }
