@@ -20,8 +20,8 @@ export const Button = styled.button`
 
   & > span {
     vertical-align: middle;
-    margin-right: 8px; 
+    margin-right: 8px;
   }
 
-  ${(props) => props}
+  ${({ customStyle }) => customStyle}
 `;
