@@ -8,7 +8,7 @@ export const ModalWrapper = styled.div`
   width: 100%;
   height: 100%;
   z-index: 100;
-  
+
   @media (min-width: 769px) {
     background: rgba(0, 0, 0, 0.8);
   }
@@ -66,30 +66,9 @@ export const Modal = styled.div`
     height: 520px;
   }
 `;
-
 export const TermsWrapper = styled.div`
   height: 100%;
   overflow-y: auto;
   margin-top: 24px;
   padding-bottom: 40px;
-`;
-
-export const Title = styled.h2`
-  font-family: Space Mono;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 120%;
-  color: #FFFFFF;
-  margin-bottom: 20px;
-`;
-
-export const Terms = styled.p`
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 120%;
-  color: #FFFFFF;
-  margin-bottom: 20px;
 `;

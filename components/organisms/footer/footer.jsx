@@ -11,14 +11,19 @@ import {
   WrapperButtonIDA,
   MediaSocial,
   Icon,
-  Organization,
+  IconOrganization,
+  Content,
   BrandIcon,
   IDAContent,
   IDAContentWrapper,
   ContentAbout,
+  ContentOrganization,
   IDASubtitle,
   IDAText,
   IDALink,
+  Organization,
+  ContentIcon,
+  TextOrganization,
 } from './footer.style';
 
 const Footer = () => {
@@ -60,8 +65,13 @@ const Footer = () => {
             </Link>
           </NavigationItem>
           <NavigationItem>
-            <Link href="/">
-              <a>Política de Privicidade</a>
+            <Link href="/use-terms">
+              <a>Termos de uso</a>
+            </Link>
+          </NavigationItem>
+          <NavigationItem>
+            <Link href="/ficha-tecnica">
+              <a>Ficha Técnica</a>
             </Link>
           </NavigationItem>
         </div>
@@ -72,7 +82,7 @@ const Footer = () => {
             without
             rel="noreferrer"
           >
-            <Icon src="/static/icons/facebookIcon.svg" alt="" />
+            <Icon src="/static/icons/facebookIcon.svg" alt="Logo do Facebook" />
           </a>
           <a
             href="https://www.instagram.com/oasi.vc/"
@@ -80,7 +90,10 @@ const Footer = () => {
             without
             rel="noreferrer"
           >
-            <Icon src="static/icons/instagramIcon.svg" alt="" />
+            <Icon
+              src="static/icons/instagramIcon.svg"
+              alt="Logo do instagram"
+            />
           </a>
           <a
             href="https://twitter.com/oasivc"
@@ -88,24 +101,62 @@ const Footer = () => {
             without
             rel="noreferrer"
           >
-            <Icon src="static/icons/twitterIcon.svg" alt="" />
+            <Icon src="static/icons/twitterIcon.svg" alt="Logo do twitter" />
           </a>
         </MediaSocial>
       </Navigation>
       <Space />
       <Space />
-      <Organization>
+      <Content>
         <div>
           <Link href="/">
-            <BrandIcon src="static/icons/oasi.svg" alt="" />
+            <BrandIcon src="static/icons/oasi.svg" alt="logo da oasi" />
           </Link>
         </div>
-        <div>
-          <Icon src="static/icons/midia-ninja.svg" alt="" />
-          <Icon src="static/icons/design-ativista.svg" alt="" />
-          <Icon src="static/icons/zona-de-propulssao.svg" alt="" />
-        </div>
-      </Organization>
+        <Organization>
+          <ContentOrganization>
+            <TextOrganization>Narrativa: </TextOrganization>
+            <ContentIcon>
+              <IconOrganization
+                src="static/logos/narrativa.svg"
+                alt="Logo da plataforma de escrita criativa, é um quadrado com bordas brancas, dentro tem palavra quadro escrito"
+              />
+            </ContentIcon>
+          </ContentOrganization>
+          <ContentOrganization>
+            <TextOrganization>Desenvolvimento: </TextOrganization>
+            <ContentIcon>
+              <IconOrganization
+                src="static/logos/resystem.svg"
+                alt="Logo da Resystem"
+              />
+              <IconOrganization
+                src="static/logos/madpixel.svg"
+                alt="Logo da MadPixel"
+              />
+            </ContentIcon>
+          </ContentOrganization>
+          <ContentOrganization>
+            <TextOrganization>Apoio: </TextOrganization>
+            <ContentIcon>
+              <IconOrganization src="static/logos/som.svg" alt="Logo do SOM" />
+              <IconOrganization
+                src="static/logos/midianinja.svg"
+                alt="Logo da Midia Ninja"
+              />
+              <IconOrganization src="static/logos/logo.svg" alt="" />
+              <IconOrganization
+                src="static/logos/afete-se.svg"
+                alt="Logo do afete-se"
+              />
+              <IconOrganization
+                src="static/logos/festival.svg"
+                alt="Logo do festival covida: 2020"
+              />
+            </ContentIcon>
+          </ContentOrganization>
+        </Organization>
+      </Content>
     </FooterComponent>
   );
 };

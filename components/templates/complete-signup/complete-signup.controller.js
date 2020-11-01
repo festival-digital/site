@@ -4,22 +4,35 @@ import {
   createUser,
   getEvents as getEventsRepository,
   addTicket as addTicketRepository,
+  updateUser,
 } from './complete-signup.repository';
+import { isMobile } from './complete-signup.validate';
 
 /**
  * function that validate and try errors or the api response
  * @param {object} user user to be map
- * @param {string} user.cpf user cpf
- * @param {string} user.name user display name
  * @param {string} user.ida user ativist identification
- * @param {string} user.email user email
  */
-const mapUserToAPI = ({ ida, cpf, email, name }) => ({
+const mapUserToAPI = ({
+  ida, cpf, email, displayName,
+  old, gender, otherGender, stateLocation,
+  cityLocation, hasDisability, disability, color,
+  otherColor,
+}) => ({
   ida,
-  email,
-  first_name: name.split(' ')[0],
-  last_name: name.split(' ').slice(1).join(' '),
-  cpf: cpf.replace(/\D+/g, ''),
+  first_name: displayName.split(' ')[0],
+  last_name: displayName.split(' ').slice(1).join(' '),
+  display_name: displayName,
+  old: parseInt(old, 10),
+  gender,
+  other_gender: otherGender || null,
+  state: stateLocation,
+  city: cityLocation,
+  has_disability: hasDisability,
+  disability,
+  skin_color: color,
+  other_skin_color: otherColor,
+  status: 'ACTIVE',
 });
 
 /**
@@ -138,3 +151,33 @@ export const addTicket = async ({
   callback();
   setLoading(true);
 };
+
+/**
+ * function that add ticket on user
+ * @param {object} params infations and state control function
+ * @param {function} params.setLoading set loading state when waits for api response
+ * @param {object} params.userId api user id
+ * @param {object} params.user user data
+ * @param {object} params.router router
+ */
+export const completeRegister = async ({
+  setLoading, userId, user, router,
+}) => {
+  setLoading(true);
+
+  const mappedUser = mapUserToAPI(user);
+  mappedUser.id = userId;
+
+  let editUserPromise;
+
+  try {
+    editUserPromise = await updateUser(mappedUser);
+  } catch (err) {
+    throw err;
+  }
+
+  setLoading(false);
+  if (isMobile()) router.push('/events');
+  else router.push('/game');
+};
+

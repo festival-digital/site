@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  display: ${(props) => {
-    const { opened } = props;
-    return !opened ? 'none' : 'flex';
-  }};
+  display: flex;
   width: 100%;
   top: 0;
   left: 0;
