@@ -24,6 +24,7 @@
     "css-loader": "^5.0.0",
     "dotenv": "^8.2.0",
     "graphql": "^15.3.0",
+    "moment": "^2.29.1",
     "next": "^9.5.6-canary.11",
     "next-with-apollo": "^5.1.0",
     "postcss-flexbugs-fixes": "^4.2.1",

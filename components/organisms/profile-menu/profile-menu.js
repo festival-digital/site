@@ -34,7 +34,7 @@ const Menu = () => {
   return (
     <MenuComponent>
       <MenuItem>
-        <Link href="#">
+        <Link href="/my-tickets">
           <a>
             <Icon style={{ color: 'white' }}>account_balance_wallet</Icon>
             <Text>Meus Ingressos</Text>
@@ -50,7 +50,7 @@ const Menu = () => {
         </Link>
       </MenuItem>
       <MenuItem>
-        <Link href="#">
+        <Link href="/narrative">
           <a>
             <Icon style={{ color: 'white' }}>import_contacts</Icon>
             <Text>História de Oasi</Text>
@@ -58,7 +58,7 @@ const Menu = () => {
         </Link>
       </MenuItem>
       <MenuItem>
-        <Link href="#">
+        <Link href="/use-terms">
           <a>
             <Icon style={{ color: 'white' }}>assignment</Icon>
             <Text>Termos de Uso</Text>
@@ -66,8 +66,8 @@ const Menu = () => {
         </Link>
       </MenuItem>
       <MenuItem>
-        <Link href="#">
-          <a>
+        <Link href="https://www.instagram.com/oasi.vc">
+          <a target="_blank">
             <Icon style={{ color: 'white' }}>public</Icon>
             <Text>Portal Oasi</Text>
           </a>
