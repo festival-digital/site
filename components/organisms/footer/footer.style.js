@@ -5,8 +5,7 @@ export const Footer = styled.footer``;
 export const IDAContent = styled.div`
   width: 100%;
   text-align: center;
-  background: linear-gradient(180deg, #2E08C2 0%, #A439D7 100%);
-
+  background: linear-gradient(180deg, #2e08c2 0%, #a439d7 100%);
 `;
 
 export const IDAContentWrapper = styled.div`
@@ -16,7 +15,7 @@ export const IDAContentWrapper = styled.div`
   padding: 20px;
 
   @media (min-width: 769px) {
-    grid-template-columns: 1fr 240px;  
+    grid-template-columns: 1fr 240px;
   }
 `;
 
@@ -70,10 +69,9 @@ export const WrapperButtonIDA = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  
 
   @media (min-width: 769px) {
-    max-width: 240px;  
+    max-width: 240px;
   }
 
   & > button {
@@ -142,26 +140,70 @@ export const BrandIcon = styled.img`
 `;
 
 export const Icon = styled.img`
-  margin: 10px;
-  margin-left: 30px;
+  margin: 10px 15px 10px 0;
   vertical-align: middle;
+`;
 
-  @media (min-width: 845px) {
-    margin-left: 24px;
+export const Content = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+
+  @media (min-width: 1077px) {
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
     justify-content: space-between;
   }
 `;
 
 export const Organization = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  margin: 0 30px 30px 30px;
 
-  @media (min-width: 845px) {
-    margin-top: 40px;
-    margin: 30px;
-    flex-direction: row;
-    justify-content: space-between;
+  @media (min-width: 1077px) {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex: 2;
   }
+`;
+
+export const IconOrganization = styled.img`
+  margin-right: 20px;
+  vertical-align: middle;
+`;
+
+export const ContentOrganization = styled.div`
+  display: block;
+
+  @media (min-width: 1077px) {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const ContentIcon = styled.div`
+  margin: 8px 0;
+
+  @media (min-width: 1077px) {
+    margin: 0;
+    margin-left: 24px;
+  }
+`;
+
+export const TextOrganization = styled.p`
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 120%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #bfbfbf;
 `;

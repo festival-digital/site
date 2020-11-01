@@ -11,14 +11,19 @@ import {
   WrapperButtonIDA,
   MediaSocial,
   Icon,
-  Organization,
+  IconOrganization,
+  Content,
   BrandIcon,
   IDAContent,
   IDAContentWrapper,
   ContentAbout,
+  ContentOrganization,
   IDASubtitle,
   IDAText,
   IDALink,
+  Organization,
+  ContentIcon,
+  TextOrganization,
 } from './footer.style';
 
 const Footer = () => {
@@ -61,7 +66,12 @@ const Footer = () => {
           </NavigationItem>
           <NavigationItem>
             <Link href="/">
-              <a>Política de Privicidade</a>
+              <a>Termos de uso</a>
+            </Link>
+          </NavigationItem>
+          <NavigationItem>
+            <Link href="/">
+              <a>Ficha Técnica</a>
             </Link>
           </NavigationItem>
         </div>
@@ -84,18 +94,41 @@ const Footer = () => {
       </Navigation>
       <Space />
       <Space />
-      <Organization>
+      <Content>
         <div>
           <Link href="/">
             <BrandIcon src="static/icons/oasi.svg" alt="" />
           </Link>
         </div>
-        <div>
-          <Icon src="static/icons/midia-ninja.svg" alt="" />
-          <Icon src="static/icons/design-ativista.svg" alt="" />
-          <Icon src="static/icons/zona-de-propulssao.svg" alt="" />
-        </div>
-      </Organization>
+        <Organization>
+          <ContentOrganization>
+            <TextOrganization>Narrativa: </TextOrganization>
+            <ContentIcon>
+              <IconOrganization
+                src="static/logos/narrativa.svg"
+                alt="Logo da plataforma de escrita criativa, é um quadrado com bordas brancas, dentro tem palavra quadro escrito"
+              />
+            </ContentIcon>
+          </ContentOrganization>
+          <ContentOrganization>
+            <TextOrganization>Desenvolvimento: </TextOrganization>
+            <ContentIcon>
+              <IconOrganization src="static/logos/resystem.svg" alt="" />
+              <IconOrganization src="static/logos/madpixel.svg" alt="" />
+            </ContentIcon>
+          </ContentOrganization>
+          <ContentOrganization>
+            <TextOrganization>Apoio: </TextOrganization>
+            <ContentIcon>
+              <IconOrganization src="static/logos/som.svg" alt="" />
+              <IconOrganization src="static/logos/midianinja.svg" alt="" />
+              <IconOrganization src="static/logos/logo.svg" alt="" />
+              <IconOrganization src="static/logos/afete-se.svg" alt="" />
+              <IconOrganization src="static/logos/festival.svg" alt="" />
+            </ContentIcon>
+          </ContentOrganization>
+        </Organization>
+      </Content>
     </FooterComponent>
   );
 };
