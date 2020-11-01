@@ -68,6 +68,48 @@ export const SpaceSmall = styled.div`
   margin-bottom: 7px;
 `;
 
+export const Textarea = styled.textarea`
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 0px #000000;
+  border-radius: 10px;
+  background: #404040;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  word-wrap: break-word;
+  resize: none;
+
+  &:focus {
+    padding: 10px;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 0px #000000;
+  }
+`;
+
+export const ErrorMessage = styled.p`
+  margin-top: 6px;
+  text-align: left;
+  color: #ff2626;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+`;
+export const TextareaBase = styled.div`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const customButtonStyle = `
  @media (min-width: 650px) {
     max-width: 221px;

@@ -67,6 +67,17 @@ export const Textarea = styled.textarea`
   word-wrap: break-word;
   resize: none;
 
+  &::placeholder {
+    color: #ffffff;
+  }
+
+  &:focus {
+    padding: 0 16px;
+    border: 2px solid #000000;
+    color: #9f9f9f;
+    box-shadow: 0px 2px 0px #000000;
+  }
+
   &:focus {
     padding: 10px;
     border: 2px solid #000000;
@@ -92,16 +103,23 @@ export const TextareaBase = styled.div`
 `;
 
 export const customButtonStyle = `
- @media (min-width: 650px) {
+ @media (min-width: 680px) {
     max-width: 221px;
     align-self: flex-end;
   }
 `;
 
 export const customInputStyle = `
- @media (min-width: 650px) {
-     max-width: 300px;
+ @media (min-width: 680px) {
+     max-width: 210px;
      margin-right: 30px;
+  }
+
+ @media (min-width: 765px) {
+     max-width: 230px;
+  }
+ @media (min-width: 944px) {
+     max-width: 300px;
   }
 `;
 
