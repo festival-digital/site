@@ -28,10 +28,7 @@ const Main = ({ children }) => {
 
   // component did mount cycle
   useEffect(() => {
-    console.log('auth onCurrentUserChange');
-
     ida.onCurrentUserChange((auth) => {
-      console.log('auth from ida on  current user change ', auth);
       if (auth) {
         dispatch({
           type: SET_AUTH,

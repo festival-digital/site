@@ -1,5 +1,6 @@
 import { SET_USER } from 'components/store/actions';
 import ida from '../../libs/ida.lib';
+import { isMobile } from 'utils/validations';
 import { fetchUser } from './main.repository';
 
 /**
@@ -21,22 +22,13 @@ export const openIDASignin = async () => {
  * @param {function} navigationTo used to redirect user to another page
  */
 export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
-  console.log('pesquisar por ida ', ida);
   setLoading(true);
   let getUserResponse;
   try {
     getUserResponse = await fetchUser(ida);
   } catch (err) {
-    console.log([err]);
-  }
-
-  if (
-    !getUserResponse.data ||
-    !getUserResponse.data.oneUser ||
-    !getUserResponse.data.oneUser.status ||
-    getUserResponse.data.oneUser.status === 'INCOMPLETE'
-  ) {
-    navigationTo('/complete-signup');
+    setLoading(false);
+    return;
   }
 
   dispatch({
@@ -45,4 +37,19 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
   });
 
   setLoading(false);
+
+  if (
+    !getUserResponse.data ||
+    !getUserResponse.data.oneUser ||
+    !getUserResponse.data.oneUser.status ||
+    getUserResponse.data.oneUser.status === 'INCOMPLETE'
+  ) {
+    navigationTo('/complete-signup');
+  } else if (getUserResponse.data.oneUser.status === 'ACTIVE') {
+    if (isMobile()) {
+      navigationTo('/events');
+    } else {
+      navigationTo('/game');
+    }
+  }
 };
