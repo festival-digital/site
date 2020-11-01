@@ -110,7 +110,7 @@ export const customButtonStyle = `
 `;
 
 export const customInputStyle = `
- @media (min-width: 650px) {
+ @media (min-width: 680px) {
      max-width: 300px;
      margin-right: 30px;
   }
