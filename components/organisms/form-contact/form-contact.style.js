@@ -103,7 +103,7 @@ export const TextareaBase = styled.div`
 `;
 
 export const customButtonStyle = `
- @media (min-width: 650px) {
+ @media (min-width: 680px) {
     max-width: 221px;
     align-self: flex-end;
   }
@@ -111,8 +111,15 @@ export const customButtonStyle = `
 
 export const customInputStyle = `
  @media (min-width: 680px) {
-     max-width: 300px;
+     max-width: 210px;
      margin-right: 30px;
+  }
+
+ @media (min-width: 765px) {
+     max-width: 230px;
+  }
+ @media (min-width: 944px) {
+     max-width: 300px;
   }
 `;
 
