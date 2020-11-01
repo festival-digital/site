@@ -7,7 +7,7 @@ import {
 import { ALL_EVENTS_QUERY } from 'queries/event.queries';
 
 /**
- * request user on api
+ * request to create user on api
  * @param {string} params user IDA token to be found on APP API
  * @returns {Promise} contains user data or null
  */
@@ -18,15 +18,15 @@ export const createUser = (user) =>
   });
 
 /**
- * request update user on api
+ * request to update user on api
  * @param {string} params user IDA token to be found on APP API
  * @returns {Promise} contains user data or null
  */
 export const updateUser = (user) =>
-client().mutate({
-  mutation: UPDATE_USER_MUTATION,
-  variables: { user },
-});
+  client().mutate({
+    mutation: UPDATE_USER_MUTATION,
+    variables: { user },
+  });
 
 /**
  * request events on api

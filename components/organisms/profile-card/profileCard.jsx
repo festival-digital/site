@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Header, Wrapper, Title, Label, Value } from './profileCard.style';
 import Button from 'components/atoms/button/button';
 
-const calcAge = (birth_date) => Math.floor((new Date().getTime() - birth_date.getTime()) / 31556952000);
+const calcAge = (birth_date) => Math.floor((new Date().getTime() - new Date(+birth_date).getTime()) / 31556952000);
 
 const ProfileCard = ({
   birth_date,
@@ -18,16 +18,17 @@ const ProfileCard = ({
   disability,
   handleClick,
 }) => {
+  console.log('gender', gender);
   return (
     <Wrapper>
       <Label>Idade</Label>
       <Value>{birth_date ? calcAge(birth_date) : 'Não Informado'}</Value>
       <Label>Gênero</Label>
-      <Value>{gender || other_gender || 'Não Informado'}</Value>
+      <Value>{gender === 'other' ?  (other_gender || 'Não Informado') : gender}</Value>
       <Label>Localização</Label>
       <Value>{state && city ? `${state}, ${city}` : 'Não Informado'}</Value>
       <Label>Cor</Label>
-      <Value>{skin_color || other_skin_color || 'Não Informado'}</Value>
+      <Value>{skin_color === 'other' ? (other_skin_color || 'Não Informado') : skin_color}</Value>
       <Label>Se declara como PcD?</Label>
       <Value>{has_disability ? disability : 'Não' }</Value>
       <Button
@@ -36,7 +37,7 @@ const ProfileCard = ({
         color={'#808080'}
       >EDITAR</Button>
     </Wrapper>
-  )
+  );
 };
 
 ProfileCard.defaultProps = {

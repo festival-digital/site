@@ -8,13 +8,12 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import nextWithApollo from 'next-with-apollo';
 
 const GRAPH_URI = `${process.env.GRAPH_URI}`;
-console.log('process.env.GRAPH_URI', process.env.GRAPHQL_URI);
 const API_KEY = `${process.env.APP_KEY}`;
 
 export const client = (initialState) =>
   new ApolloClient({
     uri: process.env.GRAPHQL_URI,
-    cache: new InMemoryCache({ dataIdFromObject: () => Math.random() }).restore(
+    cache: new InMemoryCache({ dataIdFromObject: (payload) => `/* ${payload._id} */-${Math.random()}` }).restore(
       initialState || {}
     ),
     request: (operation) => {
