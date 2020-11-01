@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import buildClass from 'utils/buildClass';
-import GoBackButton from 'components/templates/narrative/node_modules/components/atoms/go-back-button/go-back-button';
+import GoBackButton from 'components/atoms/go-back-button/go-back-button';
 import {
   Nav,
   LinearBackground,

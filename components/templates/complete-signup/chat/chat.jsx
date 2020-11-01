@@ -28,7 +28,7 @@ import skinColorOptions from 'collections/skin-colors';
 import genderOptions from 'collections/genders';
 import stateOptions from 'collections/states';
 import disabilityOptions from 'collections/disabilities';
-import Store from 'components/store/Store';
+import Store from 'components/templates/useTerms/node_modules/components/store/Store';
 import { getEvents, addTicket } from '../complete-signup.controller';
 
 // define form list
@@ -112,7 +112,7 @@ const Chat = () => {
   const [montainsTranslateX, setMontainsTranslateX] = useState(0);
   const [starsTranslateX, setStarsTranslateX] = useState(0);
   const [sumDiameter, setSumDiameter] = useState(0);
-  
+
   /**
    * effect to execute after render
    */
@@ -158,10 +158,10 @@ const Chat = () => {
         message,
         user: true,
       });
-      
+
       setStarsTranslateX(starsTranslateX + STARS_TRANSLATE_VARIATION);
       setMontainsTranslateX(montainsTranslateX + MONTAINS_TRANSLATE_VARIATION);
-      
+
       setUserMessages(messages);
       setQuestionID(types.WHERE_ARE_YOU_GOING);
     },
@@ -204,7 +204,7 @@ const Chat = () => {
       // define callback
       const callback = () => {
         setStarsTranslateX(starsTranslateX + STARS_TRANSLATE_VARIATION);
-        setMontainsTranslateX(montainsTranslateX + MONTAINS_TRANSLATE_VARIATION);  
+        setMontainsTranslateX(montainsTranslateX + MONTAINS_TRANSLATE_VARIATION);
         setQuestionID(types.MEET_YOU_BETTER);
       };
 
@@ -260,7 +260,7 @@ const Chat = () => {
       setQuestionID(types.GENDER);
     },
   };
-  
+
   // define gender form paramters
   formParamters[types.GENDER] = {
     gender,
@@ -276,7 +276,7 @@ const Chat = () => {
 
       if (gender !== 'other') {
         setStarsTranslateX(starsTranslateX + STARS_TRANSLATE_VARIATION);
-        setMontainsTranslateX(montainsTranslateX + MONTAINS_TRANSLATE_VARIATION);  
+        setMontainsTranslateX(montainsTranslateX + MONTAINS_TRANSLATE_VARIATION);
         setSumDiameter(sumDiameter + 80);
       }
 
@@ -305,7 +305,7 @@ const Chat = () => {
       setQuestionID(types.STATE);
     },
   };
-  
+
   // define state form paramters
   formParamters[types.STATE] = {
     stateLocation,
@@ -327,7 +327,7 @@ const Chat = () => {
       setQuestionID(types.CITY);
     },
   };
-  
+
   // define city form paramters
   formParamters[types.CITY] = {
     cityLocation,
@@ -348,7 +348,7 @@ const Chat = () => {
       setQuestionID(types.COLOR);
     },
   };
-  
+
   // define color form paramters
   formParamters[types.COLOR] = {
     color,
@@ -384,7 +384,7 @@ const Chat = () => {
         message: otherColor,
         user: true,
       });
-      
+
       setStarsTranslateX(starsTranslateX + STARS_TRANSLATE_VARIATION);
       setMontainsTranslateX(montainsTranslateX + MONTAINS_TRANSLATE_VARIATION);
       setSumDiameter(sumDiameter + 80);
@@ -393,7 +393,7 @@ const Chat = () => {
       setQuestionID(types.HAS_DISABILITY);
     },
   };
-  
+
   // define has disability form paramters
   formParamters[types.HAS_DISABILITY] = {
     onSubmit: (hasDisability) => {
@@ -403,7 +403,7 @@ const Chat = () => {
         message: hasDisability ? 'Sim' : 'Não',
         user: true,
       });
-      
+
       if (hasDisability) {
         setHasDisability(true);
         setQuestionID(types.DISABILITY);
@@ -440,7 +440,7 @@ const Chat = () => {
       setUserMessages(messages);
     },
   };
-  
+
   // define terms form paramters
   formParamters[types.TERMS] = {
     onSubmit: () => {
@@ -451,7 +451,7 @@ const Chat = () => {
       setOpenTermsModal(true);
     },
   };
-  
+
   // define jump form paramters
   formParamters[types.JUMP] = {
     onSubmit: () => {
@@ -494,14 +494,14 @@ const Chat = () => {
           setStarsTranslateX(starsTranslateX + STARS_TRANSLATE_VARIATION);
           setMontainsTranslateX(montainsTranslateX + MONTAINS_TRANSLATE_VARIATION);
           setSumDiameter(sumDiameter + 500);
-          
+
           const messages = [...userMessages];
           messages.push({
             time: Date.now(),
             message: 'Eu aceito',
             user: true,
           });
-          
+
           setOpenTermsModal(false)
           setQuestionID(types.JUMP);
           setUserMessages(messages);

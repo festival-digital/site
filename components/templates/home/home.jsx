@@ -8,7 +8,7 @@ import ModalSympla from 'components/modals/modal-sympla/modal-sympla';
 import Header from 'components/organisms/home-header/home-header';
 import Footer from 'components/organisms/footer/footer';
 import Button from 'components/atoms/button/button';
-import GradientButton from 'components/templates/narrative/node_modules/components/atoms/gradient-button/gradient-button';
+import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import Store from 'components/store/Store';
 import { OPEN_MENU_MODAL, CLOSE_MENU_MODAL } from 'components/store/actions';

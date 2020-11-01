@@ -54,7 +54,7 @@ const JuryTemplate = ({ id }) => {
       </JuryLoadingContainer>
     )
   }
-  
+
   return (
     <JuryContainer>
       <Wrapper>
@@ -77,7 +77,7 @@ const JuryTemplate = ({ id }) => {
           Aqui, você pode classificar os vídeos exibidos na Mostra de Videoclipes. O vídeo mais bem votado vai ser exibido no palco principal durante o encerramento da Feira da Música! Quando terminar de votar, pode clicar em “Voltar Para a Galeria” que vamos te levar de volta ;)
         </JuryDescription>
         <JuryList>
-            { 
+            {
               renderCards({
                 shows: activity.shows,
                 handleVote,
