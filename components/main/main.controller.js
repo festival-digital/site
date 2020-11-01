@@ -45,11 +45,13 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
     getUserResponse.data.oneUser.status === 'INCOMPLETE'
   ) {
     navigationTo('/complete-signup');
-  } else if (getUserResponse.data.oneUser.status === 'ACTIVE') {
-    if (isMobile()) {
-      navigationTo('/events');
-    } else {
-      navigationTo('/game');
-    }
-  }
+  } 
+  
+  // if (getUserResponse.data.oneUser.status === 'ACTIVE') {
+  //   if (isMobile()) {
+  //     navigationTo('/events');
+  //   } else {
+  //     navigationTo('/game');
+  //   }
+  // }
 };

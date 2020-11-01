@@ -47,7 +47,7 @@ const JuryTemplate = ({ id }) => {
     getActivity({ setLoading, setActivity, urlParam: id });
   }, []);
 
-  if (loading) {
+  if (loading || !state.user) {
     return (
       <JuryLoadingContainer>
         <Loading />
@@ -83,7 +83,7 @@ const JuryTemplate = ({ id }) => {
                 handleVote,
                 activity,
                 setActivity,
-                userId: '5f9c6beb32b3bd49a7116e92',
+                userId: state.user.id,
               })
             }
         </JuryList>
