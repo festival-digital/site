@@ -156,11 +156,6 @@ const TextUseTerms = () => {
         acesso.
         <br />
         <br />
-        A utilização de todos os espaços acima elencados estão sujeitas a estas
-        condições de uso, devendo o Usuário consentir aos termos, para ter
-        acesso.
-        <br />
-        <br />
         A plataforma OASI é de propriedade da Serviços de Cultura Digital. A
         plataforma concede ao Usuário uma permissão limitada, não exclusiva e
         revogável para fazer uso de nossos recursos, de forma limitada, pessoal
