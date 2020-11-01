@@ -1,14 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
-import PropTypes from  'prop-types';
+import React from 'react';
 import Button from 'components/atoms/button/button';
-import Loading from 'components/atoms/loading/loading';
 import JuryCard from 'components/molecules/jury-card/jury-card';
-import Store from 'components/store/Store';
-import { getActivity, handleVote } from './jury-template.controller';
 import {
   JuryContainer, JuryHeader, JuryDescription, JuryList,
   OasiLogo, JuryTitle, BackIcon, Wrapper,
-  JuryLoadingContainer,
 } from './jury.style';
 
 const renderCards = ({

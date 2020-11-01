@@ -40,10 +40,6 @@ export const InputBase = styled.div`
   width: 100%;
   display: inline-flex;
   flex-direction: column;
-<<<<<<< HEAD
-  width: 100%;
 
   ${({ customStyle }) => customStyle}
-=======
->>>>>>> feature/fd-345
 `;

@@ -1,5 +1,9 @@
 export default [
   {
+    id: 'no',
+    label: 'Não',
+  },
+  {
     id: 'fisica',
     label: 'Física',
   },

@@ -6,3 +6,4 @@
 .env
 .env.development
 .env.production
+yarn.lock
