@@ -5,6 +5,7 @@ export const ONE_USER_QUERY = gql`
     oneUser(ida: $ida) {
       id
       ida
+      status
       tickets {
         id
         code

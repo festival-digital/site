@@ -67,6 +67,17 @@ export const Textarea = styled.textarea`
   word-wrap: break-word;
   resize: none;
 
+  &::placeholder {
+    color: #ffffff;
+  }
+
+  &:focus {
+    padding: 0 16px;
+    border: 2px solid #000000;
+    color: #9f9f9f;
+    box-shadow: 0px 2px 0px #000000;
+  }
+
   &:focus {
     padding: 10px;
     border: 2px solid #000000;

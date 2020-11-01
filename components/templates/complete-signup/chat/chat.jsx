@@ -28,8 +28,8 @@ import skinColorOptions from 'collections/skin-colors';
 import genderOptions from 'collections/genders';
 import stateOptions from 'collections/states';
 import disabilityOptions from 'collections/disabilities';
-import Store from 'components/templates/useTerms/node_modules/components/store/Store';
-import { getEvents, addTicket } from '../complete-signup.controller';
+import Store from 'components/store/Store';
+import { getEvents, addTicket, completeRegister } from '../complete-signup.controller';
 
 // define form list
 const forms = {};
@@ -455,7 +455,19 @@ const Chat = () => {
   // define jump form paramters
   formParamters[types.JUMP] = {
     onSubmit: () => {
-      console.log('fim');
+      const newUser = {
+        ida: state.auth.ida,
+        displayName, event, ticket, old,
+        gender, otherGender, stateLocation, cityLocation,
+        hasDisability, disability, color, otherColor,
+      };
+
+      completeRegister({
+        setLoading,
+        user: newUser,
+        userId: state.user.id,
+        router,
+      });
     },
   };
 
