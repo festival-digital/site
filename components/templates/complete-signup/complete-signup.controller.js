@@ -176,8 +176,10 @@ export const completeRegister = async ({
     throw err;
   }
 
-  setLoading(false);
-  if (isMobile()) router.push('/events');
-  else router.push('/game');
+  setTimeout(() => {
+    setLoading(false);
+    if (isMobile()) router.push('/events');
+    else router.push('/game');
+  }, 2000);
 };
 
