@@ -30,14 +30,17 @@ export const Title = styled.h1`
   color: ${({ theme }) => theme.neutralColor[1]};
 `;
 
-export const AuthorParagraph = styled.p`
+export const AuthorParagraph = styled.div`
   font-family: ${({ theme }) => theme.fontFamily.primary}, sans-serif;
   font-style: normal;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: ${({ theme }) => theme.fontSize.xs};
   line-height: 28px;
+  text-align: center;
   color: ${({ theme }) => theme.neutralColor[1]};
+  margin: 0 auto;
   margin-bottom: 20px;
+  padding: 0 16px;
 
   @media (min-width: 700px) {
     font-size: ${({ theme }) => theme.fontSize.lg};
