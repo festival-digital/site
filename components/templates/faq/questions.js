@@ -31,8 +31,9 @@ export const questions = [
       'A plataforma está sendo construída em versão web para poder se adequar melhor aos diversos sistemas operacionais, tornando a mais acessível. Ao mesmo tempo, os recursos e a sincronia de dados exigem um pouco mais do processamento lógico, memória cache e buffer que alguns celulares podem fornecer. Pensando em unificar a experiência para que seja aproveitada de forma ideal, alguns recursos serão limitados aos Desktops nesta versão.',
   },
   {
-    title: 'Como posso entrar em contato com os responsáveis pala Oasi?',
-    description: 'Acesse no menu contato e deixe sua mensagem. ',
+    title: 'Como posso entrar em contato com os responsáveis pela Oasi?',
+    description:
+      'Para entrar em contato conosco, preencha o formulário ao final desta página.',
   },
   {
     title: 'Quais são os recursos de acessibilidade disponíveis na Oasi?',

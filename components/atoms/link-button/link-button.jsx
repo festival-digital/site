@@ -12,6 +12,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  cutomStyle: '',
   children: 'Button',
   color: '#EA5EBF',
 };
