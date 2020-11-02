@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import GoBackButton from 'components/atoms/go-back-button/go-back-button';
-import Navigate from 'next';
+import { useRouter } from 'next/router';
 import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import ModalContact from 'components/modals/modal-contact/modal-contact';
 import {
@@ -11,7 +11,6 @@ import {
   Author,
   Text,
   Space,
-  SpaceSmall,
   Content,
   ImagemAnimation,
   Strong,
@@ -22,6 +21,7 @@ import {
 } from './narrative.style';
 
 const Narrative = () => {
+  const router = useRouter();
   const [openModalContact, setOpenModalContact] = useState(false);
 
   if (openModalContact)
@@ -35,7 +35,7 @@ const Narrative = () => {
     <Wrapper>
       <Content>
         <ContentButton>
-          <GoBackButton />
+          <GoBackButton onClick={() => router.back()} />
           <GradientButton
             customStyle={customStyleButton}
             onClick={() => setOpenModalContact(true)}
