@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   position: fixed;
   display: ${(props) => {
-    const { opened } = props;
-    return !opened ? 'none' : 'flex';
+    const { isOpen } = props;
+    return isOpen ? 'flex' : 'none';
   }};
   align-items: center;
   justify-content: center;

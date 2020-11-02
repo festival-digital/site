@@ -81,7 +81,7 @@ export function maskDate(input) {
   if (v.length < 3) return input;
   v = v.replace(/\D/g, '');
   v = v.length > 8 ? v.substring(0, 8) : v;
-  v = v.replace(/(\d{2})(\d{0,6})/g, '$1/$2');
+  v = v.replace(/(\d{2})(\d{1,6})/g, '$1/$2');
   v = v.replace(/(\d{2})(\d{1,4})/g, '$1/$2');
   return v;
 }

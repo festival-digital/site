@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-
+import { openIDASignin } from 'components/main/main.controller';
 import { IDARegisterButton, Text, Subtitle } from '@resystem/design-system';
 import {
   Footer as FooterComponent,
@@ -42,8 +42,12 @@ const Footer = () => {
             </IDAText>
           </ContentAbout>
           <WrapperButtonIDA>
-            <IDARegisterButton text="Entrar com IDa" dark />
-            <IDALink href="/">SAIBA MAIS SOBRE A IDa</IDALink>
+            <IDARegisterButton
+              text="Entrar com IDa"
+              dark
+              small
+              onClick={openIDASignin}
+            />
           </WrapperButtonIDA>
         </IDAContentWrapper>
       </IDAContent>

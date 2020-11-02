@@ -1,6 +1,7 @@
 import {
   fetchUser,
   fetchAllUsers,
+  updateUser as updateUserMutation,
   fetchEvent,
   fetchAllEvents,
 } from './complete-registration.repository';
@@ -20,6 +21,16 @@ export const getAllUsers = async (userConstraints) => {
   try {
     response = await fetchAllUsers(userConstraints);
     console.log('All users ', response);
+  } catch (err) {
+    console.log([err]);
+  }
+  return response;
+};
+
+export const updateUser = async (user) => {
+  let response;
+  try {
+    response = updateUserMutation(user);
   } catch (err) {
     console.log([err]);
   }
