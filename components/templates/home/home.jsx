@@ -121,8 +121,8 @@ const Home = () => {
               onClick={openIDASignin}
               text="Entrar com IDa"
               dark
+              small
             />
-            <IDALink href="/">SAIBA MAIS SOBRE A IDa</IDALink>
           </WrapperButtonIDA>
         </IDAContentWrapper>
       </IDAContent>
@@ -141,13 +141,13 @@ const Home = () => {
           <AboutOasiTextWrapper>
             <AboutOasiTitle>Oasi? Mas o que é isso?</AboutOasiTitle>
             <AboutOasiDescription>
-              Ei você! Oasi é uma plataforma que absorve vários formatos, shows,
-              festas, mostras, conferências, oficinas e encontros.
+              Ei! Você! Oasi é uma plataforma que absorve vários formatos,
+              shows, festas, mostras, conferências, oficinas e encontros. É uma
+              nova forma de construir eventos e experiências coletivas!
               <br />
               <br />
-              Enfim, uma nova forma de construir eventos e experiências
-              coletivas. Fica o convite pra fazer e realizar esse mundo com a
-              gente. Explorar!
+              Bom, fica o convite pra fazer e realizar esse mundo com a gente.
+              Vêm explorar! E avisa as amigues!
             </AboutOasiDescription>
           </AboutOasiTextWrapper>
         </AboutOasiWrapper>
@@ -162,11 +162,11 @@ const Home = () => {
                 src="/static/icons/grid-1-title-illustration.svg"
                 alt=""
               />
-              <AboutTitle>Saudações, Nomadæ!</AboutTitle>
+              <AboutTitle>Saudações, Nomade!</AboutTitle>
               <AboutDescription>
-                Navegações diferentes pra você assistir o seu artista favorito!
-                Fazer aquela reunião interativa e multimídia, ou expor seus
-                produtos? Conheça a plataforma! Conheça oasi.
+                Uma experiência diferente pra você assistir o seu artista
+                favorite! Fazer aquela reunião interativa e multimídia, ou expor
+                seus produtos? Conheça a plataforma! Conheça Oasi.
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -181,9 +181,9 @@ const Home = () => {
               />
               <AboutTitle>Um mundo feito de encontros</AboutTitle>
               <AboutDescription>
-                Uma nova forma de experimentar a coletividade te espera!
-                Conhecendo pessoas novas, encontrando amiges ou até artistas
-                favorites!
+                Uma nova forma de experimentar o coletivo, novas amigues,
+                amigues antigas, ou até seus artistas favorites, te esperam em
+                Oasi!
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -198,8 +198,9 @@ const Home = () => {
               />
               <AboutTitle>Galeria e Exposições</AboutTitle>
               <AboutDescription>
-                Curadoria sempre envolvida com diversos eventos e temas da
-                plataforma. Pra espalhar a palavra de tudo que a gente ama.
+                Curadoria sempre envolvida com os eventos e temas da plataforma,
+                dos mais diversos. Pra espalhar a palavra de tudo que a gente
+                ama.
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -214,9 +215,9 @@ const Home = () => {
               />
               <AboutTitle>Feira online </AboutTitle>
               <AboutDescription>
-                Com catálogo colaborativo, espaços de aprendizagem, encontros e
-                paineis, muita troca e história pra ouvir e contar por aqui! Vai
-                perder essa?
+                Com um catálogo colaborativo, espaços de aprendizagem, encontros
+                e painéis! Muita troca e histórias pra ouvir e contar por aqui!
+                Vai perder essa?
               </AboutDescription>
             </TextWrapper>
           </AboutText>
