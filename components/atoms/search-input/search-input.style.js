@@ -26,11 +26,15 @@ export const Input = styled.input`
   width: 100%;
   border-radius: 10px;
 
+  &::placeholder {
+    color: #ffffff;
+  }
+
   &:focus {
     font-size: 16px;
     line-height: 19px;
     padding: 14px 0;
-    color: #ffffff;
+    color: #9f9f9f;
     width: 100%;
   }
 
