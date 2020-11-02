@@ -278,11 +278,14 @@ const Home = () => {
           </GradientButton>
           <Button
             color="#404040"
+            onClick={() => {
+              router.push('https://feiradamusica.com.br');
+            }}
             alt="Saiba mais sobre a Feira da Música de Fortaleza de 5 a 8 de Novembro"
           >
             Saiba mais
           </Button>
-          <Link href="/">
+          <Link href="/all-events">
             <LinkButton href="/" color="#FFFFFF">
               Ver todos os eventos
             </LinkButton>
@@ -295,7 +298,7 @@ const Home = () => {
       <ModalSympla
         opened={symplaModal}
         toSympla={() => {
-          window.open('https://www.sympla.com.br', '_blank');
+          window.open('https://www.sympla.com.br/lancamento-oasi--betatesters-e-convidades---02-novembro__1028218?token=9ae11d6cdcf0caf7c1b5602a2ba5fd2b', '_blank');
           setSymplaModal(false);
         }}
         onCancel={() => setSymplaModal(false)}

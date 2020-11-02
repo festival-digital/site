@@ -5,7 +5,7 @@ import PrivateContext from 'components/private-context/private-context';
 const StreamPage = ({ stream }) => {
   return (
     <PrivateContext>
-     <StreamTemplate stream={stream} />
+      <StreamTemplate stream={stream} />
     </PrivateContext>
   );
 };
