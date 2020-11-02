@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import moment from 'moment';
 import { enhancedCodeGenerator } from 'utils/codeGenerator';
+import { useRouter } from 'next/router';
 
 const Container = styled.div`
   height: 160px;
@@ -182,6 +184,8 @@ const SelectTag = ({ activityType, subscription }) => {
   return <></>;
 };
 
+
+
 /**
  * This is the activity card component
  * @returns {React.Component}
@@ -194,27 +198,29 @@ const ActivityCard = ({
   backgroundUrl,
   isSubscribed,
   subscription,
-  tags,
+  activity,
   ...props
 }) => {
+  console.log('activity', activity);
+  const router = useRouter();
   return (
     <Container>
-      <Figure backgroundUrl={backgroundUrl} />
+      <Figure backgroundUrl={activity.cover_url || backgroundUrl} />
       <LinearBackground>
         <LeftContent>
-          <ActivityDate>{activityDate}</ActivityDate>
-          <ActivityName>{activityName}</ActivityName>
-          <GenerateTags tags={tags} />
-          <ReadMoreLink
+          <ActivityDate>{activity.date}</ActivityDate>
+          <ActivityName>{activity.title}</ActivityName>
+          <GenerateTags tags={activity.tags} />
+          {/* <ReadMoreLink
             href="/"
             alt={`Link para saber mais sobre ${activityName}`}
           >
             + Saiba mais
-          </ReadMoreLink>
+          </ReadMoreLink> */}
         </LeftContent>
         <RightContent>
-          <SelectTag subscription={subscription} activityType={activityType} />
-          <Button>Entrar</Button>
+          {/* <SelectTag subscription={subscription} activityType={activityType} /> */}
+          <Button onClick={() => router.push(`/embed-stream/${activity.id}`)}>Entrar</Button>
         </RightContent>
       </LinearBackground>
     </Container>

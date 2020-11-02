@@ -39,7 +39,7 @@ const getDateString = (startDate, endDate) => {
 
 const renderNowEvents = ({ events }) => events.map((event) => (
   <li>
-    <Link href={`/events/${event.title_key}`}>
+    <Link href={`/events/${event.id}`}>
       <a>
         <EventCard
           backgroundUrl={event.cover_url}
@@ -54,7 +54,7 @@ const renderNowEvents = ({ events }) => events.map((event) => (
 
 const renderOtherEvents = ({ events }) => events.map((event) => (
   <li>
-    <Link href={`/events/${event.title_key}`}>
+    <Link href={`/events/${event.id}`}>
       <a>
         <EventCard
           backgroundUrl={event.cover_url}

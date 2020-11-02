@@ -12,6 +12,7 @@ export const ONE_EVENT_QUERY = gql`
       description
       image_url
       cover_url
+      ticket_url
       site_url
       tags
       sympla_url

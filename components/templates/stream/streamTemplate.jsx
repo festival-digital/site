@@ -9,7 +9,6 @@ const Iframe = styled.iframe`
 `;
 
 const getActivity = async (stream, setActivity) => {
-  console.log('getActivity -> stream', stream);
   const activity = await client().query({
     query: gql`
     query oneActivity($id: String) {

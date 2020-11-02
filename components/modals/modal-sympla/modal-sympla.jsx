@@ -26,7 +26,8 @@ const ModalSympla = ({
   handleConfirmButton,
   handleCancelButton,
   handleBackButton,
-   toSympla, onCancel
+  toSympla,
+  onCancel
 }) => {
   function handleConfirmButtonClick() {
     handleConfirmButton();
@@ -37,6 +38,7 @@ const ModalSympla = ({
   }
 
   function handleBackButtonClick() {
+    console.log('handleBackButtonClick -> handleBackButtonClick');
     handleBackButton();
   }
 
@@ -74,7 +76,7 @@ const ModalSympla = ({
             </Text>
             <Space />
             <Space />
-            <NavigationLink onClick={() => { window.open('https://www.sympla.com.br', '_blank') }}
+            <NavigationLink onClick={() => { window.open('https://www.sympla.com.br/solucoes', '_blank') }}
           >Saiba mais sobre o sympla
         </NavigationLink>
         <Space />

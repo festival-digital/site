@@ -97,7 +97,7 @@ export const MainContent = styled.div`
   flex-direction: column;
   align-self: center;
 
-  &::after {
+  /* &::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -112,7 +112,7 @@ export const MainContent = styled.div`
       transparent 80%
     );
     z-index: -1;
-  }
+  } */
 
   @media (min-width: 600px) {
     max-width: 320px;

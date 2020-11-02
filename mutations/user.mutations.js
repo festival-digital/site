@@ -34,6 +34,7 @@ export const UPDATE_USER_MUTATION = gql`
         id
         code
         event {
+          id
           sympla_id
         }
       }

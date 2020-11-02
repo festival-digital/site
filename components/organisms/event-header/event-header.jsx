@@ -10,8 +10,10 @@ import {
   OasiLogo,
 } from './event-header.style';
 import ProfileMenu from '../profile-menu/profile-menu';
+import { useRouter } from 'next/router';
 
 const EventHeader = ({ backgroundURI, goBackMode }) => {
+  const router = useRouter();
   const [isSticky, setIsSticky] = useState(false);
   const stickyRef = useRef(null);
 
@@ -37,7 +39,7 @@ const EventHeader = ({ backgroundURI, goBackMode }) => {
     <Nav ref={stickyRef} isSticky={isSticky} backgroundURI={backgroundURI}>
       <LinearBackground isSticky={isSticky}>
         {goBackMode ? (
-          <GoBackButton />
+          <GoBackButton onClick={() => router.back()} />
         ) : (
           <>
             <ProfileMenu />

@@ -49,7 +49,7 @@ const ButtonFooter = styled.button`
     `${spacingInset.xs} ${spacingInset.xs}`};
 `;
 
-const EventFooter = () => {
+const EventFooter = ({ handleClick }) => {
   const [isSticky, setIsSticky] = useState(false);
   const stickyRef = useRef(null);
   const handleScroll = () => {
@@ -75,7 +75,7 @@ const EventFooter = () => {
       className={buildClass({ isScrolled: isSticky, isNotScrolled: !isSticky })}
       ref={stickyRef}
     >
-      <ButtonFooter>Adquirir ingresso gratuito </ButtonFooter>
+      <ButtonFooter onClick={handleClick}>Adquirir ingresso gratuito </ButtonFooter>
     </FooterSticky>
   );
 };

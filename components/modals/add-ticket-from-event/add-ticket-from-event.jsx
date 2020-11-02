@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import VanillaMask from 'vanilla-masker';
 import { Animation } from '@resystem/design-system';
 
 import {
@@ -35,7 +36,9 @@ const AddTicketFromEvent = ({
     string.length === 0 ? 'Código inválido! Tente novamente' : '';
 
   function handleConfirmButtonClick() {
-    handleConfirmButton({});
+    handleConfirmButton({
+      ticket: ticketInput,
+    });
   }
 
   function handleIgnoreButtonClick() {
@@ -43,7 +46,7 @@ const AddTicketFromEvent = ({
   }
 
   function handleTicketInput({ target }) {
-    setTicketInput(target.value);
+    setTicketInput(target.value.replace('/-/', ''));
     setTicketError(simpleInputValidation(target.value));
   }
 
@@ -67,7 +70,7 @@ const AddTicketFromEvent = ({
           <Space />
           <SimpleInput
             placeholder="Digite o código do ingresso"
-            value={ticketInput}
+            value={VanillaMask.toPattern(ticketInput, 'SSSS-SS-SSSS').toUpperCase()}
             onChange={handleTicketInput}
             error={ticketError}
           />

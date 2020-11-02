@@ -23,6 +23,7 @@ export const ONE_USER_QUERY = gql`
         id
         code
         event {
+          id
           sympla_id
         }
       }
