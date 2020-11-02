@@ -68,7 +68,6 @@ export const Modal = styled.div`
 `;
 export const TermsWrapper = styled.div`
   height: 100%;
-  overflow-y: auto;
   margin-top: 24px;
   padding-bottom: 40px;
 `;

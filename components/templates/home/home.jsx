@@ -104,7 +104,7 @@ const Home = () => {
             <OasiLogo src="/static/icons/oasi.svg" alt="" />
           </Title>
           <Description>
-            Experimente formas diferentes de se encontrar e conectar com amigos,
+            Experimente formas diferentes de se encontrar e conectar com amigues,
             colaborar com eventos projetos, e realizar um novo mundo possível.
           </Description>
           <DownButton
