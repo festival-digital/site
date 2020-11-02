@@ -121,8 +121,8 @@ const Home = () => {
               onClick={openIDASignin}
               text="Entrar com IDa"
               dark
+              small
             />
-            <IDALink href="/">SAIBA MAIS SOBRE A IDa</IDALink>
           </WrapperButtonIDA>
         </IDAContentWrapper>
       </IDAContent>
