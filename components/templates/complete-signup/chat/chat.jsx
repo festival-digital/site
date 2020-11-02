@@ -467,6 +467,7 @@ const Chat = () => {
         user: newUser,
         userId: state.user.id,
         router,
+        token: state.auth.token,
       });
     },
   };

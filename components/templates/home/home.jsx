@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Icon from '@material-ui/core/Icon';
@@ -9,7 +9,9 @@ import Header from 'components/organisms/home-header/home-header';
 import Footer from 'components/organisms/footer/footer';
 import Button from 'components/atoms/button/button';
 import GradientButton from 'components/atoms/gradient-button/gradient-button';
+import Loading from 'components/atoms/loading/loading';
 import LinkButton from 'components/atoms/link-button/link-button';
+import { isMobile } from 'utils/validations';
 import Store from 'components/store/Store';
 import { OPEN_MENU_MODAL, CLOSE_MENU_MODAL } from 'components/store/actions';
 import {
@@ -51,6 +53,7 @@ import {
   NextEventDescription,
   NextEventInfoWrapper,
   NextEventMosaicIllustration,
+  LoadingWrapper,
 } from './home.style';
 
 /**
@@ -61,6 +64,23 @@ const Home = () => {
   const { state, dispatch } = useContext(Store);
   const [symplaModal, setSymplaModal] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    if (state.user && state.user.status !== 'IN_REGISTER' && isMobile()) router.push('/events');
+    if (state.user && state.user.status !== 'IN_REGISTER' && !isMobile()) {
+      router.push(`https://game.oasi.vc/?t=${state.auth.token}`);
+    }
+
+  }, [state.user]);
+
+  if (state.loading) {
+    return (
+      <LoadingWrapper>
+        <Loading />
+      </LoadingWrapper>
+    );
+  }
+
   return (
     <PageTemplate>
       <InitialWrapper>
