@@ -6,7 +6,7 @@ const StreamPage = ({ stream }) => {
   return (
     <PrivateContext>
      <StreamTemplate stream={stream} />
-    <PrivateContext/>
+    </PrivateContext>
   );
 };
 
