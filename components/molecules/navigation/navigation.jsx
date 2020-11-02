@@ -23,6 +23,21 @@ const Navigation = ({
           <a>Todos os eventos</a>
         </Link>
       </NavigationItem>
+      <NavigationItem column={column} onClick={closeMenu}>
+        <Link href="/faq">
+          <a>PERGUNTAS FREQUENTES</a>
+        </Link>
+      </NavigationItem>
+      <NavigationItem column={column} onClick={closeMenu}>
+        <Link href="/narrative">
+          <a>narrativa</a>
+        </Link>
+      </NavigationItem>
+      <NavigationItem column={column} onClick={closeMenu}>
+        <Link href="/use-terms">
+          <a>Termos de uso</a>
+        </Link>
+      </NavigationItem>
       <NavigationItem column={column}>
         <IDARegisterButton
           type="button"

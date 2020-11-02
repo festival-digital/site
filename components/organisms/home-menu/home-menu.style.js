@@ -11,7 +11,7 @@ export const Menu = styled.div`
   bottom: 0;
   left: 0;
   z-index: 40;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(15px);
   overflow: auto;
 `;

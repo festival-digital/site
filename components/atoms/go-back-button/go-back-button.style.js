@@ -19,4 +19,5 @@ export const Button = styled.button`
   cursor: pointer;
 
   border-radius: 10px;
+  ${(props) => props.customStyle}
 `;
