@@ -1,48 +1,54 @@
-import { client } from "utils/apollo";
-import moment from "moment";
-import { ONE_EVENT_QUERY } from "./event.queries";
-import { ADD_TICKET_INTO_USER_MUTATION } from "./event.mutations";
-import { USER_QUERY } from "utils/user.utils";
+import { client } from 'utils/apollo';
+import moment from 'moment';
+import { USER_QUERY } from 'utils/user.utils';
+import { ONE_EVENT_QUERY } from './event.queries';
+import { ADD_TICKET_INTO_USER_MUTATION } from './event.mutations';
 
 const months = [
-  'Jan', 'Fev', 'Mar', 'Abr',
-  'Mai', 'Jun' ,'Jul' ,'Ago',
-  'Set', 'Out', 'Nov', 'Dez',
+  'Jan',
+  'Fev',
+  'Mar',
+  'Abr',
+  'Mai',
+  'Jun',
+  'Jul',
+  'Ago',
+  'Set',
+  'Out',
+  'Nov',
+  'Dez',
 ];
 
-
-export const getDate = ({
-  end_date,
-  start_date,
-}) => {
+export const getDate = ({ end_date, start_date }) => {
   const start = moment(+start_date);
   const end = moment(+end_date);
   const startObj = {
     month: months[start.month()],
-    day: start.date()
-  }
+    day: start.date(),
+  };
   const endObj = {
     month: months[end.month()],
-    day: end.date()
-  }
-  if (
-      (startObj.month === endObj.month)
-      && (startObj.day === endObj.day)
-    ) {
-    return `${endObj.day} ${startObj.month} / ${start.hour()} - ${end.hour()}h`
+    day: end.date(),
+  };
+  if (startObj.month === endObj.month && startObj.day === endObj.day) {
+    return `${endObj.day} ${startObj.month} / ${start.hour()} - ${end.hour()}h`;
   }
   if (startObj.month === endObj.month) {
-    return `${startObj.day} a ${endObj.day} de ${startObj.month}`
+    return `${startObj.day} a ${endObj.day} de ${startObj.month}`;
   }
-}
+};
 
-export const getEvent = async (event, setEvent, setActivitiesCurrent, setActivitiesFuture) => {
+export const getEvent = async (
+  event,
+  setEvent,
+  setActivitiesCurrent,
+  setActivitiesFuture
+) => {
   const eventResponse = await client().query({
-    query: ONE_EVENT_QUERY
-    ,
+    query: ONE_EVENT_QUERY,
     variables: {
       id: event,
-    }
+    },
   });
 
   const activities = eventResponse.data.oneEvent.activities.map((a) => ({
@@ -57,23 +63,20 @@ export const getEvent = async (event, setEvent, setActivitiesCurrent, setActivit
 
   const current = activities.filter((a) => {
     if (
-      (a.start_date < new Date().getTime())
-      && (a.end_date >= new Date().getTime())
+      a.start_date < new Date().getTime() &&
+      a.end_date >= new Date().getTime()
     ) {
-      return true
+      return true;
     }
-    return false
-  });
-  
-  const future = activities.filter((a) => {
-    if (
-      (a.start_date > new Date().getTime())
-    ) {
-      return true
-    }
-    return false
+    return false;
   });
 
+  const future = activities.filter((a) => {
+    if (a.start_date > new Date().getTime()) {
+      return true;
+    }
+    return false;
+  });
 
   setEvent(eventResponse.data.oneEvent);
   setActivitiesCurrent(current);
@@ -85,12 +88,20 @@ export const verifyTicket = (state, event_id, setHasTicket) => {
   setHasTicket(!!hasTicket);
 };
 
-export const addTicket = async (payload, state, event, dispatch, setAddTicketModal) => {
+export const addTicket = async (
+  payload,
+  state,
+  event,
+  dispatch,
+  setAddTicketModal
+) => {
   console.log('addTicket -> state', state);
   console.log('addTicket -> event', event);
   // setLoading(true);
 
-  if (state.user.tickets.findIndex(({ code }) => code === payload.ticket) !== -1) {
+  if (
+    state.user.tickets.findIndex(({ code }) => code === payload.ticket) !== -1
+  ) {
     // callback();
     // setLoading(true);
     return;
@@ -105,7 +116,6 @@ export const addTicket = async (payload, state, event, dispatch, setAddTicketMod
         user_id: state.user.id,
       },
     });
-  
   } catch (err) {
     console.log('err', [err]);
     // invalidTicketCallback();
@@ -114,7 +124,7 @@ export const addTicket = async (payload, state, event, dispatch, setAddTicketMod
   }
 
   let user;
-  
+
   try {
     user = await client().query({
       query: USER_QUERY,
@@ -122,7 +132,6 @@ export const addTicket = async (payload, state, event, dispatch, setAddTicketMod
         ida: state.auth.ida,
       },
     });
-  
   } catch (err) {
     // invalidTicketCallback();
     // setLoading(false);
@@ -137,4 +146,4 @@ export const addTicket = async (payload, state, event, dispatch, setAddTicketMod
 
   // callback();
   // setLoading(true);
-}
+};

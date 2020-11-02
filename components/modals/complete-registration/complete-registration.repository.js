@@ -1,6 +1,7 @@
 import { client } from 'utils/apollo';
 import { ONE_USER_QUERY, ALL_USERS_QUERY } from 'queries/user.queries';
 import { ALL_EVENTS_QUERY, ONE_EVENT_QUERY } from 'queries/event.queries';
+import { UPDATE_USER_MUTATION } from 'mutations/user.mutations';
 
 /**
  * request user on api
@@ -15,7 +16,7 @@ export const fetchUser = (ida) =>
 
 /**
  * request user on api
- * @param {Object} user receive all the users constraints for filter the search
+ * @param {Object} user receive all the users attributes for filter the search
  * @returns {Promise} contains all users that match with user args
  */
 export const fetchAllUsers = (user) =>
@@ -24,6 +25,16 @@ export const fetchAllUsers = (user) =>
     variables: { user },
   });
 
+/**
+ * update user on api
+ * @param {Object} user receive the user to be updated and all its attributes
+ * @returns {Promise} contains all users that match with user args
+ */
+export const updateUser = (user) =>
+  client().mutate({
+    mutation: UPDATE_USER_MUTATION,
+    variables: { user },
+  });
 /**
  * request user on api
  * @param {Object} id event id to be found on APP API

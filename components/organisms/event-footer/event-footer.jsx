@@ -75,7 +75,9 @@ const EventFooter = ({ handleClick }) => {
       className={buildClass({ isScrolled: isSticky, isNotScrolled: !isSticky })}
       ref={stickyRef}
     >
-      <ButtonFooter onClick={handleClick}>Adquirir ingresso gratuito </ButtonFooter>
+      <ButtonFooter onClick={handleClick}>
+        Adquirir ingresso gratuito{' '}
+      </ButtonFooter>
     </FooterSticky>
   );
 };

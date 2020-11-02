@@ -34,7 +34,7 @@ const Main = ({ children }) => {
           type: SET_AUTH,
           auth,
         });
-
+        console.log('fetch user on ida js sdk', auth);
         getUser({
           ida: auth.ida,
           setLoading,

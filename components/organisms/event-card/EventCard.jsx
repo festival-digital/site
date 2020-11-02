@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Container = styled.div`
   height: 160px;
@@ -75,6 +76,10 @@ const LinearBackground = styled.div`
 
 const IconContainer = styled.div`
   flex: 1;
+  & img {
+    max-width: 50px;
+    max-height: 50px;
+  }
 `;
 
 const LegendsContainer = styled.div`
@@ -107,7 +112,7 @@ const Legends = styled.div`
   }
 `;
 
-const Button = styled.button`
+const ButtonLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,7 +129,14 @@ const Button = styled.button`
  * @returns {React.Component}
  */
 
-const EventCard = ({ backgroundUrl, iconUrl, title, subtitle, ...props }) => {
+const EventCard = ({
+  backgroundUrl,
+  eventId,
+  iconUrl,
+  title,
+  subtitle,
+  ...props
+}) => {
   return (
     <Container onClick={() => console.log(1123)}>
       <Figure backgroundUrl={backgroundUrl} />
@@ -137,12 +149,14 @@ const EventCard = ({ backgroundUrl, iconUrl, title, subtitle, ...props }) => {
             <p>{title}</p>
             <small>{subtitle}</small>
           </Legends>
-          <Button>
-            <img
-              src="./static/icons/arrow_right.svg"
-              alt="ícone de seta para a direita"
-            />
-          </Button>
+          <Link as={`/events/${eventId}`} href="/events/[events]">
+            <ButtonLink>
+              <img
+                src="./static/icons/arrow_right.svg"
+                alt="ícone de seta para a direita"
+              />
+            </ButtonLink>
+          </Link>
         </LegendsContainer>
       </LinearBackground>
     </Container>
@@ -151,6 +165,7 @@ const EventCard = ({ backgroundUrl, iconUrl, title, subtitle, ...props }) => {
 
 EventCard.defaultProps = {
   backgroundUrl: '',
+  eventId: '',
   iconUrl: '',
   title: '',
   subtitle: '',
@@ -158,6 +173,7 @@ EventCard.defaultProps = {
 
 EventCard.propTypes = {
   backgroundUrl: PropTypes.string,
+  eventId: PropTypes.string,
   iconUrl: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
