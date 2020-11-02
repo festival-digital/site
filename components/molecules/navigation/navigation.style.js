@@ -6,16 +6,16 @@ export const Navigation = styled.ul`
     return column ? 'grid' : 'inline-flex';
   }};
   align-items: center;
-  grid-template-rows: 50px 50px auto;
+  grid-template-rows: 50px 50px 50px 50px 50px;
   width: 100%;
   margin: ${(props) => {
     const { column } = props;
     return column ? '48px 16px' : '0';
   }};
 
-  & li:nth-child(3) {
+  /* & li:nth-child(5) {
     align-self: end;
-  }
+  } */
 `;
 
 export const NavigationItem = styled.li`
@@ -43,6 +43,7 @@ export const NavigationItem = styled.li`
 `;
 
 export const IDARegisterButton = styled.button`
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;

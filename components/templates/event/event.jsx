@@ -105,6 +105,7 @@ const EventTemplate = ({ event_id }) => {
       <AddTicketFromEvent
         opened={addTicketModal}
         handleConfirmButton={(payload) => addTicket(payload, state, event, dispatch, setAddTicketModal)}
+        handleCancelButton={() => setAddTicketModal(!addTicketModal)}
       />
     </Container>
   );
