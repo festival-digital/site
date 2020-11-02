@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Animation } from '@resystem/design-system';
-import GradientButton from 'components/templates/narrative/node_modules/components/atoms/gradient-button/gradient-button';
+import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import CancelButton from 'components/atoms/cancel-button/cancel-button';
-import GoBackButton from 'components/templates/narrative/node_modules/components/atoms/go-back-button/go-back-button';
+import GoBackButton from 'components/atoms/go-back-button/go-back-button';
 import {
   Wrapper,
   Modal,
@@ -26,7 +26,8 @@ const ModalSympla = ({
   handleConfirmButton,
   handleCancelButton,
   handleBackButton,
-   toSympla, onCancel
+  toSympla,
+  onCancel,
 }) => {
   function handleConfirmButtonClick() {
     handleConfirmButton();
@@ -74,13 +75,19 @@ const ModalSympla = ({
             </Text>
             <Space />
             <Space />
-            <NavigationLink onClick={() => { window.open('https://www.sympla.com.br', '_blank') }}
-          >Saiba mais sobre o sympla
-        </NavigationLink>
-        <Space />
-        <GradientButton onClick={toSympla}>Entendi, vamos lá</GradientButton>
-        <SpaceSmall />
-        <CancelButton onClick={onCancel}>Cancelar</CancelButton>
+            <NavigationLink
+              onClick={() => {
+                window.open('https://www.sympla.com.br', '_blank');
+              }}
+            >
+              Saiba mais sobre o sympla
+            </NavigationLink>
+            <Space />
+            <GradientButton onClick={toSympla}>
+              Entendi, vamos lá
+            </GradientButton>
+            <SpaceSmall />
+            <CancelButton onClick={onCancel}>Cancelar</CancelButton>
           </MainContent>
         </Modal>
       </Animation>

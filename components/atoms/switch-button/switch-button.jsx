@@ -18,8 +18,8 @@ const SwitchButton = ({ error, options, handleOnClick, value }) => {
           <Radio
             id={options[0].id}
             name={radioName}
-            value={options[0].id}
-            defaultChecked={value === options[0].id}
+            value={options[0].value}
+            defaultChecked={value === options[0].value}
             onClick={handleOnClick}
           />
           <Label htmlFor={options[0].id}>{options[0].label}</Label>
@@ -28,8 +28,8 @@ const SwitchButton = ({ error, options, handleOnClick, value }) => {
           <Radio
             id={options[1].id}
             name={radioName}
-            value={options[1].id}
-            defaultChecked={value === options[1].id}
+            value={options[1].value}
+            defaultChecked={value === options[1].value}
             onClick={handleOnClick}
           />
           <Label htmlFor={options[1].id}>{options[1].label}</Label>
@@ -45,10 +45,12 @@ SwitchButton.defaultProps = {
     {
       id: 'opção1',
       label: 'opção1',
+      value: true,
     },
     {
       id: 'opção2',
       label: 'opção2',
+      value: false,
     },
   ],
   handleOnClick: () => {},
@@ -59,6 +61,7 @@ SwitchButton.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       label: PropTypes.string,
+      value: PropTypes.bool,
     })
   ),
   handleOnClick: PropTypes.func,

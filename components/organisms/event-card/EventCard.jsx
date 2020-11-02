@@ -75,6 +75,10 @@ const LinearBackground = styled.div`
 
 const IconContainer = styled.div`
   flex: 1;
+  & img {
+    max-width: 50px;
+    max-height: 50px;
+  }
 `;
 
 const LegendsContainer = styled.div`

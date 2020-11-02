@@ -169,16 +169,16 @@ const GenerateTags = ({ tags }) => {
   return tags.map((item) => <Tag key={enhancedCodeGenerator()}>{item}</Tag>);
 };
 
-const SelectTag = ({ activityType, subscription }) => {
+const SelectTag = ({ isFree, subscription }) => {
   if (subscription) {
     if (subscription === 'done') return <TagGreen>Inscrição feita</TagGreen>;
-    return <TagGray>Inscrições encerradas</TagGray>;
+    if (subscription === 'closed')
+      return <TagGray>Inscrições encerradas</TagGray>;
   }
 
-  if (activityType) {
-    if (activityType === 'free') return <TagGreen>Atividade gratuita</TagGreen>;
-    return <TagGray>Atividade paga</TagGray>;
-  }
+  if (isFree) return <TagGreen>Atividade gratuita</TagGreen>;
+  // return <TagGray>Atividade não gratuita</TagGray>;
+
   return <></>;
 };
 
@@ -190,9 +190,8 @@ const SelectTag = ({ activityType, subscription }) => {
 const ActivityCard = ({
   activityDate,
   activityName,
-  activityType,
   backgroundUrl,
-  isSubscribed,
+  isFree,
   subscription,
   tags,
   ...props
@@ -213,7 +212,7 @@ const ActivityCard = ({
           </ReadMoreLink>
         </LeftContent>
         <RightContent>
-          <SelectTag subscription={subscription} activityType={activityType} />
+          <SelectTag subscription={subscription} isFree={isFree} />
           <Button>Entrar</Button>
         </RightContent>
       </LinearBackground>
@@ -224,9 +223,8 @@ const ActivityCard = ({
 ActivityCard.defaultProps = {
   activityDate: null,
   activityName: null,
-  activityType: null,
   backgroundUrl: '',
-  isSubscribed: false,
+  isFree: false,
   subscription: null,
   tags: [],
 };
@@ -234,10 +232,9 @@ ActivityCard.defaultProps = {
 ActivityCard.propTypes = {
   activityDate: PropTypes.string,
   activityName: PropTypes.string,
-  activityType: PropTypes.oneOf(['free', 'payment']),
   backgroundUrl: PropTypes.string,
-  isSubscribed: PropTypes.bool,
-  subscription: PropTypes.oneOf(['closed', 'done', 'free', 'open']),
+  isFree: PropTypes.bool,
+  subscription: PropTypes.oneOf(['closed', 'done', 'open', null]),
   tags: PropTypes.arrayOf(PropTypes.string),
 };
 

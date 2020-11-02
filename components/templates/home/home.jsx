@@ -8,7 +8,7 @@ import ModalSympla from 'components/modals/modal-sympla/modal-sympla';
 import Header from 'components/organisms/home-header/home-header';
 import Footer from 'components/organisms/footer/footer';
 import Button from 'components/atoms/button/button';
-import GradientButton from 'components/templates/narrative/node_modules/components/atoms/gradient-button/gradient-button';
+import GradientButton from 'components/atoms/gradient-button/gradient-button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import Store from 'components/store/Store';
 import { OPEN_MENU_MODAL, CLOSE_MENU_MODAL } from 'components/store/actions';
@@ -158,7 +158,10 @@ const Home = () => {
           <Picture src="/static/images/grid-1.jpg" alt="" />
           <AboutText>
             <TextWrapper>
-              <AboutTitleIllusttration src="/static/icons/grid-1-title-illustration.svg" alt="" />
+              <AboutTitleIllusttration
+                src="/static/icons/grid-1-title-illustration.svg"
+                alt=""
+              />
               <AboutTitle>Saudações, Nomadæ!</AboutTitle>
               <AboutDescription>
                 Navegações diferentes pra você assistir o seu artista favorito!
@@ -178,7 +181,9 @@ const Home = () => {
               />
               <AboutTitle>Um mundo feito de encontros</AboutTitle>
               <AboutDescription>
-                Uma nova forma de experimentar a coletividade te espera! Conhecendo pessoas novas, encontrando amiges ou até artistas favorites!
+                Uma nova forma de experimentar a coletividade te espera!
+                Conhecendo pessoas novas, encontrando amiges ou até artistas
+                favorites!
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -187,10 +192,14 @@ const Home = () => {
           <Picture src="/static/images/grid-3.jpg" alt="" />
           <AboutText>
             <TextWrapper>
-              <AboutTitleIllusttration src="/static/icons/grid-3-title-illustration.svg" alt="" />
+              <AboutTitleIllusttration
+                src="/static/icons/grid-3-title-illustration.svg"
+                alt=""
+              />
               <AboutTitle>Galeria e Exposições</AboutTitle>
               <AboutDescription>
-                Curadoria sempre envolvida com diversos eventos e temas da plataforma. Pra espalhar a palavra de tudo que a gente ama.
+                Curadoria sempre envolvida com diversos eventos e temas da
+                plataforma. Pra espalhar a palavra de tudo que a gente ama.
               </AboutDescription>
             </TextWrapper>
           </AboutText>
@@ -205,7 +214,9 @@ const Home = () => {
               />
               <AboutTitle>Feira online </AboutTitle>
               <AboutDescription>
-                Com catálogo colaborativo, espaços de aprendizagem,  encontros e paineis, muita troca e história pra ouvir e contar por aqui! Vai perder essa?
+                Com catálogo colaborativo, espaços de aprendizagem, encontros e
+                paineis, muita troca e história pra ouvir e contar por aqui! Vai
+                perder essa?
               </AboutDescription>
             </TextWrapper>
           </AboutText>

@@ -32,6 +32,7 @@ export const ONE_EVENT_QUERY = gql`
         subscription_url
         type
         streaming_url
+        image_url
       }
     }
   }

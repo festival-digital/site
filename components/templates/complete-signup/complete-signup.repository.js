@@ -2,6 +2,7 @@ import { client } from 'utils/apollo';
 import {
   ADD_TICKET_INTO_USER_MUTATION,
   CREATE_USER_MUTATION,
+  UPDATE_USER_MUTATION,
 } from 'mutations/user.mutations';
 import { ALL_EVENTS_QUERY } from 'queries/event.queries';
 
