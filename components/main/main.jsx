@@ -29,6 +29,8 @@ const Main = ({ children }) => {
   // component did mount cycle
   useEffect(() => {
     ida.onCurrentUserChange((auth) => {
+      console.log('testando essa pohita', auth);
+
       if (auth) {
         dispatch({
           type: SET_AUTH,

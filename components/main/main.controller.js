@@ -26,8 +26,8 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
   let getUserResponse;
   try {
     getUserResponse = await fetchUser(ida);
-    console.log('getUser -> getUserResponse', getUserResponse);
   } catch (err) {
+    console.log([err]);
     setLoading(false);
     return;
   }
