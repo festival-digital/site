@@ -25,9 +25,11 @@ const EventTemplate = ({ event_id }) => {
   const [activitiesCurrent, setActivitiesCurrent] = useState([]);
   const [activitiesFuture, setActivitiesFuture] = useState([]);
   const { state, dispatch } = useContext(Store);
+
   useEffect(() => {
     getEvent(event_id, setEvent, setActivitiesCurrent, setActivitiesFuture);
   }, [])
+
   useEffect(() => {
     if (state.user && event.id){
       verifyTicket(state, event_id, setHasTicket);

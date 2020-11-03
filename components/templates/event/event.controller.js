@@ -84,7 +84,7 @@ export const getEvent = async (
 };
 
 export const verifyTicket = (state, event_id, setHasTicket) => {
-  const hasTicket = state.user.tickets.find((t) => t.event.id === event_id);
+  const hasTicket = state.user.tickets.find((t) => t.event && t.event.id === event_id);
   setHasTicket(!!hasTicket);
 };
 
