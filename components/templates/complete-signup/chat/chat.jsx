@@ -499,7 +499,7 @@ const Chat = () => {
         </FormContent>
       </FormWrapper>
       <UseTerms
-        open={openTermsModal || true}
+        open={openTermsModal}
         onGoBack={() => {
           setOpenTermsModal(false)
         }}
