@@ -72,7 +72,7 @@ const EventTemplate = ({ event_id }) => {
         activitiesCurrent.map((a) => (
           <ActivityCard
             key={a.id}
-            backgroundUrl="/static/images/card-activity-big.png"
+            backgroundUrl={a.image_url}
             activityName={a.title}
             activity={a}
           />
@@ -85,7 +85,7 @@ const EventTemplate = ({ event_id }) => {
         activitiesFuture.map((a) => (
           <ActivityCard
             key={a.id}
-            backgroundUrl="/static/images/card-activity-big.png"
+            backgroundUrl={a.image_url}
             activityName={a.title}
             activity={a}
           />
