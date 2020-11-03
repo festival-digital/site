@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import Button from 'components/atoms/button/button';
 import JuryCard from 'components/molecules/jury-card/jury-card';
 import Store from 'components/store/Store';
+import { getActivity } from './jury-template.controller';
 import {
   JuryContainer, JuryHeader, JuryDescription, JuryList,
   OasiLogo, JuryTitle, BackIcon, Wrapper,
