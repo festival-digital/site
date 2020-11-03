@@ -52,6 +52,7 @@ export const getEvent = async (
   });
 
   const activities = eventResponse.data.oneEvent.activities.map((a) => ({
+    image_url: a.image_url || '',
     cover_url: a.cover_url,
     title: a.title,
     tags: a.tags,
