@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Button from 'components/atoms/button/button';
 import JuryCard from 'components/molecules/jury-card/jury-card';
+import Store from 'components/store/Store';
 import {
   JuryContainer, JuryHeader, JuryDescription, JuryList,
   OasiLogo, JuryTitle, BackIcon, Wrapper,
