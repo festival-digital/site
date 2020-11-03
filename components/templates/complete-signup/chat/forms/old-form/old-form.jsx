@@ -4,7 +4,7 @@ import VanillaMask from 'vanilla-masker';
 import Button from 'components/atoms/button/button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import SimpleInput from 'components/atoms/simple-input/simple-input';
-import { FormWrapper } from './old-form.style';
+import { FormWrapper, FakeInput } from './old-form.style';
 
 const OldForm = ({
   old, onSubmit, setOld,
@@ -19,7 +19,8 @@ const OldForm = ({
     <Button type="button" onClick={onSubmit} disabled={!old}>
       Enviar
     </Button>
-    <LinkButton>Pular</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Pular</LinkButton> */}
   </FormWrapper>
 );
 

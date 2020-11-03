@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/atoms/button/button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import SimpleInput from 'components/atoms/simple-input/simple-input';
-import { FormWrapper } from './other-gender-form.style';
+import { FormWrapper, FakeInput } from './other-gender-form.style';
 
 const OtherGenderForm = ({
   otherGender, onSubmit, setOtherGender,
@@ -17,7 +17,8 @@ const OtherGenderForm = ({
     <Button type="button" onClick={onSubmit} disabled={!otherGender}>
       Enviar
     </Button>
-    <LinkButton>Prefiro não falar</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Prefiro não falar</LinkButton> */}
   </FormWrapper>
 );
 

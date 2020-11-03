@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/atoms/button/button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import SimpleInput from 'components/atoms/simple-input/simple-input';
-import { FormWrapper } from './other-color-form.style';
+import { FormWrapper, FakeInput } from './other-color-form.style';
 
 const OtherColorForm = ({
   otherColor, onSubmit, setOtherColor,
@@ -17,7 +17,8 @@ const OtherColorForm = ({
     <Button type="button" onClick={onSubmit} disabled={!otherColor}>
       Enviar
     </Button>
-    <LinkButton>Prefiro não falar</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Prefiro não falar</LinkButton> */}
   </FormWrapper>
 );
 

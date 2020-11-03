@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/atoms/button/button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import Select from 'components/atoms/select/select';
-import { FormWrapper } from './disability-form.style';
+import { FormWrapper, FakeInput } from './disability-form.style';
 
 const DisabilityForm = ({
   disability, disabilityOptions, onSubmit, setDisability,
@@ -20,7 +20,8 @@ const DisabilityForm = ({
     <Button type="button" onClick={onSubmit} disabled={!disability}>
       Enviar
     </Button>
-    <LinkButton>Pular</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Pular</LinkButton> */}
   </FormWrapper>
 );
 

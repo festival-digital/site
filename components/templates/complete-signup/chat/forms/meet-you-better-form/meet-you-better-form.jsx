@@ -11,7 +11,8 @@ const MeetYouBetterForm = ({ onSubmit }) => (
     <Button type="button" onClick={onSubmit}>
       Claro! Vamos começar
     </Button>
-    <LinkButton>Prefiro fazer isso depois</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Prefiro fazer isso depois</LinkButton> */}
   </FormWrapper>
 );
 

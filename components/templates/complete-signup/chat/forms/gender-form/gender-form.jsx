@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/atoms/button/button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import Select from 'components/atoms/select/select';
-import { FormWrapper } from './gender-form.style';
+import { FormWrapper, FakeInput } from './gender-form.style';
 
 const GenderForm = ({
   gender, genderOptions, onSubmit, setGender,
@@ -20,7 +20,8 @@ const GenderForm = ({
     <Button type="button" onClick={onSubmit} disabled={!gender}>
       Enviar
     </Button>
-    <LinkButton>Pular</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Pular</LinkButton> */}
   </FormWrapper>
 );
 

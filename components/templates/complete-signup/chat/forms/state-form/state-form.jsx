@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/atoms/button/button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import Select from 'components/atoms/select/select';
-import { FormWrapper } from './state-form.style';
+import { FormWrapper, FakeInput } from './state-form.style';
 
 const StateForm = ({
   stateLocation, stateLocationOptions, onSubmit, setStateLocation,
@@ -20,7 +20,8 @@ const StateForm = ({
     <Button type="button" onClick={onSubmit} disabled={!stateLocation}>
       Enviar
     </Button>
-    <LinkButton>Pular</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Pular</LinkButton> */}
   </FormWrapper>
 );
 

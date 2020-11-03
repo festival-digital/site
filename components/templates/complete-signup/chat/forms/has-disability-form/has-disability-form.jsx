@@ -16,7 +16,8 @@ const MeetYouBetterForm = ({ onSubmit }) => (
         Não
       </Button>
     </ButtonWrapper>
-    <LinkButton>Prefiro fazer isso depois</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Prefiro fazer isso depois</LinkButton> */}
   </FormWrapper>
 );
 

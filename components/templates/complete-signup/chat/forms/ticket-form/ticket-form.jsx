@@ -4,7 +4,7 @@ import VanillaMask from 'vanilla-masker';
 import Button from 'components/atoms/button/button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import SimpleInput from 'components/atoms/simple-input/simple-input';
-import { FormWrapper } from './ticket-form.style';
+import { FormWrapper, FakeInput } from './ticket-form.style';
 
 const TicketForm = ({
   ticket, onSubmit, setTicket,
@@ -18,7 +18,8 @@ const TicketForm = ({
     <Button type="button" onClick={onSubmit} disabled={!ticket}>
       Tenho! É esse aqui
     </Button>
-    <LinkButton>Não sei para onde estou indo</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Não sei para onde estou indo</LinkButton> */}
   </FormWrapper>
 );
 

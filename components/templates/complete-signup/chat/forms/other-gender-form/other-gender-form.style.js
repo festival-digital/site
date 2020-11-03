@@ -7,3 +7,6 @@ export const FormWrapper = styled.div`
   padding-bottom: 20px;
 `;
 
+export const FakeInput = styled.div`
+  height: 48px;
+`;
