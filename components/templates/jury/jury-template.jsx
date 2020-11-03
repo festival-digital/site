@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from 'components/atoms/button/button';
 import JuryCard from 'components/molecules/jury-card/jury-card';
 import {

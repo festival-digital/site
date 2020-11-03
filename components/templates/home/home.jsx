@@ -128,7 +128,7 @@ const Home = () => {
         <IDAContentWrapper>
           <ContentAbout>
             <IDASubtitle>
-              Gostou? Vêm viver essa experiência com a gente!
+              Gostou? Vem viver essa experiência com a gente!
             </IDASubtitle>
             <IDAText>
               Você conhece a IDa? É uma autenticação rápida e segura.
@@ -167,7 +167,7 @@ const Home = () => {
               <br />
               <br />
               Bom, fica o convite pra fazer e realizar esse mundo com a gente.
-              Vêm explorar! E avisa as amigues!
+              Vem explorar! E avisa as amigues!
             </AboutOasiDescription>
           </AboutOasiTextWrapper>
         </AboutOasiWrapper>
