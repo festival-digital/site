@@ -335,7 +335,7 @@ const TextUseTerms = () => {
         </TitleTerms>
         <br />
         <br />
-        I - INFORMAÇÕES GERAIS
+        <Strong>I - INFORMAÇÕES GERAIS</Strong>
         <br />
         <br />
         A presente Política de Privacidade contém informações sobre coleta, uso,
@@ -362,7 +362,7 @@ const TextUseTerms = () => {
         seção.
         <br />
         <br />
-        II - COMO RECOLHEMOS OS DADOS PESSOAIS DO USUÁRIO?
+        <Strong> II - COMO RECOLHEMOS OS DADOS PESSOAIS DO USUÁRIO?</Strong>
         <br />
         <br />
         Os dados pessoais do usuário são recolhidos pela plataforma OASI da
@@ -405,7 +405,7 @@ const TextUseTerms = () => {
         previamente pelos Usuários junto ao terceiro em questão.
         <br />
         <br />
-        III - QUAIS DADOS PESSOAIS RECOLHEMOS SOBRE O USUÁRIO?
+        <Strong> III - QUAIS DADOS PESSOAIS RECOLHEMOS SOBRE O USUÁRIO?</Strong>
         <br />
         <br />
         Os dados pessoais do Usuário recolhidos são os seguintes:
@@ -433,7 +433,9 @@ const TextUseTerms = () => {
         as comunicações realizadas entre a Empresa e o Usuário.
         <br />
         <br />
-        IV - PARA QUE FINALIDADES UTILIZAMOS OS DADOS PESSOAIS DO USUÁRIO?
+        <Strong>
+          IV - PARA QUE FINALIDADES UTILIZAMOS OS DADOS PESSOAIS DO USUÁRIO?
+        </Strong>
         <br />
         <br />
         Os dados pessoais do Usuário coletados e armazenados pela Plataforma
@@ -474,7 +476,9 @@ const TextUseTerms = () => {
         aplicáveis.
         <br />
         <br />
-        V - POR QUANTO TEMPO OS DADOS PESSOAIS FICAM ARMAZENADOS?
+        <Strong>
+          V - POR QUANTO TEMPO OS DADOS PESSOAIS FICAM ARMAZENADOS?
+        </Strong>
         <br />
         <br />
         Os dados pessoais do Usuário são armazenados pela Plataforma OASI, bem
@@ -508,7 +512,7 @@ const TextUseTerms = () => {
         desde que anonimizados os dados.
         <br />
         <br />
-        VII - SEGURANÇA DOS DADOS PESSOAIS ARMAZENADOS
+        <Strong>VII - SEGURANÇA DOS DADOS PESSOAIS ARMAZENADOS</Strong>
         <br />
         <br />
         A Plataforma OASI, através da empresa Serviços de Cultura Digital e da
@@ -531,7 +535,7 @@ const TextUseTerms = () => {
         nossos Termos de Uso e Serviço.
         <br />
         <br />
-        VII - COMPARTILHAMENTO DOS DADOS
+        <Strong> VII - COMPARTILHAMENTO DOS DADOS</Strong>
         <br />
         <br />
         O compartilhamento de dados do Usuário ocorre apenas com os dados
@@ -539,7 +543,9 @@ const TextUseTerms = () => {
         compartilhadas publicamente com os outros Usuários.
         <br />
         <br />
-        VIII - OS DADOS PESSOAIS ARMAZENADOS SERÃO TRANSFERIDOS A TERCEIROS?
+        <Strong>
+          VIII - OS DADOS PESSOAIS ARMAZENADOS SERÃO TRANSFERIDOS A TERCEIROS?
+        </Strong>
         <br />
         <br />
         Os dados pessoais poderão ser compartilhados com as plataformas que
@@ -583,7 +589,7 @@ const TextUseTerms = () => {
         privacidade deles.
         <br />
         <br />
-        IX – COOKIES OU DADOS DE NAVEGAÇÃO
+        <Strong> IX – COOKIES OU DADOS DE NAVEGAÇÃO</Strong>
         <br />
         <br />
         Os cookies se referem a arquivos de texto enviados pela Plataforma ao
@@ -609,7 +615,7 @@ const TextUseTerms = () => {
         cookies estiver desabilitada.
         <br />
         <br />
-        X - CONSENTIMENTO
+        <Strong> X - CONSENTIMENTO</Strong>
         <br />
         <br />
         Ao utilizar os serviços e fornecer as informações pessoais na plataforma
@@ -630,7 +636,7 @@ const TextUseTerms = () => {
         SP.
         <br />
         <br />
-        XI - ALTERAÇÕES PARA ESSA POLÍTICA DE PRIVACIDADE
+        <Strong> XI - ALTERAÇÕES PARA ESSA POLÍTICA DE PRIVACIDADE</Strong>
         <br />
         <br />
         Reservamos o direito de modificar essa Política de Privacidade a
@@ -650,7 +656,7 @@ const TextUseTerms = () => {
         permanência dos serviços oferecidos.
         <br />
         <br />
-        XII – JURISDIÇÃO PARA RESOLUÇÃO DE CONFLITOS
+        <Strong> XII – JURISDIÇÃO PARA RESOLUÇÃO DE CONFLITOS</Strong>
         <br />
         <br />
         Para a solução de controvérsias decorrentes do presente instrumento será
@@ -705,7 +711,7 @@ const TextUseTerms = () => {
         <br />
         <br />
         <br />
-        <TitleTerms> 12. Fale Conosco</TitleTerms>
+        <TitleTerms>Fale Conosco</TitleTerms>
         <br />
         <br />
         Entre em contato conosco pelo e-mail servicosdeculturadigital@gmail.com
