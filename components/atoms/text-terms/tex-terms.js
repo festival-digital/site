@@ -15,7 +15,7 @@ const TextUseTerms = () => {
         Política de privacidade e termos e condições de uso da plataforma oasi.
       </Title>
       <br />
-      <Subtitle>Aviso Legais</Subtitle>
+      <Subtitle>Avisos Legais</Subtitle>
       <Terms>
         O acesso e uso desta plataforma estão sujeitos às Condições ou Termos de
         Uso a seguir.
