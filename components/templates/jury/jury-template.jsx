@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Button from 'components/atoms/button/button';
 import Loading from 'components/atoms/loading/loading';
 import JuryCard from 'components/molecules/jury-card/jury-card';
