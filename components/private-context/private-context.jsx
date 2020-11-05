@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import Store from 'components/store/Store';
+import ida from 'libs/ida.lib';
 import Loading from '../atoms/loading/loading';
 
 const Container = styled.div`
@@ -13,16 +14,23 @@ const Container = styled.div`
   align-items: center;
 `;
 
+const validateToken = async (token) => {
+  await ida.validateToken({ token });
+}
+
 const PrivateContext = ({ children }) => {
   const { state, dispatch } = useContext(Store);
   const router = useRouter();
   const publicPage = '/';
-
+  
   useEffect(() => {
     if (!state.loading && !state.auth) {
       router.push(publicPage);
     }
   }, [state.loading, state.auth]);
+  useEffect(() => {
+    if (router.query.t) validateToken(router.query.t);
+  }, []);
 
   return state.loading ? (
     <Container>

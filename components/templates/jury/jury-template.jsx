@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import Button from 'components/atoms/button/button';
 import Loading from 'components/atoms/loading/loading';
 import JuryCard from 'components/molecules/jury-card/jury-card';
@@ -15,6 +16,7 @@ const renderCards = ({
 }) => shows.map(({
   title, id, url, votes,
 }) => {
+  const router = useRouter();
   const vote = votes.find(({ user }) => user.id === userId);
   return (
     <li>
@@ -41,7 +43,8 @@ const JuryTemplate = ({ id }) => {
   const { state } = useContext(Store);
   const [loading, setLoading] = useState(true);
   const [activity, setActivity] = useState(null);
-
+  const router = useRouter();
+  console.log('JuryTemplate -> router', router.query.t);
   useEffect(() => {
     getActivity({ setLoading, setActivity, urlParam: id });
   }, []);
