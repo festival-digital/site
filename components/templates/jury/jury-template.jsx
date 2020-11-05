@@ -5,7 +5,7 @@ import Button from 'components/atoms/button/button';
 import Loading from 'components/atoms/loading/loading';
 import JuryCard from 'components/molecules/jury-card/jury-card';
 import Store from 'components/store/Store';
-import { getActivity, handleVote } from './jury-template.controller';
+import { getActivity, handleVote, validateToken } from './jury-template.controller';
 import {
   JuryContainer, JuryHeader, JuryDescription, JuryList,
   OasiLogo, JuryTitle, BackIcon, Wrapper, JuryLoadingContainer,
@@ -46,8 +46,10 @@ const JuryTemplate = ({ id }) => {
   const router = useRouter();
   console.log('JuryTemplate -> router', router.query.t);
   useEffect(() => {
+    if (router.query && router.query.t) validateToken(router.query.t);
     getActivity({ setLoading, setActivity, urlParam: id });
   }, []);
+  
 
   if (loading || !state.user) {
     return (

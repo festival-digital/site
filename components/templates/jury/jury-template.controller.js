@@ -1,7 +1,18 @@
+import { Router } from 'next/router';
 import {
   getActivity as getActivityRepository,
   vote as voteRepository,
 } from './jury-template.repository';
+
+
+export const validateToken = async (token) => {
+  try {
+    const response = await ida.validateToken({ token });
+    if (!response) Router.push('/');
+  } catch (err) {
+    Router.push('/');
+  }
+}
 
 /**
  * function that get on api, jury data and shows to vote
