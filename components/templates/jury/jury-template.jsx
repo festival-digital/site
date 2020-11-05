@@ -72,7 +72,7 @@ const JuryTemplate = ({ id }) => {
           Voltar para a galeria
         </Button>
         <JuryDescription>
-          Aqui, você pode classificar os vídeos exibidos na Mostra de Videoclipes. O vídeo mais bem votado vai ser exibido no palco principal durante o encerramento da Feira da Música! Quando terminar de votar, pode clicar em “Voltar Para a Galeria” que vamos te levar de volta ;)
+          Aqui, você pode votar nos vídeos exibidos na Mostra de Videoclipes. Quando terminar de votar, pode clicar em “Voltar Para a Galeria” ;)  
         </JuryDescription>
         <JuryList>
             {
