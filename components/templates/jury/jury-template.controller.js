@@ -5,12 +5,12 @@ import {
 } from './jury-template.repository';
 
 
-export const validateToken = async (token) => {
+export const validateToken = async (token, router) => {
   try {
     const response = await ida.validateToken({ token });
-    if (!response) Router.push('/');
+    if (!response) router.push('/');
   } catch (err) {
-    Router.push('/');
+    router.push('/');
   }
 }
 

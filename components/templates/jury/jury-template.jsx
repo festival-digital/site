@@ -49,7 +49,7 @@ const JuryTemplate = ({ id }) => {
     getActivity({ setLoading, setActivity, urlParam: id });
   }, []);
   useEffect(() => {
-    if (router.query && router.query.t) validateToken(router.query.t);
+    if (router.query && router.query.t) validateToken(router.query.t, router);
   }, [router.query]);
   
 
