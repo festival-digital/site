@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Icon from '@material-ui/core/Icon';
@@ -9,7 +9,9 @@ import Header from 'components/organisms/home-header/home-header';
 import Footer from 'components/organisms/footer/footer';
 import Button from 'components/atoms/button/button';
 import GradientButton from 'components/atoms/gradient-button/gradient-button';
+import Loading from 'components/atoms/loading/loading';
 import LinkButton from 'components/atoms/link-button/link-button';
+import { isMobile } from 'utils/validations';
 import Store from 'components/store/Store';
 import { OPEN_MENU_MODAL, CLOSE_MENU_MODAL } from 'components/store/actions';
 import {
@@ -51,6 +53,7 @@ import {
   NextEventDescription,
   NextEventInfoWrapper,
   NextEventMosaicIllustration,
+  LoadingWrapper,
 } from './home.style';
 
 /**
@@ -61,6 +64,23 @@ const Home = () => {
   const { state, dispatch } = useContext(Store);
   const [symplaModal, setSymplaModal] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    if (state.user && state.user.status !== 'IN_REGISTER' && isMobile()) router.push('/events');
+    if (state.user && state.user.status !== 'IN_REGISTER' && !isMobile()) {
+      router.push(`https://game.oasi.vc/?t=${state.auth.token}`);
+    }
+
+  }, [state.user]);
+
+  if (state.loading) {
+    return (
+      <LoadingWrapper>
+        <Loading />
+      </LoadingWrapper>
+    );
+  }
+
   return (
     <PageTemplate>
       <InitialWrapper>
@@ -84,7 +104,7 @@ const Home = () => {
             <OasiLogo src="/static/icons/oasi.svg" alt="" />
           </Title>
           <Description>
-            Experimente formas diferentes de se encontrar e conectar com amigos,
+            Experimente formas diferentes de se encontrar e conectar com amigues,
             colaborar com eventos projetos, e realizar um novo mundo possível.
           </Description>
           <DownButton
@@ -108,7 +128,7 @@ const Home = () => {
         <IDAContentWrapper>
           <ContentAbout>
             <IDASubtitle>
-              Gostou? Vêm viver essa experiência com a gente!
+              Gostou? Vem viver essa experiência com a gente!
             </IDASubtitle>
             <IDAText>
               Você conhece a IDa? É uma autenticação rápida e segura.
@@ -147,7 +167,7 @@ const Home = () => {
               <br />
               <br />
               Bom, fica o convite pra fazer e realizar esse mundo com a gente.
-              Vêm explorar! E avisa as amigues!
+              Vem explorar! E avisa as amigues!
             </AboutOasiDescription>
           </AboutOasiTextWrapper>
         </AboutOasiWrapper>
@@ -258,11 +278,14 @@ const Home = () => {
           </GradientButton>
           <Button
             color="#404040"
+            onClick={() => {
+              router.push('https://feiradamusica.com.br');
+            }}
             alt="Saiba mais sobre a Feira da Música de Fortaleza de 5 a 8 de Novembro"
           >
             Saiba mais
           </Button>
-          <Link href="/">
+          <Link href="/all-events">
             <LinkButton href="/" color="#FFFFFF">
               Ver todos os eventos
             </LinkButton>
@@ -275,7 +298,7 @@ const Home = () => {
       <ModalSympla
         opened={symplaModal}
         toSympla={() => {
-          window.open('https://www.sympla.com.br', '_blank');
+          window.open('https://www.sympla.com.br/lancamento-oasi--betatesters-e-convidades---02-novembro__1028218?token=9ae11d6cdcf0caf7c1b5602a2ba5fd2b', '_blank');
           setSymplaModal(false);
         }}
         onCancel={() => setSymplaModal(false)}

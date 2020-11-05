@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Icon from '@material-ui/core/Icon';
+import Loading from 'components/atoms/loading/loading';
 import EventHeader from 'components/organisms/event-header/event-header';
 import EventFooter from 'components/organisms/event-footer/event-footer';
 import ActivityCard from 'components/organisms/activity-card';
@@ -9,7 +10,7 @@ import {
   Container, EventCover, LinearBackground,
   EventLogo, EventDate, LinkBadge, Grid,
   BadgeContainer, Badge, ButtonAddTicket,
-  Title, SmallText, Text, TicketAdded,
+  Title, SmallText, Text, TicketAdded, LoadingWrapper,
 } from './event.style';
 import { getDate, getEvent, verifyTicket } from './event.controller';
 import Store from 'components/store/Store';
@@ -18,6 +19,7 @@ import AddTicketFromEvent from 'components/modals/add-ticket-from-event/add-tick
 import { addTicket } from './event.controller';
 
 const EventTemplate = ({ event_id }) => {
+  const [loading, setLoading] = useState(true);
   const [event, setEvent] = useState({});
   const [hasTicket, setHasTicket] = useState({});
   const [simplaModal, setSimplaModal] = useState(false);
@@ -25,14 +27,30 @@ const EventTemplate = ({ event_id }) => {
   const [activitiesCurrent, setActivitiesCurrent] = useState([]);
   const [activitiesFuture, setActivitiesFuture] = useState([]);
   const { state, dispatch } = useContext(Store);
+
   useEffect(() => {
-    getEvent(event_id, setEvent, setActivitiesCurrent, setActivitiesFuture);
+    getEvent(
+      event_id,
+      setEvent,
+      setActivitiesCurrent,
+      setActivitiesFuture,
+      setLoading,
+    );
   }, [])
+
   useEffect(() => {
     if (state.user && event.id){
       verifyTicket(state, event_id, setHasTicket);
     }
   }, [event, state.user])
+
+  if (loading) {
+    return (
+      <LoadingWrapper>
+        <Loading />
+      </LoadingWrapper>
+    );
+  }
 
   return (
     <Container>
@@ -70,9 +88,10 @@ const EventTemplate = ({ event_id }) => {
         activitiesCurrent.map((a) => (
           <ActivityCard
             key={a.id}
-            backgroundUrl="/static/images/card-activity-big.png"
+            backgroundUrl={a.image_url}
             activityName={a.title}
             activity={a}
+            enter
           />
         ))
       }
@@ -83,7 +102,7 @@ const EventTemplate = ({ event_id }) => {
         activitiesFuture.map((a) => (
           <ActivityCard
             key={a.id}
-            backgroundUrl="/static/images/card-activity-big.png"
+            backgroundUrl={a.image_url}
             activityName={a.title}
             activity={a}
           />

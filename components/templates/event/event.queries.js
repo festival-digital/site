@@ -25,6 +25,7 @@ query oneEvent($id: String) {
       tags
       title
       end_date
+      image_url
       start_date
       has_subscription
       type

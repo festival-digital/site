@@ -30,20 +30,25 @@ export const getDate = ({ end_date, start_date }) => {
     month: months[end.month()],
     day: end.date(),
   };
-  if (startObj.month === endObj.month && startObj.day === endObj.day) {
-    return `${endObj.day} ${startObj.month} / ${start.hour()} - ${end.hour()}h`;
-  }
-  if (startObj.month === endObj.month) {
-    return `${startObj.day} a ${endObj.day} de ${startObj.month}`;
-  }
+
+  return `${startObj.day} ${startObj.month} / ${start.hour()}h${start.minute() || ''}`;
+
+  // if (startObj.month === endObj.month && startObj.day === endObj.day) {
+  //   return `${endObj.day} ${startObj.month} / ${start.hour()} - ${end.hour()}h`;
+  // }
+  // if (startObj.month === endObj.month) {
+  //   return `${startObj.day} a ${endObj.day} de ${startObj.month}`;
+  // }
 };
 
 export const getEvent = async (
   event,
   setEvent,
   setActivitiesCurrent,
-  setActivitiesFuture
+  setActivitiesFuture,
+  setLoading,
 ) => {
+  setLoading(true);
   const eventResponse = await client().query({
     query: ONE_EVENT_QUERY,
     variables: {
@@ -52,39 +57,38 @@ export const getEvent = async (
   });
 
   const activities = eventResponse.data.oneEvent.activities.map((a) => ({
+    image_url: a.image_url || '',
     cover_url: a.cover_url,
+    streaming_url: a.streaming_url,
     title: a.title,
     tags: a.tags,
     start_date: a.start_date,
     end_date: a.end_date,
     date: getDate(a),
     id: a.id,
-  }));
-
-  const current = activities.filter((a) => {
-    if (
-      a.start_date < new Date().getTime() &&
-      a.end_date >= new Date().getTime()
-    ) {
-      return true;
-    }
-    return false;
+  })).sort((a, b) => {
+    if (a.start_date === b.start_date) return 0;
+    return a.start_date < b.start_date ? -1 : 1;
   });
 
-  const future = activities.filter((a) => {
-    if (a.start_date > new Date().getTime()) {
-      return true;
-    }
-    return false;
+  const nowEvents = activities.filter((act) => {
+    const currentDate = new Date().getTime();
+    return currentDate > parseInt(act.start_date, 10) && currentDate < parseInt(act.end_date, 10);
+  });
+
+  const otherEvents = activities.filter((act) => {
+    const currentDate = new Date().getTime();
+    return currentDate < parseInt(act.start_date, 10);
   });
 
   setEvent(eventResponse.data.oneEvent);
-  setActivitiesCurrent(current);
-  setActivitiesFuture(future);
+  setActivitiesCurrent(nowEvents);
+  setActivitiesFuture(otherEvents);
+  setLoading(false);
 };
 
 export const verifyTicket = (state, event_id, setHasTicket) => {
-  const hasTicket = state.user.tickets.find((t) => t.event.id === event_id);
+  const hasTicket = state.user.tickets.find((t) => t.event && t.event.id === event_id);
   setHasTicket(!!hasTicket);
 };
 

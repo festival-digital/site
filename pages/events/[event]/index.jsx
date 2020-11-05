@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import EventTemplate from 'components/templates/event/event';
+import PrivateContext from 'components/private-context/private-context';
 
 export const Container = styled.div`
   display: flex;
@@ -9,9 +10,11 @@ export const Container = styled.div`
 
 const EventPage = ({ event_id }) => {
   return (
-    <Container>
-     <EventTemplate event_id={event_id} />
-    </Container>
+    <PrivateContext>
+      <Container>
+        <EventTemplate event_id={event_id} />
+      </Container>
+    </PrivateContext>
   );
 };
 

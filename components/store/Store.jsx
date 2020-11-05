@@ -15,7 +15,7 @@ const Store = React.createContext();
 
 export const initialState = {
   user: null,
-  auth: {},
+  auth: null,
   menu: false,
   loading: true,
 };

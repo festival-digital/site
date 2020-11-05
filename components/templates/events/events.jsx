@@ -55,7 +55,7 @@ const getDateString = (startDate, endDate) => {
 const renderNowEvents = ({ events }) =>
   events.map((event) => (
     <li>
-      <Link href={`/events/${event.id}`}>
+      <Link href="/events/[event]" as={`/events/${event.id}`}>
         <a>
           <EventCard
             backgroundUrl={event.cover_url}
@@ -71,7 +71,7 @@ const renderNowEvents = ({ events }) =>
 const renderOtherEvents = ({ events }) =>
   events.map((event) => (
     <li>
-      <Link href={`/events/${event.id}`}>
+      <Link href="/events/[event]" as={`/events/${event.id}`}>
         <a>
           <EventCard
             backgroundUrl={event.cover_url}

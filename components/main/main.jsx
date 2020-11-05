@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
+import queryString from 'query-string';
+import { useRouter } from 'next/router';
 import styled, { ThemeProvider } from 'styled-components';
 import Store from 'components/store/Store';
 import Header from 'components/organisms/header/header';
@@ -25,18 +26,21 @@ const Main = ({ children }) => {
   const { state, dispatch } = useContext(Store);
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-
+  
   // component did mount cycle
   useEffect(() => {
-    ida.onCurrentUserChange((auth) => {
-      console.log('testando essa pohita', auth);
+    const query = `?${router.asPath.split('?')[1 || '']}`;
+    const parsedQuery = queryString.parse(query);
 
+    if (parsedQuery.logout === 'true') ida.logout();
+    
+    ida.onCurrentUserChange((auth) => {
       if (auth) {
         dispatch({
           type: SET_AUTH,
           auth,
         });
-        console.log('fetch user on ida js sdk', auth);
+
         getUser({
           ida: auth.ida,
           setLoading,
@@ -44,6 +48,7 @@ const Main = ({ children }) => {
           dispatch,
         });
       }
+        
       dispatch({
         type: SET_LOADING_PAGE,
         loading: false,

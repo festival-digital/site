@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/atoms/button/button';
 import LinkButton from 'components/atoms/link-button/link-button';
 import Select from 'components/atoms/select/select';
-import { FormWrapper } from './event-form.style';
+import { FormWrapper, FakeInput } from './event-form.style';
 
 const EventForm = ({
   event, eventOptions, onSubmit, setEvent,
@@ -20,7 +20,8 @@ const EventForm = ({
     <Button type="button" onClick={onSubmit} disabled={!event}>
       Estou indo para esse evento
     </Button>
-    <LinkButton>Não sei para onde estou indo</LinkButton>
+    <FakeInput />
+    {/* <LinkButton>Não sei para onde estou indo</LinkButton> */}
   </FormWrapper>
 );
 

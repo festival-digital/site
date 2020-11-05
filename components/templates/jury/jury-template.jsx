@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Button from 'components/atoms/button/button';
+import Loading from 'components/atoms/loading/loading';
 import JuryCard from 'components/molecules/jury-card/jury-card';
+import Store from 'components/store/Store';
+import { getActivity, handleVote } from './jury-template.controller';
 import {
   JuryContainer, JuryHeader, JuryDescription, JuryList,
-  OasiLogo, JuryTitle, BackIcon, Wrapper,
+  OasiLogo, JuryTitle, BackIcon, Wrapper, JuryLoadingContainer,
 } from './jury.style';
 
 const renderCards = ({
@@ -69,7 +73,7 @@ const JuryTemplate = ({ id }) => {
           Voltar para a galeria
         </Button>
         <JuryDescription>
-          Aqui, você pode classificar os vídeos exibidos na Mostra de Videoclipes. O vídeo mais bem votado vai ser exibido no palco principal durante o encerramento da Feira da Música! Quando terminar de votar, pode clicar em “Voltar Para a Galeria” que vamos te levar de volta ;)
+          Aqui, você pode votar nos vídeos exibidos na Mostra de Videoclipes. Quando terminar de votar, pode clicar em “Voltar Para a Galeria” ;)  
         </JuryDescription>
         <JuryList>
             {

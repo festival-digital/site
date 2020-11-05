@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CompleteSignupTemplate from 'components/templates/complete-signup/complete-signup';
+import PrivateContext from 'components/private-context/private-context';
 
 const Wrapper = styled.div`
   background-color: #000;
@@ -12,9 +13,11 @@ const Wrapper = styled.div`
  * @returns {React.Component}
  */
 const CompleteSignup = () => (
-  <Wrapper>
-    <CompleteSignupTemplate />
-  </Wrapper>
+  <PrivateContext>
+    <Wrapper>
+      <CompleteSignupTemplate />
+    </Wrapper>
+  </PrivateContext>
 );
 
 export default CompleteSignup;

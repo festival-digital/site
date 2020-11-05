@@ -3,6 +3,7 @@ import GoBackButton from 'components/atoms/go-back-button/go-back-button';
 import ProfileCard from 'components/organisms/profile-card/profileCard';
 import { Header, Wrapper, Title } from './profile.style';
 import ProfileEditCard from 'components/organisms/profile-edit-card/profileEditCard';
+import PrivateContext from 'components/private-context/private-context';
 import Store from 'components/store/Store';
 import { sendUser } from './profile.controller';
 import { useRouter } from 'next/router';
@@ -25,27 +26,29 @@ const ProfileTemplate = () => {
   const router = useRouter();
 
   return (
-    <Wrapper>
-      <Header>
-        <GoBackButton onClick={() => router.back()} />
-      </Header>
-      <Title>Dados Cadastrais</Title>
-      {
-        !edit ?
-          (
-            <ProfileCard
-              { ...state.user }
-              handleClick={() => setEdit(true)}
-            />
-          ) :
-          (
-            <ProfileEditCard
-              initialState={state.user}
-              handleClick={(payload) => sendUser(payload, state.user, dispatch, router, setEdit)}
-            />
-          )
-      }
-    </Wrapper>
+    <PrivateContext>
+      <Wrapper>
+        <Header>
+          <GoBackButton onClick={() => router.back()} />
+        </Header>
+        <Title>Dados Cadastrais</Title>
+        {
+          !edit ?
+            (
+              <ProfileCard
+                { ...state.user }
+                handleClick={() => setEdit(true)}
+              />
+            ) :
+            (
+              <ProfileEditCard
+                initialState={state.user}
+                handleClick={(payload) => sendUser(payload, state.user, dispatch, router, setEdit)}
+              />
+            )
+        }
+      </Wrapper>
+    </PrivateContext>
   )
 };
 

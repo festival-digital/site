@@ -53,6 +53,7 @@ export const ExitButton = styled.button`
 `;
 
 export const Modal = styled.div`
+  overflow-y: auto;
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -62,13 +63,19 @@ export const Modal = styled.div`
   height: 100%;
 
   @media (min-width: 769px) {
+    padding-top: 0px;
     width: 768px;
     height: 520px;
+    padding-bottom: 40px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: 102px;
   }
 `;
 export const TermsWrapper = styled.div`
   height: 100%;
-  overflow-y: auto;
   margin-top: 24px;
-  padding-bottom: 40px;
 `;

@@ -13,16 +13,13 @@ const Navigation = ({
 }) => {
   return (
     <NavigationComponent column={column}>
-      <NavigationItem column={column} onClick={closeMenu}>
-        <Link href="/">
-          <a>Início</a>
-        </Link>
-      </NavigationItem>
-      <NavigationItem column={column} onClick={closeMenu}>
+      {
+        /* <NavigationItem column={column} onClick={closeMenu}>
         <Link href="/events">
           <a>Todos os eventos</a>
         </Link>
-      </NavigationItem>
+        </NavigationItem> */
+      }
       <NavigationItem column={column} onClick={closeMenu}>
         <Link href="/faq">
           <a>PERGUNTAS FREQUENTES</a>

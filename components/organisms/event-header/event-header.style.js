@@ -35,7 +35,6 @@ export const LinearBackground = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(0deg, #1d1d1d 40.21%, rgba(29, 29, 29, 0) 100%);
   padding: ${({ theme: { spacingInset } }) =>
     `${spacingInset.xs} ${spacingInset.xs}`};
   z-index: 100;
@@ -43,6 +42,7 @@ export const LinearBackground = styled.div`
   ${({ isSticky, theme: { spacingInset } }) => {
     return isSticky
       ? `
+      background: linear-gradient(0deg, #1d1d1d 40.21%, rgba(29, 29, 29, 0) 100%);
       padding: ${spacingInset.xs} ${spacingInset.xs};
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.75);
       z-index: 100;

@@ -162,6 +162,7 @@ export const addTicket = async ({
  */
 export const completeRegister = async ({
   setLoading, userId, user, router,
+  token,
 }) => {
   setLoading(true);
 
@@ -179,7 +180,7 @@ export const completeRegister = async ({
   setTimeout(() => {
     setLoading(false);
     if (isMobile()) router.push('/events');
-    else router.push('/game');
+    else window.open(`https://game.oasi.vc/?t=${token}`);
   }, 2000);
 };
 
