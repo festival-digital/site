@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import Button from 'components/atoms/button/button';
 import Loading from 'components/atoms/loading/loading';
 import JuryCard from 'components/molecules/jury-card/jury-card';
 import Store from 'components/store/Store';
-import { getActivity, handleVote } from './jury-template.controller';
+import { getActivity, handleVote, validateToken } from './jury-template.controller';
 import {
   JuryContainer, JuryHeader, JuryDescription, JuryList,
   OasiLogo, JuryTitle, BackIcon, Wrapper, JuryLoadingContainer,
@@ -15,6 +16,7 @@ const renderCards = ({
 }) => shows.map(({
   title, id, url, votes,
 }) => {
+  const router = useRouter();
   const vote = votes.find(({ user }) => user.id === userId);
   return (
     <li>
@@ -41,10 +43,15 @@ const JuryTemplate = ({ id }) => {
   const { state } = useContext(Store);
   const [loading, setLoading] = useState(true);
   const [activity, setActivity] = useState(null);
-
+  const router = useRouter();
   useEffect(() => {
     getActivity({ setLoading, setActivity, urlParam: id });
   }, []);
+  useEffect(() => {
+    console.log('JuryTemplate -> router', router);
+    if (router.query && router.query.t) validateToken(router.query.t, router);
+  }, [router.query]);
+  
 
   if (loading || !state.user) {
     return (

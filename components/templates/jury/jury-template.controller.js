@@ -3,6 +3,17 @@ import {
   vote as voteRepository,
 } from './jury-template.repository';
 
+
+export const validateToken = async (token, router) => {
+  try {
+    const response = await ida.validateToken({ token });
+    console.log('response', response);
+    if (!response) router.push('/');
+  } catch (err) {
+    router.push('/');
+  }
+}
+
 /**
  * function that get on api, jury data and shows to vote
  * @param {function} setActivity function to controll activty on state

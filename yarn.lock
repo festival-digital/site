@@ -1720,10 +1720,17 @@
     styled-components "^5.1.1"
     url-loader "^4.1.0"
 
+<<<<<<< HEAD
 "@resystem/ida-js-sdk@^0.0.45":
   version "0.0.45"
   resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.45.tgz#c25c85fb5c05f7d068fcbdcf8babd5bb278eaca3"
   integrity sha512-iUVN7+KeTQm2CdGyr3miScee2jK4sMxrCRGUQc9Ys3B7mXBe/D1J3GQPSZ83zEaT+koT56x8cIZPCgNt1iQv9w==
+=======
+"@resystem/ida-js-sdk@^0.0.42":
+  version "0.0.42"
+  resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.42.tgz#c8ba5feaa671e7eea48e70b0cc86d3222be9f12c"
+  integrity sha512-mNE1J9vUn1Kyg9ao8MsyMJY/48CY+gDepOXN59cfBPEHMaSeBkDftvGBXRUArAdRzGWUIrgPocxaD7qO8j6v1Q==
+>>>>>>> 3119991129ae23b72ea84df31f1fd62d02419001
   dependencies:
     "@babel/core" "^7.11.6"
     ajv "^6.12.4"
@@ -2819,6 +2826,11 @@ babel-plugin-transform-react-remove-prop-types@0.4.24:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
   integrity sha512-eqj0hVcJUR57/Ug2zE1Yswsw4LhuqqHhD+8v120T1cl3kjg76QwtyBrdIk4WVwK+lAhBJVYCd/v+4nc4y+8JsA==
+
+babel-plugin-transform-remove-console@^6.9.4:
+  version "6.9.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-remove-console/-/babel-plugin-transform-remove-console-6.9.4.tgz#b980360c067384e24b357a588d807d3c83527780"
+  integrity sha1-uYA2DAZzhOJLNXpYjYB9PINSd4A=
 
 balanced-match@^1.0.0:
   version "1.0.0"
