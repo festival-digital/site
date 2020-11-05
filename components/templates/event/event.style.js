@@ -22,6 +22,7 @@ export const EventCover = styled.div`
   height: 330px;
   position: relative;
   top: -80px;
+  margin-bottom: -80px;
   background-image: ${(props) => `url(${props.cover})`};
   background-size: cover;
   background-position: center;
