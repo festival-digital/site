@@ -30,12 +30,15 @@ export const getDate = ({ end_date, start_date }) => {
     month: months[end.month()],
     day: end.date(),
   };
-  if (startObj.month === endObj.month && startObj.day === endObj.day) {
-    return `${endObj.day} ${startObj.month} / ${start.hour()} - ${end.hour()}h`;
-  }
-  if (startObj.month === endObj.month) {
-    return `${startObj.day} a ${endObj.day} de ${startObj.month}`;
-  }
+
+  return `${startObj.day} ${startObj.month} / ${start.hour()}h${start.minute() || ''}`;
+
+  // if (startObj.month === endObj.month && startObj.day === endObj.day) {
+  //   return `${endObj.day} ${startObj.month} / ${start.hour()} - ${end.hour()}h`;
+  // }
+  // if (startObj.month === endObj.month) {
+  //   return `${startObj.day} a ${endObj.day} de ${startObj.month}`;
+  // }
 };
 
 export const getEvent = async (

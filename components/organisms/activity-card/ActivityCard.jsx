@@ -201,7 +201,6 @@ const ActivityCard = ({
   ...props
 }) => {
   const router = useRouter();
-  console.log(activity);
   return (
     <Container>
       <Figure backgroundUrl={activity.cover_url || backgroundUrl} />
