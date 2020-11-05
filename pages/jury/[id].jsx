@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BaseHead from 'components/base-head/BaseHead';
 import JuryTemplate from 'components/templates/jury/jury-template';
 import PrivateContext from 'components/private-context/private-context';
 
 const Jury = ({ id }) => (
-  <PrivateContext>
-    <JuryTemplate id={id} />
-  </PrivateContext>
+  <>
+    <BaseHead
+      title="Oasi - Juri Popular"
+      description="Aqui, você pode votar nos vídeos exibidos na Mostra de Videoclipes. Quando terminar de votar, pode clicar em “Voltar Para a Galeria” ;)"
+    />
+    <PrivateContext>
+      <JuryTemplate id={id} />
+    </PrivateContext>
+  </>
 );
 
 Jury.propTypes = {
