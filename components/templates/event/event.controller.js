@@ -66,7 +66,10 @@ export const getEvent = async (
     end_date: a.end_date,
     date: getDate(a),
     id: a.id,
-  }));
+  })).sort((a, b) => {
+    if (a.start_date === b.start_date) return 0;
+    return a.start_date < b.start_date ? -1 : 1;
+  });
 
   const current = activities.filter((a) => {
     if (
