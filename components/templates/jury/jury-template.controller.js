@@ -1,4 +1,3 @@
-import { Router } from 'next/router';
 import {
   getActivity as getActivityRepository,
   vote as voteRepository,
