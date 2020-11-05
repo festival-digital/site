@@ -29,7 +29,7 @@ const PrivateContext = ({ children }) => {
     }
   }, [state.loading, state.auth]);
   useEffect(() => {
-    if (router.query.t) validateToken(router.query.t);
+    if (router.query && router.query.t) validateToken(router.query.t);
   }, []);
 
   return state.loading ? (
