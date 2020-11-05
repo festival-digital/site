@@ -91,12 +91,12 @@ const TagsWrapper = styled.div`
 const ActivityDate = styled.div`
   align-self: start;
   color: ${({ theme }) => theme.neutralColor[1]};
-  font-size: ${({ theme }) => theme.fontSize.xs};
+  font-size: 16px;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
 `;
 
 const ActivityName = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.sm};
+  font-size: 16px;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: ${({ theme }) => theme.neutralColor[1]};
 `;
@@ -221,7 +221,7 @@ const ActivityCard = ({
         <RightContent>
           {/* <SelectTag subscription={subscription} isFree={isFree}  /> */}
           {
-            activity.streaming_url && enter ? (
+            true ? (
               <Button onClick={() => router.push(`/embed-stream/${activity.id}`)}>
                 Entrar
               </Button>
