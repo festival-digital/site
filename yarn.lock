@@ -1720,17 +1720,10 @@
     styled-components "^5.1.1"
     url-loader "^4.1.0"
 
-<<<<<<< HEAD
-"@resystem/ida-js-sdk@^0.0.45":
-  version "0.0.45"
-  resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.45.tgz#c25c85fb5c05f7d068fcbdcf8babd5bb278eaca3"
-  integrity sha512-iUVN7+KeTQm2CdGyr3miScee2jK4sMxrCRGUQc9Ys3B7mXBe/D1J3GQPSZ83zEaT+koT56x8cIZPCgNt1iQv9w==
-=======
-"@resystem/ida-js-sdk@^0.0.42":
-  version "0.0.42"
-  resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.42.tgz#c8ba5feaa671e7eea48e70b0cc86d3222be9f12c"
-  integrity sha512-mNE1J9vUn1Kyg9ao8MsyMJY/48CY+gDepOXN59cfBPEHMaSeBkDftvGBXRUArAdRzGWUIrgPocxaD7qO8j6v1Q==
->>>>>>> 3119991129ae23b72ea84df31f1fd62d02419001
+"@resystem/ida-js-sdk@^0.0.49":
+  version "0.0.49"
+  resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.49.tgz#e1db3af9d3fa40fb89d0b2f41b1a45ccb35c33c4"
+  integrity sha512-IGZLVWZtK0r4W+gtmiASS1s3q70vIajcOT6sHUOILtz42NQJIGCyjc2DZ30kvOnAf/L8XY48ldYNCNmeRUJQ8A==
   dependencies:
     "@babel/core" "^7.11.6"
     ajv "^6.12.4"
