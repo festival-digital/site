@@ -6,6 +6,7 @@ import {
 
 export const validateToken = async (token, router) => {
   try {
+    console.log('token lalala');
     const response = await ida.validateToken({ token });
     console.log('response', response);
     if (!response) router.push('/');
