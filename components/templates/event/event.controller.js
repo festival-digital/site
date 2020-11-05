@@ -71,26 +71,19 @@ export const getEvent = async (
     return a.start_date < b.start_date ? -1 : 1;
   });
 
-  const current = activities.filter((a) => {
-    if (
-      a.start_date < new Date().getTime() &&
-      a.end_date >= new Date().getTime()
-    ) {
-      return true;
-    }
-    return false;
+  const nowEvents = activities.filter((act) => {
+    const currentDate = new Date().getTime();
+    return currentDate > parseInt(act.start_date, 10) && currentDate < parseInt(act.end_date, 10);
   });
 
-  const future = activities.filter((a) => {
-    if (a.start_date > new Date().getTime()) {
-      return true;
-    }
-    return false;
+  const otherEvents = activities.filter((act) => {
+    const currentDate = new Date().getTime();
+    return currentDate < parseInt(act.start_date, 10);
   });
 
   setEvent(eventResponse.data.oneEvent);
-  setActivitiesCurrent(current);
-  setActivitiesFuture(future);
+  setActivitiesCurrent(nowEvents);
+  setActivitiesFuture(otherEvents);
   setLoading(false);
 };
 
