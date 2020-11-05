@@ -21,12 +21,14 @@ export const getEvents = async ({ setLoading, setNowEvents, setOtherEvents }) =>
   const nowEvents = eventsPromise.data.allEvents.filter((event) => {
     const currentDate = new Date().getTime();
     return currentDate > parseInt(event.start_date, 10) && currentDate < parseInt(event.end_date, 10);
-  })
+  });
 
   const otherEvents = eventsPromise.data.allEvents.filter((event) => {
     const currentDate = new Date().getTime();
     return currentDate < parseInt(event.start_date, 10);
-  })
+  });
+
+  console.log(otherEvents, nowEvents);
 
   setOtherEvents(otherEvents);
   setNowEvents(nowEvents);

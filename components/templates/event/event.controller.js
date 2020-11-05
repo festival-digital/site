@@ -42,8 +42,10 @@ export const getEvent = async (
   event,
   setEvent,
   setActivitiesCurrent,
-  setActivitiesFuture
+  setActivitiesFuture,
+  setLoading,
 ) => {
+  setLoading(true);
   const eventResponse = await client().query({
     query: ONE_EVENT_QUERY,
     variables: {
@@ -54,6 +56,7 @@ export const getEvent = async (
   const activities = eventResponse.data.oneEvent.activities.map((a) => ({
     image_url: a.image_url || '',
     cover_url: a.cover_url,
+    streaming_url: a.streaming_url,
     title: a.title,
     tags: a.tags,
     start_date: a.start_date,
@@ -82,6 +85,7 @@ export const getEvent = async (
   setEvent(eventResponse.data.oneEvent);
   setActivitiesCurrent(current);
   setActivitiesFuture(future);
+  setLoading(false);
 };
 
 export const verifyTicket = (state, event_id, setHasTicket) => {

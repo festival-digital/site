@@ -11,12 +11,6 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   transition: all 2s ease-in-out;
-
-  &:hover {
-    figure {
-      transform: scale(1.3) rotate(5deg);
-    }
-  }
 `;
 
 const Figure = styled.figure`
@@ -30,7 +24,7 @@ const Figure = styled.figure`
       backgroundUrl || ''
     })`}; /* fullmetal.jpg  './static/images/card1.png'*/
   background-size: cover;
-  background-position: center;
+  background-position: top;
   transition: all 0.7s ease-in-out;
   overflow: hidden;
   z-index: -1;
@@ -42,13 +36,13 @@ const LinearBackground = styled.div`
   height: 100%;
   padding: 16px 16px 16px 16px;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr auto;
 
   &::after {
     content: '';
     height: 100%;
-    width: 50%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 25%, transparent);
+    width: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 5%, transparent);
     position: absolute;
     top: 0;
     left: 0;
@@ -80,13 +74,18 @@ const RightContent = styled.div`
 
 const LeftContent = styled.div`
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
   grid-template-columns: 1fr;
-  align-items: end;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
   justify-content: flex-end;
   justify-items: left;
   width: 100%;
   position: relative;
+`;
+
+const TagsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const ActivityDate = styled.div`
@@ -111,6 +110,8 @@ const Tag = styled.div`
   flex-grow: 0;
   border-radius: ${({ theme }) => theme.borderRadius.xs};
   text-transform: lowercase;
+  margin-top: 8px;
+  margin-right: 8px;
 `;
 
 const TagGreen = styled.div`
@@ -196,10 +197,11 @@ const ActivityCard = ({
   isFree,
   subscription,
   activity,
+  enter,
   ...props
 }) => {
-  console.log('activity', activity);
   const router = useRouter();
+  console.log(activity);
   return (
     <Container>
       <Figure backgroundUrl={activity.cover_url || backgroundUrl} />
@@ -207,7 +209,9 @@ const ActivityCard = ({
         <LeftContent>
           <ActivityDate>{activity.date}</ActivityDate>
           <ActivityName>{activity.title}</ActivityName>
-          <GenerateTags tags={activity.tags} />
+          <TagsWrapper>
+            <GenerateTags tags={activity.tags} />
+          </TagsWrapper>
           {/* <ReadMoreLink
             href="/"
             alt={`Link para saber mais sobre ${activityName}`}
@@ -217,9 +221,13 @@ const ActivityCard = ({
         </LeftContent>
         <RightContent>
           {/* <SelectTag subscription={subscription} isFree={isFree}  /> */}
-          <Button onClick={() => router.push(`/embed-stream/${activity.id}`)}>
-            Entrar
-          </Button>
+          {
+            activity.streaming_url && enter ? (
+              <Button onClick={() => router.push(`/embed-stream/${activity.id}`)}>
+                Entrar
+              </Button>
+            ) : null
+          }
         </RightContent>
       </LinearBackground>
     </Container>
@@ -231,6 +239,7 @@ ActivityCard.defaultProps = {
   activityName: null,
   backgroundUrl: '',
   isFree: false,
+  enter: false,
   subscription: null,
   tags: [],
 };
@@ -239,6 +248,7 @@ ActivityCard.propTypes = {
   activityDate: PropTypes.string,
   activityName: PropTypes.string,
   backgroundUrl: PropTypes.string,
+  enter: PropTypes.bool,
   isFree: PropTypes.bool,
   subscription: PropTypes.oneOf(['closed', 'done', 'open', null]),
   tags: PropTypes.arrayOf(PropTypes.string),

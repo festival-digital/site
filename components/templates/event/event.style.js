@@ -10,13 +10,21 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
+export const LoadingWrapper = styled.div`
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const EventCover = styled.div`
   width: 100%;
-  height: 250px;
+  height: 330px;
   position: relative;
-
+  top: -80px;
   background-image: ${(props) => `url(${props.cover})`};
-  background-size: 100% auto;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 `;
 
@@ -25,13 +33,13 @@ export const LinearBackground = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 1px);
   top: 0;
   left: 0;
 
   background: linear-gradient(
     0deg,
-    #1d1d1d 20.27%,
+    #1d1d1d 0%,
     rgba(29, 29, 29, 0.766355) 30.5%,
     rgba(29, 29, 29, 0) 100%
   );
@@ -41,7 +49,7 @@ export const LinearBackground = styled.div`
   @media only screen and (max-width: 320px) {
     background: linear-gradient(
       0deg,
-      #1d1d1d 25.27%,
+      #1d1d1d 0%,
       rgba(29, 29, 29, 0.766355) 35.5%,
       rgba(29, 29, 29, 0) 100%
     );
