@@ -72,7 +72,7 @@ export const Modal = styled.div`
   &:after {
     content: "";
     display: block;
-    height: 32px;
+    height: 102px;
   }
 `;
 export const TermsWrapper = styled.div`
