@@ -46,9 +46,11 @@ const JuryTemplate = ({ id }) => {
   const router = useRouter();
   console.log('JuryTemplate -> router', router.query.t);
   useEffect(() => {
-    if (router.query && router.query.t) validateToken(router.query.t);
     getActivity({ setLoading, setActivity, urlParam: id });
   }, []);
+  useEffect(() => {
+    if (router.query && router.query.t) validateToken(router.query.t);
+  }, [router.query]);
   
 
   if (loading || !state.user) {
