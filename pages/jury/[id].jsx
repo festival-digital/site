@@ -10,7 +10,9 @@ const Jury = ({ id }) => (
       title="Oasi - Juri Popular"
       description="Aqui, você pode votar nos vídeos exibidos na Mostra de Videoclipes. Quando terminar de votar, pode clicar em “Voltar Para a Galeria” ;)"
     />
+    <PrivateContext>
       <JuryTemplate id={id} />
+    </PrivateContext>
   </>
 );
 

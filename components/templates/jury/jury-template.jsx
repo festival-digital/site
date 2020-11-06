@@ -47,10 +47,10 @@ const JuryTemplate = ({ id }) => {
   useEffect(() => {
     getActivity({ setLoading, setActivity, urlParam: id });
   }, []);
-  useEffect(() => {
-    console.log('JuryTemplate -> router', router.query.t);
-    if (router.query && router.query.t) validateToken(router.query.t, router);
-  }, [router.query]);
+  // useEffect(() => {
+  //   console.log('JuryTemplate -> router', router.query.t);
+  //   if (router.query && router.query.t) validateToken(router.query.t, router);
+  // }, [router.query]);
   
 
   if (loading || !state.user) {
