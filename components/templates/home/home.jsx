@@ -285,11 +285,11 @@ const Home = () => {
           >
             Saiba mais
           </Button>
-          <Link href="/all-events">
-            <LinkButton href="/" color="#FFFFFF">
+          {/* <Link href="/events">
+            <LinkButton color="#FFFFFF">
               Ver todos os eventos
             </LinkButton>
-          </Link>
+          </Link> */}
         </NextEventActionsWrapper>
       </NextEvent>
 
