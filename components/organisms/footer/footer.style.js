@@ -90,8 +90,10 @@ export const SpaceSmall = styled.div`
 export const Navigation = styled.ul`
   border-bottom: 1px solid #ffffff;
   display: block;
-  padding-bottom: 10px;
-  margin: 40px 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: 30px;
+  margin-right  : 30px;
 
   @media (min-width: 845px) {
     display: flex;
@@ -127,20 +129,27 @@ export const MediaSocial = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
+
+  @media (min-width: 1024px) {
+    margin-top: 0;
+  }
 `;
 
 export const BrandIcon = styled.img`
-  width: 132px;
-  height: 45px;
-  margin: 30px 0;
+  width: 120px;
+  margin-top: 30px;
 
   @media (min-width: 845px) {
-    margin: 0;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 `;
 
 export const Icon = styled.img`
-  margin: 10px 15px 10px 0;
+  width: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
   vertical-align: middle;
 `;
 
@@ -150,46 +159,56 @@ export const Content = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 0 30px;
-
-  @media (min-width: 1077px) {
-    justify-content: space-between;
-  }
+  padding: 0;
+  padding-bottom: 30px;
 
   @media (min-width: 1200px) {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `;
 
 export const Organization = styled.div`
-  margin: 0 30px 30px 30px;
+  width: 100%;
+  padding: 30px;
 
-  @media (min-width: 1077px) {
+  @media (min-width: 1024px) {
     margin: 0;
-    display: flex;
-    justify-content: space-around;
-    flex: 2;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 `;
 
 export const IconOrganization = styled.img`
-  margin-right: 20px;
+  height: 40px;
+  max-width: 100px;
+  object-fit: contain;
   vertical-align: middle;
+  margin-top: 16px;
+
+  & + & {
+    margin-left: 16px;
+  }
 `;
 
 export const ContentOrganization = styled.div`
   display: block;
+  margin-bottom: 30px; 
 
   @media (min-width: 1077px) {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    padding-left: 16px;
   }
 `;
 
 export const ContentIcon = styled.div`
-  margin: 8px 0;
-
+  width: 100;
+  display: flex;
+  flex-wrap: wrap;
+  
   @media (min-width: 1077px) {
     margin: 0;
     margin-left: 24px;
@@ -206,4 +225,5 @@ export const TextOrganization = styled.p`
   align-items: center;
   text-align: center;
   color: #bfbfbf;
+  margin-top: 16px;
 `;

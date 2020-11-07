@@ -298,7 +298,7 @@ const Home = () => {
       <ModalSympla
         opened={symplaModal}
         toSympla={() => {
-          window.open('https://www.sympla.com.br/lancamento-oasi--betatesters-e-convidades---02-novembro__1028218?token=9ae11d6cdcf0caf7c1b5602a2ba5fd2b', '_blank');
+          window.open('https://www.sympla.com.br/18-feira-da-musica__1034066', '_blank');
           setSymplaModal(false);
         }}
         onCancel={() => setSymplaModal(false)}

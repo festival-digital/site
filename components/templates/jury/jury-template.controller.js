@@ -1,3 +1,4 @@
+import ida from 'libs/ida.lib';
 import {
   getActivity as getActivityRepository,
   vote as voteRepository,
@@ -5,7 +6,9 @@ import {
 
 
 export const validateToken = async (token, router) => {
+  console.log('ida.validateToken', ida.validateToken);
   try {
+    console.log('token lalala');
     const response = await ida.validateToken({ token });
     console.log('response', response);
     if (!response) router.push('/');
