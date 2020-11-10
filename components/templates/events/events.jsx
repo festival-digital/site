@@ -34,11 +34,11 @@ const months = [
 ];
 
 const getDateString = (startDate, endDate) => {
-  const momentStartDate = moment(parseInt(startDate, 10));
-  const momentEndDate = moment(parseInt(endDate, 10));
+  const momentStartDate = moment(+startDate);
+  const momentEndDate = moment(+endDate);
 
-  let startDay = (momentStartDate.day() + 1).toString();
-  let endDay = (momentEndDate.day() + 1).toString();
+  let startDay = (momentStartDate.date()).toString();
+  let endDay = (momentEndDate.date()).toString();
 
   startDay = startDay.length === 1 ? `0${startDay}` : startDay;
   endDay = endDay.length === 1 ? `0${endDay}` : endDay;
@@ -54,7 +54,7 @@ const getDateString = (startDate, endDate) => {
 
 const renderNowEvents = ({ events }) =>
   events.map((event) => (
-    <li>
+    <li key={event.id}>
       <Link href="/events/[event]" as={`/events/${event.id}`}>
         <a>
           <EventCard
@@ -70,14 +70,14 @@ const renderNowEvents = ({ events }) =>
 
 const renderOtherEvents = ({ events }) =>
   events.map((event) => (
-    <li>
+    <li key={event.id}>
       <Link href="/events/[event]" as={`/events/${event.id}`}>
         <a>
           <EventCard
             backgroundUrl={event.cover_url}
             iconUrl={event.image_url}
             title={event.name}
-            subtitle="11 a 13 de novembro"
+            subtitle={getDateString(event.start_date, event.end_date)}
           />
         </a>
       </Link>
@@ -125,7 +125,7 @@ const EventsTemplate = () => {
           {otherEvents.length ? (
             <>
               <TitleContainer>Próximos Eventos</TitleContainer>
-              <EventList>{renderNowEvents({ events: otherEvents })}</EventList>
+              <EventList>{renderOtherEvents({ events: otherEvents })}</EventList>
             </>
           ) : null}
           <Separator />
