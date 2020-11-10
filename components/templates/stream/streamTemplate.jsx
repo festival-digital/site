@@ -42,7 +42,7 @@ const StreamTemplate = ({ stream }) => {
           left: 10px;
         `}
       />
-      <Iframe src={activity ? activity.streaming_url : 'http://player.twitch.tv/?channel=discopedia&parent=localhost'} allowfullscreen />
+      <Iframe src={activity ? activity.streaming_url : 'https://player.twitch.tv/?channel=discopedia&parent=localhost'} allowfullscreen />
     </>
   );
 };

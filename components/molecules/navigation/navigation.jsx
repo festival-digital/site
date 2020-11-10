@@ -43,7 +43,7 @@ const Navigation = ({
             onIDASignin();
           }}
         >
-          <IDALogo src="http://ida-design-system-assets.s3-us-west-2.amazonaws.com/icons/brand.svg" alt="" /> 
+          <IDALogo src="https://ida-design-system-assets.s3-us-west-2.amazonaws.com/icons/brand.svg" alt="" /> 
           Cadastre-se
         </IDARegisterButton>
       </NavigationItem>
