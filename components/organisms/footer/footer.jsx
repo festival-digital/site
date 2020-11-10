@@ -24,6 +24,7 @@ import {
   Organization,
   ContentIcon,
   TextOrganization,
+  AfeteseIconOrganization,
 } from './footer.style';
 
 const Footer = () => {
@@ -119,24 +120,15 @@ const Footer = () => {
         </div>
         <Organization>
           <ContentOrganization>
-            <TextOrganization>Narrativa: </TextOrganization>
-            <ContentIcon>
-              <IconOrganization
-                src="static/logos/narrativa.svg"
-                alt="Logo da plataforma de escrita criativa, é um quadrado com bordas brancas, dentro tem palavra quadro escrito"
-              />
-            </ContentIcon>
-          </ContentOrganization>
-          <ContentOrganization>
             <TextOrganization>Desenvolvimento: </TextOrganization>
             <ContentIcon>
               <IconOrganization
-                src="static/logos/resystem.svg"
-                alt="Logo da Resystem"
-              />
-              <IconOrganization
                 src="static/logos/madpixel.svg"
                 alt="Logo da MadPixel"
+              />
+              <IconOrganization
+                src="static/logos/resystem.svg"
+                alt="Logo da Resystem"
               />
             </ContentIcon>
           </ContentOrganization>
@@ -144,20 +136,30 @@ const Footer = () => {
             <TextOrganization>Apoio: </TextOrganization>
             <ContentIcon>
               <IconOrganization src="static/logos/som.svg" alt="Logo do SOM" />
-              <IconOrganization
-                src="static/logos/midianinja.svg"
-                alt="Logo da Midia Ninja"
-              />
-              <IconOrganization src="static/logos/logo.svg" alt="" />
-              <IconOrganization
-                src="static/logos/afete-se.svg"
-                alt="Logo do afete-se"
-              />
-              <IconOrganization
-                src="static/logos/festival.svg"
-                alt="Logo do festival covida: 2020"
+              <AfeteseIconOrganization
+                src="static/logos/narrativa.svg"
+                alt="Logo da plataforma de escrita criativa, é um quadrado com bordas brancas, dentro tem palavra quadro escrito"
               />
             </ContentIcon>
+          </ContentOrganization>
+          <ContentOrganization>
+            <TextOrganization>Realização: </TextOrganization>
+            <AfeteseIconOrganization
+              src="static/logos/afete-se.svg"
+              alt="Logo do afete-se"
+            />
+            <IconOrganization
+              src="static/logos/festival.svg"
+              alt="Logo do festival covida: 2020"
+            />
+            <IconOrganization
+              src="static/logos/logo.svg"
+              alt="Logo da Feira da Música"
+            />
+            <IconOrganization
+              src="static/logos/midianinja.svg"
+              alt="Logo da Midia Ninja"
+            />
           </ContentOrganization>
         </Organization>
       </Content>

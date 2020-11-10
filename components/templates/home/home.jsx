@@ -68,7 +68,7 @@ const Home = () => {
   useEffect(() => {
     if (state.user && state.user.status !== 'IN_REGISTER' && isMobile()) router.push('/events');
     if (state.user && state.user.status !== 'IN_REGISTER' && !isMobile()) {
-      router.push(`https://game.oasi.vc/?t=${state.auth.token}`);
+      router.push(`/game`);
     }
 
   }, [state.user]);
@@ -244,23 +244,20 @@ const Home = () => {
         </AboutPlataformRow>
       </AboutPlataform>
 
-      <NextEvent backgroundImg="/static/images/feira-bg.jpg">
+      <NextEvent backgroundImg="/static/images/afetese-bg.png">
         <NextEventMosaicIllustration
           src="/static/images/event-mosaic.svg"
           alt=""
         />
         <NextEventInfoWrapper>
           <NextEventTitle>Próximo evento</NextEventTitle>
-          <NextEventSubtitle>Feira da Música de Fortaleza</NextEventSubtitle>
-          <NextEventDate>de 5 a 8 de Novembro</NextEventDate>
+          <NextEventSubtitle>Afete-se em OASI - afete-se digital</NextEventSubtitle>
+          <NextEventDate>de 13 a 21 de Novembro</NextEventDate>
           <NextEventTags>
-            música - mostra de vídeoclipe - oficinas - hackatom - zona de
-            propulsão
+            simplesmenteafetese - afeteseemoasi - oasi2020
           </NextEventTags>
           <NextEventDescription>
-            Cinco dias de muita música brasileira, com artistas locais e
-            emergentes. Também vai rolar exposições com artistas de Fortaleza, e
-            claro que não podia faltar a feirinha online, né?
+            De 13 à 21 de Novembro afete-se em oasi, com mais de 20 atrações entre mostra de filmes, djs, shows, performances, encontros, e você!
           </NextEventDescription>
         </NextEventInfoWrapper>
         <NextEventActionsWrapper>
@@ -271,7 +268,7 @@ const Home = () => {
                 vertical-align: middle;
               }
             `}
-            alt="Adquirir ingresso para a Feira da Música de Fortaleza de 5 a 8 de Novembro"
+            alt="Adquirir ingresso para a Afete-se em OASI de 13 a 21 de Novembro"
           >
             <Icon>local_grocery_store</Icon>
             Adquirir ingresso
@@ -279,17 +276,17 @@ const Home = () => {
           <Button
             color="#404040"
             onClick={() => {
-              router.push('https://feiradamusica.com.br');
+              router.push(' https://www.instagram.com/afete_se');
             }}
-            alt="Saiba mais sobre a Feira da Música de Fortaleza de 5 a 8 de Novembro"
+            alt="Saiba mais sobre a Afete-se em OASI de 13 a 21 de Novembro"
           >
             Saiba mais
           </Button>
-          <Link href="/all-events">
+          {/* <Link href="/all-events">
             <LinkButton href="/" color="#FFFFFF">
               Ver todos os eventos
             </LinkButton>
-          </Link>
+          </Link> */}
         </NextEventActionsWrapper>
       </NextEvent>
 
@@ -298,7 +295,7 @@ const Home = () => {
       <ModalSympla
         opened={symplaModal}
         toSympla={() => {
-          window.open('https://www.sympla.com.br/18-feira-da-musica__1034066', '_blank');
+          router.push('https://www.sympla.com.br/afete-se-em-oasi--afete-se-digital__1048465');
           setSymplaModal(false);
         }}
         onCancel={() => setSymplaModal(false)}

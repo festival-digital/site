@@ -46,6 +46,5 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
     getUserResponse.data.oneUser.status === 'IN_REGISTER'
   ) {
     navigationTo('/complete-signup');
-  } 
-  
+  }
 };

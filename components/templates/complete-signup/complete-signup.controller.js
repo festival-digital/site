@@ -97,7 +97,10 @@ export const getEvents = async ({ setLoading, setEventOptions }) => {
   }
 
   setEventOptions(
-    eventsResponse.data.allEvents.map(({ id, name, sympla_id }) => ({
+    eventsResponse.data.allEvents.filter((event) => {
+      const currentDate = new Date().getTime();
+      return currentDate < parseInt(event.end_date, 10);
+    }).map(({ id, name, sympla_id }) => ({
       id,
       label: name,
       sympla_id,
@@ -180,7 +183,7 @@ export const completeRegister = async ({
   setTimeout(() => {
     setLoading(false);
     if (isMobile()) router.push('/events');
-    else window.open(`https://game.oasi.vc/?t=${token}`);
+    else router.push('/game');
   }, 2000);
 };
 

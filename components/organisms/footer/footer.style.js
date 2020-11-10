@@ -181,14 +181,26 @@ export const Organization = styled.div`
   }
 `;
 
-export const IconOrganization = styled.img`
-  height: 40px;
+export const AfeteseIconOrganization = styled.img`
+  height: 55px;
   max-width: 100px;
   object-fit: contain;
   vertical-align: middle;
   margin-top: 16px;
 
-  & + & {
+  & + img {
+    margin-left: 16px;
+  }
+`;
+
+export const IconOrganization = styled.img`
+  height: 35px;
+  max-width: 90px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-top: 16px;
+
+  & + img {
     margin-left: 16px;
   }
 `;
@@ -197,21 +209,25 @@ export const ContentOrganization = styled.div`
   display: block;
   margin-bottom: 30px; 
 
-  @media (min-width: 1077px) {
+  @media (min-width: 1024px) {
     display: inline-flex;
     align-items: center;
     padding-left: 16px;
+
+    & + & {
+      margin-left: 24px;
+    }
   }
 `;
 
 export const ContentIcon = styled.div`
   width: 100;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   
   @media (min-width: 1077px) {
     margin: 0;
-    margin-left: 24px;
   }
 `;
 
@@ -226,4 +242,5 @@ export const TextOrganization = styled.p`
   text-align: center;
   color: #bfbfbf;
   margin-top: 16px;
+  margin-right: 24px;
 `;
