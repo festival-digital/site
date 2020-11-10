@@ -20,7 +20,7 @@ const Game = () => {
           title="Oasi - Sinta Novamente!"
           description="Aqui, você pode votar nos vídeos exibidos na Mostra de Videoclipes. Quando terminar de votar, pode clicar em “Voltar Para a Galeria” ;)"
         />
-        <GameIFrame src={`http://game.oasi.vc/?t=${token}`} />
+        <GameIFrame src={`https://game.oasi.vc/?t=${token}`} />
       </PrivateContext>
     </>
   );
