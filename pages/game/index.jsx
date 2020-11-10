@@ -11,7 +11,8 @@ const GameIFrame = styled.iframe`
 
 const Game = () => {
   const { state } = useContext(Store);
-
+  const token = state.auth ? state.auth.token : null;
+  
   return (
     <>
       <PrivateContext>
@@ -19,7 +20,7 @@ const Game = () => {
           title="Oasi - Sinta Novamente!"
           description="Aqui, você pode votar nos vídeos exibidos na Mostra de Videoclipes. Quando terminar de votar, pode clicar em “Voltar Para a Galeria” ;)"
         />
-        <GameIFrame src={`http://game.oasi.vc/?t=${state.auth.token}`} />
+        <GameIFrame src={`http://game.oasi.vc/?t=${token}`} />
       </PrivateContext>
     </>
   );
