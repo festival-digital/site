@@ -1720,10 +1720,10 @@
     styled-components "^5.1.1"
     url-loader "^4.1.0"
 
-"@resystem/ida-js-sdk@^0.0.92":
-  version "0.0.92"
-  resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.92.tgz#f521718c1c8ae3e7b65befb6aa0dd23bb748d0aa"
-  integrity sha512-umK/5p89UuK3/PgoXquTSAikwFFxjC517VAbkydezyOWbrsWcp1ZAWDPi6JlhCl1/AgJ+LUK4iVl5F8bivZd5w==
+"@resystem/ida-js-sdk@^0.0.93":
+  version "0.0.93"
+  resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.93.tgz#5f226fa0870812b022c700b17eaa93c73599f529"
+  integrity sha512-ZH6rTC0tmZ9xhHRGNVLkRArfJ1dl93sKoSPvnIi2Nlbkxe1aqx+UDaPfLKuW2M+2RWnJYs/anHiEWBGZTirI/w==
   dependencies:
     "@babel/core" "^7.11.6"
     ajv "^6.12.4"
