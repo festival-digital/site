@@ -1720,17 +1720,10 @@
     styled-components "^5.1.1"
     url-loader "^4.1.0"
 
-<<<<<<< HEAD
-"@resystem/ida-js-sdk@^0.0.49":
-  version "0.0.49"
-  resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.49.tgz#e1db3af9d3fa40fb89d0b2f41b1a45ccb35c33c4"
-  integrity sha512-IGZLVWZtK0r4W+gtmiASS1s3q70vIajcOT6sHUOILtz42NQJIGCyjc2DZ30kvOnAf/L8XY48ldYNCNmeRUJQ8A==
-=======
-"@resystem/ida-js-sdk@^0.0.93":
-  version "0.0.93"
-  resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.93.tgz#5f226fa0870812b022c700b17eaa93c73599f529"
-  integrity sha512-ZH6rTC0tmZ9xhHRGNVLkRArfJ1dl93sKoSPvnIi2Nlbkxe1aqx+UDaPfLKuW2M+2RWnJYs/anHiEWBGZTirI/w==
->>>>>>> develop
+"@resystem/ida-js-sdk@^0.0.94":
+  version "0.0.94"
+  resolved "https://registry.yarnpkg.com/@resystem/ida-js-sdk/-/ida-js-sdk-0.0.94.tgz#6b60da415cbfde45ad2cd35ebf2d4c5396fcde9d"
+  integrity sha512-Z7w7IIz92sy8Byvq4slBVmt+s/8xVLHzpeFxKcvYmBuZwp4wlSolwsL25zjTYrp4aKI6F7teX8mgQ0DczWhkHg==
   dependencies:
     "@babel/core" "^7.11.6"
     ajv "^6.12.4"
@@ -2848,14 +2841,11 @@ babel-plugin-transform-remove-console@^6.9.4:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-remove-console/-/babel-plugin-transform-remove-console-6.9.4.tgz#b980360c067384e24b357a588d807d3c83527780"
   integrity sha1-uYA2DAZzhOJLNXpYjYB9PINSd4A=
 
-<<<<<<< HEAD
-=======
 backo2@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/backo2/-/backo2-1.0.2.tgz#31ab1ac8b129363463e35b3ebb69f4dfcfba7947"
   integrity sha1-MasayLEpNjRj41s+u2n038+6eUc=
 
->>>>>>> develop
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
