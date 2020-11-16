@@ -9,6 +9,7 @@ import {
   OPEN_MENU_MODAL,
   CLOSE_MENU_MODAL,
   SET_LOADING_PAGE,
+  SET_IDA,
 } from './actions';
 
 const Store = React.createContext();
@@ -18,18 +19,17 @@ export const initialState = {
   auth: null,
   menu: false,
   loading: true,
+  ida: null,
 };
 
 export const reducer = (state, action) => {
   switch (action.type) {
     case SET_USER: {
-      console.log('SET_USER STORE', action.user);
       return { ...state, user: action.user };
     }
     case RESET_USER:
       return { ...state, user: null };
     case SET_AUTH: {
-      console.log('SET_AUTH STORE', action.auth);
       return { ...state, auth: action.auth };
     }
     case RESET_AUTH:
@@ -40,6 +40,8 @@ export const reducer = (state, action) => {
       return { ...state, menu: false };
     case SET_LOADING_PAGE:
       return { ...state, loading: action.loading };
+    case SET_IDA:
+      return { ...state, ida: action.ida };
     default:
       return state;
   }

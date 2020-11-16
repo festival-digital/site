@@ -11,13 +11,12 @@ import {
   customButtonStyle,
   Text,
 } from './profile-menu.style';
-import ida from 'libs/ida.lib';
 import { useRouter } from 'next/router';
 import Store from 'components/store/Store';
 
-const handleLogout = (router, dispatch) => {
+const handleLogout = async (router, dispatch, ida) => {
   router.push('/');
-  ida.logout();
+  await ida.logout();
   dispatch({
     type: 'SET_USER',
     user: null,
@@ -29,7 +28,7 @@ const handleLogout = (router, dispatch) => {
 };
 
 const Menu = () => {
-  const { dispatch } = useContext(Store)
+  const { dispatch, state } = useContext(Store)
   const router = useRouter();
   return (
     <MenuComponent>
@@ -73,7 +72,7 @@ const Menu = () => {
           </a>
         </Link>
       </MenuItem>
-      <MenuItem onClick={() => handleLogout(router, dispatch)}>
+      <MenuItem onClick={() => handleLogout(router, dispatch, state.ida)}>
         <Link href="#">
           <a>
             <Icon style={{ color: 'white' }}>exit_to_app</Icon>

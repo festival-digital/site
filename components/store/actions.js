@@ -5,3 +5,4 @@ export const RESET_AUTH = 'RESET_AUTH';
 export const OPEN_MENU_MODAL = 'OPEN_MENU_MODAL';
 export const CLOSE_MENU_MODAL = 'CLOSE_MENU_MODAL';
 export const SET_LOADING_PAGE = 'SET_LOADING_PAGE';
+export const SET_IDA = 'SET_IDA';
