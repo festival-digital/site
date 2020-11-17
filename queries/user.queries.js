@@ -25,6 +25,9 @@ export const ONE_USER_QUERY = gql`
         event {
           id
           sympla_id
+          start_date
+          end_date
+          name
         }
       }
       first_name

@@ -65,14 +65,6 @@ const Home = () => {
   const [symplaModal, setSymplaModal] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    if (state.user && state.user.status !== 'IN_REGISTER' && isMobile()) router.push('/events');
-    if (state.user && state.user.status !== 'IN_REGISTER' && !isMobile()) {
-      router.push(`/game`);
-    }
-
-  }, [state.user]);
-
   if (state.loading) {
     return (
       <LoadingWrapper>

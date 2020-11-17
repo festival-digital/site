@@ -46,5 +46,21 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
     getUserResponse.data.oneUser.status === 'IN_REGISTER'
   ) {
     navigationTo('/complete-signup');
+    return;
   }
+  
+  if (
+    getUserResponse.data &&
+    getUserResponse.data.oneUser &&
+    getUserResponse.data.oneUser.tickets.length &&
+    getUserResponse.data.oneUser.tickets.filter(({ event }) => {
+      const currentDate = new Date().getTime();
+      return currentDate > +event.start_date && currentDate < +event.end_date;
+    }).length
+  ) {
+    navigationTo('/events');
+    return;
+  }
+
+  navigationTo('/events');  
 };

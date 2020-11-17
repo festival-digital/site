@@ -71,4 +71,11 @@ export const PlainButton = styled.button`
   color: ${({ theme }) => theme.neutralColor[1]};
 `;
 
-export const EventList = styled.div``;
+export const EventList = styled.ul`
+  list-style: none;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+`;

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import EventCard from 'components/organisms/event-card';
 import Loading from 'components/atoms/loading/loading';
 import ActivityIncentiveCard from 'components/molecules/activity-incentive-card';
+import { isMobile } from 'utils/validations';
 import EventHeader from 'components/organisms/event-header/event-header';
 import { Text } from '@resystem/design-system';
 import { getEvents } from './events.controller';
@@ -130,7 +131,11 @@ const EventsTemplate = () => {
           ) : null}
           <Separator />
         </div>
-        <ActivityIncentiveCard />
+        {
+          isMobile() ? (
+            <ActivityIncentiveCard />
+          ) : null
+        }
       </Container>
     </>
   );

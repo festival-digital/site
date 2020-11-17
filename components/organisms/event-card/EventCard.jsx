@@ -8,12 +8,6 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   transition: all 2s ease-in-out;
-
-  &:hover {
-    figure {
-      transform: scale(1.3) rotate(5deg);
-    }
-  }
 `;
 
 const Figure = styled.figure`
@@ -44,11 +38,11 @@ const LinearBackground = styled.div`
   &::after {
     content: '';
     height: 100%;
-    width: 50%;
+    width: 100%;
     background: linear-gradient(
       90deg,
-      #1d1d1d 32.38%,
-      rgba(29, 29, 29, 0) 95.65%
+      #1d1d1d 0%,
+      rgba(29, 29, 29, 0) 80%
     );
     position: absolute;
     top: 0;

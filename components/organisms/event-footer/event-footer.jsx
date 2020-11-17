@@ -34,6 +34,10 @@ const FooterSticky = styled.footer`
       transform: translateY(0);
     }
   }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 `;
 
 const ButtonFooter = styled.button`
