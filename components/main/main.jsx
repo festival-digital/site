@@ -1,19 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import queryString from 'query-string';
 import { useRouter } from 'next/router';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import Store from 'components/store/Store';
-import Header from 'components/organisms/header/header';
 import HomeMenu from 'components/organisms/home-menu/home-menu';
-import ida from 'libs/ida.lib';
 import {
-  SET_AUTH,
   CLOSE_MENU_MODAL,
-  SET_LOADING_PAGE,
 } from 'components/store/actions';
 import theme from 'utils/theme';
-import { getUser, openIDASignin } from './main.controller';
+import { getUser, initIda, openIDASignin } from './main.controller';
 import { MainComponent } from './main.style';
 
 /**
@@ -29,31 +24,7 @@ const Main = ({ children }) => {
   
   // component did mount cycle
   useEffect(() => {
-    const query = `?${router.asPath.split('?')[1 || '']}`;
-    const parsedQuery = queryString.parse(query);
-
-    if (parsedQuery.logout === 'true') ida.logout();
-    
-    ida.onCurrentUserChange((auth) => {
-      if (auth) {
-        dispatch({
-          type: SET_AUTH,
-          auth,
-        });
-
-        getUser({
-          ida: auth.ida,
-          setLoading,
-          navigationTo: router.push,
-          dispatch,
-        });
-      }
-        
-      dispatch({
-        type: SET_LOADING_PAGE,
-        loading: false,
-      });
-    });
+   initIda(router, dispatch, setLoading);
   }, []);
 
   return (
@@ -61,7 +32,7 @@ const Main = ({ children }) => {
       <MainComponent>
         {children}
         <HomeMenu
-          onIDASignin={openIDASignin}
+          onIDASignin={() => openIDASignin(state.ida)}
           opened={state.menu}
           closeMenu={() => {
             dispatch({

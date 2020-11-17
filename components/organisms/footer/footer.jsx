@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import { openIDASignin } from 'components/main/main.controller';
 import { IDARegisterButton, Text, Subtitle } from '@resystem/design-system';
@@ -26,8 +26,10 @@ import {
   TextOrganization,
   AfeteseIconOrganization,
 } from './footer.style';
+import Store from 'components/store/Store';
 
 const Footer = () => {
+  const { state } = useContext(Store);
   return (
     <FooterComponent>
       <IDAContent>
@@ -47,7 +49,7 @@ const Footer = () => {
               text="Entrar com IDa"
               dark
               small
-              onClick={openIDASignin}
+              onClick={() => openIDASignin(state.ida)}
             />
           </WrapperButtonIDA>
         </IDAContentWrapper>

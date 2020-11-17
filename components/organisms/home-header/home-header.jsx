@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { IDARegisterButton } from '@resystem/design-system';
@@ -10,12 +10,16 @@ import {
   Header as HeaderComponent,
   Wrapper,
 } from './home-header.style';
+import Store from 'components/store/Store';
 
 /**
  * This is the Header component
  * @returns {React.Component} header component global
  */
-const Header = ({ menuOpened, toggleMenu, closeMenu }) => (
+const Header = ({ menuOpened, toggleMenu, closeMenu }) => {
+  const { state } = useContext(Store)
+
+  return (
   <HeaderComponent fixed={menuOpened}>
     <Brand
       onClick={() => {}}
@@ -26,7 +30,7 @@ const Header = ({ menuOpened, toggleMenu, closeMenu }) => (
       <Wrapper>
         <Navigation
           closeMenu={closeMenu}
-          onIDASignin={openIDASignin}
+          onIDASignin={() => openIDASignin(state.ida)}
           textButton="Entrar"
         />
       </Wrapper>
@@ -40,7 +44,7 @@ const Header = ({ menuOpened, toggleMenu, closeMenu }) => (
       />
     </div>
   </HeaderComponent>
-);
+)};
 
 Header.propTypes = {
   menuOpened: PropTypes.bool.isRequired,

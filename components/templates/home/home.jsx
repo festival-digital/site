@@ -130,7 +130,7 @@ const Home = () => {
           </ContentAbout>
           <WrapperButtonIDA>
             <IDARegisterButton
-              onClick={openIDASignin}
+              onClick={() => openIDASignin(state.ida)}
               text="Entrar com IDa"
               dark
               small
