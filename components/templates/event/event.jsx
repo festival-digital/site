@@ -146,7 +146,11 @@ const EventTemplate = ({ event_id }) => {
               backgroundUrl={a.image_url}
               activityName={a.title}
               activity={a}
-              enter
+              enter={() => {
+                const currentDate = new Date().getTime();
+                return state.user.tickets
+                  .findIndex(({ event: e }) => e.id === event_id) !== -1;
+              }}
             />
           ))
         }
