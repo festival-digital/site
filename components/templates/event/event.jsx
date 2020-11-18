@@ -107,6 +107,7 @@ const EventTemplate = ({ event_id }) => {
                     Já tenho um ingresso
                   </ButtonAddTicket>
                   <GradientButton
+                    onClick={() => { setSimplaModal(true); }}
                     customStyle={`
                       display: none;
 
