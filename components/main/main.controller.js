@@ -63,7 +63,7 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
       return currentDate > +event.start_date && currentDate < +event.end_date;
     }).length
   ) {
-    navigationTo('/events');
+    navigationTo('/game');
     return;
   }
 
@@ -71,7 +71,6 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
 };
 
 export const onAuthChange = (auth, setLoading, router, dispatch) => {
-  console.log('onAuthChange -> auth', [auth]);
   if (auth) {
     dispatch({
       type: SET_AUTH,
