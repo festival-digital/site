@@ -12,7 +12,6 @@ import {
  * open ida signin pop and resolve possible errors if
  */
 export const openIDASignin = async (ida) => {
-console.log('ida', ida);
   try {
     await ida.signinWithPopup();
   } catch (err) {
@@ -63,7 +62,7 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
       const currentDate = new Date().getTime();
       return currentDate > +event.start_date && currentDate < +event.end_date;
     }).length &&
-    isMobile();
+    !isMobile();
   ) {
     navigationTo('/game');
     return;
