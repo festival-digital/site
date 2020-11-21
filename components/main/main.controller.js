@@ -1,6 +1,7 @@
 import queryString from 'query-string';
 import { SET_USER } from 'components/store/actions';
-import idaLib from '../../libs/ida.lib';
+import idaLib from 'libs/ida.lib';
+import { isMobile } from 'utils/validations';
 import { fetchUser } from './main.repository';
 import {
   SET_AUTH,
@@ -61,7 +62,8 @@ export const getUser = async ({ ida, setLoading, navigationTo, dispatch }) => {
     getUserResponse.data.oneUser.tickets.filter(({ event }) => {
       const currentDate = new Date().getTime();
       return currentDate > +event.start_date && currentDate < +event.end_date;
-    }).length
+    }).length &&
+    isMobile();
   ) {
     navigationTo('/game');
     return;
