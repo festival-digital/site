@@ -236,20 +236,20 @@ const Home = () => {
         </AboutPlataformRow>
       </AboutPlataform>
 
-      <NextEvent backgroundImg="/static/images/afetese-bg.png">
+      <NextEvent backgroundImg="https://oasi-assets.s3-us-west-2.amazonaws.com/25b17a43-47d0-44d6-bd38-78e6a1ec94c2.jpeg">
         <NextEventMosaicIllustration
           src="/static/images/event-mosaic.svg"
           alt=""
         />
         <NextEventInfoWrapper>
           <NextEventTitle>Próximo evento</NextEventTitle>
-          <NextEventSubtitle>Afete-se em OASI - afete-se digital</NextEventSubtitle>
-          <NextEventDate>de 13 a 21 de Novembro</NextEventDate>
+          <NextEventSubtitle>Festival Convida</NextEventSubtitle>
+          <NextEventDate>de 22 de Novembro a 05 de Dezembro</NextEventDate>
           <NextEventTags>
-            simplesmenteafetese - afeteseemoasi - oasi2020
+            música - independente - festival - shows - feira - mercado
           </NextEventTags>
           <NextEventDescription>
-            De 13 à 21 de Novembro afete-se em oasi, com mais de 20 atrações entre mostra de filmes, djs, shows, performances, encontros, e você!
+            De 22.11 a 05.12 o Festival Convida comemora sua 20ª edição. Shows, Mercado, Capacitações, Feirinha... Tudo de mais lindo do independente pra você.
           </NextEventDescription>
         </NextEventInfoWrapper>
         <NextEventActionsWrapper>
@@ -260,7 +260,7 @@ const Home = () => {
                 vertical-align: middle;
               }
             `}
-            alt="Adquirir ingresso para a Afete-se em OASI de 13 a 21 de Novembro"
+            alt="Adquirir ingresso para o Festival Convida em OASI de 22 de Novembro a 05 de Dezembro"
           >
             <Icon>local_grocery_store</Icon>
             Adquirir ingresso
@@ -268,9 +268,9 @@ const Home = () => {
           <Button
             color="#404040"
             onClick={() => {
-              router.push(' https://www.instagram.com/afete_se');
+              router.push('https://www.instagram.com/festival.convida/?igshid=6ensn9a1b7p');
             }}
-            alt="Saiba mais sobre a Afete-se em OASI de 13 a 21 de Novembro"
+            alt="Saiba mais sobre o Festival Convida em OASI de 22 de Novembro a 05 de Dezembro"
           >
             Saiba mais
           </Button>
@@ -287,7 +287,7 @@ const Home = () => {
       <ModalSympla
         opened={symplaModal}
         toSympla={() => {
-          router.push('https://www.sympla.com.br/afete-se-em-oasi--afete-se-digital__1048465');
+          router.push('https://www.sympla.com.br/festival-convida-202020__1052086');
           setSymplaModal(false);
         }}
         onCancel={() => setSymplaModal(false)}

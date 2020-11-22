@@ -35,7 +35,6 @@ const EventTemplate = ({ event_id }) => {
 
   const checkUser = () => {
     const currentDate = new Date().getTime();
-    console.log('aqui', currentDate > +event.start_date, currentDate < +event.end_date, state.user.tickets);
     if (
       state.user &&
       state.user.tickets.findIndex(({ event: e }) => e.id === event_id) !== -1  &&

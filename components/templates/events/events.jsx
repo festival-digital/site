@@ -48,8 +48,8 @@ const getDateString = (startDate, endDate) => {
     return `de ${startDay} a ${endDay} de ${months[momentEndDate.month()]}`;
   }
 
-  return `de ${startDay} ${
-    monthsShort[momentStartDate.month()]
+  return `${startDay} de ${
+    months[momentStartDate.month()]
   } a ${endDay} de ${months[momentEndDate.month()]}`;
 };
 
