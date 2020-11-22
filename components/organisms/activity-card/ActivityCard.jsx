@@ -222,7 +222,7 @@ const ActivityCard = ({
           {/* <SelectTag subscription={subscription} isFree={isFree}  /> */}
           {
             activity.streaming_url && enter ? (
-              <Button onClick={() => router.push(`/embed-stream/${activity.id}`)}>
+              <Button onClick={() => router.push(activity.streaming_url)}>
                 Entrar
               </Button>
             ) : null
