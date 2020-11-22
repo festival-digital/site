@@ -90,7 +90,7 @@ const EventTemplate = ({ event_id }) => {
           <div>
             <Title>{event.name}</Title>
             {event.is_free ? <SmallText>Evento é gratuito</SmallText> : null}
-            <LinkBadge href={'event.site_url'}>
+            <LinkBadge href="https://www.instagram.com/festival.convida/?igshid=6ensn9a1b7p">
               <Icon>public</Icon>
               &nbsp;
               Site do evento
