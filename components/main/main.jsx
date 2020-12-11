@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import Store from 'components/store/Store';
 import HomeMenu from 'components/organisms/home-menu/home-menu';
 import {
-  CLOSE_MENU_MODAL,
+  CLOSE_MENU_MODAL, SET_LOADING_PAGE,
 } from 'components/store/actions';
 import theme from 'utils/theme';
 import { getUser, initIda, openIDASignin } from './main.controller';
@@ -24,7 +24,12 @@ const Main = ({ children }) => {
   
   // component did mount cycle
   useEffect(() => {
-   initIda(router, dispatch, setLoading);
+  dispatch({
+    type: SET_LOADING_PAGE,
+    loading: false,
+  });
+
+  //  initIda(router, dispatch, setLoading);
   }, []);
 
   return (
@@ -32,7 +37,8 @@ const Main = ({ children }) => {
       <MainComponent>
         {children}
         <HomeMenu
-          onIDASignin={() => openIDASignin(state.ida)}
+          // onIDASignin={() => openIDASignin(state.ida)}
+          onIDASignin={() => null}
           opened={state.menu}
           closeMenu={() => {
             dispatch({

@@ -30,7 +30,8 @@ const Header = ({ menuOpened, toggleMenu, closeMenu }) => {
       <Wrapper>
         <Navigation
           closeMenu={closeMenu}
-          onIDASignin={() => openIDASignin(state.ida)}
+          // onIDASignin={() => openIDASignin(state.ida)}
+          onIDASignin={() => null}
           textButton="Entrar"
         />
       </Wrapper>

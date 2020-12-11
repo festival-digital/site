@@ -115,7 +115,7 @@ const Home = () => {
           </DownButton>
         </ApresentationContent>
       </InitialWrapper>
-
+{/* 
       <IDAContent id="ida-c2a">
         <IDAContentWrapper>
           <ContentAbout>
@@ -130,14 +130,15 @@ const Home = () => {
           </ContentAbout>
           <WrapperButtonIDA>
             <IDARegisterButton
-              onClick={() => openIDASignin(state.ida)}
+              // onClick={() => openIDASignin(state.ida)}
+              onClick={() => null}
               text="Entrar com IDa"
               dark
               small
             />
           </WrapperButtonIDA>
         </IDAContentWrapper>
-      </IDAContent>
+      </IDAContent> */}
 
       <AboutOasi>
         <AboutOasiWrapper>
@@ -236,7 +237,7 @@ const Home = () => {
         </AboutPlataformRow>
       </AboutPlataform>
 
-      <NextEvent backgroundImg="https://oasi-assets.s3-us-west-2.amazonaws.com/25b17a43-47d0-44d6-bd38-78e6a1ec94c2.jpeg">
+      {/* <NextEvent backgroundImg="https://oasi-assets.s3-us-west-2.amazonaws.com/25b17a43-47d0-44d6-bd38-78e6a1ec94c2.jpeg">
         <NextEventMosaicIllustration
           src="/static/images/event-mosaic.svg"
           alt=""
@@ -274,13 +275,13 @@ const Home = () => {
           >
             Saiba mais
           </Button>
-          {/* <Link href="/all-events">
+          <Link href="/all-events">
             <LinkButton href="/" color="#FFFFFF">
               Ver todos os eventos
             </LinkButton>
-          </Link> */}
+          </Link>
         </NextEventActionsWrapper>
-      </NextEvent>
+      </NextEvent> */}
 
       <Footer />
 

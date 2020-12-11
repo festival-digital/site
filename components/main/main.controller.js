@@ -98,13 +98,12 @@ export const onAuthChange = (auth, setLoading, router, dispatch) => {
 export const initIda = async (
   router, dispatch, setLoading,
 ) => {
-  console.log('initIda');
   const query = `?${router.asPath.split('?')[1 || '']}`;
   const parsedQuery = queryString.parse(query);
   const ida = await idaLib({
     onAuthChange: (auth) => onAuthChange(auth, setLoading, router, dispatch),
   });
-  console.log('ida', ida);
+
   dispatch({
     type: 'SET_IDA',
     ida: ida,

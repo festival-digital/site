@@ -32,7 +32,7 @@ const Footer = () => {
   const { state } = useContext(Store);
   return (
     <FooterComponent>
-      <IDAContent>
+      {/* <IDAContent>
         <IDAContentWrapper>
           <ContentAbout>
             <IDASubtitle>
@@ -49,11 +49,12 @@ const Footer = () => {
               text="Entrar com IDa"
               dark
               small
-              onClick={() => openIDASignin(state.ida)}
+              // onClick={() => openIDASignin(state.ida)}
+              onClick={() => null}
             />
           </WrapperButtonIDA>
         </IDAContentWrapper>
-      </IDAContent>
+      </IDAContent> */}
       <Navigation>
         <div>
           <NavigationItem>

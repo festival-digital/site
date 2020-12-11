@@ -16,7 +16,7 @@ const Header = ({ onIDASignin, menuOpened}) => (
       alt="esse é um logo provisório para a plataforma da feira digital"
     />
     <div>
-      <IDALoginButton onClick={() => console.log('testeee')} dark small text="Entrar" />
+      {/* <IDALoginButton onClick={() => console.log('testeee')} dark small text="Entrar" /> */}
       <BurgerIcon
         onClick={() => {}}
         src="/static/icons/menu-burger.svg"
