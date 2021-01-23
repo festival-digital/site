@@ -1,5 +1,5 @@
 <p align="center">
-<img style="border-radius: 100px;" src="https://github.com/delimarenata/site-1/blob/master/public/static/images/oasi.jpg" width="200" alt=“Oasi”>
+<img style="border-radius:100px;" src="https://github.com/delimarenata/site-1/blob/master/public/static/images/oasi.jpg" width="200" alt=“Oasi”>
 </p>
 <h1 align="center">Oasi.vc</h1>
 <p align="center">Plataforma gamificada que proporciona uma experiência e imersão 3D </p>
@@ -55,3 +55,4 @@ Uma experiência diferente pra você assistir o seu artista favorite! Fazer aque
 * Feira de Expositores
 
 Powered by [Frente Hacker]
+
