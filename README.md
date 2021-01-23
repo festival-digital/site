@@ -1,5 +1,5 @@
 <p align="center">
-<img style="border-radius: 100px;" src="https://static.wixstatic.com/media/a14a2b_0a6ea4b1fc6f4b9682dea5a121c92b64~mv2.png/v1/fill/w_100,h_100,al_c,q_85,usm_0.66_1.00_0.01/ninja-appaula-icones-ida.webp" width="200" alt=“Oasi”>
+<img style="border-radius: 100px;" src="https://github.com/delimarenata/site-1/blob/master/public/static/images/oasi.jpg" width="200" alt=“Oasi”>
 </p>
 <h1 align="center">Oasi.vc</h1>
 <p align="center">Plataforma gamificada que proporciona uma experiência e imersão 3D </p>
